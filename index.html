@@ -57,7 +57,7 @@
             <nav class="topnav" aria-label="Sayfa bölümleri">
                 <a href="#katalog" class="nav-link active">Katalog</a>
                 <a href="#market-section" class="nav-link">Market & Fiyatlar</a>
-                <a href="#boss-section" class="nav-link">Boss Rehberi (4016 HP)</a>
+                <a href="#boss-section" class="nav-link">Cyborg & Boss Rehberi</a>
                 <a href="#falling-rate-section" class="nav-link">Falling Rate</a>
                 <a href="./Minifal%20%E2%80%94%20konu%C5%9F,%20giyin,%20kur,%20oyna.html" class="nav-link">Ana Sayfa</a>
                 <a href="./Hik%C3%A2yemiz%20%E2%80%94%20Minifal.html" class="nav-link">Hikâyemiz</a>
@@ -222,43 +222,63 @@
             </div>
         </section>
 
-        <!-- BOSS REHBERİ VE SAVAŞ HASAR SİMÜLATÖRÜ (COMMANDER 4016 CAN & LIGHT MACHINE GUN 12 HASAR) -->
+        <!-- BOSS REHBERİ VE SAVAŞ HASAR SİMÜLATÖRÜ (CYBORG COMMANDER 4016 CAN & CYBORG SOLDIER) -->
         <section class="boss-section" id="boss-section">
             <div class="boss-header">
                 <div class="boss-title-wrap">
-                    <span class="boss-eyebrow">⚔️ NPC & Survival Modu Savaş Veritabanı</span>
-                    <h2 class="boss-title">Boss Rehberi: Commander & Hasar Simülatörü</h2>
+                    <span class="boss-eyebrow">⚔️ NPC & Survival Modu Düşman Ansiklopedisi</span>
+                    <h2 class="boss-title">Cyborg Düşmanlar & Hasar Simülatörü</h2>
                     <p class="boss-lead">
-                        Minifal NPC modunun en dayanıklı baş düşmanı <b>Commander</b> (4016 Can) ve silahların vuruş / mermi gereksinimleri.
+                        Minifal Game Type 4 (Survival) modunun resmi düşmanları: <b>Cyborg Commander</b> (4.016 Can Boss) ve <b>Cyborg Soldier</b>.
                     </p>
                 </div>
                 <div class="boss-badge-pill">
-                    <span class="boss-badge-dot"></span>
-                    <span>Game Type 4: Survival Boss</span>
+                    <span class="boss-badge-dot" id="boss-badge-dot"></span>
+                    <span id="boss-mode-badge">Game Type 4: Survival Boss</span>
                 </div>
             </div>
 
+            <!-- Düşman Hedef Seçici Sekmeleri -->
+            <div class="enemy-switch-bar" role="tablist" aria-label="Düşman Hedef Seçimi">
+                <button type="button" class="enemy-switch-btn active" data-target="boss-commander" id="tab-boss-commander">
+                    👑 Cyborg Commander (4.016 HP Boss)
+                </button>
+                <button type="button" class="enemy-switch-btn" data-target="enemy-soldier" id="tab-enemy-soldier">
+                    🤖 Cyborg Soldier (250 HP Piyade)
+                </button>
+            </div>
+
             <div class="boss-grid">
-                <!-- Sol Kart: Commander Boss Profili -->
+                <!-- Sol Kart: Aktif Düşman Profili -->
                 <div class="boss-profile-card">
-                    <div class="boss-avatar-box">
-                        <img src="./img/items/commander_boss_trans.png" alt="Commander Boss" class="boss-avatar-img">
-                        <span class="boss-hp-tag">CAN: 4.016 HP</span>
+                    <div class="boss-avatar-box" id="boss-avatar-wrapper">
+                        <img src="./img/items/cyborg_commander_trans.png" alt="Cyborg Commander" id="boss-avatar-img" class="boss-avatar-img">
+                        <span class="boss-hp-tag" id="boss-hp-tag">CAN: 4.016 HP</span>
                     </div>
                     <div class="boss-info">
                         <div class="boss-info-top">
-                            <h3 class="boss-name">Commander</h3>
-                            <span class="boss-type-badge">Cyborg & NPC Baş Düşmanı</span>
+                            <div class="boss-name-group">
+                                <h3 class="boss-name" id="boss-name">Cyborg Commander</h3>
+                                <span class="boss-ingame-nametag" id="boss-nametag-preview">Cyborg Commander</span>
+                            </div>
+                            <span class="boss-type-badge" id="boss-type-badge">Cyborg & NPC Baş Düşmanı</span>
                         </div>
+
+                        <div class="boss-tags" id="boss-equipment-tags">
+                            <span class="boss-tag">🛡️ Ağır Sibernetik Komuta Zırhı</span>
+                            <span class="boss-tag">🔫 Ağır Plazma Paintball Topu</span>
+                            <span class="boss-tag">🟢 Yeşil Neon Vizör</span>
+                        </div>
+
                         <div class="boss-hp-track" title="Can Durumu">
                             <div class="boss-hp-fill" id="commander-hp-fill" style="width: 100%;"></div>
                         </div>
                         <div class="boss-hp-meta">
                             <span>Can Durumu:</span>
-                            <b class="boss-hp-counter"><span id="commander-hp-val">4.016</span> / 4.016 HP</b>
+                            <b class="boss-hp-counter"><span id="commander-hp-val">4.016</span> / <span id="commander-hp-max">4.016</span> HP</b>
                         </div>
-                        <p class="boss-desc">
-                            Minifal'ın NPC Survival arenasında (Oyun Modu 4) oyunculara karşı savaşan devasa sibernetik boss. <b>4016 Can</b> havuzunu eritmek için organize baskı ateşi şarttır.
+                        <p class="boss-desc" id="boss-desc">
+                            Minifal savaş meydanının resmi NPC baş düşmanı (Game Type 4 Boss). Tam <b>4.016 Can</b> havuzunu eritmek için organize baskı ateşi ve ağır silahlar şarttır.
                         </p>
                     </div>
                 </div>
@@ -343,7 +363,7 @@
                             <span class="calc-pill-val" id="calc-dmg-display">12 Hasar</span>
                         </div>
                         <div class="calc-stat-pill calc-stat-pill--primary">
-                            <span class="calc-pill-label">Commander İçin Gereken Vuruş</span>
+                            <span class="calc-pill-label" id="calc-hits-label">Commander İçin Gereken Vuruş</span>
                             <span class="calc-pill-val" id="calc-hits-display">335 Mermi</span>
                         </div>
                         <div class="calc-stat-pill">
@@ -358,7 +378,7 @@
                             💥 Test Ateşi Aç (-<span id="btn-fire-dmg">12</span> Hasar)
                         </button>
                         <button type="button" class="btn-reset" id="btn-reset-hp">
-                            🔄 Canı Sıfırla (4016 HP)
+                            🔄 Canı Sıfırla (<span id="btn-reset-hp-val">4.016</span> HP)
                         </button>
                     </div>
 

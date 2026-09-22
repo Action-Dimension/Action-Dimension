@@ -1341,23 +1341,52 @@ const MINIFAL_DATABASE = {
         ]
     },
 
-    // 8. BOSS VE NPC BİRİMLERİ (COMMANDER - 4016 HP)
+    // 8. BOSS VE NPC BİRİMLERİ (GAME TYPE 4: SURVIVAL)
     bosses: [
         {
             id: "boss-commander",
-            name: "Commander",
+            name: "Cyborg Commander",
+            inGameName: "Cyborg Commander",
+            tier: "Boss / Lider",
             title: "Cyborg & NPC Baş Düşmanı (Game Type 4 Boss)",
             hp: 4016,
             maxHp: 4016,
-            armorType: "Ağır Sibernetik Zırh",
-            gameMode: "NPC Modu / Survival Modu (Game Type 4)",
-            image: "./img/items/commander_boss_trans.png",
-            description: "Minifal savaş meydanının en güçlü NPC patronu. Tam 4016 Can (HP) barına sahiptir. Tek başına yenmek imkansıza yakındır; takım halinde yoğun makineli tüfek ateşiyle düşürülebilir.",
+            armorType: "Ağır Sibernetik Komuta Zırhı",
+            weapon: "Ağır Plazma Paintball Topu (Green Tank Heavy Gun)",
+            visor: "Yeşil Neon Hedefleme Vizörü",
+            gameMode: "Game Type 4: Survival / Cyborg Assault",
+            image: "./img/items/cyborg_commander_trans.png",
+            avatar: "./img/items/cyborg_commander_avatar.png",
+            glowColor: "#00E676",
+            description: "Minifal savaş meydanının resmi NPC baş düşmanı (Game Type 4 Boss). Tam 4.016 Can (HP) barı, yeşil neon hedefleme vizörü ve ağır paintball topu donanımına sahiptir. Tek başına devrilmesi neredeyse imkansızdır; takım halinde organize baskı ateşi ve ağır makineli tüfek gerektirir.",
             combatBenchmark: {
                 referenceWeapon: "Light Machine Gun",
                 damagePerBullet: 12,
                 bulletsToDefeat: 335,
                 formulaText: "4016 Can / 12 Hasar = 334.6 (Yaklaşık 335 Mermi)"
+            }
+        },
+        {
+            id: "enemy-soldier",
+            name: "Cyborg Soldier",
+            inGameName: "Cyborg Soldier",
+            tier: "Piyade Birliği",
+            title: "Cyborg Piyade Düşmanı (Game Type 4 Minion)",
+            hp: 250,
+            maxHp: 250,
+            armorType: "Hafif Taktik Sibernetik Zırh",
+            weapon: "Seri Atışlı Paintball Tüfeği (Green Box Scope)",
+            visor: "Kırmızı Dörtlü Gece / Termal Görüş Vizörü",
+            gameMode: "Game Type 4: Survival / Cyborg Assault",
+            image: "./img/items/cyborg_soldier_trans.png",
+            avatar: "./img/items/cyborg_soldier_avatar.png",
+            glowColor: "#FF3D00",
+            description: "Cyborg Commander'a eşlik eden ve Survival modunda dalgalar halinde hücum eden taktik sibernetik piyadeler. Kırmızı dörtlü göz vizörleri ve çevik hareket kabiliyetleriyle oyuncuları kuşatırlar.",
+            combatBenchmark: {
+                referenceWeapon: "Assault Rifle",
+                damagePerBullet: 18,
+                bulletsToDefeat: 14,
+                formulaText: "250 Can / 18 Hasar = 13.8 (Yaklaşık 14 Mermi)"
             }
         }
     ]

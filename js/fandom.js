@@ -543,23 +543,95 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // 5. BOSS REHBERİ & HASAR HESAPLAYICISI (COMMANDER 4016 CAN & LIGHT MACHINE GUN 12 HASAR)
+    // 5. BOSS & DÜŞMAN REHBERİ VE HASAR SİMÜLATÖRÜ (CYBORG COMMANDER 4016 HP & CYBORG SOLDIER 250 HP)
     function initBossCalculator() {
         const weaponSelect = document.getElementById("boss-weapon-select");
         const dmgDisplay = document.getElementById("calc-dmg-display");
         const hitsDisplay = document.getElementById("calc-hits-display");
+        const hitsLabel = document.getElementById("calc-hits-label");
         const magDisplay = document.getElementById("calc-mag-display");
         const fireBtn = document.getElementById("btn-fire-test");
         const fireDmgSpan = document.getElementById("btn-fire-dmg");
         const resetBtn = document.getElementById("btn-reset-hp");
+        const resetHpValSpan = document.getElementById("btn-reset-hp-val");
         const hpValSpan = document.getElementById("commander-hp-val");
+        const hpMaxSpan = document.getElementById("commander-hp-max");
         const hpFillBar = document.getElementById("commander-hp-fill");
         const tipBox = document.getElementById("calc-benchmark-text");
+        
+        // Düşman Profil Elemanları
+        const avatarImg = document.getElementById("boss-avatar-img");
+        const hpTag = document.getElementById("boss-hp-tag");
+        const nameEl = document.getElementById("boss-name");
+        const nametagPreview = document.getElementById("boss-nametag-preview");
+        const typeBadge = document.getElementById("boss-type-badge");
+        const equipTags = document.getElementById("boss-equipment-tags");
+        const descEl = document.getElementById("boss-desc");
+        const modeBadge = document.getElementById("boss-mode-badge");
+        const switchBtns = document.querySelectorAll(".enemy-switch-btn");
 
-        if (!weaponSelect) return;
+        if (!weaponSelect || !MINIFAL_DATABASE.bosses) return;
 
-        const maxHp = 4016;
-        let currentHp = 4016;
+        let activeEnemyId = "boss-commander";
+        let activeEnemy = MINIFAL_DATABASE.bosses.find(b => b.id === activeEnemyId) || MINIFAL_DATABASE.bosses[0];
+        let currentHp = activeEnemy.maxHp;
+
+        function setTargetEnemy(enemyId) {
+            const found = MINIFAL_DATABASE.bosses.find(b => b.id === enemyId);
+            if (!found) return;
+
+            activeEnemyId = enemyId;
+            activeEnemy = found;
+            currentHp = activeEnemy.maxHp;
+
+            // Sekmeleri güncelle
+            switchBtns.forEach(btn => {
+                const isTarget = btn.getAttribute("data-target") === enemyId;
+                btn.classList.toggle("active", isTarget);
+                btn.setAttribute("aria-selected", isTarget ? "true" : "false");
+            });
+
+            // Profil kartını güncelle
+            if (avatarImg) {
+                avatarImg.src = activeEnemy.image;
+                avatarImg.alt = activeEnemy.name;
+            }
+            if (hpTag) hpTag.textContent = `CAN: ${activeEnemy.maxHp.toLocaleString("tr-TR")} HP`;
+            if (nameEl) nameEl.textContent = activeEnemy.name;
+            if (nametagPreview) nametagPreview.textContent = activeEnemy.inGameName || activeEnemy.name;
+            if (typeBadge) typeBadge.textContent = activeEnemy.title;
+            if (descEl) descEl.textContent = activeEnemy.description;
+            if (modeBadge) modeBadge.textContent = activeEnemy.gameMode || "Game Type 4: Survival";
+
+            if (equipTags) {
+                if (activeEnemy.id === "boss-commander") {
+                    equipTags.innerHTML = `
+                        <span class="boss-tag">🛡️ Ağır Komuta Zırhı</span>
+                        <span class="boss-tag">🔫 Ağır Paintball Topu</span>
+                        <span class="boss-tag boss-tag--green">🟢 Yeşil Neon Vizör</span>
+                    `;
+                } else {
+                    equipTags.innerHTML = `
+                        <span class="boss-tag">🛡️ Hafif Taktik Zırh</span>
+                        <span class="boss-tag">🔫 Seri Paintball Tüfeği</span>
+                        <span class="boss-tag boss-tag--red">🔴 Kırmızı Termal Vizör</span>
+                    `;
+                }
+            }
+
+            // Can çubuğunu sıfırla
+            if (hpValSpan) hpValSpan.textContent = activeEnemy.maxHp.toLocaleString("tr-TR");
+            if (hpMaxSpan) hpMaxSpan.textContent = activeEnemy.maxHp.toLocaleString("tr-TR");
+            if (resetHpValSpan) resetHpValSpan.textContent = activeEnemy.maxHp.toLocaleString("tr-TR");
+            if (hpFillBar) {
+                hpFillBar.style.width = "100%";
+                hpFillBar.style.background = activeEnemy.glowColor || "var(--orange)";
+            }
+
+            if (hitsLabel) hitsLabel.textContent = `${activeEnemy.name} İçin Gereken Vuruş`;
+
+            updateCalculations();
+        }
 
         function updateCalculations() {
             const opt = weaponSelect.options[weaponSelect.selectedIndex];
@@ -567,7 +639,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const cap = parseInt(opt.getAttribute("data-cap"), 10) || 60;
             const wName = opt.getAttribute("data-name") || "Silah";
 
-            const hitsNeeded = Math.ceil(maxHp / dmg);
+            const hitsNeeded = Math.ceil(activeEnemy.maxHp / dmg);
             const magsNeeded = (hitsNeeded / cap).toFixed(1);
 
             if (dmgDisplay) dmgDisplay.textContent = `${dmg} Hasar`;
@@ -576,13 +648,29 @@ document.addEventListener("DOMContentLoaded", () => {
             if (fireDmgSpan) fireDmgSpan.textContent = dmg;
 
             if (tipBox) {
-                if (wName === "Light Machine Gun") {
-                    tipBox.innerHTML = `💡 <b>Resmi Minifal Ölçütü:</b> 12 hasar veren <b>Light Machine Gun</b> ile 4016 canı olan <b>Commander</b>'ı indirmek için tam <b>335 isabetli mermi</b> gerekir (4016 ÷ 12 ≈ 334.6).`;
+                if (activeEnemy.id === "boss-commander") {
+                    if (wName === "Light Machine Gun") {
+                        tipBox.innerHTML = `💡 <b>Resmi Minifal Ölçütü:</b> 12 hasar veren <b>Light Machine Gun</b> ile 4.016 canı olan <b>Cyborg Commander</b>'ı indirmek için tam <b>335 isabetli mermi</b> gerekir (4016 ÷ 12 ≈ 334.6).`;
+                    } else {
+                        tipBox.innerHTML = `💡 <b>Hesaplama:</b> ${dmg} hasar veren <b>${wName}</b> ile 4.016 canı olan <b>Cyborg Commander</b>'ı devirmek için <b>${hitsNeeded} isabetli mermi</b> gerekir.`;
+                    }
                 } else {
-                    tipBox.innerHTML = `💡 <b>Hesaplama:</b> ${dmg} hasar veren <b>${wName}</b> ile 4016 canı olan <b>Commander</b>'ı devirmek için <b>${hitsNeeded} isabetli mermi</b> gerekir.`;
+                    if (wName === "Assault Rifle") {
+                        tipBox.innerHTML = `💡 <b>Piyade Karşılaşması:</b> 18 hasar veren <b>Assault Rifle</b> ile 250 canı olan <b>Cyborg Soldier</b>'ı düşürmek için <b>14 isabetli mermi</b> yeterlidir (250 ÷ 18 ≈ 13.8).`;
+                    } else {
+                        tipBox.innerHTML = `💡 <b>Hesaplama:</b> ${dmg} hasar veren <b>${wName}</b> ile 250 canı olan <b>Cyborg Soldier</b>'ı düşürmek için <b>${hitsNeeded} isabetli mermi</b> gerekir.`;
+                    }
                 }
             }
         }
+
+        // Sekme Değişimi Dinleyicileri
+        switchBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                const target = btn.getAttribute("data-target");
+                if (target) setTargetEnemy(target);
+            });
+        });
 
         weaponSelect.addEventListener("change", updateCalculations);
 
@@ -592,13 +680,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 const dmg = parseInt(opt.value, 10) || 12;
 
                 currentHp = Math.max(0, currentHp - dmg);
-                const pct = (currentHp / maxHp) * 100;
+                const pct = (currentHp / activeEnemy.maxHp) * 100;
 
                 if (hpValSpan) hpValSpan.textContent = currentHp.toLocaleString("tr-TR");
                 if (hpFillBar) hpFillBar.style.width = `${pct}%`;
 
                 if (currentHp <= 0) {
-                    fireBtn.textContent = "🏆 Commander Düştü! Zafer!";
+                    fireBtn.textContent = `🏆 ${activeEnemy.name} Düştü! Zafer!`;
                 } else {
                     fireBtn.innerHTML = `💥 -${dmg} Vuruldu! (Kalan: ${currentHp.toLocaleString("tr-TR")} HP)`;
                 }
@@ -607,8 +695,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (resetBtn) {
             resetBtn.addEventListener("click", () => {
-                currentHp = maxHp;
-                if (hpValSpan) hpValSpan.textContent = maxHp.toLocaleString("tr-TR");
+                currentHp = activeEnemy.maxHp;
+                if (hpValSpan) hpValSpan.textContent = activeEnemy.maxHp.toLocaleString("tr-TR");
                 if (hpFillBar) hpFillBar.style.width = "100%";
                 const opt = weaponSelect.options[weaponSelect.selectedIndex];
                 const dmg = parseInt(opt.value, 10) || 12;
@@ -616,7 +704,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
 
-        updateCalculations();
+        setTargetEnemy("boss-commander");
     }
 
     // Pencere yeniden boyutlandırıldığında grafiği güncelle
