@@ -138,23 +138,28 @@
             <button type="button" class="cat-btn" data-cat="drops">🎯 Falling Rate (Pasif)</button>
         </nav>
 
-        <!-- Arama ve Sıralama Paneli -->
+        <!-- Arama ve Sıralama Çubuğu (Sade & Kompakt) -->
         <section class="filter-panel" aria-label="Filtreleme Seçenekleri">
-            <div class="search-box">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                <input type="text" id="search-input" placeholder="Silah, modkit, zırh, mobilya veya maske ara…" autocomplete="off">
+            <div class="filter-left">
+                <span id="results-count" class="catalog-count-pill">Yükleniyor…</span>
             </div>
 
-            <div class="sort-group">
-                <span class="sort-label">Sırala:</span>
-                <select id="sort-select" class="sort-select">
-                    <option value="featured">Öne Çıkanlar</option>
-                    <option value="price-asc">Fiyat: Düşükten Yükseğe</option>
-                    <option value="price-desc">Fiyat: Yüksekten Düşüğe</option>
-                    <option value="change-desc">24s Değişim: En Çok Artanlar</option>
-                    <option value="name-asc">Alfabetik (A-Z)</option>
-                </select>
-                <span id="results-count" style="font-size: 12px; color: var(--ink-dim); font-weight: 700; margin-left: 6px;">Yükleniyor…</span>
+            <div class="filter-right">
+                <div class="search-box">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <input type="text" id="search-input" placeholder="Eşya veya modkit ara…" autocomplete="off">
+                </div>
+
+                <div class="sort-group">
+                    <label for="sort-select" class="sort-label">Sırala:</label>
+                    <select id="sort-select" class="sort-select">
+                        <option value="featured">Öne Çıkanlar</option>
+                        <option value="price-asc">Fiyat: Düşükten Yükseğe</option>
+                        <option value="price-desc">Fiyat: Yüksekten Düşüğe</option>
+                        <option value="change-desc">24s Değişim</option>
+                        <option value="name-asc">Alfabetik (A-Z)</option>
+                    </select>
+                </div>
             </div>
         </section>
 
