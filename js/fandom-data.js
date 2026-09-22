@@ -29,7 +29,7 @@ const MINIFAL_DATABASE = {
         { id: "all", name: "Tüm Eşyalar", icon: "🌐", color: "ink", count: 48, desc: "Minifal evrenindeki tüm eşyaların ortak kataloğu." },
         { id: "weapons", name: "Silahlar", icon: "🔫", color: "orange", count: 24, desc: "Paintball sahasında kullanılan hafif, ağır ve özel boya silahları." },
         { id: "armor", name: "Zırhlar & Kalkanlar", icon: "🛡️", color: "gold", count: 12, desc: "Maçlarda boya hasarını engelleyen taktik yelekler, kalkanlar ve robotik zırhlar." },
-        { id: "modkits", name: "Modkitler", icon: "⚙️", color: "teal", count: 8, desc: "Silahların hasar, hız ve menzilini artıran geliştirme modülleri ve sökücüler." },
+        { id: "modkits", name: "Modkitler", icon: "⚙️", color: "teal", count: 16, desc: "Silahların hasar, hız ve menzilini artıran geliştirme modülleri ve sökücüler." },
         { id: "potions", name: "Taktik Çantalar", icon: "🧪", color: "teal", count: 7, desc: "Can ve cephane ikmal paketleri, hız ve çeviklik güçlendiriciler." },
         { id: "masks", name: "Kıyafet & Maske", icon: "🎭", color: "olive", count: 465, desc: "Şehirde tarzını yansıtan maskeler, tişörtler, şortlar ve ceketler." },
         { id: "furniture", name: "Mobilyalar & Ev", icon: "🛋️", color: "sand", count: 116, desc: "Sebastian'dan alınan ev planları ve odayı döşeyen mobilyalar." },
@@ -881,8 +881,9 @@ const MINIFAL_DATABASE = {
             description: "Siyah alet çantası ve kırmızı-turuncu aşağı ok simgeli resmi mod sökücü alet kiti. Silah kombinasyonlarınızı dilediğiniz gibi değiştirmenize olanak tanır.",
             source: "Dükkan / 6 Crystal"
         },
+        // PENETRATION (İsabetlilik: Small +2, Medium +3, Large +4)
         {
-            id: "mod-kit-636",
+            id: "mod-pen-small",
             name: "Paintball Mod Kit of Penetration - Small",
             category: "modkits",
             subType: "Paintball Yükseltme Kiti",
@@ -906,7 +907,56 @@ const MINIFAL_DATABASE = {
             source: "Dükkan / 636 Cash"
         },
         {
-            id: "mod-kit-606",
+            id: "mod-pen-medium",
+            name: "Paintball Mod Kit of Penetration - Medium",
+            category: "modkits",
+            subType: "Paintball Yükseltme Kiti",
+            rarity: "epic",
+            rarityName: "Epik",
+            image: "./img/items/modkit_medium_trans.png",
+            currency: "cash",
+            price: 5272,
+            marketRange: "5.000 - 5.500 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 4900 },
+                { date: "Tem 2026", price: 5100 },
+                { date: "Ağu 2026", price: 5200 },
+                { date: "Eyl 2026", price: 5272 }
+            ],
+            change24h: 1.4,
+            effects: "[İsabetlilik Bonusu 3] Bu mod kiti isabetliliğini arttırmak için paintball silahlarında kullanılabilir. Tek kullanımlık.",
+            slotCost: "1 Yuva",
+            compatibility: "Paintball Silahları",
+            description: "[ORTA BOY KİT] [İsabetlilik Bonusu 3] Bu mod kiti isabetliliğini arttırmak için paintball silahlarında kullanılabilir. Tek kullanımlık.",
+            source: "Pazar / MrCAGRI (5.272 Cash)"
+        },
+        {
+            id: "mod-pen-large",
+            name: "Paintball Mod Kit of Penetration - Large",
+            category: "modkits",
+            subType: "Paintball Yükseltme Kiti",
+            rarity: "legendary",
+            rarityName: "Efsanevi",
+            image: "./img/items/modkit_large_trans.png",
+            currency: "cash",
+            price: 11000,
+            marketRange: "10.500 - 12.000 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 10000 },
+                { date: "Tem 2026", price: 10500 },
+                { date: "Ağu 2026", price: 10800 },
+                { date: "Eyl 2026", price: 11000 }
+            ],
+            change24h: 1.9,
+            effects: "[İsabetlilik Bonusu 4] Bu mod kiti isabetliliğini arttırmak için paintball silahlarında kullanılabilir. Tek kullanımlık.",
+            slotCost: "1 Yuva",
+            compatibility: "Paintball Silahları",
+            description: "[BÜYÜK KİT] [İsabetlilik Bonusu 4] Bu mod kiti isabetliliğini arttırmak için paintball silahlarında kullanılabilir. Tek kullanımlık.",
+            source: "Pazar / Alperkose (11.000 Cash)"
+        },
+        // BRUTALITY (Hasar: Small +2, Medium +3, Large +4)
+        {
+            id: "mod-brut-small",
             name: "Paintball Mod Kit of Brutality - Small",
             category: "modkits",
             subType: "Paintball Yükseltme Kiti",
@@ -930,7 +980,56 @@ const MINIFAL_DATABASE = {
             source: "Dükkan / 606 Cash"
         },
         {
-            id: "mod-kit-588",
+            id: "mod-brut-medium",
+            name: "Paintball Mod Kit of Brutality - Medium",
+            category: "modkits",
+            subType: "Paintball Yükseltme Kiti",
+            rarity: "epic",
+            rarityName: "Epik",
+            image: "./img/items/modkit_medium_trans.png",
+            currency: "cash",
+            price: 40212,
+            marketRange: "38.000 - 42.000 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 36000 },
+                { date: "Tem 2026", price: 38500 },
+                { date: "Ağu 2026", price: 39500 },
+                { date: "Eyl 2026", price: 40212 }
+            ],
+            change24h: 1.8,
+            effects: "[Hasar Bonusu 3] Bu mod kiti hasarı arttırmak için paintball silahlarında kullanılabilir. Tek kullanımlık.",
+            slotCost: "1 Yuva",
+            compatibility: "Paintball Silahları",
+            description: "[ORTA BOY KİT] [Hasar Bonusu 3] Bu mod kiti hasarı arttırmak için paintball silahlarında kullanılabilir. Tek kullanımlık.",
+            source: "Pazar / MrCAGRI (40.212 Cash)"
+        },
+        {
+            id: "mod-brut-large",
+            name: "Paintball Mod Kit of Brutality - Large",
+            category: "modkits",
+            subType: "Paintball Yükseltme Kiti",
+            rarity: "legendary",
+            rarityName: "Efsanevi",
+            image: "./img/items/modkit_large_trans.png",
+            currency: "cash",
+            price: 65000,
+            marketRange: "60.000 - 70.000 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 58000 },
+                { date: "Tem 2026", price: 61000 },
+                { date: "Ağu 2026", price: 63500 },
+                { date: "Eyl 2026", price: 65000 }
+            ],
+            change24h: 2.4,
+            effects: "[Hasar Bonusu 4] Bu mod kiti hasarı arttırmak için paintball silahlarında kullanılabilir. Tek kullanımlık.",
+            slotCost: "1 Yuva",
+            compatibility: "Paintball Silahları",
+            description: "[BÜYÜK KİT] [Hasar Bonusu 4] Bu mod kiti hasarı arttırmak için paintball silahlarında kullanılabilir. Tek kullanımlık.",
+            source: "Pazar / 65.000 Cash"
+        },
+        // FURY (Atış Hızı: Small +30, Medium +40, Large +50)
+        {
+            id: "mod-fury-small",
             name: "Paintball Mod Kit of Fury - Small",
             category: "modkits",
             subType: "Paintball Yükseltme Kiti",
@@ -954,7 +1053,56 @@ const MINIFAL_DATABASE = {
             source: "Dükkan / 588 Cash"
         },
         {
-            id: "mod-kit-570",
+            id: "mod-fury-medium",
+            name: "Paintball Mod Kit of Fury - Medium",
+            category: "modkits",
+            subType: "Paintball Yükseltme Kiti",
+            rarity: "epic",
+            rarityName: "Epik",
+            image: "./img/items/modkit_medium_trans.png",
+            currency: "cash",
+            price: 75000,
+            marketRange: "70.000 - 80.000 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 68000 },
+                { date: "Tem 2026", price: 71000 },
+                { date: "Ağu 2026", price: 73500 },
+                { date: "Eyl 2026", price: 75000 }
+            ],
+            change24h: 2.1,
+            effects: "[Atış Hızı Bonusu 40] Bu mod kiti atış hızını arttırmak için paintball silahlarında kullanılabilir. Tek kullanımlık.",
+            slotCost: "1 Yuva",
+            compatibility: "Paintball Silahları",
+            description: "[ORTA BOY KİT] [Atış Hızı Bonusu 40] Bu mod kiti atış hızını arttırmak için paintball silahlarında kullanılabilir. Tek kullanımlık.",
+            source: "Pazar / SharkRaider (75.000 Cash)"
+        },
+        {
+            id: "mod-fury-large",
+            name: "Paintball Mod Kit of Fury - Large",
+            category: "modkits",
+            subType: "Paintball Yükseltme Kiti",
+            rarity: "legendary",
+            rarityName: "Efsanevi",
+            image: "./img/items/modkit_large_trans.png",
+            currency: "cash",
+            price: 110000,
+            marketRange: "100.000 - 120.000 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 95000 },
+                { date: "Tem 2026", price: 102000 },
+                { date: "Ağu 2026", price: 107000 },
+                { date: "Eyl 2026", price: 110000 }
+            ],
+            change24h: 2.8,
+            effects: "[Atış Hızı Bonusu 50] Bu mod kiti atış hızını arttırmak için paintball silahlarında kullanılabilir. Tek kullanımlık.",
+            slotCost: "1 Yuva",
+            compatibility: "Paintball Silahları",
+            description: "[BÜYÜK KİT] [Atış Hızı Bonusu 50] Bu mod kiti atış hızını arttırmak için paintball silahlarında kullanılabilir. Tek kullanımlık.",
+            source: "Pazar / 110.000 Cash"
+        },
+        // MADNESS (Mermi Hızı: Small +2, Medium +3, Large +4)
+        {
+            id: "mod-mad-small",
             name: "Paintball Mod Kit of Madness - Small",
             category: "modkits",
             subType: "Paintball Yükseltme Kiti",
@@ -978,7 +1126,56 @@ const MINIFAL_DATABASE = {
             source: "Dükkan / 570 Cash"
         },
         {
-            id: "mod-kit-522",
+            id: "mod-mad-medium",
+            name: "Paintball Mod Kit of Madness - Medium",
+            category: "modkits",
+            subType: "Paintball Yükseltme Kiti",
+            rarity: "epic",
+            rarityName: "Epik",
+            image: "./img/items/modkit_medium_trans.png",
+            currency: "cash",
+            price: 7500,
+            marketRange: "7.000 - 8.200 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 6800 },
+                { date: "Tem 2026", price: 7100 },
+                { date: "Ağu 2026", price: 7300 },
+                { date: "Eyl 2026", price: 7500 }
+            ],
+            change24h: 1.3,
+            effects: "[Mermi Hızı Bonusu 3] Bu mod kiti paintball silahlarının mermi hızını arttırmak için kullanılır. Tek kullanımlık.",
+            slotCost: "1 Yuva",
+            compatibility: "Paintball Silahları",
+            description: "[ORTA BOY KİT] [Mermi Hızı Bonusu 3] Bu mod kiti paintball silahlarının mermi hızını arttırmak için kullanılır. Tek kullanımlık.",
+            source: "Pazar / 7.500 Cash"
+        },
+        {
+            id: "mod-mad-large",
+            name: "Paintball Mod Kit of Madness - Large",
+            category: "modkits",
+            subType: "Paintball Yükseltme Kiti",
+            rarity: "legendary",
+            rarityName: "Efsanevi",
+            image: "./img/items/modkit_large_trans.png",
+            currency: "cash",
+            price: 15000,
+            marketRange: "14.000 - 16.500 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 13500 },
+                { date: "Tem 2026", price: 14200 },
+                { date: "Ağu 2026", price: 14700 },
+                { date: "Eyl 2026", price: 15000 }
+            ],
+            change24h: 2.0,
+            effects: "[Mermi Hızı Bonusu 4] Bu mod kiti paintball silahlarının mermi hızını arttırmak için kullanılır. Tek kullanımlık.",
+            slotCost: "1 Yuva",
+            compatibility: "Paintball Silahları",
+            description: "[BÜYÜK KİT] [Mermi Hızı Bonusu 4] Bu mod kiti paintball silahlarının mermi hızını arttırmak için kullanılır. Tek kullanımlık.",
+            source: "Pazar / 15.000 Cash"
+        },
+        // ENDURANCE (Şarjör Kapasitesi: Small +2, Medium +3, Large +4)
+        {
+            id: "mod-end-small",
             name: "Paintball Mod Kit of Endurance - Small",
             category: "modkits",
             subType: "Paintball Yükseltme Kiti",
@@ -995,59 +1192,59 @@ const MINIFAL_DATABASE = {
                 { date: "Eyl 2026", price: 522 }
             ],
             change24h: 0.8,
-            effects: "[Şarjör Kapasitesi Bonusu 2] Bu mod kiti silahların şarjör kapasitesini arttırmak için kullanılır. Tek kullanımlık.",
+            effects: "[Şarjör Kapasitesi Bonusu 2] Bu mod kit eklendiği paintball silahlarının şarjör kapasitesini arttırır. Tek kullanımlık.",
             slotCost: "1 Yuva",
             compatibility: "Paintball Silahları",
-            description: "[KÜÇÜK KİT] [Şarjör Kapasitesi Bonusu 2] Bu mod kiti silahların şarjör kapasitesini arttırmak için kullanılır. Tek kullanımlık.",
+            description: "[KÜÇÜK KİT] [Şarjör Kapasitesi Bonusu 2] Bu mod kit eklendiği paintball silahlarının şarjör kapasitesini arttırır. Tek kullanımlık.",
             source: "Dükkan / 522 Cash"
         },
         {
-            id: "mod-paintball-green",
-            name: "Paintball Mod Kit (Green)",
+            id: "mod-end-medium",
+            name: "Paintball Mod Kit of Endurance - Medium",
             category: "modkits",
-            subType: "Özel Modkit",
+            subType: "Paintball Yükseltme Kiti",
             rarity: "epic",
             rarityName: "Epik",
-            image: "./img/items/paintball_modkit_green_trans.png",
+            image: "./img/items/modkit_medium_trans.png",
             currency: "cash",
-            price: 10000,
-            marketRange: "5.272 - 75.000 Cash",
+            price: 6500,
+            marketRange: "6.000 - 7.200 Cash",
             priceHistory: [
-                { date: "Haz 2026", price: 5272 },
-                { date: "Tem 2026", price: 7800 },
-                { date: "Ağu 2026", price: 9500 },
-                { date: "Eyl 2026", price: 10000 }
+                { date: "Haz 2026", price: 5800 },
+                { date: "Tem 2026", price: 6100 },
+                { date: "Ağu 2026", price: 6350 },
+                { date: "Eyl 2026", price: 6500 }
             ],
-            change24h: 5.2,
-            effects: "Hasar +%20, Mermi Dağılımı -%35",
-            slotCost: "2 Yuva",
-            compatibility: "Tüm Boya Silahları",
-            description: "Yeşil neon detaylı üst düzey turnuva kiti.",
-            source: "2. El Market / Özel Etkinlik"
+            change24h: 1.2,
+            effects: "[Şarjör Kapasitesi Bonusu 3] Bu mod kit eklendiği paintball silahlarının şarjör kapasitesini arttırır. Tek kullanımlık.",
+            slotCost: "1 Yuva",
+            compatibility: "Paintball Silahları",
+            description: "[ORTA BOY KİT] [Şarjör Kapasitesi Bonusu 3] Bu mod kit eklendiği paintball silahlarının şarjör kapasitesini arttırır. Tek kullanımlık.",
+            source: "Pazar / 6.500 Cash"
         },
         {
-            id: "mod-paintball-orange",
-            name: "Paintball Mod Kit (Orange)",
+            id: "mod-end-large",
+            name: "Paintball Mod Kit of Endurance - Large",
             category: "modkits",
-            subType: "Özel Modkit",
-            rarity: "rare",
-            rarityName: "Ender",
-            image: "./img/items/paintball_modkit_orange_trans.png",
+            subType: "Paintball Yükseltme Kiti",
+            rarity: "legendary",
+            rarityName: "Efsanevi",
+            image: "./img/items/modkit_large_trans.png",
             currency: "cash",
-            price: 10500,
-            marketRange: "10.001 - 11.000 Cash",
+            price: 10001,
+            marketRange: "9.500 - 11.000 Cash",
             priceHistory: [
-                { date: "Haz 2026", price: 9800 },
-                { date: "Tem 2026", price: 10001 },
-                { date: "Ağu 2026", price: 10200 },
-                { date: "Eyl 2026", price: 10500 }
+                { date: "Haz 2026", price: 9200 },
+                { date: "Tem 2026", price: 9600 },
+                { date: "Ağu 2026", price: 9850 },
+                { date: "Eyl 2026", price: 10001 }
             ],
-            change24h: 2.9,
-            effects: "Atış Hızı +%25",
+            change24h: 1.5,
+            effects: "[Şarjör Kapasitesi Bonusu 4] Bu mod kit eklendiği paintball silahlarının şarjör kapasitesini arttırır. Tek kullanımlık.",
             slotCost: "1 Yuva",
-            compatibility: "Tüm Boya Silahları",
-            description: "Turuncu turnuva kiti.",
-            source: "2. El Market / Dükkan"
+            compatibility: "Paintball Silahları",
+            description: "[BÜYÜK KİT] [Şarjör Kapasitesi Bonusu 4] Bu mod kit eklendiği paintball silahlarının şarjör kapasitesini arttırır. Tek kullanımlık.",
+            source: "Pazar / International (10.001 Cash)"
         }
     ],
 
