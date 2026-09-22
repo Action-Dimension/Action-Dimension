@@ -273,24 +273,37 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         modalContent.innerHTML = `
+            <div class="modal-top-bar" style="display:flex; justify-content:space-between; align-items:center; border-bottom:1.5px solid rgba(46,42,24,0.25); padding-bottom:10px; margin-bottom:16px;">
+                <span style="font-family:var(--font-display); font-size:17px; font-weight:900; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink); text-shadow:1px 1px 0 rgba(255,255,255,0.9);">EŞYA AYRINTILARI</span>
+            </div>
             <div class="modal-head">
                 <div class="modal-icon">${icon}</div>
                 <div>
                     <h2 class="modal-title">${item.name}</h2>
                     <span class="rarity-pill ${rarityClass}">${item.rarityName || 'Standart'}</span>
                     <span style="margin-left: 8px; font-size: 13px; color: var(--ink-dim); font-weight: 700;">${item.subType || ''}</span>
+                    <div style="margin-top: 6px; font-size: 14px; font-weight: 700; color: var(--ink);">
+                        Fiyatı: <span style="font-family:var(--font-display); font-weight:900;">${item.price.toLocaleString('tr-TR')} ${item.currency === 'crystal' ? 'Crystal' : 'Cash'}</span>
+                        <img src="${item.currency === 'crystal' ? './img/crystal_gem_trans.png' : './img/cash_coin_trans.png'}" style="width:18px; height:15px; vertical-align:middle; margin-left:4px;" alt="">
+                    </div>
                 </div>
             </div>
-            <p style="color: var(--ink-dim); font-size: 14.5px; line-height: 1.5; margin: 0 0 16px;">${item.description || ''}</p>
+            <div style="background:var(--sand-input); border:1.5px solid var(--ink); border-radius:10px; padding:12px 14px; margin-bottom:16px;">
+                <b style="font-size:12px; color:var(--ink-dim); display:block; text-transform:uppercase; margin-bottom:4px;">Eşya Bilgisi:</b>
+                <p style="color: var(--ink); font-size: 14px; line-height: 1.5; margin: 0; font-weight: 600;">${item.description || ''}</p>
+            </div>
             ${detailsSpecificHtml}
             ${priceHistoryHtml}
-            <div style="margin-top: 24px; padding-top: 16px; border-top: 2px dashed rgba(46,42,24,0.2); display: flex; align-items: center; justify-content: space-between;">
+            <div style="margin-top: 24px; padding-top: 16px; border-top: 2px dashed rgba(46,42,24,0.2); display: flex; align-items: center; justify-content: space-between; flex-wrap:wrap; gap:10px;">
                 <div>
                     <span style="font-size:11px; color:var(--ink-dim); text-transform:uppercase; font-weight:700;">Güncel Pazar Fiyatı</span>
                     <div style="margin-top: 2px;">${renderPriceHtml(item, true)}</div>
                     ${item.marketRange ? `<span style="display:block; font-size:12px; color:var(--orange); font-weight:700; margin-top:4px;">Pazar İlan Aralığı: ${item.marketRange}</span>` : ''}
                 </div>
-                <button id="view-on-chart-btn" type="button" class="cat-btn is-active" style="padding: 8px 14px;">Grafikte İncele 📈</button>
+                <div style="display:flex; gap:8px;">
+                    <button id="view-on-chart-btn" type="button" class="cat-btn is-active" style="padding: 8px 14px;">Grafikte İncele 📈</button>
+                    <button type="button" class="btn-fire" style="padding: 8px 16px; background:#3D1800; color:#FFF; border-radius:8px; font-weight:800; border:1.5px solid var(--ink); box-shadow:2px 2px 0 var(--ink);">Bu eşyayı al</button>
+                </div>
             </div>
         `;
 
