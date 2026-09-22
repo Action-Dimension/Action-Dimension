@@ -42,15 +42,23 @@ Action Dimension'ın bağımsız yeniden yapımı olan **Minifal** için resmi t
 ```
 minifal/
 ├── index.html                           # Fandom & Wiki Ana Portalı
+├── anasayfa.html                        # Orijinal Minifal Ana Sayfası
+├── anasayfa_files/                      # Ana sayfa statik varlıkları
+├── hesabim.html                         # Orijinal Hesap Sayfası
+├── hesabim_files/                       # Hesap sayfası statik varlıkları
+├── hikayemiz.html                       # Orijinal Hikâye Sayfası
+├── hikayemiz_files/                     # Hikâye sayfası statik varlıkları
+├── marijuannaa.html                     # Orijinal Oyun İstemcisi
+├── marijuannaa_files/                   # Oyun istemcisi varlıkları
 ├── css/
 │   └── fandom.css                       # Bire bir Minifal tasarım dili ve CSS stilleri
 ├── js/
 │   ├── fandom-data.js                   # Statik veritabanı (El ile kolayca düzenlenebilir)
-│   └── fandom.js                        # Arama, filtreleme, modal ve SVG grafik motoru
-├── Hesabım — Minifal.html               # Orijinal hesap sayfası
-├── Hikâyemiz — Minifal.html             # Orijinal hikâye sayfası
-├── Minifal — konuş, giyin, kur, oyna.html # Orijinal ana sayfa
-├── marijuannaa.html                     # Orijinal oyun istemcisi
+│   └── fandom.js                        # Arama, filtreleme, modal ve grafik motoru
+├── img/
+│   ├── minifal_logo.png                 # Orijinal 3D Minifal Logosu
+│   ├── items/                           # Oyun içi şeffaf eşya ve silah görselleri
+│   └── enemies/                         # Cyborg Commander ve Soldier modelleri
 └── README.md
 ```
 
