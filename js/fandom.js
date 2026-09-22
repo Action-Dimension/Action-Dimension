@@ -203,12 +203,13 @@ document.addEventListener("DOMContentLoaded", () => {
             detailsSpecificHtml = `
                 <h4 class="modal-section-title">Silah İstatistikleri</h4>
                 <div class="modal-stat-grid">
-                    <div class="modal-stat-item"><span class="modal-stat-label">Hasar</span><span class="modal-stat-value">${item.stats.damage}</span></div>
+                    <div class="modal-stat-item"><span class="modal-stat-label">Hasar</span><span class="modal-stat-value">${item.stats.damage} Hasar</span></div>
                     <div class="modal-stat-item"><span class="modal-stat-label">Atış Hızı</span><span class="modal-stat-value">${item.stats.fireRate}</span></div>
                     <div class="modal-stat-item"><span class="modal-stat-label">Menzil</span><span class="modal-stat-value">${item.stats.range} m</span></div>
                     <div class="modal-stat-item"><span class="modal-stat-label">Şarjör</span><span class="modal-stat-value">${item.stats.capacity}</span></div>
                     <div class="modal-stat-item"><span class="modal-stat-label">Modkit Yuvası</span><span class="modal-stat-value" style="color:var(--teal);">${item.modkitSlots} Yuva</span></div>
                 </div>
+                ${item.combatBenchmark ? `<p style="font-size:12.5px; color:var(--orange); font-weight:800; margin:8px 0 0;">⚔️ Savaş Notu: ${item.combatBenchmark}</p>` : ''}
                 <h4 class="modal-section-title">Uyumlu Modkitler</h4>
                 <p style="font-size: 13.5px; color: var(--ink); margin: 0;">${item.compatibleModkits ? item.compatibleModkits.join(", ") : "Standart Modkitler"}</p>
             `;
@@ -239,7 +240,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <div class="modal-stat-item"><span class="modal-stat-label">Kaynak</span><span class="modal-stat-value">${item.source}</span></div>
                 </div>
                 <h4 class="modal-section-title">Renk Seçenekleri</h4>
-                <p style="font-size: 13.5px; color: var(--ink); margin: 0;">${item.colorOptions ? item.colorOptions.join(", ") : "Standart Renk"}</p>
+                <p style="font-size: 13.5px; color: var(--ink): margin: 0;">${item.colorOptions ? item.colorOptions.join(", ") : "Standart Renk"}</p>
             `;
         } else if (item.category === "potions") {
             detailsSpecificHtml = `
@@ -529,6 +530,82 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // 5. BOSS REHBERİ & HASAR HESAPLAYICISI (COMMANDER 4016 CAN & LIGHT MACHINE GUN 12 HASAR)
+    function initBossCalculator() {
+        const weaponSelect = document.getElementById("boss-weapon-select");
+        const dmgDisplay = document.getElementById("calc-dmg-display");
+        const hitsDisplay = document.getElementById("calc-hits-display");
+        const magDisplay = document.getElementById("calc-mag-display");
+        const fireBtn = document.getElementById("btn-fire-test");
+        const fireDmgSpan = document.getElementById("btn-fire-dmg");
+        const resetBtn = document.getElementById("btn-reset-hp");
+        const hpValSpan = document.getElementById("commander-hp-val");
+        const hpFillBar = document.getElementById("commander-hp-fill");
+        const tipBox = document.getElementById("calc-benchmark-text");
+
+        if (!weaponSelect) return;
+
+        const maxHp = 4016;
+        let currentHp = 4016;
+
+        function updateCalculations() {
+            const opt = weaponSelect.options[weaponSelect.selectedIndex];
+            const dmg = parseInt(opt.value, 10) || 12;
+            const cap = parseInt(opt.getAttribute("data-cap"), 10) || 60;
+            const wName = opt.getAttribute("data-name") || "Silah";
+
+            const hitsNeeded = Math.ceil(maxHp / dmg);
+            const magsNeeded = (hitsNeeded / cap).toFixed(1);
+
+            if (dmgDisplay) dmgDisplay.textContent = `${dmg} Hasar`;
+            if (hitsDisplay) hitsDisplay.textContent = `${hitsNeeded} Mermi`;
+            if (magDisplay) magDisplay.textContent = `~${magsNeeded} Şarjör (${cap}'lık)`;
+            if (fireDmgSpan) fireDmgSpan.textContent = dmg;
+
+            if (tipBox) {
+                if (wName === "Light Machine Gun") {
+                    tipBox.innerHTML = `💡 <b>Resmi Minifal Ölçütü:</b> 12 hasar veren <b>Light Machine Gun</b> ile 4016 canı olan <b>Commander</b>'ı indirmek için tam <b>335 isabetli mermi</b> gerekir (4016 ÷ 12 ≈ 334.6).`;
+                } else {
+                    tipBox.innerHTML = `💡 <b>Hesaplama:</b> ${dmg} hasar veren <b>${wName}</b> ile 4016 canı olan <b>Commander</b>'ı devirmek için <b>${hitsNeeded} isabetli mermi</b> gerekir.`;
+                }
+            }
+        }
+
+        weaponSelect.addEventListener("change", updateCalculations);
+
+        if (fireBtn) {
+            fireBtn.addEventListener("click", () => {
+                const opt = weaponSelect.options[weaponSelect.selectedIndex];
+                const dmg = parseInt(opt.value, 10) || 12;
+
+                currentHp = Math.max(0, currentHp - dmg);
+                const pct = (currentHp / maxHp) * 100;
+
+                if (hpValSpan) hpValSpan.textContent = currentHp.toLocaleString("tr-TR");
+                if (hpFillBar) hpFillBar.style.width = `${pct}%`;
+
+                if (currentHp <= 0) {
+                    fireBtn.textContent = "🏆 Commander Düştü! Zafer!";
+                } else {
+                    fireBtn.innerHTML = `💥 -${dmg} Vuruldu! (Kalan: ${currentHp.toLocaleString("tr-TR")} HP)`;
+                }
+            });
+        }
+
+        if (resetBtn) {
+            resetBtn.addEventListener("click", () => {
+                currentHp = maxHp;
+                if (hpValSpan) hpValSpan.textContent = maxHp.toLocaleString("tr-TR");
+                if (hpFillBar) hpFillBar.style.width = "100%";
+                const opt = weaponSelect.options[weaponSelect.selectedIndex];
+                const dmg = parseInt(opt.value, 10) || 12;
+                if (fireBtn) fireBtn.innerHTML = `💥 Test Ateşi Aç (-<span id="btn-fire-dmg">${dmg}</span> Hasar)`;
+            });
+        }
+
+        updateCalculations();
+    }
+
     // Pencere yeniden boyutlandırıldığında grafiği güncelle
     window.addEventListener("resize", () => {
         renderChart();
@@ -539,4 +616,5 @@ document.addEventListener("DOMContentLoaded", () => {
     renderChart();
     renderMarketTable();
     renderCards();
+    initBossCalculator();
 });

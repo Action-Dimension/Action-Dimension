@@ -904,6 +904,358 @@ button, input, select {
 }
 
 /* ==========================================================================
+   BOSS REHBERİ & HASAR SİMÜLATÖRÜ (COMMANDER 4016 HP)
+   ========================================================================== */
+.boss-section {
+  background: var(--sand);
+  border: var(--edge);
+  border-radius: var(--radius-lg);
+  padding: 26px;
+  box-shadow: var(--lift-2);
+  margin-top: 40px;
+}
+
+.boss-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.boss-eyebrow {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--orange);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.boss-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.boss-lead {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: var(--ink-dim);
+}
+
+.boss-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: var(--sand-input);
+  border: 1.5px solid var(--ink);
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.boss-badge-dot {
+  width: 8px;
+  height: 8px;
+  background: #E53935;
+  border-radius: 50%;
+  animation: pulse-dot 1.5s infinite alternate;
+}
+
+.boss-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .boss-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.boss-profile-card,
+.boss-calc-card {
+  background: #FFFDF5;
+  border: var(--edge);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  box-shadow: 2px 2px 0 var(--ink);
+  display: flex;
+  flex-direction: column;
+}
+
+.boss-profile-card {
+  flex-direction: row;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+@media (max-width: 550px) {
+  .boss-profile-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.boss-avatar-box {
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.boss-avatar-img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 6px rgba(46, 42, 24, 0.3));
+  transition: transform 0.2s ease;
+}
+
+.boss-avatar-box:hover .boss-avatar-img {
+  transform: scale(1.06) rotate(-2deg);
+}
+
+.boss-hp-tag {
+  background: #C62828;
+  color: #FFF;
+  font-family: var(--font-display);
+  font-size: 10.5px;
+  font-weight: 900;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--ink);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.boss-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.boss-info-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.boss-name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--ink);
+}
+
+.boss-type-badge {
+  background: var(--sand-input);
+  border: 1px solid var(--ink);
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ink-dim);
+}
+
+.boss-hp-track {
+  width: 100%;
+  height: 12px;
+  background: rgba(46, 42, 24, 0.12);
+  border: 1.5px solid var(--ink);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.boss-hp-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #E53935, #FFA000);
+  border-radius: 999px;
+  transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.boss-hp-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.boss-hp-counter {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: #C62828;
+}
+
+.boss-desc {
+  margin: 4px 0 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-dim);
+}
+
+/* Hasar Simülatörü Kontrolleri */
+.calc-header {
+  margin-bottom: 12px;
+}
+
+.calc-title {
+  margin: 0 0 4px;
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.calc-sub {
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--ink-dim);
+}
+
+.calc-selector-wrap {
+  margin-bottom: 14px;
+}
+
+.calc-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-dim);
+  margin-bottom: 4px;
+}
+
+.boss-weapon-select {
+  width: 100%;
+  padding: 9px 12px;
+  background: var(--sand);
+  border: 1.5px solid var(--ink);
+  border-radius: 8px;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--ink);
+  box-shadow: 2px 2px 0 var(--ink);
+  cursor: pointer;
+}
+
+.calc-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+@media (max-width: 600px) {
+  .calc-stat-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.calc-stat-pill {
+  background: var(--sand-input);
+  border: 1.5px solid var(--ink);
+  border-radius: 8px;
+  padding: 8px 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.calc-stat-pill--primary {
+  background: var(--gold);
+}
+
+.calc-pill-label {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--ink-dim);
+  text-transform: uppercase;
+}
+
+.calc-pill-val {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 900;
+  color: var(--ink);
+}
+
+.boss-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.btn-fire {
+  flex: 1;
+  min-width: 170px;
+  padding: 8px 14px;
+  background: var(--orange);
+  color: #FFF;
+  border: 1.5px solid var(--ink);
+  border-radius: 8px;
+  font-family: var(--font-display);
+  font-size: 12.5px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 var(--ink);
+  transition: transform 0.05s ease, box-shadow 0.05s ease;
+}
+
+.btn-fire:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 var(--ink);
+}
+
+.btn-reset {
+  padding: 8px 12px;
+  background: var(--sand-input);
+  border: 1.5px solid var(--ink);
+  border-radius: 8px;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.btn-reset:hover {
+  background: var(--sand-deep);
+}
+
+.calc-tip-box {
+  background: var(--sand-input);
+  border: 1.5px dashed rgba(46, 42, 24, 0.3);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+/* ==========================================================================
    PAINTBALL FALLING RATE SECTION (PASİF / YAKINDA)
    ========================================================================== */
 .falling-rate-section {

@@ -40,6 +40,31 @@ const MINIFAL_DATABASE = {
     // 1. SILAHLAR (WEAPONS)
     weapons: [
         {
+            id: "wep-light-machine-gun",
+            name: "Light Machine Gun",
+            category: "weapons",
+            subType: "Hafif Makineli (LMG)",
+            rarity: "rare",
+            rarityName: "Ender",
+            image: "./img/items/light_machine_gun_trans.png",
+            currency: "cash",
+            price: 6400,
+            marketRange: "5.800 - 7.500 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 5800 },
+                { date: "Tem 2026", price: 6100 },
+                { date: "Ağu 2026", price: 6300 },
+                { date: "Eyl 2026", price: 6400 }
+            ],
+            change24h: 1.6,
+            modkitSlots: 3,
+            stats: { damage: 12, fireRate: 92, range: 62, reload: 45, capacity: 60 },
+            description: "Hızlı atış temposu ve istikrarlı geri tepmesiyle öne çıkan hafif makineli boya tüfeği. Mermi başına tam 12 hasar verir. Örneğin 4016 cana sahip bir Commander'ı düşürmek için tam 335 mermi isabeti gerekir.",
+            source: "2. El Market / Paintball Kasası",
+            combatBenchmark: "12 Hasar / Mermi · 4016 Canlı Commander'a karşı 335 isabet",
+            compatibleModkits: ["Hızlı Tetik Kiti", "Boya Haznesi Genişletici", "Dengeleyici Dipçik", "Paintball Mod Kit"]
+        },
+        {
             id: "wep-infiltrator-shotgun",
             name: "Infiltrator Shotgun",
             category: "weapons",
@@ -592,7 +617,28 @@ const MINIFAL_DATABASE = {
                 items: ["Infiltrator Sniper", "Cyborg Minigun", "Cyborg Rocketeer", "Commando Armor", "Paintball Mod Kit (Green)"]
             }
         ]
-    }
+    },
+
+    // 8. BOSS VE NPC BİRİMLERİ (COMMANDER - 4016 HP)
+    bosses: [
+        {
+            id: "boss-commander",
+            name: "Commander",
+            title: "Cyborg & NPC Baş Düşmanı (Game Type 4 Boss)",
+            hp: 4016,
+            maxHp: 4016,
+            armorType: "Ağır Sibernetik Zırh",
+            gameMode: "NPC Modu / Survival Modu (Game Type 4)",
+            image: "./img/items/commander_boss_trans.png",
+            description: "Minifal savaş meydanının en güçlü NPC patronu. Tam 4016 Can (HP) barına sahiptir. Tek başına yenmek imkansıza yakındır; takım halinde yoğun makineli tüfek ateşiyle düşürülebilir.",
+            combatBenchmark: {
+                referenceWeapon: "Light Machine Gun",
+                damagePerBullet: 12,
+                bulletsToDefeat: 335,
+                formulaText: "4016 Can / 12 Hasar = 334.6 (Yaklaşık 335 Mermi)"
+            }
+        }
+    ]
 };
 
 // Node ortamında dışa aktarma

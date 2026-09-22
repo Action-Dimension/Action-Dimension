@@ -26,7 +26,12 @@ Action Dimension'ın bağımsız yeniden yapımı olan **Minifal** için resmi t
    - 24 saatlik değişim oranları (% artış ve azalışlar)
    - **İnteraktif Zaman Çizelgesi Grafiği:** Seçilen herhangi bir eşyanın son 4 aydaki fiyat dalgalanmasını gösteren dinamik SVG eğrisi ve fare ile üzerine gelindiğinde çalışan bilgi balonu (tooltip)
 
-4. **Paintball Maç Sonu Düşme İhtimali (Falling Rate):**
+4. **Boss Rehberi & Savaş Hasar Simülatörü:**
+   - **Commander (4016 HP):** Minifal NPC Survival modunun (Game Type 4) baş düşmanı ve can havuzu
+   - **Light Machine Gun (12 Hasar):** Mermi başına net 12 hasar veren temel hafif makineli
+   - **İnteraktif Hasar Hesaplayıcısı:** Seçilen silahlarla Commander'ı alt etmek için gereken mermi ve şarjör sayısını canlı hesaplar (ör. LMG ile 335 mermi); interaktif "Test Ateşi" ile can barını simüle eder
+
+5. **Paintball Maç Sonu Düşme İhtimali (Falling Rate):**
    - Şimdilik **"Pasif / Gelecek Sezonda Açılacak"** mührüyle kilitli önizleme sistemi
    - Yaygın (%60), Nadir (%25), Ender (%11.5) ve Epik/Efsanevi (%3.5) düşme havuzları
 

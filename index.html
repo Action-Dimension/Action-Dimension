@@ -57,6 +57,7 @@
             <nav class="topnav" aria-label="Sayfa bölümleri">
                 <a href="#katalog" class="nav-link active">Katalog</a>
                 <a href="#market-section" class="nav-link">Market & Fiyatlar</a>
+                <a href="#boss-section" class="nav-link">Boss Rehberi (4016 HP)</a>
                 <a href="#falling-rate-section" class="nav-link">Falling Rate</a>
                 <a href="./Minifal%20%E2%80%94%20konu%C5%9F,%20giyin,%20kur,%20oyna.html" class="nav-link">Ana Sayfa</a>
                 <a href="./Hik%C3%A2yemiz%20%E2%80%94%20Minifal.html" class="nav-link">Hikâyemiz</a>
@@ -82,7 +83,7 @@
                     </div>
                     <h1 class="hero-title">Minifal Fandom & Wiki</h1>
                     <p class="hero-lead">
-                        Paintball silahları, modkitler, zırhlar, eşyalar ve canlı pazar fiyatları.
+                        Paintball silahları, modkitler, zırhlar, NPC Boss canları ve canlı pazar fiyatları.
                     </p>
                 </div>
 
@@ -107,7 +108,8 @@
 
             <!-- Kompakt İstatistik Rozetleri -->
             <div class="stat-pills-row">
-                <span class="stat-pill">🔫 <b>33</b> Silah</span>
+                <span class="stat-pill">🔫 <b>34</b> Silah (LMG: 12 Hasar)</span>
+                <span class="stat-pill">👾 <b>Commander</b> (4016 HP)</span>
                 <span class="stat-pill">⚙️ <b>15</b> Modkit</span>
                 <span class="stat-pill">🛡️ <b>8</b> Zırh</span>
                 <span class="stat-pill">🛋️ <b>116</b> Mobilya</span>
@@ -212,6 +214,111 @@
                         <!-- JS dinamik satırları buraya ekler -->
                     </tbody>
                 </table>
+            </div>
+        </section>
+
+        <!-- BOSS REHBERİ VE SAVAŞ HASAR SİMÜLATÖRÜ (COMMANDER 4016 CAN & LIGHT MACHINE GUN 12 HASAR) -->
+        <section class="boss-section" id="boss-section">
+            <div class="boss-header">
+                <div class="boss-title-wrap">
+                    <span class="boss-eyebrow">⚔️ NPC & Survival Modu Savaş Veritabanı</span>
+                    <h2 class="boss-title">Boss Rehberi: Commander & Hasar Simülatörü</h2>
+                    <p class="boss-lead">
+                        Minifal NPC modunun en dayanıklı baş düşmanı <b>Commander</b> (4016 Can) ve silahların vuruş / mermi gereksinimleri.
+                    </p>
+                </div>
+                <div class="boss-badge-pill">
+                    <span class="boss-badge-dot"></span>
+                    <span>Game Type 4: Survival Boss</span>
+                </div>
+            </div>
+
+            <div class="boss-grid">
+                <!-- Sol Kart: Commander Boss Profili -->
+                <div class="boss-profile-card">
+                    <div class="boss-avatar-box">
+                        <img src="./img/items/commander_boss_trans.png" alt="Commander Boss" class="boss-avatar-img">
+                        <span class="boss-hp-tag">CAN: 4.016 HP</span>
+                    </div>
+                    <div class="boss-info">
+                        <div class="boss-info-top">
+                            <h3 class="boss-name">Commander</h3>
+                            <span class="boss-type-badge">Cyborg & NPC Baş Düşmanı</span>
+                        </div>
+                        <div class="boss-hp-track" title="Can Durumu">
+                            <div class="boss-hp-fill" id="commander-hp-fill" style="width: 100%;"></div>
+                        </div>
+                        <div class="boss-hp-meta">
+                            <span>Can Durumu:</span>
+                            <b class="boss-hp-counter"><span id="commander-hp-val">4.016</span> / 4.016 HP</b>
+                        </div>
+                        <p class="boss-desc">
+                            Minifal'ın NPC Survival arenasında (Oyun Modu 4) oyunculara karşı savaşan devasa sibernetik boss. <b>4016 Can</b> havuzunu eritmek için organize baskı ateşi şarttır.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Sağ Kart: İnteraktif Silah Hasar Hesaplayıcısı -->
+                <div class="boss-calc-card">
+                    <div class="calc-header">
+                        <h4 class="calc-title">🎯 Silah Hasar & Mermi Simülatörü</h4>
+                        <p class="calc-sub">Silah seçin ve 4016 Canlı Commander'ı düşürmek için kaç mermi gerektiğini canlı hesaplayın:</p>
+                    </div>
+
+                    <div class="calc-selector-wrap">
+                        <label for="boss-weapon-select" class="calc-label">Silahınızı Seçin:</label>
+                        <select id="boss-weapon-select" class="boss-weapon-select">
+                            <option value="12" data-name="Light Machine Gun" data-cap="60" selected>
+                                🔫 Light Machine Gun (12 Hasar / Mermi) ⭐
+                            </option>
+                            <option value="45" data-name="Cyborg Minigun" data-cap="180">
+                                🔫 Cyborg Minigun (45 Hasar / Mermi)
+                            </option>
+                            <option value="85" data-name="Infiltrator Shotgun" data-cap="12">
+                                🔫 Infiltrator Shotgun (85 Hasar / Vuruş)
+                            </option>
+                            <option value="98" data-name="Infiltrator Sniper" data-cap="6">
+                                🔫 Infiltrator Sniper (98 Hasar / Mermi)
+                            </option>
+                            <option value="120" data-name="Cyborg Rocketeer" data-cap="4">
+                                🚀 Cyborg Rocketeer (120 Hasar / Roket)
+                            </option>
+                            <option value="90" data-name="Rocket Launcher" data-cap="6">
+                                🚀 Rocket Launcher (90 Hasar / Roket)
+                            </option>
+                        </select>
+                    </div>
+
+                    <!-- İstatistik Göstergeleri -->
+                    <div class="calc-stat-grid">
+                        <div class="calc-stat-pill">
+                            <span class="calc-pill-label">Mermi Başına Hasar</span>
+                            <span class="calc-pill-val" id="calc-dmg-display">12 Hasar</span>
+                        </div>
+                        <div class="calc-stat-pill calc-stat-pill--primary">
+                            <span class="calc-pill-label">Commander İçin Gereken Vuruş</span>
+                            <span class="calc-pill-val" id="calc-hits-display">335 Mermi</span>
+                        </div>
+                        <div class="calc-stat-pill">
+                            <span class="calc-pill-label">Gereken Şarjör</span>
+                            <span class="calc-pill-val" id="calc-mag-display">~6 Şarjör (60'lık)</span>
+                        </div>
+                    </div>
+
+                    <!-- İnteraktif Test Ateşi Kontrolleri -->
+                    <div class="boss-actions">
+                        <button type="button" class="btn-fire" id="btn-fire-test">
+                            💥 Test Ateşi Aç (-<span id="btn-fire-dmg">12</span> Hasar)
+                        </button>
+                        <button type="button" class="btn-reset" id="btn-reset-hp">
+                            🔄 Canı Sıfırla (4016 HP)
+                        </button>
+                    </div>
+
+                    <div class="calc-tip-box" id="calc-benchmark-text">
+                        💡 <b>Resmi Minifal Ölçütü:</b> 12 hasar veren <b>Light Machine Gun</b> ile 4016 canı olan <b>Commander</b>'ı indirmek için tam <b>335 isabetli mermi</b> gerekir (4016 ÷ 12 ≈ 334.6).
+                    </div>
+                </div>
             </div>
         </section>
 
