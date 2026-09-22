@@ -75,8 +75,11 @@ document.addEventListener("DOMContentLoaded", () => {
         return items;
     }
 
-    // Eşya kartı ikonu belirleme
+    // Eşya kartı ikonu belirleme (Gerçek görsel varsa görseli bas)
     function getItemIcon(item) {
+        if (item.image) {
+            return `<img src="${item.image}" alt="${item.name}" class="item-real-img" loading="lazy">`;
+        }
         switch (item.category) {
             case "weapons": return "🔫";
             case "modkits": return "⚙️";
@@ -267,6 +270,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div>
                     <span style="font-size:11px; color:var(--ink-dim); text-transform:uppercase; font-weight:700;">Güncel Market Fiyatı</span>
                     <div style="font-family:var(--font-display); font-size:22px; font-weight:900; color:var(--ink);">${item.price.toLocaleString('tr-TR')} ₼</div>
+                    ${item.marketRange ? `<span style="display:block; font-size:12px; color:var(--orange); font-weight:700; margin-top:2px;">Pazar İlan Aralığı: ${item.marketRange}</span>` : ''}
                 </div>
                 <button id="view-on-chart-btn" type="button" class="cat-btn is-active" style="padding: 8px 14px;">Grafikte İncele 📈</button>
             </div>

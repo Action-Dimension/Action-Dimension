@@ -647,8 +647,8 @@ button, input, select {
 }
 
 .item-mini-icon {
-  width: 36px;
-  height: 36px;
+  width: 42px;
+  height: 42px;
   display: grid;
   place-items: center;
   background: var(--sand-input);
@@ -656,6 +656,8 @@ button, input, select {
   border-radius: 8px;
   font-size: 18px;
   flex-shrink: 0;
+  overflow: hidden;
+  padding: 3px;
 }
 
 .price-tag {
@@ -730,16 +732,32 @@ button, input, select {
 }
 
 .item-icon-box {
-  width: 52px;
-  height: 52px;
+  width: 60px;
+  height: 60px;
   display: grid;
   place-items: center;
   background: var(--sand-input);
   border: var(--edge);
   border-radius: var(--radius-md);
-  font-size: 26px;
+  font-size: 28px;
   box-shadow: 2px 2px 0 var(--ink);
   flex-shrink: 0;
+  overflow: hidden;
+  padding: 4px;
+}
+
+.item-real-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  filter: drop-shadow(0 2px 2px rgba(46, 42, 24, 0.25));
+  transition: transform 0.15s ease;
+}
+
+.item-card:hover .item-real-img {
+  transform: scale(1.08);
 }
 
 .rarity-pill {
@@ -1028,15 +1046,18 @@ button, input, select {
 }
 
 .modal-icon {
-  width: 64px;
-  height: 64px;
+  width: 72px;
+  height: 72px;
   display: grid;
   place-items: center;
   background: var(--sand-input);
   border: var(--edge);
   border-radius: var(--radius-md);
-  font-size: 32px;
+  font-size: 34px;
   box-shadow: 3px 3px 0 var(--ink);
+  overflow: hidden;
+  padding: 4px;
+  flex-shrink: 0;
 }
 
 .modal-title {
