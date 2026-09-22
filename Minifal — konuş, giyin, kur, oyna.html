@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<!-- saved from url=(0020)https://minifal.com/ -->
+<html lang="tr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#E2C68C">
+    <meta name="description" content="Sohbet et, kombinini yap, evini kur, paintball ve tenis maçlarına gir. Tarayıcıda açılan sosyal dünya.">
+    <title>Minifal — konuş, giyin, kur, oyna</title>
+    <link rel="icon" type="image/svg+xml" href="https://minifal.com/img/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://minifal.com/img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link rel="stylesheet" href="./Minifal — konuş, giyin, kur, oyna_files/css2">
+  <script type="module" crossorigin="" src="./Minifal — konuş, giyin, kur, oyna_files/home-ea03105f.js.indir"></script>
+  <link rel="modulepreload" crossorigin="" href="https://minifal.com/assets/modulepreload-polyfill-3cfb730f.js">
+  <link rel="modulepreload" crossorigin="" href="https://minifal.com/assets/i18n-7189b6d3.js">
+  <link rel="stylesheet" href="./Minifal — konuş, giyin, kur, oyna_files/index-bff16311.css">
+  <link rel="stylesheet" href="./Minifal — konuş, giyin, kur, oyna_files/styles-7b38c733.css">
+  <link rel="stylesheet" href="./Minifal — konuş, giyin, kur, oyna_files/site-footer-16ecd6f3.css">
+</head>
+<body class="home">
+    <svg width="0" height="0" aria-hidden="true" style="position:absolute">
+        <symbol id="splat-2" viewBox="0 0 120 120">
+            <path d="M103.4 60.0C103.7 62.4 89.5 64.2 87.9 67.5C86.2 70.7 95.1 77.5 93.8 79.5C92.5 81.6 83.0 78.8 79.9 79.9C76.7 81.0 77.3 85.4 75.0 86.0C72.8 86.7 68.9 82.9 66.3 83.7C63.8 84.4 62.2 90.2 60.0 90.6C57.8 91.0 54.9 88.0 52.9 86.3C51.0 84.7 52.1 79.9 48.0 80.7C44.0 81.6 30.8 92.4 28.6 91.4C26.4 90.3 33.6 78.7 34.8 74.6C35.9 70.4 35.4 69.0 35.6 66.5C35.9 64.1 38.5 62.9 36.0 60.0C33.4 57.1 20.0 51.5 20.3 49.4C20.7 47.3 34.9 49.0 38.1 47.4C41.3 45.7 38.2 41.5 39.6 39.6C40.9 37.7 44.0 37.4 46.1 36.0C48.3 34.6 50.0 34.3 52.3 31.2C54.6 28.2 57.4 17.7 60.0 17.6C62.6 17.4 65.6 27.4 67.9 30.5C70.2 33.5 71.7 34.5 73.9 36.0C76.0 37.4 79.5 37.3 80.8 39.2C82.1 41.1 80.8 45.2 81.7 47.5C82.6 49.8 82.6 50.9 86.2 53.0C89.8 55.1 103.2 57.6 103.4 60.0Z"></path>
+            <circle cx="42.2" cy="24.7" r="3.6"></circle>
+            <circle cx="11.2" cy="49.5" r="2.9"></circle>
+            <circle cx="27.0" cy="41.3" r="2.6"></circle>
+            <circle cx="9.6" cy="37.1" r="2.2"></circle>
+            <circle cx="27.5" cy="39.4" r="3.9"></circle>
+            <circle cx="7.5" cy="45.8" r="2.7"></circle>
+            <circle cx="67.8" cy="98.5" r="3.1"></circle>
+            <circle cx="98.3" cy="95.7" r="2.8"></circle>
+        </symbol>
+        <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 7l5 5-5 5"></path></symbol>
+        <symbol id="play" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"></path></symbol>
+        <symbol id="pause" viewBox="0 0 24 24"><path d="M7.5 5h3.4v14H7.5zM13.1 5h3.4v14h-3.4z"></path></symbol>
+
+        <!-- "Oynanis" kartlarinin rozet ikonlari. Sayfanin dilinde: duz dolgu,
+             ayri kontur yok (murekkep dolgu, altin/turkuaz kare uzerinde).
+             42px'te ciziliyorlar; siluet o boyutta okunacak kadar acik. -->
+        <symbol id="ic-chat" viewBox="0 0 24 24">
+            <!-- Balon ve kuyruk tek kesintisiz kontur; noktalar evenodd ile
+                 oyuluyor, boylece altindaki vurgu rengi gorunuyor. -->
+            <path fill-rule="evenodd" d="M5.6 3.5h12.8A3.6 3.6 0 0 1 22 7.1v6.3a3.6 3.6 0 0 1-3.6 3.6h-6L6.2 21.8 7.8 17H5.6A3.6 3.6 0 0 1 2 13.4V7.1a3.6 3.6 0 0 1 3.6-3.6zM6.5 10.25a1.5 1.5 0 1 0 3 0 1.5 1.5 0 1 0-3 0zm4 0a1.5 1.5 0 1 0 3 0 1.5 1.5 0 1 0-3 0zm4 0a1.5 1.5 0 1 0 3 0 1.5 1.5 0 1 0-3 0z"></path>
+        </symbol>
+        <symbol id="ic-shirt" viewBox="0 0 24 24">
+            <path d="M9 2.6 3.8 5.2 2 10.1l3.4 1.3.8-2.2v11.9h11.6V9.2l.8 2.2 3.4-1.3-1.8-4.9L15 2.6a3.1 3.1 0 0 1-6 0z"></path>
+        </symbol>
+        <symbol id="ic-home" viewBox="0 0 24 24">
+            <!-- Dolu ev silueti; pencere ve kapi bosluklari vurgu rengini
+                 gosteriyor. Kucuk rozette de ilk bakista ev olarak okunur. -->
+            <path fill-rule="evenodd" d="M12 2 1.6 10.4l1.9 2.4 1.3-1.1V21h14.4v-9.3l1.3 1.1 1.9-2.4L12 2zM7.7 11.6h3.1v3.1H7.7v-3.1zm5.5 0h3.1v3.1h-3.1v-3.1zm-2.7 5h3V21h-3v-4.4z"></path>
+        </symbol>
+        <symbol id="ic-splat" viewBox="0 0 24 24">
+            <path d="M12.2 2.3c1.5 0 1.9 2.3 3 3 1.2.6 3.3-.6 4 .6.8 1.1-.9 2.7-.7 4 .2 1.4 2.1 2.5 1.6 3.8-.4 1.2-2.7.8-3.7 1.8-.9.9-.7 3.2-2 3.7-1.2.4-2.3-1.6-3.6-1.7-1.3-.1-2.9 1.6-4 1-1.2-.7-.4-2.8-1-3.9-.7-1.2-2.9-1.5-3-2.9 0-1.4 2.2-1.9 2.8-3.1.5-1.3-.5-3.3.4-4.1 1-.9 2.7.4 4 .1 1.4-.4 1.8-2.2 2.2-2.3z"></path>
+            <circle cx="20.6" cy="4.1" r="1.5"></circle>
+            <circle cx="3.6" cy="19.4" r="1.2"></circle>
+        </symbol>
+        <symbol id="logo-google" viewBox="0 0 48 48">
+            <path fill="#FFC107" d="M43.61 20.08H42V20H24v8h11.30c-1.64 4.65-6.08 8-11.30 8-6.62 0-12-5.37-12-12s5.37-12 12-12c3.05 0 5.84 1.15 7.96 3.03l5.65-5.65C34.04 6.05 29.26 4 24 4 12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20c0-1.34-.13-2.65-.38-3.91z"></path>
+            <path fill="#FF3D00" d="M6.30 14.69l6.57 4.81C14.65 15.10 18.96 12 24 12c3.05 0 5.84 1.15 7.96 3.03l5.65-5.65C34.04 6.05 29.26 4 24 4 16.31 4 9.65 8.33 6.30 14.69z"></path>
+            <path fill="#4CAF50" d="M24 44c5.16 0 9.86-1.97 13.40-5.19l-6.19-5.23A11.9 11.9 0 0 1 24 36c-5.20 0-9.61-3.31-11.28-7.94l-6.52 5.02C9.50 39.55 16.22 44 24 44z"></path>
+            <path fill="#1976D2" d="M43.61 20.08H42V20H24v8h11.30a12.04 12.04 0 0 1-4.08 5.57l6.19 5.23C36.97 39.20 44 34 44 24c0-1.34-.13-2.65-.38-3.91z"></path>
+        </symbol>
+        <symbol id="logo-apple" viewBox="0 0 24 24">
+            <path d="M17.05 12.53c-.02-2.78 2.27-4.12 2.37-4.19-1.29-1.89-3.30-2.15-4.02-2.18-1.71-.17-3.34 1.00-4.21 1.00-.86 0-2.20-.98-3.63-.95-1.87.02-3.59 1.08-4.55 2.75-1.94 3.37-.49 8.36 1.39 11.10.92 1.34 2.02 2.84 3.48 2.79 1.39-.05 1.92-.90 3.61-.90 1.69 0 2.16.90 3.63.87 1.50-.02 2.45-1.36 3.36-2.70 1.06-1.55 1.50-3.05 1.52-3.13-.03-.01-2.92-1.12-2.95-4.46zM14.36 4.19c.76-.92 1.28-2.21 1.14-3.50-1.10.04-2.43.73-3.23 1.66-.70.81-1.33 2.12-1.16 3.38 1.23.09 2.48-.62 3.25-1.54z"></path>
+        </symbol>
+        <symbol id="logo-minifal" viewBox="-25 -912 3843 1056">
+  <defs>
+    <path id="mf-sil" d="M28 -575V0L270 21V-332Q281 -346 301 -359Q322 -372 339 -372Q355 -372 365 -365Q375 -357 381 -345Q386 -333 388 -318Q389 -304 389 -292V0H631V-330Q645 -345 659 -359Q674 -374 696 -374Q714 -374 725 -366Q735 -358 741 -346Q747 -334 748 -319Q750 -305 750 -291V21L992 0V-387Q992 -429 979 -466Q967 -503 943 -530Q920 -557 885 -572Q850 -588 806 -588Q744 -588 693 -559Q642 -530 611 -476Q601 -503 583 -523Q565 -544 543 -558Q520 -572 494 -580Q467 -588 439 -588Q390 -588 345 -565Q300 -543 270 -504V-575H28Z M1064 -575V0L1308 10V-575Q1278 -564 1248 -559Q1218 -553 1186 -553Q1154 -553 1124 -559Q1094 -564 1064 -575Z M1370 -575V0L1612 21V-337Q1627 -351 1642 -362Q1656 -373 1677 -373Q1694 -373 1705 -367Q1715 -360 1720 -349Q1725 -338 1727 -324Q1728 -311 1728 -297V21L1973 0V-392Q1973 -432 1960 -468Q1948 -504 1925 -530Q1902 -557 1869 -573Q1836 -589 1794 -589Q1735 -589 1690 -562Q1644 -535 1612 -486V-575H1370Z M2043 -575V0L2287 10V-575Q2257 -564 2227 -559Q2197 -553 2165 -553Q2133 -553 2103 -559Q2073 -564 2043 -575Z M2359 -510 2349 -357H2410V0L2653 21V-357L2734 -358L2744 -510H2654Q2654 -527 2656 -542Q2657 -558 2663 -570Q2669 -581 2682 -588Q2694 -595 2716 -595Q2726 -595 2736 -592Q2745 -590 2756 -586V-736Q2725 -741 2695 -745Q2664 -749 2633 -749Q2588 -749 2548 -740Q2508 -730 2477 -708Q2447 -686 2429 -651Q2411 -616 2411 -566V-510H2359Z M3076 -231V-118Q3065 -108 3050 -101Q3035 -94 3021 -94Q2997 -94 2986 -110Q2976 -127 2976 -147Q2976 -168 2984 -183Q2993 -197 3007 -208Q3022 -218 3040 -223Q3058 -229 3076 -231Z M3076 -342V-335Q3036 -336 2984 -327Q2933 -319 2886 -296Q2840 -273 2807 -232Q2775 -191 2774 -127Q2774 -92 2788 -66Q2803 -40 2826 -22Q2850 -4 2880 5Q2910 14 2942 14Q2979 14 3014 5Q3049 -5 3080 -24Q3095 -10 3114 -2Q3134 6 3156 9Q3178 13 3200 13Q3223 14 3242 14Q3266 14 3289 11Q3313 8 3336 6L3386 -143Q3376 -137 3364 -137Q3343 -137 3331 -153Q3318 -169 3318 -188V-385Q3318 -434 3299 -472Q3281 -511 3250 -537Q3218 -563 3177 -576Q3135 -590 3089 -590Q3003 -590 2930 -558Q2857 -526 2789 -476L2860 -327Q2878 -348 2896 -364Q2913 -380 2932 -390Q2950 -401 2972 -406Q2993 -411 3022 -411Q3041 -411 3052 -406Q3063 -401 3068 -392Q3074 -383 3075 -370Q3076 -357 3076 -342Z M3452 -814V0L3695 21V-814H3452Z M1146 -800L1271 -675L1146 -550L1021 -675Z M2125 -800L2250 -675L2125 -550L2000 -675Z"></path>
+  </defs>
+  <!-- Kabartma: siluetin murekkep kopyalari sag-alta dogru adim adim iniyor;
+       sayfanin sert golge fizigi (--lift-*) harflere uygulanmis hali. -->
+  <g fill="#2E2A18" stroke="#2E2A18" stroke-width="54" stroke-linejoin="round">
+    <use href="#mf-sil" x="70.0" y="70.0"></use>
+    <use href="#mf-sil" x="61.2" y="61.2"></use>
+    <use href="#mf-sil" x="52.5" y="52.5"></use>
+    <use href="#mf-sil" x="43.8" y="43.8"></use>
+    <use href="#mf-sil" x="35.0" y="35.0"></use>
+    <use href="#mf-sil" x="26.2" y="26.2"></use>
+    <use href="#mf-sil" x="17.5" y="17.5"></use>
+    <use href="#mf-sil" x="8.8" y="8.8"></use>
+  </g>
+  <!-- Harf dolgusu `currentColor`, konturu murekkep. Kontur ve kabartma sabit:
+       logo hem acik
+       (kum/kum-koyu) hem koyu zeminde ayni dosyayla okunuyor, zemine gore
+       renk degistirmesi gerekmiyor. Murekkep dolgu DENENDI: kabartma da
+       murekkep oldugu icin harfler golgeyle birlesip kutleye donusuyor.
+       paint-order: kontur dolgunun ALTINA cizilsin, yoksa harfin icini yer. -->
+  <g paint-order="stroke" stroke="#2E2A18" stroke-width="54" stroke-linejoin="round">
+    <path fill="currentColor" d="M28 -575V0L270 21V-332Q281 -346 301 -359Q322 -372 339 -372Q355 -372 365 -365Q375 -357 381 -345Q386 -333 388 -318Q389 -304 389 -292V0H631V-330Q645 -345 659 -359Q674 -374 696 -374Q714 -374 725 -366Q735 -358 741 -346Q747 -334 748 -319Q750 -305 750 -291V21L992 0V-387Q992 -429 979 -466Q967 -503 943 -530Q920 -557 885 -572Q850 -588 806 -588Q744 -588 693 -559Q642 -530 611 -476Q601 -503 583 -523Q565 -544 543 -558Q520 -572 494 -580Q467 -588 439 -588Q390 -588 345 -565Q300 -543 270 -504V-575H28Z M1064 -575V0L1308 10V-575Q1278 -564 1248 -559Q1218 -553 1186 -553Q1154 -553 1124 -559Q1094 -564 1064 -575Z M1370 -575V0L1612 21V-337Q1627 -351 1642 -362Q1656 -373 1677 -373Q1694 -373 1705 -367Q1715 -360 1720 -349Q1725 -338 1727 -324Q1728 -311 1728 -297V21L1973 0V-392Q1973 -432 1960 -468Q1948 -504 1925 -530Q1902 -557 1869 -573Q1836 -589 1794 -589Q1735 -589 1690 -562Q1644 -535 1612 -486V-575H1370Z M2043 -575V0L2287 10V-575Q2257 -564 2227 -559Q2197 -553 2165 -553Q2133 -553 2103 -559Q2073 -564 2043 -575Z M2359 -510 2349 -357H2410V0L2653 21V-357L2734 -358L2744 -510H2654Q2654 -527 2656 -542Q2657 -558 2663 -570Q2669 -581 2682 -588Q2694 -595 2716 -595Q2726 -595 2736 -592Q2745 -590 2756 -586V-736Q2725 -741 2695 -745Q2664 -749 2633 -749Q2588 -749 2548 -740Q2508 -730 2477 -708Q2447 -686 2429 -651Q2411 -616 2411 -566V-510H2359Z M3076 -231V-118Q3065 -108 3050 -101Q3035 -94 3021 -94Q2997 -94 2986 -110Q2976 -127 2976 -147Q2976 -168 2984 -183Q2993 -197 3007 -208Q3022 -218 3040 -223Q3058 -229 3076 -231Z M3076 -342V-335Q3036 -336 2984 -327Q2933 -319 2886 -296Q2840 -273 2807 -232Q2775 -191 2774 -127Q2774 -92 2788 -66Q2803 -40 2826 -22Q2850 -4 2880 5Q2910 14 2942 14Q2979 14 3014 5Q3049 -5 3080 -24Q3095 -10 3114 -2Q3134 6 3156 9Q3178 13 3200 13Q3223 14 3242 14Q3266 14 3289 11Q3313 8 3336 6L3386 -143Q3376 -137 3364 -137Q3343 -137 3331 -153Q3318 -169 3318 -188V-385Q3318 -434 3299 -472Q3281 -511 3250 -537Q3218 -563 3177 -576Q3135 -590 3089 -590Q3003 -590 2930 -558Q2857 -526 2789 -476L2860 -327Q2878 -348 2896 -364Q2913 -380 2932 -390Q2950 -401 2972 -406Q2993 -411 3022 -411Q3041 -411 3052 -406Q3063 -401 3068 -392Q3074 -383 3075 -370Q3076 -357 3076 -342Z M3452 -814V0L3695 21V-814H3452Z"></path>
+    <path fill="#FCC600" d="M1146 -800L1271 -675L1146 -550L1021 -675Z M2125 -800L2250 -675L2125 -550L2000 -675Z"></path>
+  </g>
+        </symbol>
+        <symbol id="logo-discord" viewBox="0 0 24 24">
+            <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6066 3.9495-1.5218 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"></path>
+        </symbol>
+    </svg>
+
+    <a class="skip" href="https://minifal.com/#giris">Giriş formuna geç</a>
+
+    <!-- Geri sayim. Metin web/src/home.ts'in basindaki countdownCopy'de,
+         genel oyun acilisi sunucudan (GAME_OPENS_AT) geliyor. -->
+    <div class="countdown" id="countdown" data-state="done">
+        <div class="countdown-inner">
+            <div class="countdown-text">
+                <p class="countdown-lead" id="countdown-lead">Action Dimension’ın dünyası Minifal’le geri döndü.</p>
+                <p class="countdown-body" id="countdown-body">O eski Flash dünyası modern bir oyun motoruyla sıfırdan yeniden yazıldı. Hesabını aç, eski dostlarınla yeniden buluş.</p>
+                <div class="countdown-actions">
+                    <a class="countdown-story-link" href="https://minifal.com/hikaye">
+                        Hikâyeyi oku
+                        <svg aria-hidden="true" viewBox="0 0 24 24"><use href="#arrow"></use></svg>
+                    </a>
+                    <a class="countdown-contact" href="mailto:info@minifal.com">İletişim: info@minifal.com</a>
+                </div>
+            </div>
+            <p class="sr-only" id="countdown-when"></p>
+            <div class="countdown-side">
+                <p class="countdown-eyebrow">Açılışa</p>
+                <div class="countdown-clock" id="countdown-clock" role="timer" aria-hidden="true">
+                    <span class="cd-unit"><b data-cd="day">00</b><span>gün</span></span>
+                    <span class="cd-unit"><b data-cd="hour">00</b><span>saat</span></span>
+                    <span class="cd-unit"><b data-cd="minute">00</b><span>dk</span></span>
+                    <span class="cd-unit"><b data-cd="second">00</b><span>sn</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div aria-hidden="true"></div><header class="topbar">
+        <div class="topbar-inner">
+            <a class="logotype" href="https://minifal.com/" aria-label="Minifal — ana sayfa"><svg aria-hidden="true"><use href="#logo-minifal"></use></svg></a>
+            <nav class="topnav" aria-label="Sayfa bölümleri">
+                <a href="https://minifal.com/#oyunlar" class="">Oyunlar</a>
+                <a href="https://minifal.com/#ev">Ev</a>
+            </nav>
+            <a class="topbar-cta" href="https://minifal.com/play" data-cta="">Oyuna dön</a>
+        <select class="language-switch" aria-label="English" title="English"><option value="tr">TR</option><option value="en">EN</option><option value="pt">PT</option></select></div>
+    </header>
+
+    <main>
+        <!-- ------------------------------------------------------------ hero -->
+        <section class="hero band band--deep" data-bg=""><div class="hero-photo" aria-hidden="true" style="background-image: url(&quot;/img/hero-sehir.webp&quot;);"></div>
+            <div class="hero-grid">
+                <!-- Baslik kendi satirinda. Forma yapisikken sol sutun pencereden
+                     cok uzun kaliyor, pencere ortada asili duruyor ve altinda olu
+                     bir alan aciliyordu. -->
+                <div class="hero-head">
+                    <h1 class="hero-title">Minifal<br>dünyasına<br>katıl</h1>
+                    <p class="hero-copy">Sohbet et, yeni arkadaşlar edin. Yüzlerce kıyafet arasından kendi stilini oluştur. Evini seçtiğin mobilyalarla istediğin gibi tasarla. Paintball'da takımınla sahaya in, teniste teke tek oyna.</p>
+                    <p class="hero-note">Tarayıcında açılır, indirme gerekmez.</p>
+                </div>
+
+                <section class="panel" id="giris" aria-label="Giriş ve hesap açma">
+                    <div class="tabs" id="tabs" role="tablist" aria-label="Giriş ve hesap açma" data-active="login" hidden="">
+                        <span class="tabs-marker" aria-hidden="true"></span>
+                        <button class="tab" id="tab-login" type="button" role="tab" aria-selected="true" aria-controls="panel-login">Giriş</button>
+                        <button class="tab" id="tab-register" type="button" role="tab" aria-selected="false" aria-controls="panel-register">Hesap aç</button>
+                    </div>
+
+                    <p class="panel-lead" id="panel-lead">Kaldığın yerden devam et.</p>
+
+                    <!-- Yalnizca sunucuya ulasilamadiginda gorunur (styles.css).
+                         "Sunucu acik" demek gurultu; "ulasilamiyor" demek bilgi:
+                         girisin neden basarisiz oldugunu soyleyen tek isaret bu. -->
+                    <p class="server-state" id="server-state" data-state="up" aria-live="polite">
+                        <span class="server-dot" aria-hidden="true"></span>
+                        <span id="server-state-text">Sunucu açık</span>
+                    </p>
+
+                    <div id="panel-forms" hidden="">
+                        <div id="panel-login" role="tabpanel" aria-labelledby="tab-login">
+                            <form id="login-form" novalidate="">
+                                <!-- E-posta ve sifre yan yana: panel dikeyde kisaliyor ve
+                                     hero'da pencereyle ayni yuksekligi tutuyor. -->
+                                <label class="field" for="email">
+                                    <span class="field-label">E-posta</span>
+                                    <span class="input-shell">
+                                        <input id="email" name="email" type="email" autocomplete="username" maxlength="254" placeholder="example@email.com" required="">
+                                    </span>
+                                </label>
+
+                                <label class="field" for="password">
+                                    <span class="field-label">Şifre</span>
+                                    <span class="input-shell">
+                                        <input id="password" name="password" type="password" autocomplete="current-password" maxlength="128" required="">
+                                        <button class="pw-toggle" type="button" aria-label="Şifreyi göster">
+                                            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"></path><circle cx="12" cy="12" r="2.5"></circle></svg>
+                                        </button>
+                                    </span>
+                                </label>
+
+                                <div id="form-message" class="form-message" role="alert" aria-live="polite"></div>
+
+                                <button id="submit-button" class="action" type="submit">
+                                    <span class="action-label">Oyuna gir</span>
+                                    <span class="action-spinner" aria-hidden="true"></span>
+                                    <svg aria-hidden="true" viewBox="0 0 24 24"><use href="#arrow"></use></svg>
+                                </button>
+                            </form>
+                        </div>
+
+                        <div id="panel-register" role="tabpanel" aria-labelledby="tab-register" hidden="">
+                            <form id="register-form" novalidate="">
+                                <label class="field" for="register-email">
+                                    <span class="field-label">E-posta</span>
+                                    <span class="input-shell">
+                                        <input id="register-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="example@email.com" required="">
+                                    </span>
+                                </label>
+
+                                <label class="field" for="register-password">
+                                    <span class="field-label">Şifre</span>
+                                    <span class="input-shell">
+                                        <input id="register-password" name="password" type="password" autocomplete="new-password" minlength="6" maxlength="128" required="">
+                                        <button class="pw-toggle" type="button" aria-label="Şifreyi göster">
+                                            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"></path><circle cx="12" cy="12" r="2.5"></circle></svg>
+                                        </button>
+                                    </span>
+                                    <span class="input-hint">En az 6 karakter.</span>
+                                </label>
+
+                                <label class="field" for="register-password-confirm">
+                                    <span class="field-label">Şifre tekrar</span>
+                                    <span class="input-shell">
+                                        <input id="register-password-confirm" name="password_confirmation" type="password" autocomplete="new-password" minlength="6" maxlength="128" required="">
+                                        <button class="pw-toggle" type="button" aria-label="Şifreyi göster">
+                                            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"></path><circle cx="12" cy="12" r="2.5"></circle></svg>
+                                        </button>
+                                    </span>
+                                </label>
+
+                                <div id="register-message" class="form-message" role="alert" aria-live="polite"></div>
+
+                                <button id="register-submit" class="action" type="submit">
+                                    <span class="action-label">Hesap aç</span>
+                                    <span class="action-spinner" aria-hidden="true"></span>
+                                    <svg aria-hidden="true" viewBox="0 0 24 24"><use href="#arrow"></use></svg>
+                                </button>
+                                <p class="register-legal">
+                                    Hesap açarak <a href="https://minifal.com/kullanim-kosullari" target="_blank" rel="noopener">Kullanım koşulları</a> 'nı kabul eder ve <a href="https://minifal.com/gizlilik" target="_blank" rel="noopener">Gizlilik</a>'nı okuduğunu onaylarsın.
+                                </p>
+                            </form>
+                        </div>
+
+                        <p class="or"><span>ya da</span></p>
+
+                        <div class="providers">
+                            <button class="provider" type="button" data-provider="Google">
+                                <svg class="provider-mark" viewBox="0 0 48 48" aria-hidden="true"><use href="#logo-google"></use></svg>
+                                Google
+                            </button>
+                            <button class="provider" type="button" data-provider="Apple">
+                                <svg class="provider-mark provider-mark--apple" viewBox="0 0 24 24" aria-hidden="true"><use href="#logo-apple"></use></svg>
+                                Apple
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="session" id="panel-session">
+                        <p class="session-greeting">Tekrar hoş geldin, <strong id="session-name">Zenn</strong>.</p>
+                        <a class="action" id="session-action" href="https://minifal.com/play">
+                            <span class="action-label" id="session-action-label">Oyuna dön</span>
+                            <span class="action-spinner" aria-hidden="true"></span>
+                            <svg aria-hidden="true" viewBox="0 0 24 24"><use href="#arrow"></use></svg>
+                        </a>
+                        <div class="session-links">
+                            <a class="session-link" href="https://minifal.com/hesap">Hesabım</a>
+                            <button class="session-signout" id="session-signout" type="button">Çıkış yap</button>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="stage">
+                    <figure class="shot" data-shot="hero">
+                        <div class="shot-bar">
+                            <span class="shot-tag" data-shot-tag="">Ekran görüntüsü</span>
+                            <span class="shot-count" data-shot-count="" hidden=""></span>
+                            <span class="shot-ratio">4:3</span>
+                        </div>
+                        <div class="shot-view" data-shot-view="">
+                            <div class="shot-empty">
+                                <span class="shot-crop" aria-hidden="true"></span>
+                                <p class="shot-subject">Şehir merkezi</p>
+                                <p class="shot-note">Ekran görüntüsü eklenecek</p>
+                            </div>
+                        </div>
+                        <figcaption class="shot-caption" data-shot-caption="">Şehir merkezi</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <!-- Dunyanin kesit kenari, bant boyunca. map2.png'de harita turkuaz
+                 denizin altinda uc toprak katmani olarak kesiliyor; hero de o
+                 dunyadan kesilmis bir dilim. -->
+            <div class="crust" aria-hidden="true">
+                <span></span><span></span><span></span>
+            </div>
+        </section>
+
+        <!-- -------------------------------------------------------- oynanış -->
+        <section class="band band--sand">
+            <div class="shell">
+                <!-- Bu bölümde tek vurgu yok, dört tane var; kutucuk da aşağıdaki
+                     dört kartın lejandı. Sıra kartlarla aynı. -->
+                <p class="eyebrow eyebrow--quad">
+                    Oynanış
+                    <span class="quad" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+                    Oynanış
+                </p>
+                <h2 class="section-title">Burada<br>ne yaparsın</h2>
+
+                <ul class="deeds">
+                    <li class="deed is-in" data-accent="teal" data-reveal="">
+                        <span class="deed-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#ic-chat"></use></svg></span>
+                        <h3 class="deed-title">Konuş</h3>
+                        <p>Herkes aynı haritada dolaşıyor. Yanına git, yaz, tanış. Arkadaş ekle, takas yap, ikinci el pazarında pazarlık et.</p>
+                    </li>
+                    <li class="deed is-in" data-accent="gold" data-reveal="">
+                        <span class="deed-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#ic-shirt"></use></svg></span>
+                        <h3 class="deed-title">Giyin</h3>
+                        <p>465 giyilebilir parça. Şapka, ceket, pantolon, ayakkabı, maske, zırh — kombin tamamen senin.</p>
+                    </li>
+                    <li class="deed is-in" data-accent="olive" data-reveal="">
+                        <span class="deed-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#ic-home"></use></svg></span>
+                        <h3 class="deed-title">Kur</h3>
+                        <p>Kendi evin var. 116 mobilyayı istediğin yere koy, çevir, evini döşe, arkadaşlarını çağır.</p>
+                    </li>
+                    <li class="deed is-in" data-accent="orange" data-reveal="">
+                        <span class="deed-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#ic-splat"></use></svg></span>
+                        <h3 class="deed-title">Oyna</h3>
+                        <p>Paintball ve tenis maçları. Kazandıkça seviye atla, maç sonunda ganimet düşsün.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ---------------------------------------------------------- oyunlar -->
+        <section class="band band--deep" id="oyunlar" data-accent="orange">
+            <div class="shell">
+                <div class="section-head">
+                    <div>
+                        <p class="eyebrow">Mini oyunlar</p>
+                        <h2 class="section-title">Maç<br>başlıyor</h2>
+                    </div>
+                    <p class="section-copy">Şehirde dolaşmaktan sıkılınca sahaya in. İki oyun şu an açık, yenileri geliyor.</p>
+                </div>
+
+                <div class="games">
+                    <article class="game game--paintball is-in" data-reveal="">
+                        <svg class="game-splat" viewBox="0 0 120 120" aria-hidden="true"><use href="#splat-2"></use></svg>
+                        <figure class="shot is-filled" data-shot="paintball" style="--shot-ratio: 16 / 9;">
+                    <div class="shot-bar">
+                        <span class="shot-tag" data-shot-tag="">Oyundan</span>
+                        <span class="shot-count" data-shot-count="" hidden="">1 / 1</span>
+                    <button type="button" class="stepper stepper--play" aria-label="Videoyu durdur"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#pause"></use></svg></button></div>
+                    <div class="shot-view" data-shot-view=""><video loop="" playsinline="" preload="none" poster="/video/paintball-poster.webp" aria-label="Paintball maçından görüntü: boya izleriyle kaplı sahada bir oyuncu" src="/video/paintball.mp4"></video></div>
+                    <figcaption class="shot-caption" data-shot-caption="" aria-live="polite">Paintball maçı</figcaption>
+                </figure>
+                        <h3 class="game-title">Paintball</h3>
+                        <p class="game-copy">10 kişiye kadar takım maçı, dört harita. Silahını ve zırhını seç, mod kitlerle ateş hızını ya da hasarını yükselt.</p>
+                        <ul class="modes">
+                            <li>Bayrak Kapmaca</li>
+                            <li>Ölüm Maçı</li>
+                            <li>Cyborg Saldırısı</li>
+                            <li>Başlangıç Takım Maçı</li>
+                        </ul>
+                        <p class="game-note">33 silah · 8 zırh · 15 mod kit</p>
+                    </article>
+
+                    <div class="games-side">
+                        <article class="game is-in" data-reveal="">
+                            <figure class="shot is-filled" data-shot="tenis" style="--shot-ratio: 16 / 9;">
+                                <div class="shot-bar">
+                                    <span class="shot-tag" data-shot-tag="">Oyundan</span>
+                                    <span class="shot-count" data-shot-count="" hidden="">1 / 1</span>
+                                <button type="button" class="stepper stepper--play" aria-label="Videoyu durdur"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#pause"></use></svg></button></div>
+                                <div class="shot-view" data-shot-view=""><video loop="" playsinline="" preload="none" poster="/video/tennis-poster.webp" aria-label="Tenis maçından görüntü: kortun iki yanında birer oyuncu, aralarında top" src="/video/tennis.mp4"></video></div>
+                                <figcaption class="shot-caption" data-shot-caption="" aria-live="polite">Tenis maçı</figcaption>
+                            </figure>
+                            <h3 class="game-title">Tenis</h3>
+                            <p class="game-copy">Teke tek ya da çift. Kendi maçını kur, arkadaşını bekle; ya da listeden dolu olmayan bir maça gir.</p>
+                            <ul class="modes">
+                                <li>1v1</li>
+                                <li>2v2</li>
+                            </ul>
+                        </article>
+
+                        <article class="game game--soon is-in" data-reveal="">
+                            <h3 class="game-title">Yolda</h3>
+                            <p class="game-copy">Yeni mini oyunlar üzerinde çalışıyoruz. Çıktıklarında şehirde, aynı yerde olacaklar.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ---------------------------------------------------------------- ev -->
+        <!-- Iki sutun: solda kayit, sagda videoda gordugun uc islem. Yan sutun
+             dar tutuldu (~280px) — sayfadaki tek hareketli kanit burada oldugu
+             icin cerceve digerlerinden genis, ama bandi da doldurmuyor. -->
+        <section class="band band--sand" id="ev" data-accent="olive">
+            <div class="shell">
+                <div class="section-head">
+                    <div>
+                        <p class="eyebrow">Ev</p>
+                        <h2 class="section-title">Boş bir ev,<br>116 mobilya</h2>
+                    </div>
+                    <p class="section-copy">Dört ev planından birini Sebastian'dan alırsın. Mobilyayı Mobilyacıdan alır, gerisini düzenleyicide halledersin.</p>
+                </div>
+
+                <div class="ev-grid" data-reveal="">
+                    <figure class="shot is-filled" data-shot="ev" style="--shot-ratio: 16 / 9;">
+                        <div class="shot-bar">
+                            <span class="shot-tag" data-shot-tag="">Oyundan</span>
+                            <span class="shot-count" data-shot-count="" hidden="">1 / 1</span>
+                        <button type="button" class="stepper stepper--play" aria-label="Videoyu durdur"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#pause"></use></svg></button></div>
+                        <div class="shot-view" data-shot-view=""><video loop="" playsinline="" preload="none" poster="/video/room_editor-poster.webp" aria-label="Ev düzenleme modu: düzenleyici paneli açık, mobilyalar taşınıp çevriliyor ve renk çubuğuyla renkleri değiştiriliyor" src="/video/room_editor.mp4"></video></div>
+                        <figcaption class="shot-caption" data-shot-caption="" aria-live="polite">Ev düzenleme modu</figcaption>
+                    </figure>
+
+                    <ul class="ev-list">
+                        <li>
+                            <b>Taşı ve çevir</b>
+                            Her parça istediğin yere gider, dört yöne döner.
+                        </li>
+                        <li>
+                            <b>Rengini seç</b>
+                            Aynı koltuk, senin seçtiğin renkte.
+                        </li>
+                        <li>
+                            <b>Kapını aç</b>
+                            Ev bitince arkadaşlarını çağırırsın, gelip gezerler.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ------------------------------------------------------------ kapanış -->
+        <section class="band band--deep closer">
+            <div class="shell closer-inner">
+                <h2 class="closer-title">Şehirde görüşürüz</h2>
+                <p class="closer-copy">E-posta ve şifre yeter. Karakterini içeride oluşturursun.</p>
+                <a class="action closer-cta" href="https://minifal.com/play" data-cta="">
+                    <span class="action-label">Oyuna dön</span>
+                    <svg aria-hidden="true" viewBox="0 0 24 24"><use href="#arrow"></use></svg>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="foot site-footer" id="site-footer">
+        <div class="shell site-footer-inner">
+            <div class="site-footer-brand">
+                <a class="site-footer-logo logotype logotype--small" href="https://minifal.com/" aria-label="Minifal — ana sayfa"><svg aria-hidden="true"><use href="#logo-minifal"></use></svg></a>
+                <a class="site-footer-email" href="mailto:info@minifal.com">info@minifal.com</a>
+            </div>
+            <section class="site-footer-community" aria-labelledby="footer-social-title">
+                <div class="site-footer-community-head">
+                    <p class="site-footer-label" id="footer-social-title">Şehirden haberdar ol</p>
+                    <p class="site-footer-handle">@minifalgame</p>
+                </div>
+                <nav class="site-socials" aria-label="Sosyal medya hesapları">
+                    <a class="site-social" href="https://www.instagram.com/minifalgame" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a class="site-social" href="https://x.com/minifalgame" target="_blank" rel="noopener noreferrer">X</a>
+                    <a class="site-social" href="https://www.youtube.com/@minifalgame" target="_blank" rel="noopener noreferrer">YouTube</a>
+                </nav>
+            </section>
+            <div class="site-footer-bottom">
+                <div class="site-footer-links">
+                    <nav class="site-footer-nav" aria-label="Alt bağlantılar">
+                        <a href="https://minifal.com/#oyunlar">Oyunlar</a>
+                        <a href="https://minifal.com/#ev">Ev</a>
+                        <a href="https://minifal.com/hikaye">Hikâyemiz</a>
+                        <a href="https://discord.gg/nzgp3pfT3" target="_blank" rel="noopener noreferrer">Discord</a>
+                    </nav>
+                    <nav class="site-footer-legal" aria-label="Yasal bağlantılar">
+                        <a href="https://minifal.com/gizlilik">Gizlilik</a>
+                        <a href="https://minifal.com/kullanim-kosullari">Kullanım koşulları</a>
+                    </nav>
+                </div>
+                <span class="site-footer-build" id="foot-build">Sürüm 0.0.55</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sayfa boyunca sabit: konumu kaydirmayla degismiyor. Sohbet vurgusunu
+         (teal) tasiyor cunku Discord da ozunde bu — sohbet=deniz eslesmesi
+         .eyebrow renklerindeki ayni kural. Govde cumlesi geri sayimla ayni
+         bekleyise bagliyor: kapida sohbet edecek yer olmasi acilis gunune
+         kadar gecen sureyi bir bekleme degil, bir yer haline getiriyor. -->
+    <a class="discord-float" href="https://discord.gg/nzgp3pfT3" target="_blank" rel="noopener noreferrer">
+        <span class="discord-float-head">
+            <span class="discord-float-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#logo-discord"></use></svg></span>
+            <b>Discord'a katıl</b>
+        </span>
+        <span class="discord-float-body">Oyun açılana kadar Discord'da sohbet edebilirsin.</span>
+    </a>
+
+    
+<script type="module" src="./Minifal — konuş, giyin, kur, oyna_files/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;64b24abdfba847b4872b38a0637edcb2&quot;,&quot;r&quot;:1,&quot;spa&quot;:2}" crossorigin="anonymous"></script>
+
+
+</body></html>

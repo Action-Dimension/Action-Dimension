@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!-- saved from url=(0025)https://minifal.com/hesap -->
+<html lang="tr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#E2C68C">
+    <meta name="robots" content="noindex">
+    <title>Hesabım — Minifal</title>
+    <link rel="icon" type="image/svg+xml" href="https://minifal.com/img/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://minifal.com/img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link rel="stylesheet" href="./Hesabım — Minifal_files/css2">
+    
+    
+  <script type="module" crossorigin="" src="./Hesabım — Minifal_files/account-f5deacf9.js.indir"></script>
+  <link rel="modulepreload" crossorigin="" href="https://minifal.com/assets/modulepreload-polyfill-3cfb730f.js">
+  <link rel="modulepreload" crossorigin="" href="https://minifal.com/assets/i18n-2cd22738.js">
+  <link rel="stylesheet" href="./Hesabım — Minifal_files/hesap-f7b71fd7.css">
+  <link rel="stylesheet" href="./Hesabım — Minifal_files/styles-cbbc3ec6.css">
+</head>
+<body class="account-page">
+    <header class="account-topbar">
+        <div class="account-shell account-topbar-inner">
+            <a class="account-logo" href="https://minifal.com/" aria-label="Minifal — ana sayfa">
+                <img src="./Hesabım — Minifal_files/logo.svg" alt="">
+            </a>
+            <a class="account-back" href="https://minifal.com/play">Oyuna dön</a>
+        <button type="button" class="language-switch" aria-label="English" title="English">EN</button></div>
+    </header>
+
+    <main class="account-main account-shell">
+        <h1 class="account-title">Hesabım</h1>
+
+        <!-- Sayfadaki TEK cerceveli nesne. Asagisi kimlik kartina yapilan
+             degisiklikler; onlar kutulanmiyor, murekkep cizgisiyle ayriliyor. -->
+        <section class="card" aria-labelledby="card-name">
+            <div class="card-body">
+                <p class="card-name" id="card-name">Zenn</p>
+                <p class="card-email" id="card-email">mertcan.baybekmn@gmail.com</p>
+                <p class="card-level" id="card-level">Seviye 18</p>
+            </div>
+            <div class="card-mark">
+                <p class="stamp" id="stamp" data-state="verified">Doğrulandı</p>
+                <button class="stamp-action" id="resend-verification" type="button" hidden="">Bağlantıyı yeniden gönder</button>
+            </div>
+            <div class="card-message form-message" id="card-message" role="status" aria-live="polite"></div>
+        </section>
+
+        <div class="account-body" id="account-body">
+            <section class="block" aria-labelledby="email-title">
+                <h2 class="block-title" id="email-title">E-posta adresi</h2>
+                <p class="block-lead">
+                    Yeni adrese bir doğrulama bağlantısı gönderiyoruz. Sen bağlantıya
+                    basana kadar hesabın şu anki adreste kalır.
+                </p>
+
+                <form class="block-form" id="email-form" novalidate="">
+                    <label class="field" for="new-email">
+                        <span class="field-label">Yeni e-posta adresi</span>
+                        <span class="input-shell">
+                            <input id="new-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="example@email.com" required="">
+                        </span>
+                    </label>
+
+                    <label class="field" for="email-password">
+                        <span class="field-label">Şifren</span>
+                        <span class="input-shell">
+                            <input id="email-password" name="password" type="password" autocomplete="current-password" maxlength="128" required="">
+                            <button class="pw-toggle" type="button" aria-label="Şifreyi göster">
+                                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"></path><circle cx="12" cy="12" r="2.5"></circle></svg>
+                            </button>
+                        </span>
+                    </label>
+
+                    <div class="form-message" id="email-message" role="alert" aria-live="polite"></div>
+
+                    <button class="action" id="email-submit" type="submit">
+                        <span class="action-label">Doğrulama bağlantısı gönder</span>
+                        <span class="action-spinner" aria-hidden="true"></span>
+                    </button>
+                </form>
+            </section>
+
+            <section class="block" aria-labelledby="password-title">
+                <h2 class="block-title" id="password-title">Şifre</h2>
+                <p class="block-lead">
+                    Şifreni değiştirdiğinde diğer cihazlardaki oturumlar kapanır.
+                    Bu cihazda açık kalırsın.
+                </p>
+
+                <form class="block-form" id="password-form" novalidate="">
+                    <!-- Sifre yoneticilerinin kaydi dogru hesapla eslestirmesi icin.
+                         Gorunmez ama form verisinde duruyor; sunucu bu alani okumuyor. -->
+                    <input class="sr-only" id="password-username" name="username" type="email" autocomplete="username" tabindex="-1" aria-hidden="true" readonly="" placeholder="example@email.com">
+
+                    <label class="field" for="current-password">
+                        <span class="field-label">Mevcut şifre</span>
+                        <span class="input-shell">
+                            <input id="current-password" name="current_password" type="password" autocomplete="current-password" maxlength="128" required="">
+                            <button class="pw-toggle" type="button" aria-label="Şifreyi göster">
+                                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"></path><circle cx="12" cy="12" r="2.5"></circle></svg>
+                            </button>
+                        </span>
+                    </label>
+
+                    <label class="field" for="next-password">
+                        <span class="field-label">Yeni şifre</span>
+                        <span class="input-shell">
+                            <input id="next-password" name="password" type="password" autocomplete="new-password" minlength="6" maxlength="128" required="">
+                            <button class="pw-toggle" type="button" aria-label="Şifreyi göster">
+                                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"></path><circle cx="12" cy="12" r="2.5"></circle></svg>
+                            </button>
+                        </span>
+                        <span class="input-hint">En az 6 karakter.</span>
+                    </label>
+
+                    <label class="field" for="next-password-confirm">
+                        <span class="field-label">Yeni şifre tekrar</span>
+                        <span class="input-shell">
+                            <input id="next-password-confirm" name="password_confirmation" type="password" autocomplete="new-password" minlength="6" maxlength="128" required="">
+                            <button class="pw-toggle" type="button" aria-label="Şifreyi göster">
+                                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"></path><circle cx="12" cy="12" r="2.5"></circle></svg>
+                            </button>
+                        </span>
+                    </label>
+
+                    <div class="form-message" id="password-message" role="alert" aria-live="polite"></div>
+
+                    <button class="action" id="password-submit" type="submit">
+                        <span class="action-label">Şifreyi değiştir</span>
+                        <span class="action-spinner" aria-hidden="true"></span>
+                    </button>
+                </form>
+            </section>
+
+            <section class="block" aria-labelledby="devices-title">
+                <h2 class="block-title" id="devices-title">Diğer cihazlar</h2>
+                <p class="block-lead">
+                    Telefonunda ya da başka bir bilgisayarda açık kalan oturumları
+                    kapatır. Bu cihazda da yeniden giriş yapman gerekir.
+                </p>
+
+                <div class="form-message" id="devices-message" role="alert" aria-live="polite"></div>
+
+                <button class="action action--quiet" id="devices-submit" type="button">
+                    <span class="action-label">Diğer cihazlardan çık</span>
+                    <span class="action-spinner" aria-hidden="true"></span>
+                </button>
+            </section>
+        </div>
+
+        <div class="account-locked" id="account-locked" hidden="">
+            <p id="account-locked-text">Bu sayfayı görmek için giriş yapman gerekiyor.</p>
+            <a class="action" href="https://minifal.com/#giris"><span class="action-label">Giriş yap</span></a>
+        </div>
+    </main>
+
+    
+<script type="module" src="./Hesabım — Minifal_files/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;64b24abdfba847b4872b38a0637edcb2&quot;,&quot;r&quot;:1,&quot;spa&quot;:2}" crossorigin="anonymous"></script>
+
+
+</body></html>
