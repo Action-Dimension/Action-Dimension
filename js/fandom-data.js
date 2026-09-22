@@ -2,18 +2,21 @@
  * ==============================================================================
  * MINIFAL FANDOM & WIKI - STATİK VERİTABANI
  * ==============================================================================
- * Oyun içi market ekran görüntülerinden çıkarılan gerçek eşyalar,
- * görseller ve gerçek pazar fiyatları ile yapılandırılmıştır.
+ * Oyun içi para birimleri:
+ * - Cash: Sarı altın sikke (Çoğu eşya Cash ile alınır)
+ * - Crystal: Parlak turkuaz kristal taş (Bazı özel ve nadir eşyalar Crystal ile alınır)
  * ==============================================================================
  */
 
 const MINIFAL_DATABASE = {
-    // Sürüm ve son güncelleme bilgisi
+    // Sürüm ve para birimleri
     meta: {
         gameVersion: "0.0.55",
         lastUpdated: "2026-09-22",
-        currency: "Minifal Altını",
-        currencySymbol: "₼",
+        currencies: {
+            cash: { name: "Cash", icon: "./img/cash_coin_trans.png", desc: "Temel pazar ve dükkan para birimi" },
+            crystal: { name: "Crystal", icon: "./img/crystal_gem_trans.png", desc: "Özel ve seçkin eşyalar için kristal" }
+        },
         totalItemsCount: 465,
         totalWeapons: 33,
         totalArmor: 8,
@@ -23,7 +26,7 @@ const MINIFAL_DATABASE = {
 
     // Kategori Tanımları
     categories: [
-        { id: "all", name: "Tüm Eşyalar", icon: "🌐", color: "ink", count: 20, desc: "Minifal evrenindeki tüm eşyaların ortak kataloğu." },
+        { id: "all", name: "Tüm Eşyalar", icon: "🌐", color: "ink", count: 22, desc: "Minifal evrenindeki tüm eşyaların ortak kataloğu." },
         { id: "weapons", name: "Silahlar", icon: "🔫", color: "orange", count: 33, desc: "Paintball sahasında kullanılan hafif, ağır ve özel boya silahları." },
         { id: "modkits", name: "Modkitler", icon: "⚙️", color: "teal", count: 15, desc: "Silahların hasar, hız ve menzilini artıran geliştirme modülleri." },
         { id: "armor", name: "Zırhlar", icon: "🛡️", color: "gold", count: 8, desc: "Maçlarda boya hasarını engelleyen taktik yelekler ve kıyafetler." },
@@ -44,8 +47,9 @@ const MINIFAL_DATABASE = {
             rarity: "rare",
             rarityName: "Ender",
             image: "./img/items/infiltrator_shotgun_trans.png",
+            currency: "cash",
             price: 5800,
-            marketRange: "5.000 ₼ - 25.000 ₼",
+            marketRange: "5.000 - 25.000 Cash",
             priceHistory: [
                 { date: "Haz 2026", price: 5000 },
                 { date: "Tem 2026", price: 5500 },
@@ -67,8 +71,9 @@ const MINIFAL_DATABASE = {
             rarity: "epic",
             rarityName: "Epik",
             image: "./img/items/infiltrator_sniper_trans.png",
+            currency: "cash",
             price: 9000,
-            marketRange: "7.520 ₼ - 18.920 ₼",
+            marketRange: "7.520 - 18.920 Cash",
             priceHistory: [
                 { date: "Haz 2026", price: 7520 },
                 { date: "Tem 2026", price: 7920 },
@@ -90,8 +95,9 @@ const MINIFAL_DATABASE = {
             rarity: "legendary",
             rarityName: "Efsanevi",
             image: "./img/items/cyborg_minigun_trans.png",
+            currency: "cash",
             price: 25900,
-            marketRange: "23.200 ₼ - 25.900 ₼",
+            marketRange: "23.200 - 25.900 Cash",
             priceHistory: [
                 { date: "Haz 2026", price: 21000 },
                 { date: "Tem 2026", price: 23200 },
@@ -113,8 +119,9 @@ const MINIFAL_DATABASE = {
             rarity: "legendary",
             rarityName: "Efsanevi",
             image: "./img/items/cyborg_rocketeer_trans.png",
+            currency: "cash",
             price: 33200,
-            marketRange: "29.000 ₼ - 33.200 ₼",
+            marketRange: "29.000 - 33.200 Cash",
             priceHistory: [
                 { date: "Haz 2026", price: 28000 },
                 { date: "Tem 2026", price: 30500 },
@@ -136,8 +143,9 @@ const MINIFAL_DATABASE = {
             rarity: "rare",
             rarityName: "Ender",
             image: "./img/items/rocket_launcher_trans.png",
+            currency: "cash",
             price: 3366,
-            marketRange: "3.100 ₼ - 3.500 ₼",
+            marketRange: "3.100 - 3.500 Cash",
             priceHistory: [
                 { date: "Haz 2026", price: 3000 },
                 { date: "Tem 2026", price: 3200 },
@@ -152,12 +160,36 @@ const MINIFAL_DATABASE = {
             compatibleModkits: ["Hızlı Doldurma", "Paintball Mod Kit"]
         },
         {
+            id: "wep-crystal-blaster",
+            name: "Kristal Enerji Blasterı",
+            category: "weapons",
+            subType: "Özel Silah",
+            rarity: "legendary",
+            rarityName: "Seçkin Kristal",
+            currency: "crystal",
+            price: 450,
+            marketRange: "400 - 480 Crystal",
+            priceHistory: [
+                { date: "Haz 2026", price: 400 },
+                { date: "Tem 2026", price: 420 },
+                { date: "Ağu 2026", price: 440 },
+                { date: "Eyl 2026", price: 450 }
+            ],
+            change24h: 2.3,
+            modkitSlots: 5,
+            stats: { damage: 105, fireRate: 75, range: 85, reload: 50, capacity: 35 },
+            description: "Sadece Crystal ile alınabilen elit turnuva silahı. Parlak turkuaz boya mermileri sıkar.",
+            source: "Crystal Mağazası",
+            compatibleModkits: ["Paintball Mod Kit"]
+        },
+        {
             id: "wep-01",
             name: "Standart Boya Tabancası",
             category: "weapons",
             subType: "Tabanca",
             rarity: "common",
             rarityName: "Başlangıç",
+            currency: "cash",
             price: 150,
             priceHistory: [
                 { date: "Haz 2026", price: 140 },
@@ -184,8 +216,9 @@ const MINIFAL_DATABASE = {
             rarity: "epic",
             rarityName: "Epik",
             image: "./img/items/paintball_modkit_green_trans.png",
+            currency: "cash",
             price: 10000,
-            marketRange: "5.272 ₼ - 75.000 ₼",
+            marketRange: "5.272 - 75.000 Cash",
             priceHistory: [
                 { date: "Haz 2026", price: 5272 },
                 { date: "Tem 2026", price: 7272 },
@@ -207,8 +240,9 @@ const MINIFAL_DATABASE = {
             rarity: "rare",
             rarityName: "Ender",
             image: "./img/items/paintball_modkit_orange_trans.png",
+            currency: "cash",
             price: 11000,
-            marketRange: "10.001 ₼ - 11.000 ₼",
+            marketRange: "10.001 - 11.000 Cash",
             priceHistory: [
                 { date: "Haz 2026", price: 9200 },
                 { date: "Tem 2026", price: 9800 },
@@ -223,12 +257,36 @@ const MINIFAL_DATABASE = {
             isRemover: false
         },
         {
+            id: "mod-crystal-core",
+            name: "Crystal Overload Kiti",
+            category: "modkits",
+            subType: "Seçkin Modül",
+            rarity: "legendary",
+            rarityName: "Seçkin Kristal",
+            currency: "crystal",
+            price: 180,
+            marketRange: "150 - 200 Crystal",
+            priceHistory: [
+                { date: "Haz 2026", price: 150 },
+                { date: "Tem 2026", price: 165 },
+                { date: "Ağu 2026", price: 175 },
+                { date: "Eyl 2026", price: 180 }
+            ],
+            change24h: 2.8,
+            slotCost: 1,
+            effects: "+35% Kritik Hasar, Silaha Kristal Parlaması",
+            compatibility: "Tüm Silahlar",
+            description: "Crystal ile satın alınan saf enerji dönüştürücü taktik kit.",
+            isRemover: false
+        },
+        {
             id: "mod-05",
             name: "Modkit Sökücü (Kit Remover)",
             category: "modkits",
             subType: "Gereç",
             rarity: "common",
             rarityName: "Gereç",
+            currency: "cash",
             price: 250,
             priceHistory: [
                 { date: "Haz 2026", price: 250 },
@@ -255,8 +313,9 @@ const MINIFAL_DATABASE = {
             rarity: "legendary",
             rarityName: "Efsanevi",
             image: "./img/items/commando_armor_trans.png",
+            currency: "cash",
             price: 44900,
-            marketRange: "43.000 ₼ - 46.000 ₼",
+            marketRange: "43.000 - 46.000 Cash",
             priceHistory: [
                 { date: "Haz 2026", price: 39000 },
                 { date: "Tem 2026", price: 42000 },
@@ -278,8 +337,9 @@ const MINIFAL_DATABASE = {
             rarity: "epic",
             rarityName: "Epik",
             image: "./img/items/hellbringer_armor_trans.png",
+            currency: "cash",
             price: 7000,
-            marketRange: "6.400 ₼ - 13.000 ₼",
+            marketRange: "6.400 - 13.000 Cash",
             priceHistory: [
                 { date: "Haz 2026", price: 6400 },
                 { date: "Tem 2026", price: 6500 },
@@ -300,6 +360,7 @@ const MINIFAL_DATABASE = {
             subType: "Temel Yelek",
             rarity: "common",
             rarityName: "Başlangıç",
+            currency: "cash",
             price: 180,
             priceHistory: [
                 { date: "Haz 2026", price: 180 },
@@ -326,8 +387,9 @@ const MINIFAL_DATABASE = {
             rarity: "common",
             rarityName: "Klasik",
             image: "./img/items/white_tshirt_trans.png",
+            currency: "cash",
             price: 500,
-            marketRange: "500 ₼",
+            marketRange: "500 Cash",
             priceHistory: [
                 { date: "Haz 2026", price: 500 },
                 { date: "Tem 2026", price: 500 },
@@ -347,8 +409,9 @@ const MINIFAL_DATABASE = {
             rarity: "common",
             rarityName: "Klasik",
             image: "./img/items/yellow_shorts_trans.png",
+            currency: "cash",
             price: 500,
-            marketRange: "500 ₼",
+            marketRange: "500 Cash",
             priceHistory: [
                 { date: "Haz 2026", price: 500 },
                 { date: "Tem 2026", price: 500 },
@@ -361,23 +424,25 @@ const MINIFAL_DATABASE = {
             popularity: "Temel Gardırop"
         },
         {
-            id: "msk-01",
-            name: "Siber Gaz Maskesi",
+            id: "msk-phantom-crystal",
+            name: "Neon Hayalet Maskesi",
             category: "masks",
-            subType: "Maske",
-            rarity: "epic",
-            rarityName: "Epik",
-            price: 2400,
+            subType: "Seçkin Maske",
+            rarity: "legendary",
+            rarityName: "Seçkin Kristal",
+            currency: "crystal",
+            price: 320,
+            marketRange: "280 - 350 Crystal",
             priceHistory: [
-                { date: "Haz 2026", price: 1800 },
-                { date: "Tem 2026", price: 2100 },
-                { date: "Ağu 2026", price: 2300 },
-                { date: "Eyl 2026", price: 2400 }
+                { date: "Haz 2026", price: 280 },
+                { date: "Tem 2026", price: 300 },
+                { date: "Ağu 2026", price: 310 },
+                { date: "Eyl 2026", price: 320 }
             ],
-            change24h: 4.3,
+            change24h: 3.2,
             slot: "Yüz / Maske",
-            description: "Neon yeşil filtreli retro fütüristik gaz maskesi. Şehirdeki en havalı maskelerden biri.",
-            popularity: "Çok Yüksek"
+            description: "Crystal ile alınabilen, karanlıkta turkuaz ve neon mor ışıltı saçan efsanevi maske.",
+            popularity: "Seçkin Gardırop"
         }
     ],
 
@@ -391,8 +456,9 @@ const MINIFAL_DATABASE = {
             rarity: "rare",
             rarityName: "Ender",
             image: "./img/items/dexterity_potion_trans.png",
+            currency: "cash",
             price: 2748,
-            marketRange: "2.400 ₼ - 2.800 ₼",
+            marketRange: "2.400 - 2.800 Cash",
             priceHistory: [
                 { date: "Haz 2026", price: 2400 },
                 { date: "Tem 2026", price: 2550 },
@@ -412,8 +478,9 @@ const MINIFAL_DATABASE = {
             rarity: "rare",
             rarityName: "Ender",
             image: "./img/items/agility_potion_trans.png",
+            currency: "cash",
             price: 3748,
-            marketRange: "3.200 ₼ - 3.800 ₼",
+            marketRange: "3.200 - 3.800 Cash",
             priceHistory: [
                 { date: "Haz 2026", price: 3200 },
                 { date: "Tem 2026", price: 3450 },
@@ -424,6 +491,27 @@ const MINIFAL_DATABASE = {
             duration: "30 Dakika",
             effect: "+25% Koşu Hızı, +15% Zıplama Çevikliği",
             description: "Gök mavisi şişede parlayan mor iksir. Paintball sahasında kurşunlardan sıyrılmayı kolaylaştırır."
+        },
+        {
+            id: "pot-crystal-elixir",
+            name: "Saf Kristal İksiri",
+            category: "potions",
+            subType: "Özel İksir",
+            rarity: "epic",
+            rarityName: "Seçkin Kristal",
+            currency: "crystal",
+            price: 95,
+            marketRange: "80 - 110 Crystal",
+            priceHistory: [
+                { date: "Haz 2026", price: 80 },
+                { date: "Tem 2026", price: 85 },
+                { date: "Ağu 2026", price: 90 },
+                { date: "Eyl 2026", price: 95 }
+            ],
+            change24h: 5.5,
+            duration: "Kalıcı Stat",
+            effect: "+10 Kalıcı Can, Karakter Çevresinde Kristal Parlaması",
+            description: "Crystal madenlerinden damıtılmış saf enerji iksiri. Karaktere kalıcı dayanıklılık verir."
         }
     ],
 
@@ -436,6 +524,7 @@ const MINIFAL_DATABASE = {
             subType: "Oturma Grubu",
             rarity: "uncommon",
             rarityName: "Nadir",
+            currency: "cash",
             price: 420,
             priceHistory: [
                 { date: "Haz 2026", price: 380 },
@@ -456,6 +545,7 @@ const MINIFAL_DATABASE = {
             subType: "Oyun Makinesi",
             rarity: "legendary",
             rarityName: "Efsanevi",
+            currency: "cash",
             price: 4800,
             priceHistory: [
                 { date: "Haz 2026", price: 3900 },

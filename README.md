@@ -20,8 +20,9 @@ Action Dimension'ın bağımsız yeniden yapımı olan **Minifal** için resmi t
    - 🛋️ **Mobilyalar ve Ev Planları:** Sebastian'ın mimari ev planları, 4 yöne dönebilen ve renkleri değiştirilebilen ev eşyaları
    - 🧪 **Potionlar:** Maçlık ve kalıcı stat güçlendirici iksirler
 
-3. **Canlı Market ve Fiyat Değişim Grafiği:**
-   - 2. el oyuncu pazarındaki tüm eşyaların güncel Minifal Altını (₼) fiyatları
+3. **Canlı Market ve Fiyat Değişim Grafiği (Cash & Crystal):**
+   - Oyundaki iki resmi para birimi: **Cash (Altın Para)** çoğu eşya için, **Crystal (Yeşil Taş)** ise özel ve nadir eşyalar için kullanılır
+   - 2. el oyuncu pazarındaki tüm eşyaların güncel Cash ve Crystal fiyatları
    - 24 saatlik değişim oranları (% artış ve azalışlar)
    - **İnteraktif Zaman Çizelgesi Grafiği:** Seçilen herhangi bir eşyanın son 4 aydaki fiyat dalgalanmasını gösteren dinamik SVG eğrisi ve fare ile üzerine gelindiğinde çalışan bilgi balonu (tooltip)
 

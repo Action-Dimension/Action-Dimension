@@ -71,64 +71,53 @@
         </div>
     </header>
 
-    <!-- Hero / Tanıtım Bölümü -->
-    <section class="fandom-hero">
-        <svg class="hero-splat hero-splat--1" viewBox="0 0 120 120"><use href="#splat-2"></use></svg>
-        <svg class="hero-splat hero-splat--2" viewBox="0 0 120 120"><use href="#splat-2"></use></svg>
-
+    <!-- Hero / Kompakt ve Şık Giriş Bölümü -->
+    <section class="fandom-hero fandom-hero--compact">
         <div class="hero-shell">
-            <p class="hero-eyebrow">
-                <span class="splat-dot" aria-hidden="true"></span>
-                Action Dimension Mirası · Topluluk Veritabanı
-            </p>
-            <h1 class="hero-title">Minifal Fandom<br>ve Eşya Ansiklopedisi</h1>
-            <p class="hero-lead">
-                Paintball sahalarındaki tüm silahlar, modkit kombinasyonları, taktik zırhlar, Sebastian'ın ev planları, 
-                şehir kostümleri ve 2. el pazarındaki canlı market fiyat geçmişi.
-            </p>
+            <div class="hero-header-row">
+                <div class="hero-text-block">
+                    <div class="hero-tag-inline">
+                        <span class="splat-dot" aria-hidden="true"></span>
+                        <span>Action Dimension Mirası · Topluluk Portalı</span>
+                    </div>
+                    <h1 class="hero-title">Minifal Fandom & Wiki</h1>
+                    <p class="hero-lead">
+                        Paintball silahları, modkitler, zırhlar, eşyalar ve canlı pazar fiyatları.
+                    </p>
+                </div>
 
-            <div class="stat-chips">
-                <div class="stat-chip">
-                    <span class="stat-chip-icon">🔫</span>
-                    <div>
-                        <span class="stat-chip-label">Silahlar</span>
-                        <span class="stat-chip-val">33 Silah</span>
+                <!-- Oyun İçi Para Birimleri -->
+                <div class="currency-panel" aria-label="Oyun İçi Para Birimleri">
+                    <div class="currency-card">
+                        <img src="./img/cash_coin_trans.png" alt="Cash" class="curr-img">
+                        <div>
+                            <span class="curr-name">Cash</span>
+                            <span class="curr-sub">Çoğu Eşya</span>
+                        </div>
+                    </div>
+                    <div class="currency-card currency-card--crystal">
+                        <img src="./img/crystal_gem_trans.png" alt="Crystal" class="curr-img">
+                        <div>
+                            <span class="curr-name">Crystal</span>
+                            <span class="curr-sub">Özel & Nadir</span>
+                        </div>
                     </div>
                 </div>
-                <div class="stat-chip">
-                    <span class="stat-chip-icon">⚙️</span>
-                    <div>
-                        <span class="stat-chip-label">Geliştirme</span>
-                        <span class="stat-chip-val">15 Modkit</span>
-                    </div>
-                </div>
-                <div class="stat-chip">
-                    <span class="stat-chip-icon">🛡️</span>
-                    <div>
-                        <span class="stat-chip-label">Savunma</span>
-                        <span class="stat-chip-val">8 Zırh</span>
-                    </div>
-                </div>
-                <div class="stat-chip">
-                    <span class="stat-chip-icon">🛋️</span>
-                    <div>
-                        <span class="stat-chip-label">Ev & Oda</span>
-                        <span class="stat-chip-val">116 Mobilya</span>
-                    </div>
-                </div>
-                <div class="stat-chip">
-                    <span class="stat-chip-icon">🎭</span>
-                    <div>
-                        <span class="stat-chip-label">Kombin</span>
-                        <span class="stat-chip-val">465 Giysi & Maske</span>
-                    </div>
-                </div>
+            </div>
+
+            <!-- Kompakt İstatistik Rozetleri -->
+            <div class="stat-pills-row">
+                <span class="stat-pill">🔫 <b>33</b> Silah</span>
+                <span class="stat-pill">⚙️ <b>15</b> Modkit</span>
+                <span class="stat-pill">🛡️ <b>8</b> Zırh</span>
+                <span class="stat-pill">🛋️ <b>116</b> Mobilya</span>
+                <span class="stat-pill">🎭 <b>465</b> Giysi & Maske</span>
             </div>
         </div>
     </section>
 
-    <!-- Toprak Katmanı Kesiti (Crust) -->
-    <div class="crust" aria-hidden="true">
+    <!-- İnce Toprak Katmanı Kesiti (Crust) -->
+    <div class="crust crust--slim" aria-hidden="true">
         <span></span><span></span><span></span>
     </div>
 
@@ -180,8 +169,8 @@
                     <p>Oyuncular arası 2. el pazarında eşyaların değerleri ve aylık fiyat trendleri.</p>
                 </div>
                 <div class="market-stat-badge">
-                    <span>Para Birimi:</span>
-                    <strong style="color:var(--orange);">Minifal Altını (₼)</strong>
+                    <span class="curr-mini-tag"><img src="./img/cash_coin_trans.png" class="curr-img-mini" alt="Cash"> <b>Cash</b> (Temel)</span>
+                    <span class="curr-mini-tag curr-mini-tag--crystal"><img src="./img/crystal_gem_trans.png" class="curr-img-mini" alt="Crystal"> <b>Crystal</b> (Özel)</span>
                 </div>
             </div>
 

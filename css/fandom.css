@@ -170,13 +170,13 @@ button, input, select {
 }
 
 /* ==========================================================================
-   HERO / MASTHEAD BANNER
+   HERO / KOMPAKT VE ŞIK GİRİŞ BÖLÜMÜ
    ========================================================================== */
 .fandom-hero {
   position: relative;
   background: var(--sand-deep);
   border-bottom: var(--edge);
-  padding: 48px 20px 36px;
+  padding: 18px 20px 14px;
   overflow: hidden;
 }
 
@@ -187,175 +187,242 @@ button, input, select {
   z-index: 2;
 }
 
-.hero-eyebrow {
+.hero-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.hero-text-block {
+  flex: 1 1 340px;
+}
+
+.hero-tag-inline {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  margin: 0 0 12px;
+  gap: 6px;
+  margin: 0 0 4px;
   font-family: var(--font-display);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 800;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ink-dim);
 }
 
-.hero-eyebrow .splat-dot {
-  width: 10px;
-  height: 10px;
+.hero-tag-inline .splat-dot {
+  width: 8px;
+  height: 8px;
   background: var(--orange);
-  border: 2px solid var(--ink);
+  border: 1.5px solid var(--ink);
   border-radius: 50%;
 }
 
 .hero-title {
-  margin: 0 0 16px;
+  margin: 0 0 3px;
   font-family: var(--font-display);
-  font-size: clamp(32px, 4.5vw, 56px);
+  font-size: clamp(20px, 2.2vw, 26px);
   font-weight: 900;
-  line-height: 1.05;
-  letter-spacing: -0.02em;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
   text-transform: uppercase;
   color: var(--ink);
 }
 
 .hero-lead {
-  max-width: 65ch;
-  margin: 0 0 24px;
-  font-size: clamp(15px, 1.8vw, 18px);
+  margin: 0;
+  font-size: 13.5px;
   color: var(--ink-dim);
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
-/* Stat Sayaçları */
-.stat-chips {
+/* Para Birimleri Paneli (Cash & Crystal) */
+.currency-panel {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.stat-chip {
-  display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 10px 16px;
+  flex-wrap: wrap;
+}
+
+.currency-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
   background: var(--sand);
   border: var(--edge);
-  border-radius: var(--radius-md);
-  box-shadow: var(--lift-1);
+  border-radius: var(--radius-sm);
+  box-shadow: 2px 2px 0 var(--ink);
 }
 
-.stat-chip-icon {
-  font-size: 18px;
+.curr-img {
+  width: 22px;
+  height: 16px;
+  object-fit: contain;
+  image-rendering: crisp-edges;
 }
 
-.stat-chip-label {
-  font-size: 12px;
+.curr-name {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 900;
+  color: var(--ink);
+  display: block;
+  line-height: 1.1;
+}
+
+.curr-sub {
+  font-size: 10.5px;
   color: var(--ink-dim);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-weight: 700;
   display: block;
 }
 
-.stat-chip-val {
+.currency-card--crystal {
+  background: #E4F9F7;
+  border-color: var(--teal);
+}
+
+/* Kompakt İstatistik Rozetleri */
+.stat-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.stat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: var(--sand);
+  border: 1.5px solid var(--ink);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.stat-pill b {
   font-family: var(--font-display);
-  font-size: 17px;
+  font-weight: 800;
+  color: var(--orange);
+}
+
+/* Dunyanin kesit kenari (Crust) - Kompakt */
+.crust {
+  display: flex;
+  flex-direction: column;
+  height: 6px;
+}
+.crust span:nth-child(1) { height: 2px; background: var(--crust-1); }
+.crust span:nth-child(2) { height: 2px; background: var(--crust-2); }
+.crust span:nth-child(3) { height: 2px; background: var(--crust-3); }
+
+/* Para Rozetleri (Kartlar ve Tablo İçin) */
+.curr-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-display);
+  font-size: 15px;
   font-weight: 900;
   color: var(--ink);
 }
 
-/* Arka plan süsleri (Splats) */
-.hero-splat {
-  position: absolute;
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.25;
+.curr-badge .curr-icon {
+  width: 19px;
+  height: 15px;
+  object-fit: contain;
+  image-rendering: crisp-edges;
+  vertical-align: middle;
 }
 
-.hero-splat--1 {
-  right: -5%;
-  top: -10%;
-  width: 320px;
-  color: var(--orange);
-  rotate: 25deg;
+.curr-badge small {
+  font-size: 11px;
+  color: var(--ink-dim);
+  font-weight: 700;
+  margin-left: 2px;
 }
 
-.hero-splat--2 {
-  left: -4%;
-  bottom: -15%;
-  width: 240px;
-  color: var(--teal);
-  rotate: -35deg;
+.curr-badge--crystal {
+  color: #007A82;
 }
 
-/* Dunyanin kesit kenari (Crust) */
-.crust {
-  display: flex;
-  flex-direction: column;
-  height: 12px;
+.curr-mini-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  background: var(--sand);
+  border: 1.5px solid var(--ink);
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
 }
-.crust span:nth-child(1) { height: 4px; background: var(--crust-1); }
-.crust span:nth-child(2) { height: 4px; background: var(--crust-2); }
-.crust span:nth-child(3) { height: 4px; background: var(--crust-3); }
+
+.curr-img-mini {
+  width: 17px;
+  height: 13px;
+  object-fit: contain;
+  image-rendering: crisp-edges;
+}
+
+.curr-mini-tag--crystal {
+  background: #E4F9F7;
+  border-color: var(--teal);
+}
 
 /* ==========================================================================
-   MAIN CONTENT SHELL
+   MAIN CONTENT SHELL & COMPACT TABS
    ========================================================================== */
 .fandom-main {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 32px 20px 60px;
+  padding: 18px 20px 50px;
 }
 
-/* ==========================================================================
-   CATEGORY TABS BAR
-   ========================================================================== */
 .category-nav {
   display: flex;
   gap: 8px;
   overflow-x: auto;
-  padding-bottom: 12px;
-  margin-bottom: 24px;
+  padding-bottom: 8px;
+  margin-bottom: 16px;
   scrollbar-width: thin;
-}
-
-.category-nav::-webkit-scrollbar {
-  height: 6px;
-}
-.category-nav::-webkit-scrollbar-thumb {
-  background: var(--ink-dim);
-  border-radius: 4px;
 }
 
 .cat-btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 18px;
+  gap: 6px;
+  padding: 7px 14px;
   background: var(--sand);
   border: var(--edge);
-  border-radius: var(--radius-md);
+  border-radius: 10px;
   font-family: var(--font-display);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 800;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--ink);
   cursor: pointer;
-  box-shadow: 3px 3px 0 var(--ink);
+  box-shadow: 2px 2px 0 var(--ink);
   white-space: nowrap;
   transition: translate 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
 }
 
 .cat-btn:hover {
   translate: -2px -2px;
-  box-shadow: 5px 5px 0 var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
 }
 
 .cat-btn:active {
   translate: 1px 1px;
-  box-shadow: 2px 2px 0 var(--ink);
+  box-shadow: 1px 1px 0 var(--ink);
 }
 
 .cat-btn.is-active {
@@ -365,91 +432,50 @@ button, input, select {
 }
 
 .cat-btn .badge-num {
-  font-size: 11px;
-  padding: 2px 6px;
+  font-size: 10px;
+  padding: 1px 5px;
   background: rgba(46, 42, 24, 0.15);
   border-radius: 999px;
   font-family: var(--font-body);
 }
 
-/* ==========================================================================
-   FILTER & SEARCH CONTROLS
-   ========================================================================== */
+/* Kompakt Filtre ve Arama Paneli */
 .filter-panel {
   background: var(--sand);
   border: var(--edge);
-  border-radius: var(--radius-lg);
-  padding: 18px 20px;
-  box-shadow: var(--lift-2);
-  margin-bottom: 30px;
+  border-radius: var(--radius-md);
+  padding: 10px 16px;
+  box-shadow: var(--lift-1);
+  margin-bottom: 22px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 12px;
 }
 
 .search-box {
-  flex: 1 1 300px;
+  flex: 1 1 260px;
   display: flex;
   align-items: center;
-  height: 48px;
+  height: 38px;
   background: var(--sand-input);
   border: var(--edge);
-  border-radius: 11px;
-  padding: 0 14px;
-  gap: 10px;
+  border-radius: 9px;
+  padding: 0 12px;
+  gap: 8px;
   transition: box-shadow 0.14s ease;
 }
 
-.search-box:focus-within {
-  box-shadow: 0 0 0 3px var(--teal);
-}
-
-.search-box svg {
-  width: 18px;
-  height: 18px;
-  color: var(--ink-dim);
-  flex-shrink: 0;
-}
-
-.search-box input {
-  flex: 1;
-  min-width: 0;
-  border: none;
-  background: transparent;
-  color: var(--ink);
-  outline: none;
-  font-size: 15px;
-}
-
-.search-box input::placeholder {
-  color: #a69868;
-}
-
-.sort-group {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.sort-label {
-  font-family: var(--font-display);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink-dim);
-}
-
 .sort-select {
-  height: 46px;
-  padding: 0 14px;
+  height: 38px;
+  padding: 0 10px;
   background: var(--sand-input);
   border: var(--edge);
-  border-radius: 10px;
+  border-radius: 8px;
   color: var(--ink);
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 13px;
   cursor: pointer;
   outline: none;
 }

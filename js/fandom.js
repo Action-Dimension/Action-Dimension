@@ -91,6 +91,19 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    // Fiyat ve Para Birimi Formatlayıcı (Cash & Crystal)
+    function renderPriceHtml(item, isLarge = false) {
+        const isCrystal = item.currency === "crystal";
+        const iconSrc = isCrystal ? "./img/crystal_gem_trans.png" : "./img/cash_coin_trans.png";
+        const label = isCrystal ? "Crystal" : "Cash";
+        const iconStyle = isLarge ? "width:20px; height:15px;" : "width:17px; height:13px;";
+        return `<span class="curr-badge ${isCrystal ? 'curr-badge--crystal' : ''}">
+            <img src="${iconSrc}" class="curr-icon" style="${iconStyle}" alt="${label}">
+            ${item.price.toLocaleString('tr-TR')}
+            <small>${label}</small>
+        </span>`;
+    }
+
     // Kartları Render Et
     function renderCards() {
         const items = getFilteredItems();
@@ -159,8 +172,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     ${statBarsHtml}
                     <div class="item-card-footer">
                         <div class="price-display">
-                            <span class="price-label">Pazar Fiyatı</span>
-                            <span class="price-amount">${item.price.toLocaleString('tr-TR')} ₼</span>
+                            <span class="price-label">Fiyat</span>
+                            <span class="price-amount">${renderPriceHtml(item)}</span>
                         </div>
                         <button class="details-btn" type="button">Detaylar</button>
                     </div>
@@ -241,13 +254,17 @@ document.addEventListener("DOMContentLoaded", () => {
         // Fiyat geçmişi mini tablosu
         let priceHistoryHtml = '';
         if (item.priceHistory && item.priceHistory.length > 0) {
+            const histIcon = item.currency === 'crystal' ? './img/crystal_gem_trans.png' : './img/cash_coin_trans.png';
             priceHistoryHtml = `
                 <h4 class="modal-section-title">Zaman İçindeki Fiyat Değişimi</h4>
                 <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:8px;">
                     ${item.priceHistory.map(ph => `
                         <div style="flex:1; min-width:80px; background:var(--sand-input); border:1.5px solid var(--ink); border-radius:8px; padding:6px 10px; text-align:center;">
                             <span style="font-size:11px; color:var(--ink-dim); display:block;">${ph.date}</span>
-                            <b style="font-family:var(--font-display); font-size:14px;">${ph.price.toLocaleString('tr-TR')} ₼</b>
+                            <b style="font-family:var(--font-display); font-size:13px; display:inline-flex; align-items:center; justify-content:center; gap:3px;">
+                                <img src="${histIcon}" style="width:15px;height:12px;" alt="">
+                                ${ph.price.toLocaleString('tr-TR')}
+                            </b>
                         </div>
                     `).join('')}
                 </div>
@@ -268,9 +285,9 @@ document.addEventListener("DOMContentLoaded", () => {
             ${priceHistoryHtml}
             <div style="margin-top: 24px; padding-top: 16px; border-top: 2px dashed rgba(46,42,24,0.2); display: flex; align-items: center; justify-content: space-between;">
                 <div>
-                    <span style="font-size:11px; color:var(--ink-dim); text-transform:uppercase; font-weight:700;">Güncel Market Fiyatı</span>
-                    <div style="font-family:var(--font-display); font-size:22px; font-weight:900; color:var(--ink);">${item.price.toLocaleString('tr-TR')} ₼</div>
-                    ${item.marketRange ? `<span style="display:block; font-size:12px; color:var(--orange); font-weight:700; margin-top:2px;">Pazar İlan Aralığı: ${item.marketRange}</span>` : ''}
+                    <span style="font-size:11px; color:var(--ink-dim); text-transform:uppercase; font-weight:700;">Güncel Pazar Fiyatı</span>
+                    <div style="margin-top: 2px;">${renderPriceHtml(item, true)}</div>
+                    ${item.marketRange ? `<span style="display:block; font-size:12px; color:var(--orange); font-weight:700; margin-top:4px;">Pazar İlan Aralığı: ${item.marketRange}</span>` : ''}
                 </div>
                 <button id="view-on-chart-btn" type="button" class="cat-btn is-active" style="padding: 8px 14px;">Grafikte İncele 📈</button>
             </div>
@@ -307,11 +324,14 @@ document.addEventListener("DOMContentLoaded", () => {
     function populateChartSelect() {
         if (!chartSelect) return;
         const allItems = getAllItems().filter(i => i.priceHistory && i.priceHistory.length > 0);
-        chartSelect.innerHTML = allItems.map(item => `
-            <option value="${item.id}" ${item.id === state.selectedChartItem ? 'selected' : ''}>
-                ${item.name} (${item.price} ₼)
-            </option>
-        `).join('');
+        chartSelect.innerHTML = allItems.map(item => {
+            const curTag = item.currency === 'crystal' ? '💎 Crystal' : '🪙 Cash';
+            return `
+                <option value="${item.id}" ${item.id === state.selectedChartItem ? 'selected' : ''}>
+                    ${item.name} (${item.price.toLocaleString('tr-TR')} ${curTag})
+                </option>
+            `;
+        }).join('');
 
         chartSelect.addEventListener("change", (e) => {
             state.selectedChartItem = e.target.value;
@@ -354,12 +374,13 @@ document.addEventListener("DOMContentLoaded", () => {
         // SVG Izgara Çizgileri ve Eksenler
         let gridHtml = '';
         const gridSteps = 4;
+        const curLabel = item.currency === 'crystal' ? 'Cry' : 'Cash';
         for (let i = 0; i <= gridSteps; i++) {
             const yVal = paddingTop + (i / gridSteps) * plotHeight;
             const pVal = Math.round(maxPrice - (i / gridSteps) * priceRange);
             gridHtml += `
                 <line x1="${paddingLeft}" y1="${yVal}" x2="${width - paddingRight}" y2="${yVal}" class="chart-grid-line" />
-                <text x="${paddingLeft - 10}" y="${yVal + 4}" text-anchor="end" class="chart-axis-text">${pVal.toLocaleString('tr-TR')} ₼</text>
+                <text x="${paddingLeft - 10}" y="${yVal + 4}" text-anchor="end" class="chart-axis-text">${pVal.toLocaleString('tr-TR')} ${curLabel}</text>
             `;
         }
 
@@ -400,7 +421,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 const scaleY = rect.height / height;
 
                 if (chartTooltip) {
-                    chartTooltip.innerHTML = `<b>${p.date}</b>: ${p.price.toLocaleString('tr-TR')} ₼`;
+                    const iconImg = item.currency === 'crystal'
+                        ? '<img src="./img/crystal_gem_trans.png" style="width:14px;height:11px;vertical-align:middle;margin-right:3px;" alt="Crystal">'
+                        : '<img src="./img/cash_coin_trans.png" style="width:14px;height:12px;vertical-align:middle;margin-right:3px;" alt="Cash">';
+                    const curName = item.currency === 'crystal' ? 'Crystal' : 'Cash';
+                    chartTooltip.innerHTML = `<b>${p.date}</b>: ${iconImg} ${p.price.toLocaleString('tr-TR')} ${curName}`;
                     chartTooltip.style.left = `${p.x * scaleX}px`;
                     chartTooltip.style.top = `${p.y * scaleY}px`;
                     chartTooltip.style.opacity = "1";
@@ -439,7 +464,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <span class="rarity-pill rarity-${item.rarity || 'common'}">${item.rarityName || 'Standart'}</span>
                     </td>
                     <td>
-                        <span class="price-tag">${item.price.toLocaleString('tr-TR')} ₼</span>
+                        ${renderPriceHtml(item)}
                     </td>
                     <td>
                         <span class="trend-badge ${trendClass}">${trendIcon}${change}%</span>
