@@ -892,6 +892,626 @@ document.addEventListener("DOMContentLoaded", () => {
         setTargetEnemy("boss-commander");
     }
 
+    
+    // ==============================================================================
+    // HARİTA, MEKÂNLAR VE SATICILAR (NPC) FONKSİYONLARI
+    // ==============================================================================
+    function renderHaritaAndLocations() {
+        const locsGrid = document.getElementById("harita-locs-grid");
+        if (!locsGrid || !MINIFAL_DATABASE.mapData) return;
+
+        const locs = MINIFAL_DATABASE.mapData.locations || [];
+        locsGrid.innerHTML = locs.map(loc => {
+            const hasNpcs = loc.npcs && loc.npcs.length > 0;
+            const npcBadges = hasNpcs 
+                ? loc.npcs.map(n => `<span class="loc-npc-pill">🏷️ ${n}</span>`).join(" ")
+                : (loc.id === "loc-4" ? `<span class="loc-npc-pill" style="background:#E0F2FE; color:#0369A1; border-color:#38BDF8;">🛋️ 115 Mobilya</span>` : "");
+
+            return `
+                <div class="loc-card">
+                    <div>
+                        <div class="loc-card-top">
+                            <h4 class="loc-name">${loc.name}</h4>
+                            <span class="loc-badge">${hasNpcs ? loc.npcs.length + " Satıcı" : "Bölge"}</span>
+                        </div>
+                        <p class="loc-desc">${loc.desc}</p>
+                    </div>
+                    <div>
+                        ${npcBadges}
+                    </div>
+                </div>
+            `;
+        }).join("");
+    }
+
+    function renderVendors() {
+        const vendorsGrid = document.getElementById("vendors-grid");
+        if (!vendorsGrid || !MINIFAL_DATABASE.vendors) return;
+
+        vendorsGrid.innerHTML = MINIFAL_DATABASE.vendors.map(v => {
+            let actionBtnText = "Detayları Gör";
+            let actionAttr = "";
+
+            if (v.id === "vendor-mason") {
+                actionBtnText = "🏡 Evleri Gez & Tasarla";
+                actionAttr = 'data-action="goto-houses"';
+            } else if (v.id === "vendor-hunter") {
+                actionBtnText = "🎾 Spor & Tenis Eşyaları";
+                actionAttr = 'data-action="filter-sports"';
+            } else if (v.id === "vendor-tobias") {
+                actionBtnText = "🎪 Eğlence & Oyuncak Eşyaları";
+                actionAttr = 'data-action="filter-toys"';
+            } else if (v.id === "vendor-vincent") {
+                actionBtnText = "📦 İkinci El Pazarı";
+                actionAttr = 'data-action="filter-vintage"';
+            }
+
+            return `
+                <div class="vendor-card" id="${v.id}">
+                    <div class="vendor-avatar-wrap">
+                        <img src="${v.avatar}" alt="${v.name}" class="vendor-avatar-img">
+                        <span class="vendor-loc-tag">📍 ${v.location}</span>
+                    </div>
+                    <div class="vendor-body">
+                        <h4 class="vendor-name">${v.name}</h4>
+                        <span class="vendor-role">${v.role}</span>
+                        <div class="vendor-quote">"${v.dialogue}"</div>
+                        <span class="vendor-wares-title">Satılan Öne Çıkanlar:</span>
+                        <ul class="vendor-wares-list">
+                            ${v.itemsForSale.map(item => `<li>${item}</li>`).join("")}
+                        </ul>
+                        <button type="button" class="vendor-action-btn" ${actionAttr}>${actionBtnText}</button>
+                    </div>
+                </div>
+            `;
+        }).join("");
+
+        // Satıcı buton tıklama olayları
+        vendorsGrid.querySelectorAll(".vendor-action-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const action = btn.getAttribute("data-action");
+                if (action === "goto-houses") {
+                    const target = document.getElementById("evler-section");
+                    if (target) target.scrollIntoView({ behavior: "smooth" });
+                } else if (action === "filter-sports") {
+                    state.activeCategory = "sports";
+                    updateActiveCategoryButton("sports");
+                    renderCards();
+                    const katalog = document.getElementById("katalog");
+                    if (katalog) katalog.scrollIntoView({ behavior: "smooth" });
+                } else if (action === "filter-toys" || action === "filter-vintage") {
+                    state.activeCategory = "furniture";
+                    updateActiveCategoryButton("furniture");
+                    renderCards();
+                    const katalog = document.getElementById("katalog");
+                    if (katalog) katalog.scrollIntoView({ behavior: "smooth" });
+                }
+            });
+        });
+    }
+
+    function updateActiveCategoryButton(cat) {
+        if (!categoryNav) return;
+        categoryNav.querySelectorAll(".cat-btn").forEach(btn => {
+            if (btn.getAttribute("data-cat") === cat) {
+                btn.classList.add("is-active");
+            } else {
+                btn.classList.remove("is-active");
+            }
+        });
+    }
+
+    // ==============================================================================
+    // EMLAK VE EVLER FONKSİYONLARI
+    // ==============================================================================
+    function renderHouses() {
+        const housesGrid = document.getElementById("houses-grid");
+        if (!housesGrid || !MINIFAL_DATABASE.houses) return;
+
+        housesGrid.innerHTML = MINIFAL_DATABASE.houses.map(h => {
+            const isCrystal = h.currency === "crystal";
+            const coinIcon = isCrystal ? "./img/crystal_gem_trans.png" : "./img/cash_coin_trans.png";
+
+            return `
+                <div class="house-card" data-house-id="${h.id}">
+                    <div class="house-preview-wrap" data-blueprint-full="${h.fullCard}" title="Büyütmek için tıklayın">
+                        <img src="${h.blueprint}" alt="${h.name}" class="house-blueprint-preview">
+                        <div class="house-price-tag">
+                            <img src="${coinIcon}" style="width:16px;height:16px;object-fit:contain;" alt="">
+                            <span>${h.formattedPrice}</span>
+                        </div>
+                    </div>
+                    <div class="house-body">
+                        <h4 class="house-name">${h.name}</h4>
+                        <div class="house-rooms-pills">
+                            ${h.rooms.map(r => `<span class="room-tag">${r}</span>`).join("")}
+                        </div>
+                        <p class="house-desc">${h.description}</p>
+                        <div class="house-actions-row">
+                            <button type="button" class="btn-house-view" data-blueprint-full="${h.fullCard}">
+                                🔍 Planı Büyüt
+                            </button>
+                            <button type="button" class="btn-house-design" data-select-house="${h.id}">
+                                🛋️ Bu Evi Tasarla
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }).join("");
+
+        // Planı büyütme modal dinleyicileri
+        housesGrid.querySelectorAll("[data-blueprint-full]").forEach(el => {
+            el.addEventListener("click", () => {
+                const fullImg = el.getAttribute("data-blueprint-full");
+                if (fullImg) openHouseModal(fullImg);
+            });
+        });
+
+        // "Bu Evi Tasarla" butonları
+        housesGrid.querySelectorAll("[data-select-house]").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const houseId = btn.getAttribute("data-select-house");
+                if (window.designerSwitchRoom) {
+                    window.designerSwitchRoom(houseId);
+                }
+                const designerSec = document.getElementById("tasarimci-section");
+                if (designerSec) designerSec.scrollIntoView({ behavior: "smooth" });
+            });
+        });
+    }
+
+    function openHouseModal(imgSrc) {
+        if (!modalOverlay || !modalContent) return;
+        modalContent.innerHTML = `
+            <div style="text-align:center; padding:10px;">
+                <img src="${imgSrc}" alt="Ev Planı" style="max-width:100%; max-height:80vh; object-fit:contain; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.2);">
+                <div style="margin-top:14px;">
+                    <a href="#tasarimci-section" onclick="document.getElementById('item-modal').classList.remove('is-open')" class="btn-mason-tour" style="display:inline-block;">
+                        🛋️ Bu Evi Tasarımcıda Aç
+                    </a>
+                </div>
+            </div>
+        `;
+        modalOverlay.classList.add("is-open");
+        modalOverlay.setAttribute("aria-hidden", "false");
+    }
+
+    // ==============================================================================
+    // İNTERAKTİF EV TASARIMCISI VE ODA PLANLAYICI MANTIĞI
+    // ==============================================================================
+    function initRoomDesigner() {
+        const stage = document.getElementById("furniture-stage");
+        const viewport = document.getElementById("room-viewport");
+        const blueprintImg = document.getElementById("room-blueprint-img");
+        const roomLabel = document.getElementById("active-room-label");
+        const paletteList = document.getElementById("palette-items-list");
+        const paletteSearch = document.getElementById("palette-search");
+        const catPills = document.getElementById("palette-cat-pills");
+        const counterSpan = document.getElementById("palette-counter");
+
+        const cashTotalSpan = document.getElementById("designer-cash-total");
+        const crystalTotalSpan = document.getElementById("designer-crystal-total");
+        const countSpan = document.getElementById("designer-item-count");
+
+        const roomButtons = document.querySelectorAll(".room-btn");
+        const clearBtn = document.getElementById("btn-clear-room");
+        const sampleBtn = document.getElementById("btn-sample-layout");
+        const saveBtn = document.getElementById("btn-save-layout");
+        const loadBtn = document.getElementById("btn-load-layout");
+
+        if (!stage || !viewport) return;
+
+        // Tasarımcı Durumu (Designer State)
+        const designerState = {
+            activeRoom: "house-kucuk",
+            activePaletteCat: "all",
+            paletteQuery: "",
+            placedItems: [], // { id, furnId, x, y, flipped, zIndex }
+            selectedItem: null,
+            draggedItem: null,
+            dragOffset: { x: 0, y: 0 },
+            nextZ: 10
+        };
+
+        const roomBlueprints = {
+            "house-kucuk": { name: "Küçük Oda", src: "./img/houses/house_kucuk_oda.png" },
+            "house-orta": { name: "Orta Boy Oda", src: "./img/houses/house_orta_oda.png" },
+            "house-buyuk": { name: "Büyük Oda", src: "./img/houses/house_buyuk_oda.png" },
+            "house-teras": { name: "Teras Katı", src: "./img/houses/house_teras_kati.png" }
+        };
+
+        // Dışarıdan oda değişimini çağırmak için global referans
+        window.designerSwitchRoom = function(roomId) {
+            if (!roomBlueprints[roomId]) return;
+            designerState.activeRoom = roomId;
+
+            roomButtons.forEach(b => {
+                if (b.getAttribute("data-room") === roomId) b.classList.add("active");
+                else b.classList.remove("active");
+            });
+
+            blueprintImg.src = roomBlueprints[roomId].src;
+            if (roomLabel) roomLabel.textContent = `Seçili Oda: ${roomBlueprints[roomId].name}`;
+        };
+
+        // Oda Seçici Butonları
+        roomButtons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                const r = btn.getAttribute("data-room");
+                window.designerSwitchRoom(r);
+            });
+        });
+
+        // Mobilya Paletini Render Et
+        function renderPalette() {
+            let furnList = MINIFAL_DATABASE.furniture || [];
+
+            // Kategori filtreleme
+            if (designerState.activePaletteCat !== "all") {
+                furnList = furnList.filter(f => f.furnCategory === designerState.activePaletteCat);
+            }
+
+            // Arama filtreleme
+            if (designerState.paletteQuery.trim()) {
+                const q = designerState.paletteQuery.toLowerCase();
+                furnList = furnList.filter(f =>
+                    f.name.toLowerCase().includes(q) ||
+                    (f.trName && f.trName.toLowerCase().includes(q)) ||
+                    (f.subType && f.subType.toLowerCase().includes(q))
+                );
+            }
+
+            if (counterSpan) counterSpan.textContent = `${furnList.length} Eşya`;
+
+            if (furnList.length === 0) {
+                paletteList.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:30px;color:var(--ink-dim);font-size:12px;">Eşya bulunamadı.</div>`;
+                return;
+            }
+
+            paletteList.innerHTML = furnList.map(item => {
+                const isCrystal = item.currency === "crystal";
+                const coin = isCrystal ? "./img/crystal_gem_trans.png" : "./img/cash_coin_trans.png";
+                return `
+                    <div class="palette-item-card" data-furn-id="${item.id}" title="${item.name} (${item.trName || ""})">
+                        <img src="${item.image}" alt="${item.name}" class="palette-item-thumb">
+                        <span class="palette-item-name">${item.name}</span>
+                        <span class="palette-item-trname">${item.trName || item.subType}</span>
+                        <span class="palette-item-price">
+                            <img src="${coin}" style="width:13px;height:13px;object-fit:contain;" alt="">
+                            ${item.price.toLocaleString("tr-TR")}
+                        </span>
+                        <button type="button" class="palette-add-btn" data-add-furn="${item.id}">+ Ekle</button>
+                    </div>
+                `;
+            }).join("");
+
+            // Tıklayınca odaya ekleme
+            paletteList.querySelectorAll("[data-add-furn]").forEach(btn => {
+                btn.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    const fId = btn.getAttribute("data-add-furn");
+                    addFurnitureToStage(fId);
+                });
+            });
+
+            // Kartın kendisine tıklayınca da ekleme
+            paletteList.querySelectorAll(".palette-item-card").forEach(card => {
+                card.addEventListener("click", () => {
+                    const fId = card.getAttribute("data-furn-id");
+                    addFurnitureToStage(fId);
+                });
+            });
+        }
+
+        // Kategori Hapları Dinleyicisi
+        if (catPills) {
+            catPills.querySelectorAll(".p-cat-btn").forEach(btn => {
+                btn.addEventListener("click", () => {
+                    catPills.querySelectorAll(".p-cat-btn").forEach(b => b.classList.remove("active"));
+                    btn.classList.add("active");
+                    designerState.activePaletteCat = btn.getAttribute("data-pcat");
+                    renderPalette();
+                });
+            });
+        }
+
+        // Palet Arama Girişi
+        if (paletteSearch) {
+            paletteSearch.addEventListener("input", (e) => {
+                designerState.paletteQuery = e.target.value;
+                renderPalette();
+            });
+        }
+
+        // Odaya Mobilya Ekle
+        function addFurnitureToStage(furnId, customX = null, customY = null, flipped = false) {
+            const furn = (MINIFAL_DATABASE.furniture || []).find(f => f.id === furnId);
+            if (!furn) return;
+
+            const stageRect = stage.getBoundingClientRect();
+            const defaultX = customX !== null ? customX : Math.round(stageRect.width / 2 - 35 + (Math.random() * 40 - 20));
+            const defaultY = customY !== null ? customY : Math.round(stageRect.height / 2 - 35 + (Math.random() * 40 - 20));
+
+            const instanceId = "placed-" + Date.now() + "-" + Math.floor(Math.random() * 1000);
+            designerState.nextZ += 1;
+
+            const placedObj = {
+                id: instanceId,
+                furnId: furn.id,
+                name: furn.name,
+                trName: furn.trName,
+                price: furn.price,
+                currency: furn.currency,
+                image: furn.image,
+                x: defaultX,
+                y: defaultY,
+                flipped: flipped,
+                zIndex: designerState.nextZ
+            };
+
+            designerState.placedItems.push(placedObj);
+            renderPlacedItemDom(placedObj);
+            updateBudget();
+            selectItem(instanceId);
+        }
+
+        // Yerleştirilen Eşyanın DOM Elemanını Oluştur
+        function renderPlacedItemDom(item) {
+            const el = document.createElement("div");
+            el.className = "placed-item";
+            el.id = item.id;
+            el.style.left = `${item.x}px`;
+            el.style.top = `${item.y}px`;
+            el.style.zIndex = item.zIndex;
+            el.style.transform = item.flipped ? "scaleX(-1)" : "none";
+
+            el.innerHTML = `
+                <div class="placed-item-gizmo">
+                    <button type="button" class="gizmo-btn gizmo-btn--flip" title="Döndür / Çevir">🔄</button>
+                    <button type="button" class="gizmo-btn gizmo-btn--up" title="Öne Getir">⬆️</button>
+                    <button type="button" class="gizmo-btn gizmo-btn--down" title="Arkaya Gönder">⬇️</button>
+                    <button type="button" class="gizmo-btn gizmo-btn--del" title="Sil">🗑️</button>
+                </div>
+                <img src="${item.image}" alt="${item.name}">
+            `;
+
+            // Gizmo Aksiyonları
+            const flipBtn = el.querySelector(".gizmo-btn--flip");
+            const upBtn = el.querySelector(".gizmo-btn--up");
+            const downBtn = el.querySelector(".gizmo-btn--down");
+            const delBtn = el.querySelector(".gizmo-btn--del");
+
+            flipBtn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                item.flipped = !item.flipped;
+                el.style.transform = item.flipped ? "scaleX(-1)" : "none";
+            });
+
+            upBtn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                designerState.nextZ += 1;
+                item.zIndex = designerState.nextZ;
+                el.style.zIndex = item.zIndex;
+            });
+
+            downBtn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                item.zIndex = Math.max(1, item.zIndex - 1);
+                el.style.zIndex = item.zIndex;
+            });
+
+            delBtn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                removePlacedItem(item.id);
+            });
+
+            // Tıklama ve Sürükleme Başlatma
+            el.addEventListener("pointerdown", (e) => {
+                // Gizmo butonlarına tıklandıysa sürükleme yapma
+                if (e.target.closest(".placed-item-gizmo")) return;
+                e.stopPropagation();
+
+                selectItem(item.id);
+                designerState.draggedItem = item;
+                const rect = el.getBoundingClientRect();
+                designerState.dragOffset = {
+                    x: e.clientX - rect.left,
+                    y: e.clientY - rect.top
+                };
+
+                el.setPointerCapture(e.pointerId);
+            });
+
+            el.addEventListener("pointermove", (e) => {
+                if (designerState.draggedItem && designerState.draggedItem.id === item.id) {
+                    const stageRect = stage.getBoundingClientRect();
+                    let newX = e.clientX - stageRect.left - designerState.dragOffset.x;
+                    let newY = e.clientY - stageRect.top - designerState.dragOffset.y;
+
+                    // Tuval sınırları
+                    newX = Math.max(0, Math.min(newX, stageRect.width - 50));
+                    newY = Math.max(0, Math.min(newY, stageRect.height - 50));
+
+                    item.x = Math.round(newX);
+                    item.y = Math.round(newY);
+
+                    el.style.left = `${item.x}px`;
+                    el.style.top = `${item.y}px`;
+                }
+            });
+
+            el.addEventListener("pointerup", (e) => {
+                if (designerState.draggedItem && designerState.draggedItem.id === item.id) {
+                    designerState.draggedItem = null;
+                    try { el.releasePointerCapture(e.pointerId); } catch(err) {}
+                }
+            });
+
+            stage.appendChild(el);
+        }
+
+        function selectItem(instanceId) {
+            designerState.selectedItem = instanceId;
+            stage.querySelectorAll(".placed-item").forEach(el => {
+                if (el.id === instanceId) el.classList.add("is-selected");
+                else el.classList.remove("is-selected");
+            });
+        }
+
+        function removePlacedItem(instanceId) {
+            const idx = designerState.placedItems.findIndex(i => i.id === instanceId);
+            if (idx !== -1) {
+                designerState.placedItems.splice(idx, 1);
+            }
+            const dom = document.getElementById(instanceId);
+            if (dom) dom.remove();
+            if (designerState.selectedItem === instanceId) designerState.selectedItem = null;
+            updateBudget();
+        }
+
+        // Sahneye boş tıklanınca seçimi kaldır
+        viewport.addEventListener("pointerdown", (e) => {
+            if (!e.target.closest(".placed-item")) {
+                designerState.selectedItem = null;
+                stage.querySelectorAll(".placed-item").forEach(el => el.classList.remove("is-selected"));
+            }
+        });
+
+        // Bütçe Hesaplaması
+        function updateBudget() {
+            let totalCash = 0;
+            let totalCrystal = 0;
+
+            designerState.placedItems.forEach(item => {
+                if (item.currency === "crystal") {
+                    totalCrystal += item.price;
+                } else {
+                    totalCash += item.price;
+                }
+            });
+
+            if (cashTotalSpan) cashTotalSpan.textContent = `${totalCash.toLocaleString("tr-TR")} Cash`;
+            if (crystalTotalSpan) crystalTotalSpan.textContent = `${totalCrystal.toLocaleString("tr-TR")} Crystal`;
+            if (countSpan) countSpan.textContent = `${designerState.placedItems.length} Eşya`;
+        }
+
+        // Temizle Butonu
+        if (clearBtn) {
+            clearBtn.addEventListener("click", () => {
+                if (designerState.placedItems.length === 0) return;
+                if (confirm("Odadaki tüm mobilyaları kaldırmak istediğinize emin misiniz?")) {
+                    designerState.placedItems = [];
+                    designerState.selectedItem = null;
+                    stage.innerHTML = "";
+                    updateBudget();
+                }
+            });
+        }
+
+        // Örnek Yerleşim Butonu
+        if (sampleBtn) {
+            sampleBtn.addEventListener("click", () => {
+                stage.innerHTML = "";
+                designerState.placedItems = [];
+                designerState.selectedItem = null;
+
+                const stageRect = stage.getBoundingClientRect();
+                const cx = stageRect.width || 600;
+                const cy = stageRect.height || 500;
+
+                // Seçili odaya göre zengin örnek yerleşim
+                if (designerState.activeRoom === "house-kucuk") {
+                    addFurnitureToStage("furn-single-bed", cx * 0.18, cy * 0.58);
+                    addFurnitureToStage("furn-small-nightstand", cx * 0.36, cy * 0.62);
+                    addFurnitureToStage("furn-classic-armchair", cx * 0.55, cy * 0.45);
+                    addFurnitureToStage("furn-32-lcd-tv", cx * 0.65, cy * 0.28);
+                    addFurnitureToStage("furn-fridge", cx * 0.72, cy * 0.52);
+                    addFurnitureToStage("furn-simple-large-rug", cx * 0.38, cy * 0.42);
+                    addFurnitureToStage("furn-desk-lamp", cx * 0.38, cy * 0.55);
+                } else if (designerState.activeRoom === "house-orta") {
+                    addFurnitureToStage("furn-double-bed", cx * 0.15, cy * 0.55);
+                    addFurnitureToStage("furn-nightstand-tray", cx * 0.32, cy * 0.58);
+                    addFurnitureToStage("furn-classic-large-couch", cx * 0.48, cy * 0.38);
+                    addFurnitureToStage("furn-double-coffee-table", cx * 0.52, cy * 0.50);
+                    addFurnitureToStage("furn-42-lcd-tv", cx * 0.68, cy * 0.25);
+                    addFurnitureToStage("furn-audio-system", cx * 0.78, cy * 0.28);
+                    addFurnitureToStage("furn-bookshelves", cx * 0.35, cy * 0.22);
+                    addFurnitureToStage("furn-thin-floor-lamp", cx * 0.45, cy * 0.25);
+                } else if (designerState.activeRoom === "house-buyuk") {
+                    addFurnitureToStage("furn-double-bed", cx * 0.16, cy * 0.45);
+                    addFurnitureToStage("furn-large-wardrobe", cx * 0.08, cy * 0.30);
+                    addFurnitureToStage("furn-fancy-large-couch", cx * 0.42, cy * 0.35);
+                    addFurnitureToStage("furn-fancy-armchair", cx * 0.34, cy * 0.52);
+                    addFurnitureToStage("furn-large-dinner-table", cx * 0.62, cy * 0.48);
+                    addFurnitureToStage("furn-52-lcd-tv", cx * 0.58, cy * 0.22);
+                    addFurnitureToStage("furn-high-speaker", cx * 0.68, cy * 0.22);
+                    addFurnitureToStage("furn-striped-med-rug", cx * 0.44, cy * 0.45);
+                    addFurnitureToStage("furn-deck-chair", cx * 0.12, cy * 0.68);
+                } else {
+                    // Teras Katı
+                    addFurnitureToStage("furn-double-bed", cx * 0.18, cy * 0.32);
+                    addFurnitureToStage("furn-transparent-large-couch", cx * 0.45, cy * 0.35);
+                    addFurnitureToStage("furn-transparent-armchair", cx * 0.38, cy * 0.50);
+                    addFurnitureToStage("furn-piano", cx * 0.70, cy * 0.25);
+                    addFurnitureToStage("furn-52-lcd-tv", cx * 0.55, cy * 0.18);
+                    addFurnitureToStage("furn-billiards-table", cx * 0.68, cy * 0.55);
+                    addFurnitureToStage("furn-small-fountain", cx * 0.42, cy * 0.68);
+                    addFurnitureToStage("furn-trampoline", cx * 0.22, cy * 0.65);
+                }
+            });
+        }
+
+        // Tasarımı Kaydet (LocalStorage)
+        if (saveBtn) {
+            saveBtn.addEventListener("click", () => {
+                const savePayload = {
+                    room: designerState.activeRoom,
+                    items: designerState.placedItems.map(i => ({
+                        furnId: i.furnId,
+                        x: i.x,
+                        y: i.y,
+                        flipped: i.flipped,
+                        zIndex: i.zIndex
+                    }))
+                };
+                localStorage.setItem("minifal_room_design", JSON.stringify(savePayload));
+                alert("✨ Tasarımınız tarayıcınıza başarıyla kaydedildi!");
+            });
+        }
+
+        // Kayıtlı Tasarımı Yükle
+        if (loadBtn) {
+            loadBtn.addEventListener("click", () => {
+                const raw = localStorage.getItem("minifal_room_design");
+                if (!raw) {
+                    alert("Kayıtlı bir tasarım bulunamadı. Önce bir tasarım kaydedin.");
+                    return;
+                }
+                try {
+                    const data = JSON.parse(raw);
+                    if (data.room) window.designerSwitchRoom(data.room);
+
+                    stage.innerHTML = "";
+                    designerState.placedItems = [];
+                    designerState.selectedItem = null;
+
+                    if (Array.isArray(data.items)) {
+                        data.items.forEach(it => {
+                            addFurnitureToStage(it.furnId, it.x, it.y, it.flipped);
+                        });
+                    }
+                    alert("📂 Kayıtlı tasarımınız başarıyla yüklendi!");
+                } catch(err) {
+                    alert("Tasarım yüklenirken bir hata oluştu.");
+                }
+            });
+        }
+
+        // İlk palet renderı
+        renderPalette();
+    }
+
     // Pencere yeniden boyutlandırıldığında grafiği güncelle
     window.addEventListener("resize", () => {
         renderChart();
@@ -903,4 +1523,8 @@ document.addEventListener("DOMContentLoaded", () => {
     renderMarketTable();
     renderCards();
     initBossCalculator();
+    renderHaritaAndLocations();
+    renderVendors();
+    renderHouses();
+    initRoomDesigner();
 });

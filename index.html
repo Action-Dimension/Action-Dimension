@@ -57,7 +57,10 @@
             <nav class="topnav" aria-label="Sayfa bölümleri">
                 <a href="#katalog" class="nav-link active">Katalog</a>
                 <a href="#market-section" class="nav-link">Market & Fiyatlar</a>
-                <a href="#boss-section" class="nav-link">Cyborg & Boss Rehberi</a>
+                <a href="#harita-section" class="nav-link">Harita & Satıcılar</a>
+                <a href="#evler-section" class="nav-link">Emlak & Evler</a>
+                <a href="#tasarimci-section" class="nav-link">Ev Tasarımcısı</a>
+                <a href="#boss-section" class="nav-link">Cyborg & Boss</a>
                 <a href="#falling-rate-section" class="nav-link">Falling Rate</a>
                 <a href="./anasayfa.html" class="nav-link">Ana Sayfa</a>
                 <a href="./hikayemiz.html" class="nav-link">Hikâyemiz</a>
@@ -133,7 +136,7 @@
             <button type="button" class="cat-btn" data-cat="armor">🛡️ Zırhlar <span class="badge-num">10</span></button>
             <button type="button" class="cat-btn" data-cat="sports">🎾 Tenis <span class="badge-num">3</span></button>
             <button type="button" class="cat-btn" data-cat="masks">🎭 Maskeler & Kıyafet <span class="badge-num">465</span></button>
-            <button type="button" class="cat-btn" data-cat="furniture">🛋️ Mobilyalar & Ev <span class="badge-num">116</span></button>
+            <button type="button" class="cat-btn" data-cat="furniture">🛋️ Mobilyalar & Ev <span class="badge-num">115</span></button>
             <button type="button" class="cat-btn" data-cat="potions">🧪 Potionlar <span class="badge-num">7</span></button>
             <button type="button" class="cat-btn" data-cat="market">📈 Market Fiyatları</button>
             <button type="button" class="cat-btn" data-cat="drops">🎯 Falling Rate (Pasif)</button>
@@ -220,6 +223,278 @@
                         <!-- JS dinamik satırları buraya ekler -->
                     </tbody>
                 </table>
+            </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- HARİTA VE SATICILAR / MEKÂNLAR BÖLÜMÜ -->
+        <!-- ================================================================= -->
+        <section class="harita-section" id="harita-section">
+            <div class="harita-window-box">
+                <!-- Üst Kahverengi Minifal Harita Barı -->
+                <div class="harita-top-banner">
+                    <div class="harita-title-left">
+                        <span class="harita-map-icon">🗺️</span>
+                        <h2 class="harita-main-title">HARİTA</h2>
+                    </div>
+                    <div class="harita-top-right">
+                        <div class="harita-online-badge">
+                            <span class="online-users-icon">👥</span>
+                            <span>Toplam çevrimiçi: <b>23</b></span>
+                        </div>
+                        <span class="harita-close-badge">✕</span>
+                    </div>
+                </div>
+
+                <div class="harita-inner-body">
+                    <!-- OYUNLAR (4) -->
+                    <div class="harita-group-block">
+                        <div class="harita-group-title">
+                            <span class="group-icon">🎮</span> Oyunlar (4)
+                        </div>
+                        <div class="harita-games-grid">
+                            <div class="harita-game-card">
+                                <div class="game-thumb-box">
+                                    <img src="./img/items/paintball_modkit_orange_trans.png" alt="Paintball" class="game-thumb-icon">
+                                    <span class="game-status-tag game-status--active">7 Oyuncu</span>
+                                </div>
+                                <div class="game-info-col">
+                                    <h4 class="game-title">Paintball</h4>
+                                    <p class="game-desc">Takım maçları, bayrak kapmaca ve Cyborg Boss savunma arenası.</p>
+                                </div>
+                            </div>
+
+                            <div class="harita-game-card">
+                                <div class="game-thumb-box">
+                                    <img src="./img/items/racket_of_speed_trans.png" alt="Tenis" class="game-thumb-icon">
+                                    <span class="game-status-tag game-status--open">Kortlar Açık</span>
+                                </div>
+                                <div class="game-info-col">
+                                    <h4 class="game-title">Tenis</h4>
+                                    <p class="game-desc">Hunter'ın raketleriyle tekler ve çiftler kort karşılaşmaları.</p>
+                                </div>
+                            </div>
+
+                            <div class="harita-game-card">
+                                <div class="game-thumb-box">
+                                    <span class="game-thumb-emoji">⚽</span>
+                                    <span class="game-status-tag game-status--open">Saha Açık</span>
+                                </div>
+                                <div class="game-info-col">
+                                    <h4 class="game-title">Futbol</h4>
+                                    <p class="game-desc">Stadyumda hızlı tempolu yeşil saha maçları.</p>
+                                </div>
+                            </div>
+
+                            <div class="harita-game-card harita-game-card--soon">
+                                <div class="game-thumb-box">
+                                    <span class="game-thumb-emoji">🏎️</span>
+                                    <span class="game-status-tag game-status--soon">Yakında</span>
+                                </div>
+                                <div class="game-info-col">
+                                    <h4 class="game-title">Yarış</h4>
+                                    <p class="game-desc">Minifal sokaklarında rekabetçi araç yarışları.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MEKÂNLAR (10) -->
+                    <div class="harita-group-block">
+                        <div class="harita-group-title">
+                            <span class="group-icon">📍</span> Mekânlar (10)
+                        </div>
+                        <div class="harita-locs-grid" id="harita-locs-grid">
+                            <!-- JS dinamik olarak 10 mekânı yerleştirecek -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SATICILAR VE NPC REHBERİ -->
+            <div class="vendors-container">
+                <div class="vendors-header">
+                    <div>
+                        <span class="section-eyebrow">🛍️ Şehir Esnafı & Satıcı Rehberi</span>
+                        <h3 class="vendors-section-title">Minifal NPC Satıcıları</h3>
+                        <p class="vendors-section-desc">Şehrin farklı noktalarındaki dükkan sahipleri, uzmanlık alanları ve sattıkları teçhizatlar.</p>
+                    </div>
+                    <div class="vendors-counter-pill">
+                        <b>4 Aktif Satıcı</b>
+                    </div>
+                </div>
+
+                <div class="vendors-grid" id="vendors-grid">
+                    <!-- JS dinamik satıcı kartlarını buraya yerleştirecek -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- EMLAK VE EVLER BÖLÜMÜ -->
+        <!-- ================================================================= -->
+        <section class="evler-section" id="evler-section">
+            <div class="mason-dialog-card">
+                <div class="mason-dialog-avatar">
+                    <img src="./img/npcs/npc_mason.png" alt="Mason - Emlak" class="mason-img">
+                </div>
+                <div class="mason-dialog-content">
+                    <div class="mason-name-row">
+                        <span class="mason-name-badge">Mason - Emlak</span>
+                        <span class="mason-loc-badge">📍 Rezidans</span>
+                    </div>
+                    <p class="mason-quote">
+                        "Merhaba vatandaş. Şu an 4 oda seçeneğimiz var. Bir tur atıp seçeneklere göz at."
+                    </p>
+                    <div class="mason-dialog-actions">
+                        <a href="#tasarimci-section" class="btn-mason-tour">🛋️ Ev Tasarımcısını Aç & Mobilyaları Yerleştir</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="houses-header">
+                <div>
+                    <span class="section-eyebrow">🏡 Minifal Emlak Ajansı</span>
+                    <h3 class="houses-title">Oda ve Konut Seçenekleri</h3>
+                    <p class="houses-desc">Kompakt stüdyolardan lüks teras katı penthouse'lara kadar Minifal ev planları.</p>
+                </div>
+            </div>
+
+            <div class="houses-grid" id="houses-grid">
+                <!-- JS dinamik 4 evi buraya yerleştirecek -->
+            </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- İNTERAKTİF EV TASARIMCISI VE ODA PLANLAYICI -->
+        <!-- ================================================================= -->
+        <section class="tasarimci-section" id="tasarimci-section">
+            <div class="tasarimci-header">
+                <div class="tasarimci-title-area">
+                    <div class="tasarimci-tag-row">
+                        <span class="badge-designer">✨ Yeni Özellik</span>
+                        <span class="badge-isometric">İzometrik 3D Yerleşim</span>
+                    </div>
+                    <h2 class="tasarimci-title">Minifal Ev Tasarımcısı & Oda Planlayıcı</h2>
+                    <p class="tasarimci-lead">
+                        Evinizi seçin, 115 orijinal Minifal mobilyasını odanıza sürükleyip bırakın, bütçenizi gerçek zamanlı hesaplayın!
+                    </p>
+                </div>
+
+                <!-- Bütçe Paneli -->
+                <div class="designer-budget-panel">
+                    <div class="budget-chip">
+                        <img src="./img/cash_coin_trans.png" alt="Cash" class="budget-icon">
+                        <div>
+                            <span class="budget-label">Toplam Cash</span>
+                            <span class="budget-val" id="designer-cash-total">0 Cash</span>
+                        </div>
+                    </div>
+                    <div class="budget-chip budget-chip--crystal">
+                        <img src="./img/crystal_gem_trans.png" alt="Crystal" class="budget-icon">
+                        <div>
+                            <span class="budget-label">Toplam Crystal</span>
+                            <span class="budget-val" id="designer-crystal-total">0 Crystal</span>
+                        </div>
+                    </div>
+                    <div class="budget-chip budget-chip--items">
+                        <span class="budget-count-icon">🛋️</span>
+                        <div>
+                            <span class="budget-label">Yerleştirilen</span>
+                            <span class="budget-val" id="designer-item-count">0 Eşya</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tasarımcı Arayüzü: Oda Seçici & Araç Çubuğu -->
+            <div class="designer-toolbar">
+                <div class="room-selector-group" role="tablist" aria-label="Oda Tipi Seçimi">
+                    <button type="button" class="room-btn active" data-room="house-kucuk">
+                        Küçük Oda (1.000 Cash)
+                    </button>
+                    <button type="button" class="room-btn" data-room="house-orta">
+                        Orta Boy Oda (5.000 Cash)
+                    </button>
+                    <button type="button" class="room-btn" data-room="house-buyuk">
+                        Büyük Oda (15.000 Cash)
+                    </button>
+                    <button type="button" class="room-btn" data-room="house-teras">
+                        Teras Katı (125 Crystal)
+                    </button>
+                </div>
+
+                <div class="designer-action-group">
+                    <button type="button" class="btn-designer-action" id="btn-sample-layout" title="Örnek mobilya yerleşimi yükler">
+                        💡 Örnek Yerleşim
+                    </button>
+                    <button type="button" class="btn-designer-action btn-designer-action--danger" id="btn-clear-room" title="Odadaki tüm mobilyaları kaldırır">
+                        🗑️ Temizle
+                    </button>
+                    <button type="button" class="btn-designer-action" id="btn-save-layout" title="Tasarımınızı tarayıcıya kaydeder">
+                        💾 Tasarımı Kaydet
+                    </button>
+                    <button type="button" class="btn-designer-action" id="btn-load-layout" title="Kayıtlı tasarımınızı geri yükler">
+                        📂 Yükle
+                    </button>
+                </div>
+            </div>
+
+            <!-- Ana Çalışma Alanı (İzometrik Sahne + Mobilya Çekmecesi) -->
+            <div class="designer-workspace">
+                <!-- Sol / Merkez: İzometrik Oda Tuvali -->
+                <div class="room-canvas-container" id="room-canvas-container">
+                    <div class="room-canvas-viewport" id="room-viewport">
+                        <!-- Oda Planı Arka Planı -->
+                        <div class="room-plan-layer" id="room-plan-layer">
+                            <img src="./img/houses/house_kucuk_oda.png" alt="Oda Planı" id="room-blueprint-img" class="room-blueprint-img">
+                            <div class="room-grid-overlay" aria-hidden="true"></div>
+                        </div>
+
+                        <!-- Yerleştirilen Mobilyalar Katmanı -->
+                        <div class="room-furniture-stage" id="furniture-stage">
+                            <!-- JS ile mobilyalar buraya interaktif eklenir -->
+                        </div>
+                    </div>
+
+                    <!-- Tuval Altı Bilgi & Kısayol İpuçları -->
+                    <div class="canvas-hint-bar">
+                        <span>💡 <b>İpucu:</b> Mobilyaları sürükleyerek taşıyabilir, üzerlerine tıklayarak <b>Döndürebilir (Çevirebilir)</b> veya <b>Silebilirsiniz</b>.</span>
+                        <span class="active-room-indicator" id="active-room-label">Seçili Oda: Küçük Oda</span>
+                    </div>
+                </div>
+
+                <!-- Sağ: Mobilya Çekmecesi ve Kataloğu -->
+                <aside class="designer-palette-sidebar">
+                    <div class="palette-header">
+                        <div class="palette-title-row">
+                            <h4 class="palette-title">Mobilya Paleti</h4>
+                            <span class="palette-counter" id="palette-counter">115 Eşya</span>
+                        </div>
+
+                        <!-- Palet İçi Arama -->
+                        <div class="palette-search-box">
+                            <input type="text" id="palette-search" placeholder="Mobilya ara (örn: koltuk, tv, masa)...">
+                        </div>
+
+                        <!-- Kategori Hapları -->
+                        <div class="palette-category-pills" id="palette-cat-pills">
+                            <button type="button" class="p-cat-btn active" data-pcat="all">Tümü (115)</button>
+                            <button type="button" class="p-cat-btn" data-pcat="oturma">🛋️ Koltuk</button>
+                            <button type="button" class="p-cat-btn" data-pcat="yatak-dolap">🛏️ Yatak & Dolap</button>
+                            <button type="button" class="p-cat-btn" data-pcat="masa">🪑 Masa & Sehpa</button>
+                            <button type="button" class="p-cat-btn" data-pcat="elektronik">📺 Elektronik</button>
+                            <button type="button" class="p-cat-btn" data-pcat="aydinlatma">💡 Aydınlatma</button>
+                            <button type="button" class="p-cat-btn" data-pcat="mutfak-banyo">🍳 Mutfak/Banyo</button>
+                            <button type="button" class="p-cat-btn" data-pcat="dekor-eglence">🎯 Dekor</button>
+                        </div>
+                    </div>
+
+                    <!-- Mobilya Listesi Çekmecesi -->
+                    <div class="palette-items-list" id="palette-items-list">
+                        <!-- JS dinamik olarak mobilyaları buraya listeler -->
+                    </div>
+                </aside>
             </div>
         </section>
 
