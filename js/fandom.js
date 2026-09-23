@@ -191,127 +191,305 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Modal açma
+    // Modal açma (Bire Bir Minifal Oyun İçi "EŞYA AYRINTILARI" Düzeni)
     function openItemModal(itemId) {
         const item = getAllItems().find(i => i.id === itemId);
         if (!item) return;
 
-        const icon = getItemIcon(item);
-        const rarityClass = `rarity-${item.rarity || 'common'}`;
+        state.activeModalItem = item;
 
-        let detailsSpecificHtml = '';
-        if (item.category === "weapons") {
-            detailsSpecificHtml = `
-                <h4 class="modal-section-title">Silah İstatistikleri</h4>
-                <div class="modal-stat-grid">
-                    <div class="modal-stat-item"><span class="modal-stat-label">Hasar</span><span class="modal-stat-value">${item.stats.damage} Hasar</span></div>
-                    <div class="modal-stat-item"><span class="modal-stat-label">Atış Hızı</span><span class="modal-stat-value">${item.stats.fireRate}</span></div>
-                    <div class="modal-stat-item"><span class="modal-stat-label">Menzil</span><span class="modal-stat-value">${item.stats.range} m</span></div>
-                    <div class="modal-stat-item"><span class="modal-stat-label">Şarjör</span><span class="modal-stat-value">${item.stats.capacity}</span></div>
-                    <div class="modal-stat-item"><span class="modal-stat-label">Modkit Yuvası</span><span class="modal-stat-value" style="color:var(--teal);">${item.modkitSlots} Yuva</span></div>
-                </div>
-                ${item.combatBenchmark ? `<p style="font-size:12.5px; color:var(--orange); font-weight:800; margin:8px 0 0;">⚔️ Savaş Notu: ${item.combatBenchmark}</p>` : ''}
-                <h4 class="modal-section-title">Uyumlu Modkitler</h4>
-                <p style="font-size: 13.5px; color: var(--ink); margin: 0;">${item.compatibleModkits ? item.compatibleModkits.join(", ") : "Standart Modkitler"}</p>
-            `;
-        } else if (item.category === "modkits") {
-            detailsSpecificHtml = `
-                <h4 class="modal-section-title">Modkit Etkileri</h4>
-                <div class="modal-stat-grid">
-                    <div class="modal-stat-item"><span class="modal-stat-label">Etki</span><span class="modal-stat-value" style="color:var(--orange);">${item.effects}</span></div>
-                    <div class="modal-stat-item"><span class="modal-stat-label">Yuva İhtiyacı</span><span class="modal-stat-value">${item.slotCost}</span></div>
-                </div>
-                <h4 class="modal-section-title">Uyumlu Silah Tipleri</h4>
-                <p style="font-size: 13.5px; color: var(--ink); margin: 0;">${item.compatibility}</p>
-            `;
-        } else if (item.category === "armor") {
-            detailsSpecificHtml = `
-                <h4 class="modal-section-title">Zırh Değerleri</h4>
-                <div class="modal-stat-grid">
-                    <div class="modal-stat-item"><span class="modal-stat-label">Zırh Koruma</span><span class="modal-stat-value">${item.defense}</span></div>
-                    <div class="modal-stat-item"><span class="modal-stat-label">Hız Değişimi</span><span class="modal-stat-value">${item.speedModifier}</span></div>
-                    <div class="modal-stat-item"><span class="modal-stat-label">Dayanıklılık</span><span class="modal-stat-value">${item.durability} DP</span></div>
-                </div>
-            `;
-        } else if (item.category === "furniture") {
-            detailsSpecificHtml = `
-                <h4 class="modal-section-title">Ev Düzenleme Bilgisi</h4>
-                <div class="modal-stat-grid">
-                    <div class="modal-stat-item"><span class="modal-stat-label">Döndürme</span><span class="modal-stat-value">${item.rotatable}</span></div>
-                    <div class="modal-stat-item"><span class="modal-stat-label">Kaynak</span><span class="modal-stat-value">${item.source}</span></div>
-                </div>
-                <h4 class="modal-section-title">Renk Seçenekleri</h4>
-                <p style="font-size: 13.5px; color: var(--ink): margin: 0;">${item.colorOptions ? item.colorOptions.join(", ") : "Standart Renk"}</p>
-            `;
-        } else if (item.category === "potions") {
-            detailsSpecificHtml = `
-                <h4 class="modal-section-title">İksir Etkisi</h4>
-                <div class="modal-stat-grid">
-                    <div class="modal-stat-item"><span class="modal-stat-label">Etki Süresi</span><span class="modal-stat-value">${item.duration}</span></div>
-                    <div class="modal-stat-item"><span class="modal-stat-label">Karakter Bonusu</span><span class="modal-stat-value" style="color:var(--teal);">${item.effect}</span></div>
-                </div>
-            `;
+        // Fiyat ve Para Birimi
+        const isCrystal = item.currency === "crystal";
+        const coinIconSrc = isCrystal ? "./img/crystal_gem_trans.png" : "./img/cash_coin_trans.png";
+        const currencyName = isCrystal ? "Crystal" : "Cash";
+        const formattedPrice = item.price ? item.price.toLocaleString("tr-TR") : "0";
+
+        // Eşya Türü
+        const itemType = item.inGameType || (item.category === "armor" ? "Paintball Zırhı" : (item.category === "weapons" ? "Paintball Gereci" : (item.category === "modkits" ? "Paintball Mod Kiti" : "Paintball Eşyası")));
+
+        // Satıcı veya Bonus Satırı
+        let metaHtml = '';
+        if (item.seller) {
+            metaHtml = `<div class="game-item-meta">Satıcı: ${item.seller}</div>`;
+        }
+        if (item.bonusText) {
+            metaHtml += `<div class="game-item-meta" style="${item.seller ? 'margin-top:4px;' : ''}">${item.bonusText}</div>`;
+        } else if (item.isShield && item.description) {
+            metaHtml += `<div class="game-item-meta" style="margin-top:10px; max-width: 320px; line-height: 1.35;">${item.description}</div>`;
+        } else if (!item.seller && item.description && item.category !== "weapons" && item.inGameType !== "Paintball Gereci") {
+            metaHtml += `<div class="game-item-meta">${item.description}</div>`;
         }
 
-        // Fiyat geçmişi mini tablosu
-        let priceHistoryHtml = '';
-        if (item.priceHistory && item.priceHistory.length > 0) {
-            const histIcon = item.currency === 'crystal' ? './img/crystal_gem_trans.png' : './img/cash_coin_trans.png';
-            priceHistoryHtml = `
-                <h4 class="modal-section-title">Zaman İçindeki Fiyat Değişimi</h4>
-                <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:8px;">
-                    ${item.priceHistory.map(ph => `
-                        <div style="flex:1; min-width:80px; background:var(--sand-input); border:1.5px solid var(--ink); border-radius:8px; padding:6px 10px; text-align:center;">
-                            <span style="font-size:11px; color:var(--ink-dim); display:block;">${ph.date}</span>
-                            <b style="font-family:var(--font-display); font-size:13px; display:inline-flex; align-items:center; justify-content:center; gap:3px;">
-                                <img src="${histIcon}" style="width:15px;height:12px;" alt="">
-                                ${ph.price.toLocaleString('tr-TR')}
-                            </b>
+        // İstatistikler (Kalkanlar veya Silahlar / Paintball Gereci)
+        let statsHtml = '';
+        if (item.isShield) {
+            const blockFill = item.blockAngle !== undefined ? item.blockAngle : 33;
+            statsHtml = `
+                <div class="game-stats-container">
+                    <!-- Sol Kolon: Bloke Açısı ve 2 Boş Bar -->
+                    <div style="display:flex; flex-direction:column; gap:6px;">
+                        <div class="game-stat-item">
+                            <span class="game-stat-name" style="width:72px;">Bloke Açısı</span>
+                            <div class="game-stat-bar-trough">
+                                <div class="game-stat-bar-fill" style="width: ${blockFill}%;"></div>
+                            </div>
                         </div>
-                    `).join('')}
-                </div>
-            `;
-        }
+                        <div class="game-stat-item">
+                            <span class="game-stat-name" style="width:72px; visibility:hidden;">Bloke Açısı</span>
+                            <div class="game-stat-bar-trough"></div>
+                        </div>
+                        <div class="game-stat-item">
+                            <span class="game-stat-name" style="width:72px; visibility:hidden;">Bloke Açısı</span>
+                            <div class="game-stat-bar-trough"></div>
+                        </div>
+                    </div>
 
-        modalContent.innerHTML = `
-            <div class="modal-top-bar" style="display:flex; justify-content:space-between; align-items:center; border-bottom:1.5px solid rgba(46,42,24,0.25); padding-bottom:10px; margin-bottom:16px;">
-                <span style="font-family:var(--font-display); font-size:17px; font-weight:900; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink); text-shadow:1px 1px 0 rgba(255,255,255,0.9);">EŞYA AYRINTILARI</span>
-            </div>
-            <div class="modal-head">
-                <div class="modal-icon">${icon}</div>
-                <div>
-                    <h2 class="modal-title">${item.name}</h2>
-                    <span class="rarity-pill ${rarityClass}">${item.rarityName || 'Standart'}</span>
-                    <span style="margin-left: 8px; font-size: 13px; color: var(--ink-dim); font-weight: 700;">${item.subType || ''}</span>
-                    <div style="margin-top: 6px; font-size: 14px; font-weight: 700; color: var(--ink);">
-                        Fiyatı: <span style="font-family:var(--font-display); font-weight:900;">${item.price.toLocaleString('tr-TR')} ${item.currency === 'crystal' ? 'Crystal' : 'Cash'}</span>
-                        <img src="${item.currency === 'crystal' ? './img/crystal_gem_trans.png' : './img/cash_coin_trans.png'}" style="width:18px; height:15px; vertical-align:middle; margin-left:4px;" alt="">
+                    <!-- Sağ Kolon: 3 Boş Bar (Oyun İçi Sabit Grid Düzeni) -->
+                    <div style="display:flex; flex-direction:column; gap:6px;">
+                        <div class="game-stat-item">
+                            <span class="game-stat-name" style="visibility:hidden;">İsabet</span>
+                            <div class="game-stat-bar-trough"></div>
+                        </div>
+                        <div class="game-stat-item">
+                            <span class="game-stat-name" style="visibility:hidden;">İsabet</span>
+                            <div class="game-stat-bar-trough"></div>
+                        </div>
+                        <div class="game-stat-item">
+                            <span class="game-stat-name" style="visibility:hidden;">İsabet</span>
+                            <div class="game-stat-bar-trough"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div style="background:var(--sand-input); border:1.5px solid var(--ink); border-radius:10px; padding:12px 14px; margin-bottom:16px;">
-                <b style="font-size:12px; color:var(--ink-dim); display:block; text-transform:uppercase; margin-bottom:4px;">Eşya Bilgisi:</b>
-                <p style="color: var(--ink); font-size: 14px; line-height: 1.5; margin: 0; font-weight: 600;">${item.description || ''}</p>
-            </div>
-            ${detailsSpecificHtml}
-            ${priceHistoryHtml}
-            <div style="margin-top: 24px; padding-top: 16px; border-top: 2px dashed rgba(46,42,24,0.2); display: flex; align-items: center; justify-content: space-between; flex-wrap:wrap; gap:10px;">
-                <div>
-                    <span style="font-size:11px; color:var(--ink-dim); text-transform:uppercase; font-weight:700;">Güncel Pazar Fiyatı</span>
-                    <div style="margin-top: 2px;">${renderPriceHtml(item, true)}</div>
-                    ${item.marketRange ? `<span style="display:block; font-size:12px; color:var(--orange); font-weight:700; margin-top:4px;">Pazar İlan Aralığı: ${item.marketRange}</span>` : ''}
+            `;
+        } else if (item.category === "weapons" || item.inGameType === "Paintball Gereci" || item.stats) {
+            // 6 temel oyun içi stat (Hasar, Atış Hızı, Cephane, Hız, İsabet, Dürbün)
+            const dmg = item.stats?.damage !== undefined ? item.stats.damage : 50;
+            const rate = item.stats?.fireRate !== undefined ? item.stats.fireRate : 50;
+            const ammo = item.stats?.ammo !== undefined ? item.stats.ammo : Math.min(100, Math.round(((item.stats?.capacity || 30) / 100) * 100));
+            const speed = item.stats?.speed !== undefined ? item.stats.speed : Math.max(20, Math.min(100, 100 - Math.round(dmg * 0.25)));
+            const acc = item.stats?.accuracy !== undefined ? item.stats.accuracy : (item.stats?.range || 80);
+            const scope = item.stats?.scope !== undefined ? item.stats.scope : (item.name.toLowerCase().includes("sniper") || item.name.toLowerCase().includes("scoped") ? 100 : 0);
+
+            // Modkit Yuvaları (Eklentiler) - Sadece yuvası olan silahlarda gösterilir
+            const slotsCount = item.modkitSlots !== undefined ? item.modkitSlots : 2;
+            const equipped = item.equippedModkits || [];
+            let eklentilerRowHtml = '';
+            if (slotsCount > 0) {
+                let slotsHtml = '';
+                for (let i = 0; i < slotsCount; i++) {
+                    if (equipped[i]) {
+                        slotsHtml += `<div class="game-slot-cell is-equipped" data-slot="${i}" title="Takılı Modkit: ${item.name} Güçlendirici"><img src="${equipped[i]}" class="game-slot-img" alt="Modkit"></div>`;
+                    } else {
+                        slotsHtml += `<div class="game-slot-cell is-empty" data-slot="${i}" title="Boş Eklenti Yuvası (Takmak için tıkla)"></div>`;
+                    }
+                }
+                eklentilerRowHtml = `
+                    <div class="game-stat-item">
+                        <span class="game-stat-name">Eklentiler</span>
+                        <div class="game-slots-wrapper">
+                            ${slotsHtml}
+                        </div>
+                    </div>
+                `;
+            }
+
+            statsHtml = `
+                <div class="game-stats-container">
+                    <!-- Sol Kolon -->
+                    <div style="display:flex; flex-direction:column; gap:6px;">
+                        <div class="game-stat-item">
+                            <span class="game-stat-name">Hasar</span>
+                            <div class="game-stat-bar-trough">
+                                <div class="game-stat-bar-fill" style="width: ${dmg}%;"></div>
+                            </div>
+                        </div>
+                        <div class="game-stat-item">
+                            <span class="game-stat-name">Atış Hızı</span>
+                            <div class="game-stat-bar-trough">
+                                <div class="game-stat-bar-fill" style="width: ${rate}%;"></div>
+                            </div>
+                        </div>
+                        <div class="game-stat-item">
+                            <span class="game-stat-name">Cephane</span>
+                            <div class="game-stat-bar-trough">
+                                <div class="game-stat-bar-fill" style="width: ${ammo}%;"></div>
+                            </div>
+                        </div>
+                        ${eklentilerRowHtml}
+                    </div>
+
+                    <!-- Sağ Kolon -->
+                    <div style="display:flex; flex-direction:column; gap:6px;">
+                        <div class="game-stat-item">
+                            <span class="game-stat-name">Hız</span>
+                            <div class="game-stat-bar-trough">
+                                <div class="game-stat-bar-fill" style="width: ${speed}%;"></div>
+                            </div>
+                        </div>
+                        <div class="game-stat-item">
+                            <span class="game-stat-name">İsabet</span>
+                            <div class="game-stat-bar-trough">
+                                <div class="game-stat-bar-fill" style="width: ${acc}%;"></div>
+                            </div>
+                        </div>
+                        <div class="game-stat-item">
+                            <span class="game-stat-name">Dürbün</span>
+                            <div class="game-stat-bar-trough">
+                                <div class="game-stat-bar-fill" style="width: ${scope}%;"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div style="display:flex; gap:8px;">
-                    <button id="view-on-chart-btn" type="button" class="cat-btn is-active" style="padding: 8px 14px;">Grafikte İncele 📈</button>
-                    <button type="button" class="btn-fire" style="padding: 8px 16px; background:#3D1800; color:#FFF; border-radius:8px; font-weight:800; border:1.5px solid var(--ink); box-shadow:2px 2px 0 var(--ink);">Bu eşyayı al</button>
+            `;
+        }
+
+        // Buton Metni:
+        // 1. item.inGameAction varsa onu kullan (ör. "Bu eşyayı al", "Pazara Koy")
+        // 2. item.seller varsa (2. el pazar ilanı) -> "Satın Al"
+        // 3. Dükkan / Kristal eşyası ise -> "Bu eşyayı al"
+        const actionLabel = item.inGameAction || (item.seller ? "Satın Al" : "Bu eşyayı al");
+
+        // İnceleme / Önizleme ikonu (Görsel 2'deki gibi pazara koy / envanter eşyalarında mevcuttur)
+        const inspectHtml = (item.inGameAction === "Pazara Koy") ? `
+            <button type="button" class="game-inspect-btn" id="game-inspect-btn" title="Tam Ekran / Odak İnceleme">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#756b54" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 8V4h4M20 8V4h-4M4 16v4h4M20 16v4h-4"/>
+                </svg>
+            </button>
+        ` : '';
+
+        // Görsel URL'si ve Para Birimi İkonu
+        const previewImgSrc = item.image || "./img/items/light_machine_gun_trans.png";
+        const coinIconClass = isCrystal ? "game-crystal-icon" : "game-coin-icon";
+
+        modalContent.innerHTML = `
+            <!-- Üst Eşya Bilgileri ve Sağdaki Yüzen Eşya Görseli -->
+            <div class="game-item-top">
+                <h4 class="game-item-name">${item.name}</h4>
+                <div class="game-item-price-row">
+                    <span>Fiyatı: ${formattedPrice} ${currencyName}</span>
+                    <img src="${coinIconSrc}" class="${coinIconClass}" alt="${currencyName}">
                 </div>
+                <div class="game-item-type">${itemType}</div>
+                ${metaHtml}
+                <img src="${previewImgSrc}" alt="${item.name}" class="game-item-float-img" id="game-float-img" title="Büyütmek için tıkla">
+            </div>
+
+            <!-- Orta Bölüm: Silah İstatistikleri veya Ek Bilgiler -->
+            ${statsHtml}
+
+            <!-- Alt Kısım: İnceleme İkonu ve Buton -->
+            <div class="game-modal-footer">
+                ${inspectHtml}
+                <button type="button" class="game-action-btn" id="game-action-btn">${actionLabel}</button>
+            </div>
+
+            <!-- Bildirim Balonu -->
+            <div class="game-modal-toast" id="game-modal-toast"></div>
+
+            <!-- Opsiyonel Açılır Pazar Grafiği & Detaylı Wiki Çekmecesi -->
+            <a class="game-wiki-toggle" id="game-wiki-toggle">▾ Pazar Fiyat Geçmişi & Wiki Notları</a>
+            <div class="game-wiki-drawer" id="game-wiki-drawer">
+                <div style="font-size:12.5px; color:#3a3224; line-height:1.45; margin-bottom:10px;">
+                    <b>Eşya Tanımı:</b> ${item.description || 'Detaylı wiki kaydı bulunmamaktadır.'}
+                </div>
+                ${item.priceHistory && item.priceHistory.length > 0 ? `
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                        <span style="font-size:11px; font-weight:800; color:#5c5138; text-transform:uppercase;">Son 4 Ay Fiyat Değişimi:</span>
+                        <button type="button" id="modal-view-chart-btn" style="background:#240c04; color:#fff; border:none; border-radius:6px; font-size:11px; font-weight:700; padding:4px 8px; cursor:pointer;">Ana Grafikte Aç 📈</button>
+                    </div>
+                    <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                        ${item.priceHistory.map(ph => `
+                            <div style="flex:1; min-width:70px; background:#fff8ea; border:1px solid #c9bea3; border-radius:6px; padding:4px 6px; text-align:center;">
+                                <span style="font-size:10px; color:#7a6f56; display:block;">${ph.date}</span>
+                                <b style="font-size:12px; color:#240c04;">${ph.price.toLocaleString('tr-TR')}</b>
+                            </div>
+                        `).join('')}
+                    </div>
+                ` : ''}
             </div>
         `;
 
         modalOverlay.classList.add("is-open");
 
-        const viewChartBtn = document.getElementById("view-on-chart-btn");
-        if (viewChartBtn) {
-            viewChartBtn.addEventListener("click", () => {
+        // Etkileşimler
+        const actionBtn = document.getElementById("game-action-btn");
+        const toast = document.getElementById("game-modal-toast");
+        const inspectBtn = document.getElementById("game-inspect-btn");
+        const floatImg = document.getElementById("game-float-img");
+        const wikiToggle = document.getElementById("game-wiki-toggle");
+        const wikiDrawer = document.getElementById("game-wiki-drawer");
+        const modalChartBtn = document.getElementById("modal-view-chart-btn");
+
+        function showToast(msg) {
+            if (!toast) return;
+            toast.textContent = msg;
+            toast.classList.add("is-shown");
+            setTimeout(() => {
+                toast.classList.remove("is-shown");
+            }, 2200);
+        }
+
+        // Satın Al / Bu eşyayı al / Pazara Koy Butonu
+        if (actionBtn) {
+            actionBtn.addEventListener("click", () => {
+                if (actionLabel === "Satın Al") {
+                    showToast(`✓ ${item.name} (${formattedPrice} ${currencyName}) pazardan satın alındı!`);
+                } else if (actionLabel === "Bu eşyayı al") {
+                    showToast(`✓ ${item.name} (${formattedPrice} ${currencyName}) dükkandan alındı!`);
+                } else {
+                    showToast(`✓ ${item.name} başarıyla pazara konuldu!`);
+                }
+            });
+        }
+
+        // Kadraj / Büyütme
+        let isZoomed = false;
+        function toggleZoom() {
+            isZoomed = !isZoomed;
+            if (floatImg) {
+                if (isZoomed) {
+                    floatImg.style.transform = "scale(1.8) translateY(20px)";
+                    floatImg.style.zIndex = "20";
+                    showToast("🔍 İnceleme Modu Açıldı");
+                } else {
+                    floatImg.style.transform = "none";
+                    floatImg.style.zIndex = "auto";
+                }
+            }
+        }
+        if (inspectBtn) inspectBtn.addEventListener("click", toggleZoom);
+        if (floatImg) floatImg.addEventListener("click", toggleZoom);
+
+        // Modkit Yuvalarına Tıklama (Tak / Çıkar İnteraktivitesi)
+        modalContent.querySelectorAll(".game-slot-cell").forEach(slot => {
+            slot.addEventListener("click", () => {
+                const isEq = slot.classList.contains("is-equipped");
+                if (isEq) {
+                    slot.classList.remove("is-equipped");
+                    slot.classList.add("is-empty");
+                    slot.innerHTML = '';
+                    showToast("⚙️ Modkit söküldü.");
+                } else {
+                    slot.classList.remove("is-empty");
+                    slot.classList.add("is-equipped");
+                    slot.innerHTML = '<img src="./img/items/paintball_modkit_588_trans.png" class="game-slot-img" alt="Modkit">';
+                    showToast("⚙️ Modkit takıldı (+Bonus aktif)!");
+                }
+            });
+        });
+
+        // Wiki Çekmecesi Aç/Kapa
+        if (wikiToggle && wikiDrawer) {
+            wikiToggle.addEventListener("click", () => {
+                const isOpen = wikiDrawer.classList.toggle("is-open");
+                wikiToggle.textContent = isOpen ? "▴ Detaylı Wiki Bilgisini Gizle" : "▾ Pazar Fiyat Geçmişi & Wiki Notları";
+            });
+        }
+
+        // Ana Grafikte İncele
+        if (modalChartBtn) {
+            modalChartBtn.addEventListener("click", () => {
                 modalOverlay.classList.remove("is-open");
                 state.selectedChartItem = item.id;
                 if (chartSelect) chartSelect.value = item.id;
@@ -333,6 +511,11 @@ document.addEventListener("DOMContentLoaded", () => {
             if (e.target === modalOverlay) modalOverlay.classList.remove("is-open");
         });
     }
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modalOverlay && modalOverlay.classList.contains("is-open")) {
+            modalOverlay.classList.remove("is-open");
+        }
+    });
 
     // 2. FİYAT GEÇMİŞİ İNTERAKTİF GRAFİĞİ (SVG CHART)
     function populateChartSelect() {

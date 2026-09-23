@@ -465,12 +465,15 @@
         </section>
     </main>
 
-    <!-- EŞYA DETAY MODALİ -->
+    <!-- EŞYA DETAY MODALİ (OYUN İÇİ BİREBİR EŞYA AYRINTILARI PENCERESİ) -->
     <div class="modal-overlay" id="item-modal" role="dialog" aria-modal="true" aria-hidden="true">
-        <div class="modal-card">
-            <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Kapat">✕</button>
-            <div id="modal-content-body">
-                <!-- JS içeriği buraya dinamik doldurur -->
+        <div class="modal-card game-modal" id="modal-card">
+            <div class="game-modal-header">
+                <h3 class="game-modal-title">EŞYA&nbsp;&nbsp;AYRINTILARI</h3>
+                <button type="button" class="game-modal-close-btn" id="modal-close-btn" aria-label="Kapat">✕</button>
+            </div>
+            <div id="modal-content-body" class="game-modal-body">
+                <!-- JS içeriği buraya birebir oyun diliyle dinamik doldurur -->
             </div>
         </div>
     </div>
