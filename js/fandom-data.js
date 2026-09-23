@@ -239,56 +239,7 @@ const MINIFAL_DATABASE = {
             combatBenchmark: "110 Hasar / Bomba · 4016 Canlı Commander'a karşı 37 isabet",
             compatibleModkits: ["Paintball Mod Kit"]
         },
-        {
-            id: "wep-spray-thrower",
-            name: "Spray Thrower",
-            category: "weapons",
-            subType: "Boya Püskürtücü",
-            rarity: "epic",
-            rarityName: "Epik",
-            image: "./img/items/spray_thrower_trans.png",
-            currency: "crystal",
-            price: 132,
-            marketRange: "120 - 150 Crystal",
-            priceHistory: [
-                { date: "Haz 2026", price: 115 },
-                { date: "Tem 2026", price: 122 },
-                { date: "Ağu 2026", price: 128 },
-                { date: "Eyl 2026", price: 132 }
-            ],
-            change24h: 3.1,
-            modkitSlots: 4,
-            stats: { damage: 15, fireRate: 98, range: 30, reload: 60, capacity: 120 },
-            description: "İki yüksek basınçlı boya tüpüyle sürekli boya püskürten alev makinesi benzeri özel silah.",
-            source: "Dükkan / 132 Crystal",
-            combatBenchmark: "15 Hasar / Sürekli Akış · 4016 Canlı Commander'a karşı 268 isabet",
-            compatibleModkits: ["Yüksek Basınç Valfi", "Paintball Mod Kit"]
-        },
-        {
-            id: "wep-scoped-assault-rifle",
-            name: "Scoped Assault Rifle",
-            category: "weapons",
-            subType: "Dürbünlü Hücum Tüfeği",
-            rarity: "epic",
-            rarityName: "Epik",
-            image: "./img/items/scoped_assault_rifle_trans.png",
-            currency: "crystal",
-            price: 110,
-            marketRange: "95 - 125 Crystal",
-            priceHistory: [
-                { date: "Haz 2026", price: 95 },
-                { date: "Tem 2026", price: 102 },
-                { date: "Ağu 2026", price: 108 },
-                { date: "Eyl 2026", price: 110 }
-            ],
-            change24h: 1.8,
-            modkitSlots: 4,
-            stats: { damage: 22, fireRate: 70, range: 85, reload: 50, capacity: 30 },
-            description: "Taktik optik dürbün takılı özel Crystal hücum tüfeği. Orta ve uzak mesafede yüksek isabet sunar.",
-            source: "Dükkan / 110 Crystal",
-            combatBenchmark: "22 Hasar / Mermi · 4016 Canlı Commander'a karşı 183 isabet",
-            compatibleModkits: ["Paintball Mod Kit"]
-        },
+
         {
             id: "wep-paint-wave-launcher",
             name: "Paint Wave Launcher",
