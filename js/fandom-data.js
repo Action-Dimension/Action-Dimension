@@ -31,6 +31,7 @@ const MINIFAL_DATABASE = {
         { id: "armor", name: "Zırhlar & Kalkanlar", icon: "🛡️", color: "gold", count: 12, desc: "Maçlarda boya hasarını engelleyen taktik yelekler, kalkanlar ve robotik zırhlar." },
         { id: "modkits", name: "Modkitler", icon: "⚙️", color: "teal", count: 16, desc: "Silahların hasar, hız ve menzilini artıran geliştirme modülleri ve sökücüler." },
         { id: "potions", name: "Taktik Çantalar", icon: "🧪", color: "teal", count: 7, desc: "Can ve cephane ikmal paketleri, hız ve çeviklik güçlendiriciler." },
+        { id: "sports", name: "Tenis Raketleri", icon: "🎾", color: "orange", count: 3, desc: "Tenis kortlarında kullanılan ve koşu, vuruş veya stamina bonusu sağlayan raketler." },
         { id: "masks", name: "Kıyafet & Maske", icon: "🎭", color: "olive", count: 465, desc: "Şehirde tarzını yansıtan maskeler, tişörtler, şortlar ve ceketler." },
         { id: "furniture", name: "Mobilyalar & Ev", icon: "🛋️", color: "sand", count: 116, desc: "Sebastian'dan alınan ev planları ve odayı döşeyen mobilyalar." },
         { id: "market", name: "Market Fiyatları", icon: "📈", color: "gold", count: 50, desc: "2. el pazarındaki canlı fiyatlar ve zaman içindeki değişim grafikleri." },
@@ -1525,7 +1526,83 @@ const MINIFAL_DATABASE = {
         }
     ],
 
-    // 5. MASKELER & KIYAFETLER (MASKS)
+    // 5. SPOR & TENİS RAKETLERİ (SPORTS)
+    sports: [
+        {
+            id: "sport-racket-speed",
+            name: "Racket of Speed",
+            category: "sports",
+            subType: "Tenis Raketi",
+            inGameType: "Tenis Raketi",
+            inGameAction: "Satın Al",
+            bonusText: "Teniste koşu hızına +0,1 bonus verir.",
+            rarity: "uncommon",
+            rarityName: "Nadir",
+            image: "./img/items/racket_of_speed_trans.png",
+            currency: "cash",
+            price: 360,
+            marketRange: "330 - 410 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 320 },
+                { date: "Tem 2026", price: 340 },
+                { date: "Ağu 2026", price: 350 },
+                { date: "Eyl 2026", price: 360 }
+            ],
+            change24h: 2.8,
+            description: "Tenis kortlarında kullanılan hafif ve dengeli hız raketi. Teniste koşu hızına +0,1 bonus verir.",
+            source: "Dükkan / 360 Cash"
+        },
+        {
+            id: "sport-racket-stamina",
+            name: "Racket of Stamina",
+            category: "sports",
+            subType: "Tenis Raketi",
+            inGameType: "Tenis Raketi",
+            inGameAction: "Satın Al",
+            bonusText: "Teniste maksimum stamina değerine +1 bonus verir.",
+            rarity: "rare",
+            rarityName: "Ender",
+            image: "./img/items/racket_of_stamina_trans.png",
+            currency: "cash",
+            price: 480,
+            marketRange: "440 - 530 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 420 },
+                { date: "Tem 2026", price: 450 },
+                { date: "Ağu 2026", price: 470 },
+                { date: "Eyl 2026", price: 480 }
+            ],
+            change24h: 2.1,
+            description: "Uzun tenis rallilerinde dayanıklılığı koruyan özel mor gövdeli raket. Teniste maksimum stamina değerine +1 bonus verir.",
+            source: "Dükkan / 480 Cash"
+        },
+        {
+            id: "sport-racket-power",
+            name: "Racket of Power",
+            category: "sports",
+            subType: "Tenis Raketi",
+            inGameType: "Tenis Raketi",
+            inGameAction: "Satın Al",
+            bonusText: "Teniste vuruş gücüne %5 bonus verir.",
+            rarity: "epic",
+            rarityName: "Epik",
+            image: "./img/items/racket_of_power_trans.png",
+            currency: "crystal",
+            price: 40,
+            marketRange: "35 - 48 Crystal",
+            priceHistory: [
+                { date: "Haz 2026", price: 34 },
+                { date: "Tem 2026", price: 37 },
+                { date: "Ağu 2026", price: 39 },
+                { date: "Eyl 2026", price: 40 }
+            ],
+            change24h: 2.5,
+            description: "Dikenli çerçevesiyle sert smaçlar vuran seçkin Crystal tenis raketi. Teniste vuruş gücüne %5 bonus verir.",
+            source: "Dükkan / 40 Crystal"
+        }
+    ],
+
+    // 6. MASKELER & KIYAFETLER (MASKS)
     masks: [
         {
             id: "app-white-tshirt",

@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ...MINIFAL_DATABASE.weapons,
             ...MINIFAL_DATABASE.modkits,
             ...MINIFAL_DATABASE.armor,
+            ...(MINIFAL_DATABASE.sports || []),
             ...MINIFAL_DATABASE.masks,
             ...MINIFAL_DATABASE.furniture,
             ...MINIFAL_DATABASE.potions
@@ -84,6 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
             case "weapons": return "🔫";
             case "modkits": return "⚙️";
             case "armor": return "🛡️";
+            case "sports": return "🎾";
             case "masks": return item.subType === "Maske" ? "🎭" : item.subType === "Ceket" ? "🧥" : "👟";
             case "furniture": return item.subType === "Ev Planı" ? "📜" : "🛋️";
             case "potions": return "🧪";
