@@ -47,7 +47,6 @@ minifal/
 ├── boss.html                            # Cyborg Boss Rehberi ve Hasar Simülatörü
 ├── anasayfa.html                        # Orijinal Minifal Ana Sayfası
 ├── anasayfa_files/                      # Ana sayfa statik varlıkları
-├── hesabim_files/                       # Statik varlıklar (logolar ve ikonlar)
 ├── hikayemiz.html                       # Orijinal Hikâye Sayfası
 ├── hikayemiz_files/                     # Hikâye sayfası statik varlıkları
 ├── css/
