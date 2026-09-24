@@ -215,6 +215,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const coinIconSrc = isCrystal ? "./img/crystal_gem_trans.png" : "./img/cash_coin_trans.png";
         const currencyName = isCrystal ? "Crystal" : "Cash";
         const formattedPrice = item.price ? item.price.toLocaleString("tr-TR") : "0";
+        const priceLabel = item.priceLabel || "Fiyatı";
 
         // Eşya Türü
         const itemType = item.inGameType || (item.category === "armor" ? "Paintball Zırhı" : (item.category === "weapons" ? "Paintball Gereci" : (item.category === "modkits" ? "Paintball Mod Kiti" : "Paintball Eşyası")));
@@ -228,6 +229,8 @@ document.addEventListener("DOMContentLoaded", () => {
             metaHtml += `<div class="game-item-meta" style="${item.seller ? 'margin-top:4px;' : ''}">${item.bonusText}</div>`;
         } else if (item.isShield && item.description) {
             metaHtml += `<div class="game-item-meta" style="margin-top:10px; max-width: 320px; line-height: 1.35;">${item.description}</div>`;
+        } else if (item.category === "potions" && item.description) {
+            metaHtml += `<div class="game-item-meta" style="margin-top:8px; line-height: 1.4; color: #3a3224; max-width: 330px;">${item.description}</div>`;
         } else if (!item.seller && item.description && item.category !== "weapons" && item.inGameType !== "Paintball Gereci") {
             metaHtml += `<div class="game-item-meta">${item.description}</div>`;
         }
@@ -379,7 +382,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="game-item-top">
                 <h4 class="game-item-name">${item.name}</h4>
                 <div class="game-item-price-row">
-                    <span>Fiyatı: ${formattedPrice} ${currencyName}</span>
+                    <span>${priceLabel}: ${formattedPrice} ${currencyName}</span>
                     <img src="${coinIconSrc}" class="${coinIconClass}" alt="${currencyName}">
                 </div>
                 <div class="game-item-type">${itemType}</div>
@@ -442,10 +445,12 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 2200);
         }
 
-        // Satın Al / Bu eşyayı al / Pazara Koy Butonu
+        // Satın Al / Bu eşyayı al / Pazara Koy / Kullan Butonu
         if (actionBtn) {
             actionBtn.addEventListener("click", () => {
-                if (actionLabel === "Satın Al") {
+                if (actionLabel === "Kullan") {
+                    showToast(`✓ ${item.name} kullanıldı! Etki 2 saat boyunca aktif.`);
+                } else if (actionLabel === "Satın Al") {
                     showToast(`✓ ${item.name} (${formattedPrice} ${currencyName}) pazardan satın alındı!`);
                 } else if (actionLabel === "Bu eşyayı al") {
                     showToast(`✓ ${item.name} (${formattedPrice} ${currencyName}) dükkandan alındı!`);
