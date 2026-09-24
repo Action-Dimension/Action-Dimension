@@ -3907,6 +3907,50 @@ const MINIFAL_DATABASE = {
                 "Dexterity Potion - Small (1.020 Cash)"
             ],
             badgeColor: "#10b981",
+        },
+        {
+            id: "vendor-ivan",
+            name: "Ivan - Hayvan Yemi",
+            location: "Şehir Merkezi",
+            role: "Hayvan Yemi & Bakım Malzemeleri",
+            avatar: "./img/npcs/npc_ivan.png",
+            dialogue: "Dostlarının enerjik ve mutlu kalması için en taze, besleyici yemler burada!",
+            description: "Şehir merkezinde geniş şapkası ve sarı gömleğiyle tezgâh açan hayvan dostu esnaf. Evcil hayvanların beslenmesi ve bakımı için yem ve besin paketleri sağlar.",
+            itemsForSale: ["Evcil Hayvan Yemleri (Yakında)", "Gelişim & Enerji Mamaları", "Özel Bakım İkramları"],
+            badgeColor: "#eab308",
+        },
+        {
+            id: "vendor-sergei",
+            name: "Sergei - Evcil Hayvan",
+            location: "Şehir Merkezi",
+            role: "Evcil Hayvan Yetiştiricisi & Satıcısı",
+            avatar: "./img/npcs/npc_sergei.png",
+            dialogue: "Minifal sokaklarında sana eşlik edecek sevimli bir evcil hayvan ister misin? Sevgiye doyamayacaksın!",
+            description: "Şehir meydanında sevimli kahverengi tavşan kostümüyle oyuncuları karşılayan evcil hayvan yetiştiricisi. Oyunculara şehirde yanlarında gezdirebilecekleri yoldaş hayvanlar sunar.",
+            itemsForSale: ["Evcil Hayvanlar (Yakında)", "Tavşanlar & Minik Dostlar", "Yoldaş Tasarımları"],
+            badgeColor: "#a855f7",
+        },
+        {
+            id: "vendor-jasper",
+            name: "Jasper - Kristal",
+            location: "Şehir Merkezi",
+            role: "Kristal Tüccarı & Bilet Satıcısı",
+            avatar: "./img/npcs/npc_jasper.png",
+            dialogue: "Minifal'in en değerli hazinesi Kristallerdir! Özel etkinlikler ve nadir eşyalar için biletini al.",
+            description: "Şehir merkezinde ihtişamlı kral tacı, pelerini ve altın biletleriyle tezgâh açan kristal tüccarı. Özel eşya alımları, maç biletleri ve Crystal paketleri sunar.",
+            itemsForSale: ["Crystal Paketleri", "Özel Giriş Biletleri", "Nadir Turnuva Kuponları"],
+            badgeColor: "#06b6d4",
+        },
+        {
+            id: "vendor-chloe",
+            name: "Chloe - Kuaför",
+            location: "Power Mall 1. Kat",
+            role: "Kuaför & Saç Tasarımcısı / Hair Stylist",
+            avatar: "./img/npcs/npc_chloe.png",
+            dialogue: "Yeni bir tarz, yeni bir enerji! Saç modelini baştan yaratmaya hazır mısın?",
+            description: "Power Mall 1. katta kuaför salonunu işleten sarı kıvırcık saçlı, stil sahibi kuaför. Oyuncuların saç kesimlerini, modellerini ve renklerini yeniler.",
+            itemsForSale: ["Saç Kesim & Modelleri", "Saç Boyası & Renk Değişimi", "Özel Stil & Bakım Paketleri"],
+            badgeColor: "#ec4899",
         }
     ],
 
@@ -3947,14 +3991,20 @@ const MINIFAL_DATABASE = {
                 {
                         "id": "loc-1",
                         "name": "Şehir Merkezi",
-                        "npcs": [],
-                        "desc": "Minifal'in kalbi ve ana buluşma meydanı."
+                        "npcs": [
+                                "Ivan - Hayvan Yemi",
+                                "Sergei - Evcil Hayvan",
+                                "Jasper - Kristal"
+                        ],
+                        "desc": "Minifal'in kalbi ve ana buluşma meydanı; Ivan'ın yem tezgâhı, Sergei'nin evcil hayvanları ve Jasper'ın kristal sandığı."
                 },
                 {
                         "id": "loc-2",
                         "name": "Power Mall 1.Kat",
-                        "npcs": [],
-                        "desc": "Büyük alışveriş merkezi, mağazalar ve butikler."
+                        "npcs": [
+                                "Chloe - Kuaför"
+                        ],
+                        "desc": "Büyük alışveriş merkezi 1. kat; mağazalar, butikler ve Chloe'nin kuaför salonu."
                 },
                 {
                         "id": "loc-3",

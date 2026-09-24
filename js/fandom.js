@@ -965,6 +965,18 @@ document.addEventListener("DOMContentLoaded", () => {
             } else if (v.id === "vendor-hazel") {
                 actionBtnText = "🧪 İksirleri İncele";
                 actionAttr = 'data-action="filter-potions"';
+            } else if (v.id === "vendor-chloe") {
+                actionBtnText = "💇 Kuaför & Saç Modelleri";
+                actionAttr = 'data-action="filter-masks"';
+            } else if (v.id === "vendor-jasper") {
+                actionBtnText = "💎 Kristal Eşyaları";
+                actionAttr = 'data-action="filter-crystal"';
+            } else if (v.id === "vendor-sergei") {
+                actionBtnText = "🐾 Evcil Hayvanlar (Yakında)";
+                actionAttr = 'data-action="info-pets"';
+            } else if (v.id === "vendor-ivan") {
+                actionBtnText = "🌾 Hayvan Yemleri (Yakında)";
+                actionAttr = 'data-action="info-pets"';
             }
 
             return `
@@ -1028,6 +1040,29 @@ document.addEventListener("DOMContentLoaded", () => {
                     } else {
                         window.location.href = "./index.html?cat=potions#katalog";
                     }
+                } else if (action === "filter-masks") {
+                    const katalog = document.getElementById("katalog");
+                    if (katalog) {
+                        state.activeCategory = "masks";
+                        updateActiveCategoryButton("masks");
+                        renderCards();
+                        katalog.scrollIntoView({ behavior: "smooth" });
+                    } else {
+                        window.location.href = "./index.html?cat=masks";
+                    }
+                } else if (action === "filter-crystal") {
+                    const katalog = document.getElementById("katalog");
+                    if (katalog) {
+                        state.searchQuery = "Crystal";
+                        const searchInput = document.getElementById("search-input");
+                        if (searchInput) searchInput.value = "Crystal";
+                        renderCards();
+                        katalog.scrollIntoView({ behavior: "smooth" });
+                    } else {
+                        window.location.href = "./index.html";
+                    }
+                } else if (action === "info-pets") {
+                    alert("🐾 Evcil hayvanlar ve hayvan yemleri kataloğu çok yakında eklenecek ve burada listelenecektir!");
                 }
             });
         });
