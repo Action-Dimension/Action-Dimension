@@ -41,15 +41,16 @@ Action Dimension'ın bağımsız yeniden yapımı olan **Minifal** için resmi t
 
 ```
 minifal/
-├── index.html                           # Fandom & Wiki Ana Portalı
+├── index.html                           # Fandom & Wiki Eşya Kataloğu ve Canlı Market
+├── harita.html                          # Şehir Haritası, Oyunlar ve NPC Satıcıları
+├── evler.html                           # Emlak Ajansı ve 3D İnteraktif Ev Tasarımcısı
+├── boss.html                            # Cyborg Boss Rehberi ve Hasar Simülatörü
 ├── anasayfa.html                        # Orijinal Minifal Ana Sayfası
 ├── anasayfa_files/                      # Ana sayfa statik varlıkları
 ├── hesabim.html                         # Orijinal Hesap Sayfası
 ├── hesabim_files/                       # Hesap sayfası statik varlıkları
 ├── hikayemiz.html                       # Orijinal Hikâye Sayfası
 ├── hikayemiz_files/                     # Hikâye sayfası statik varlıkları
-├── marijuannaa.html                     # Orijinal Oyun İstemcisi
-├── marijuannaa_files/                   # Oyun istemcisi varlıkları
 ├── css/
 │   └── fandom.css                       # Bire bir Minifal tasarım dili ve CSS stilleri
 ├── js/
