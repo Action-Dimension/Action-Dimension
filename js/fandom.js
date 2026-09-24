@@ -922,7 +922,7 @@ document.addEventListener("DOMContentLoaded", () => {
         locsGrid.innerHTML = locs.map(loc => {
             const hasNpcs = loc.npcs && loc.npcs.length > 0;
             const npcBadges = hasNpcs 
-                ? loc.npcs.map(n => `<span class="loc-npc-pill">🏷️ ${n}</span>`).join(" ")
+                ? loc.npcs.map(n => `<span class="loc-npc-pill">🏷️ ${n}</span>`).join(" ") + (loc.id === "loc-4" ? ` <span class="loc-npc-pill" style="background:#E0F2FE; color:#0369A1; border-color:#38BDF8;">🛋️ 115 Modern Mobilya</span>` : "")
                 : (loc.id === "loc-4" ? `<span class="loc-npc-pill" style="background:#E0F2FE; color:#0369A1; border-color:#38BDF8;">🛋️ 115 Mobilya</span>` : "");
 
             return `
@@ -930,7 +930,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <div>
                         <div class="loc-card-top">
                             <h4 class="loc-name">${loc.name}</h4>
-                            <span class="loc-badge">${hasNpcs ? loc.npcs.length + " Satıcı" : "Bölge"}</span>
+                            <span class="loc-badge">${hasNpcs ? (loc.id === "loc-10" ? loc.npcs.length + " Kurucu & Ekip" : loc.npcs.length + " Satıcı") : "Bölge"}</span>
                         </div>
                         <p class="loc-desc">${loc.desc}</p>
                     </div>
@@ -992,6 +992,21 @@ document.addEventListener("DOMContentLoaded", () => {
             } else if (v.id === "vendor-harrison") {
                 actionBtnText = "💉 Estetik & Stil Kliniği";
                 actionAttr = 'data-action="info-surgery"';
+            } else if (v.id === "vendor-ivy") {
+                actionBtnText = "🛋️ Mobilyaları İncele";
+                actionAttr = 'data-action="filter-furniture"';
+            } else if (v.id === "npc-tolga") {
+                actionBtnText = "💬 Tolga ile Konuş";
+                actionAttr = 'data-action="dialogue-tolga"';
+            } else if (v.id === "npc-cem") {
+                actionBtnText = "💬 Cem ile Konuş";
+                actionAttr = 'data-action="dialogue-cem"';
+            } else if (v.id === "npc-taner") {
+                actionBtnText = "💻 Geliştirici Mesajı";
+                actionAttr = 'data-action="dialogue-taner"';
+            } else if (v.id === "npc-marijuannaa") {
+                actionBtnText = "📖 Wiki Portalı";
+                actionAttr = 'data-action="goto-wiki"';
             }
 
             return `
@@ -1080,6 +1095,24 @@ document.addEventListener("DOMContentLoaded", () => {
                     alert("🐾 Evcil hayvanlar ve hayvan yemleri kataloğu çok yakında eklenecek ve burada listelenecektir!");
                 } else if (action === "info-surgery") {
                     alert("💉 Dr. Harrison'ın Estetik Ameliyat Kliniğinde karakterinizin ten rengi, yüz hatları, saç kesimi ve tarzı baştan aşağı yenilenmektedir!");
+                } else if (action === "filter-furniture") {
+                    const katalog = document.getElementById("katalog");
+                    if (katalog) {
+                        state.activeCategory = "furniture";
+                        updateActiveCategoryButton("furniture");
+                        renderCards();
+                        katalog.scrollIntoView({ behavior: "smooth" });
+                    } else {
+                        window.location.href = "./index.html?cat=furniture#katalog";
+                    }
+                } else if (action === "dialogue-tolga") {
+                    alert('Tolga:\n"Ben meşgulüm! Seninle Cem uğraşsın."');
+                } else if (action === "dialogue-cem") {
+                    alert('Cem:\n"Ben çalışıyorum! Seninle Tolga uğraşsın."');
+                } else if (action === "dialogue-taner") {
+                    alert('Taner [DEV]:\n"Flash öldü ama Minifal yaşıyor! Oyunu modern web teknolojileriyle sıfırdan hayata döndürüyoruz."');
+                } else if (action === "goto-wiki") {
+                    window.location.href = "./index.html";
                 }
             });
         });

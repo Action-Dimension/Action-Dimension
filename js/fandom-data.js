@@ -4006,6 +4006,61 @@ const MINIFAL_DATABASE = {
             description: "Minifal Estetik Kliniği'nin baş cerrahı. Uzun saçları, beyaz önlüğü ve profesyonel kliniğinde karakterlerin yüz hatlarını, ten rengini ve fiziksel görünüşünü baştan tasarlar.",
             itemsForSale: ["Ten Rengi Değişimi", "Göz & Yüz Hatları Estetiği", "Tam Karakter Yenileme Paketi"],
             badgeColor: "#0ea5e9",
+        },
+        {
+            id: "vendor-ivy",
+            name: "Ivy - Mobilya",
+            location: "Mobilya Mağazası",
+            role: "Modern Mobilya Satıcısı / Furniture Stylist",
+            avatar: "./img/npcs/npc_ivy.png",
+            dialogue: "Evin senin dünyan! En kaliteli modern mobilyalar, şık koltuklar ve mutfak takımları burada.",
+            description: "Mobilya Mağazasını işleten pembe takımlı, sarı kahve kupalı zarif mobilya uzmanı. Oyundaki tüm modern mobilyalar bu satıcıda bulunur. (Retro ve Space Age tarzdaki mobilyalar farklı satıcılardan satılacak olup şu anda Under Construction / Yapım Aşamasındadır).",
+            itemsForSale: ["Modern Mobilya Koleksiyonu (115 Parça)", "Mutfak, Banyo & Salon Takımları", "Retro & Space Age (Under Construction)"],
+            badgeColor: "#ec4899",
+        },
+        {
+            id: "npc-tolga",
+            name: "Tolga",
+            location: "ODCAF Ofisi",
+            role: "Orijinal Oyun Kurucusu / Co-Founder",
+            avatar: "./img/npcs/npc_tolga.png",
+            dialogue: "Ben meşgulüm! Seninle Cem uğraşsın.",
+            description: "Action Dimension ve Minifal evreninin efsanevi ilk kurucu ortağı. ODCAF Ofisinde yoğun sistem geliştirme çalışmaları yürütür.",
+            itemsForSale: ["Oyun Mimarisi & Vizyonu", "Action Dimension Mirası", "Geliştirici İpuçları"],
+            badgeColor: "#64748b",
+        },
+        {
+            id: "npc-cem",
+            name: "Cem",
+            location: "ODCAF Ofisi",
+            role: "Orijinal Oyun Kurucusu / Co-Founder",
+            avatar: "./img/npcs/npc_cem.png",
+            dialogue: "Ben çalışıyorum! Seninle Tolga uğraşsın.",
+            description: "Action Dimension ve Minifal'in ilk kurucu mimarlarından. ODCAF Ofisinde oyun operasyonlarını ve dünya düzenini yönetir.",
+            itemsForSale: ["Klasik Minifal Ruhları", "Oyun Sistemleri Tasarımı", "Yönetici Rehberliği"],
+            badgeColor: "#64748b",
+        },
+        {
+            id: "npc-taner",
+            name: "Taner [DEV]",
+            location: "ODCAF Ofisi",
+            role: "Baş Geliştirici & Mimar / Lead Developer",
+            avatar: "./img/npcs/npc_taner.png",
+            dialogue: "Flash öldü ama Minifal yaşıyor! Oyunu modern web teknolojileriyle sıfırdan hayata döndürüyoruz.",
+            description: "Minifal remake projesini modern web, Canvas ve istemci-sunucu motoruyla sıfırdan hayata döndüren baş yazılımcı. Pervaneli şapkası ve ayıcığıyla ODCAF Ofisindeki koltuğunda kod yazar.",
+            itemsForSale: ["Modern Web Motoru", "Yeni Minifal İstemcisi", "Oyun Mekanikleri & Fixler"],
+            badgeColor: "#3b82f6",
+        },
+        {
+            id: "npc-marijuannaa",
+            name: "marijuannaa [NOVA]",
+            location: "ODCAF Ofisi",
+            role: "Wiki Mimarı & Topluluk Yöneticisi / Wiki Architect",
+            avatar: "./img/npcs/npc_marijuannaa.png",
+            dialogue: "Şehrin tüm sırları, silah hasarları, mobilyaları ve haritaları bu rehberde! Keyfini çıkar.",
+            description: "Minifal Fandom & Wiki portalını kuran, eşya hasarlarını, satıcıları ve haritayı detaylandıran topluluk yöneticisi. ODCAF Ofisi koltuğunda portala can verir.",
+            itemsForSale: ["Minifal Fandom & Wiki Portalı", "Canlı Market & Fiyat Grafiği", "Tüm NPC & Harita Veritabanı"],
+            badgeColor: "#8b5cf6",
         }
     ],
 
@@ -4077,8 +4132,10 @@ const MINIFAL_DATABASE = {
                 {
                         "id": "loc-4",
                         "name": "Mobilya Mağazası",
-                        "npcs": [],
-                        "desc": "Ev döşemek için tüm mobilya çeşitlerinin bulunduğu büyük mağaza."
+                        "npcs": [
+                                "Ivy - Mobilya"
+                        ],
+                        "desc": "Ev döşemek için tüm mobilya çeşitlerinin bulunduğu büyük mağaza. Ivy tüm modern mobilyaları burada sunar (Retro & Space Age yapım aşamasında)."
                 },
                 {
                         "id": "loc-5",
@@ -4120,8 +4177,13 @@ const MINIFAL_DATABASE = {
                 {
                         "id": "loc-10",
                         "name": "ODCAF Ofisi",
-                        "npcs": [],
-                        "desc": "Minifal yönetim, denetim ve kamu güvenliği merkezi."
+                        "npcs": [
+                                "Tolga",
+                                "Cem",
+                                "Taner [DEV]",
+                                "marijuannaa [NOVA]"
+                        ],
+                        "desc": "Action Dimension kurucuları Tolga & Cem, Minifal'i sıfırdan kuran Taner [DEV] ve Wiki mimarı marijuannaa [NOVA]'nın bulunduğu merkez ofis."
                 }
         ]
 },
