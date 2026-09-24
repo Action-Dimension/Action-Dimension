@@ -16,29 +16,53 @@
     
   <script type="module" crossorigin="" src="./hikayemiz_files/modulepreload-polyfill-3cfb730f.js.indir"></script>
   <script type="module" crossorigin="" src="./hikayemiz_files/i18n-7189b6d3.js.indir"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Instrument+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/fandom.css?v=2.5">
   <link rel="stylesheet" href="./hikayemiz_files/styles-7b38c733.css">
   <link rel="stylesheet" href="./hikayemiz_files/story-25a4c78a.css">
   <link rel="stylesheet" href="./hikayemiz_files/site-footer-16ecd6f3.css">
 </head>
 <body class="story-page">
-    <a class="story-skip" href="https://minifal.com/hikaye#hikaye">Hikâyeye geç</a>
+    <a class="story-skip" href="#hikaye">Hikâyeye geç</a>
 
-    <header class="story-topbar">
-        <div class="story-shell story-topbar-inner">
-            <a class="story-logo" href="https://minifal.com/" aria-label="Minifal — ana sayfa">
-                <img src="./hikayemiz_files/logo.svg" alt="">
-            </a>
-            <span class="story-page-name">Hikâyemiz</span>
-            <nav class="story-nav" aria-label="Sayfa bölümleri">
-                <a href="./index.html">Katalog & Market</a>
-                <a href="./harita.html">Harita & Mekânlar</a>
-                <a href="./evler.html">Emlak & Tasarımcı</a>
-                <a href="./boss.html">Boss Rehberi</a>
-                <a href="./hikayemiz.html" class="active">Hikâyemiz</a>
+    <!-- SVG Sprite -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 7l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></symbol>
+    </svg>
+
+    <!-- Üst Menü / Topbar -->
+    <header class="topbar">
+        <div class="topbar-inner">
+            <div class="brand-group">
+                <a class="logotype" href="./index.html" aria-label="Minifal Wiki">
+                    <img src="./img/minifal_logo.png" alt="Minifal" class="logotype-img">
+                </a>
+                <span class="wiki-badge">Fandom & Wiki</span>
+            </div>
+
+            <nav class="topnav" aria-label="Sayfa bölümleri">
+                <a href="./index.html" class="nav-link">📦 Katalog & Market</a>
+                <a href="./harita.html" class="nav-link">🗺️ Harita & Mekânlar</a>
+                <a href="./evler.html" class="nav-link">🏡 Emlak & Tasarımcı</a>
+                <a href="./boss.html" class="nav-link">👾 Boss Rehberi</a>
+                <a href="./hikayemiz.html" class="nav-link active">📜 Hikâyemiz</a>
             </nav>
-            <a class="story-cta" href="https://minifal.com/#giris">Hesap aç</a>
-        <select class="language-switch" aria-label="English" title="English"><option value="tr">TR</option><option value="en">EN</option><option value="pt">PT</option></select></div>
+
+            <div class="topbar-actions">
+                <a class="topbar-cta" href="https://minifal.com/">
+                    <span>Oyuna Dön</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24"><use href="#arrow"></use></svg>
+                </a>
+            </div>
+        </div>
     </header>
+
+    <!-- İnce Toprak Katmanı Kesiti (Crust) -->
+    <div class="crust crust--slim" aria-hidden="true">
+        <span></span><span></span><span></span>
+    </div>
 
     <main class="story-main" id="hikaye" tabindex="-1">
         <article class="story-article story-shell" aria-labelledby="story-title">
@@ -69,14 +93,18 @@
         </article>
     </main>
 
-    <footer class="site-footer" id="site-footer">
-        <div class="story-shell site-footer-inner">
+    <!-- Orijinal Minifal Footer -->
+    <footer class="site-footer">
+        <div class="site-footer-inner">
             <div class="site-footer-brand">
-                <a class="site-footer-logo" href="https://minifal.com/" aria-label="Minifal — ana sayfa"><img src="./hikayemiz_files/logo.svg" alt=""></a>
+                <a class="logotype logotype--small" href="./index.html" aria-label="Minifal ana sayfa">
+                    <img src="./img/minifal_logo.png" alt="Minifal" class="logotype-img logotype-img--small">
+                </a>
                 <a class="site-footer-email" href="mailto:info@minifal.com">info@minifal.com</a>
             </div>
+
             <section class="site-footer-community" aria-labelledby="footer-social-title">
-                <div class="site-footer-community-head">
+                <div>
                     <p class="site-footer-label" id="footer-social-title">Şehirden haberdar ol</p>
                     <p class="site-footer-handle">@minifalgame</p>
                 </div>
@@ -86,19 +114,16 @@
                     <a class="site-social" href="https://www.youtube.com/@minifalgame" target="_blank" rel="noopener noreferrer">YouTube</a>
                 </nav>
             </section>
+
             <div class="site-footer-bottom">
-                <div class="site-footer-links">
-                    <nav class="site-footer-nav" aria-label="Alt bağlantılar">
-                        <a href="https://minifal.com/">Ana sayfa</a>
-                        <a href="https://minifal.com/#oyunlar">Oyunlar</a>
-                        <a href="https://minifal.com/hikaye">Hikâyemiz</a>
-                        <a href="https://discord.gg/nzgp3pfT3" target="_blank" rel="noopener noreferrer">Discord</a>
-                    </nav>
-                    <nav class="site-footer-legal" aria-label="Yasal bağlantılar">
-                        <a href="https://minifal.com/gizlilik">Gizlilik</a>
-                        <a href="https://minifal.com/kullanim-kosullari">Kullanım koşulları</a>
-                    </nav>
-                </div>
+                <nav class="site-footer-nav" aria-label="Alt bağlantılar">
+                    <a href="./index.html">Fandom & Wiki</a>
+                    <a href="./anasayfa.html">Orijinal Sayfa</a>
+                    <a href="./hikayemiz.html">Hikâyemiz</a>
+                    <a href="./hesabim.html">Hesabım</a>
+                    <a href="https://minifal.com/">Oyuna Bağlan</a>
+                </nav>
+                <span>Sürüm 0.0.55 · Minifal Topluluk Fandom Portalı</span>
             </div>
         </div>
     </footer>
