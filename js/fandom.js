@@ -14,6 +14,15 @@ document.addEventListener("DOMContentLoaded", () => {
         activeModalItem: null
     };
 
+    // URL parametresinden kategori seçimi (örn: ?cat=weapons veya ?cat=sports)
+    if (typeof window !== "undefined" && window.location) {
+        const urlParams = new URLSearchParams(window.location.search);
+        const catParam = urlParams.get("cat");
+        if (catParam) {
+            state.activeCategory = catParam;
+        }
+    }
+
     // DOM Elemanları
     const itemsGrid = document.getElementById("items-grid");
     const searchInput = document.getElementById("search-input");
@@ -108,6 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Kartları Render Et
     function renderCards() {
+        if (!itemsGrid) return;
         const items = getFilteredItems();
         if (resultsCount) {
             resultsCount.textContent = `${items.length} eşya listeleniyor`;
@@ -522,6 +532,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 2. FİYAT GEÇMİŞİ İNTERAKTİF GRAFİĞİ (SVG CHART)
     function populateChartSelect() {
         if (!chartSelect) return;
+        if (!chartSelect) return;
         const allItems = getAllItems().filter(i => i.priceHistory && i.priceHistory.length > 0);
         chartSelect.innerHTML = allItems.map(item => {
             const curTag = item.currency === 'crystal' ? '💎 Crystal' : '🪙 Cash';
@@ -640,6 +651,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 3. MARKET TABLOSUNU DOLDUR
     function renderMarketTable() {
         if (!marketTableBody) return;
+        if (!marketTableBody) return;
         const items = getAllItems().filter(i => i.priceHistory && i.priceHistory.length > 0);
 
         marketTableBody.innerHTML = items.map(item => {
@@ -731,6 +743,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 5. BOSS & DÜŞMAN REHBERİ VE HASAR SİMÜLATÖRÜ (CYBORG COMMANDER 4016 HP & CYBORG SOLDIER 250 HP)
     function initBossCalculator() {
         const weaponSelect = document.getElementById("boss-weapon-select");
+        if (!weaponSelect) return;
         const dmgDisplay = document.getElementById("calc-dmg-display");
         const hitsDisplay = document.getElementById("calc-hits-display");
         const hitsLabel = document.getElementById("calc-hits-label");
@@ -972,19 +985,31 @@ document.addEventListener("DOMContentLoaded", () => {
                 const action = btn.getAttribute("data-action");
                 if (action === "goto-houses") {
                     const target = document.getElementById("evler-section");
-                    if (target) target.scrollIntoView({ behavior: "smooth" });
+                    if (target) {
+                        target.scrollIntoView({ behavior: "smooth" });
+                    } else {
+                        window.location.href = "./evler.html";
+                    }
                 } else if (action === "filter-sports") {
-                    state.activeCategory = "sports";
-                    updateActiveCategoryButton("sports");
-                    renderCards();
                     const katalog = document.getElementById("katalog");
-                    if (katalog) katalog.scrollIntoView({ behavior: "smooth" });
+                    if (katalog) {
+                        state.activeCategory = "sports";
+                        updateActiveCategoryButton("sports");
+                        renderCards();
+                        katalog.scrollIntoView({ behavior: "smooth" });
+                    } else {
+                        window.location.href = "./index.html?cat=sports";
+                    }
                 } else if (action === "filter-toys" || action === "filter-vintage") {
-                    state.activeCategory = "furniture";
-                    updateActiveCategoryButton("furniture");
-                    renderCards();
                     const katalog = document.getElementById("katalog");
-                    if (katalog) katalog.scrollIntoView({ behavior: "smooth" });
+                    if (katalog) {
+                        state.activeCategory = "furniture";
+                        updateActiveCategoryButton("furniture");
+                        renderCards();
+                        katalog.scrollIntoView({ behavior: "smooth" });
+                    } else {
+                        window.location.href = "./index.html?cat=furniture";
+                    }
                 }
             });
         });

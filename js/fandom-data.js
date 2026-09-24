@@ -1664,7 +1664,7 @@ const MINIFAL_DATABASE = {
             marketRange: "138 Cash",
             image: "./img/items/utility_box_small_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Utility Box - Small (Küçük Kutu). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-util-box-edge",
@@ -1680,7 +1680,7 @@ const MINIFAL_DATABASE = {
             marketRange: "138 Cash",
             image: "./img/items/utility_box_edge_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Utility Box - Edge (Köşe Kutu). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-52-lcd-tv",
@@ -1696,7 +1696,7 @@ const MINIFAL_DATABASE = {
             marketRange: "28 Crystal",
             image: "./img/items/52_inch_lcd_tv_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal 52 inch LCD TV (52 İnç LCD TV). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-audio-system",
@@ -1712,7 +1712,7 @@ const MINIFAL_DATABASE = {
             marketRange: "894 Cash",
             image: "./img/items/audio_system_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Audio System (Ses Sistemi). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-high-speaker",
@@ -1728,7 +1728,7 @@ const MINIFAL_DATABASE = {
             marketRange: "1,350 Cash",
             image: "./img/items/high_power_speaker_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal High-Power Speaker (Yüksek Güçlü Hoparlör). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-med-speaker",
@@ -1744,7 +1744,7 @@ const MINIFAL_DATABASE = {
             marketRange: "624 Cash",
             image: "./img/items/medium_speaker_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Medium Speaker (Orta Boy Hoparlör). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-single-bed",
@@ -1760,7 +1760,7 @@ const MINIFAL_DATABASE = {
             marketRange: "90 Cash",
             image: "./img/items/single_bed_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Single Bed (Tek Kişilik Yatak). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-double-bed",
@@ -1776,7 +1776,7 @@ const MINIFAL_DATABASE = {
             marketRange: "1,782 Cash",
             image: "./img/items/double_bed_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Double Bed (Çift Kişilik Yatak). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-hammock",
@@ -1792,7 +1792,7 @@ const MINIFAL_DATABASE = {
             marketRange: "522 Cash",
             image: "./img/items/hammock_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Hammock (Hamak). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-trampoline",
@@ -1808,7 +1808,7 @@ const MINIFAL_DATABASE = {
             marketRange: "18 Crystal",
             image: "./img/items/trampoline_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Trampoline (Trambolin). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-large-shoe-chair",
@@ -1824,7 +1824,7 @@ const MINIFAL_DATABASE = {
             marketRange: "456 Cash",
             image: "./img/items/large_shoe_chair_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Large Shoe Chair (Büyük Ayakkabı Koltuk). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-small-shoe-chair",
@@ -1840,7 +1840,7 @@ const MINIFAL_DATABASE = {
             marketRange: "126 Cash",
             image: "./img/items/small_shoe_chair_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Small Shoe Chair (Küçük Ayakkabı Koltuk). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-pyramid-armchair",
@@ -1856,7 +1856,7 @@ const MINIFAL_DATABASE = {
             marketRange: "270 Cash",
             image: "./img/items/pyramid_armchair_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Pyramid Armchair (Piramit Tekli Koltuk). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-pyramid-med-couch",
@@ -1872,7 +1872,7 @@ const MINIFAL_DATABASE = {
             marketRange: "498 Cash",
             image: "./img/items/pyramid_medium_couch_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Pyramid Medium Couch (Piramit İkili Kanepe). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-pyramid-large-couch",
@@ -1888,7 +1888,7 @@ const MINIFAL_DATABASE = {
             marketRange: "900 Cash",
             image: "./img/items/pyramid_large_couch_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Pyramid Large Couch (Piramit Büyük Kanepe). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-elcheapo-armchair",
@@ -1904,7 +1904,7 @@ const MINIFAL_DATABASE = {
             marketRange: "30 Cash",
             image: "./img/items/el_cheapo_armchair_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal El Cheapo Armchair (El Cheapo Tekli Koltuk). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-elcheapo-med-couch",
@@ -1920,7 +1920,7 @@ const MINIFAL_DATABASE = {
             marketRange: "66 Cash",
             image: "./img/items/el_cheapo_medium_couch_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal El Cheapo Medium Couch (El Cheapo İkili Kanepe). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-elcheapo-large-couch",
@@ -1936,7 +1936,7 @@ const MINIFAL_DATABASE = {
             marketRange: "108 Cash",
             image: "./img/items/el_cheapo_large_couch_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal El Cheapo Large Couch (El Cheapo Büyük Kanepe). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-classic-armchair",
@@ -1952,7 +1952,7 @@ const MINIFAL_DATABASE = {
             marketRange: "288 Cash",
             image: "./img/items/classic_armchair_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Classic Armchair (Klasik Tekli Koltuk). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-classic-med-couch",
@@ -1968,7 +1968,7 @@ const MINIFAL_DATABASE = {
             marketRange: "492 Cash",
             image: "./img/items/classic_medium_couch_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Classic Medium Couch (Klasik İkili Kanepe). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-classic-large-couch",
@@ -1984,7 +1984,7 @@ const MINIFAL_DATABASE = {
             marketRange: "750 Cash",
             image: "./img/items/classic_large_couch_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Classic Large Couch (Klasik Büyük Kanepe). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-fancy-armchair",
@@ -2000,7 +2000,7 @@ const MINIFAL_DATABASE = {
             marketRange: "402 Cash",
             image: "./img/items/fancy_armchair_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Fancy Armchair (Fancy Tekli Koltuk). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-fancy-med-couch",
@@ -2016,7 +2016,7 @@ const MINIFAL_DATABASE = {
             marketRange: "840 Cash",
             image: "./img/items/fancy_medium_couch_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Fancy Medium Couch (Fancy İkili Kanepe). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-fancy-large-couch",
@@ -2032,7 +2032,7 @@ const MINIFAL_DATABASE = {
             marketRange: "1,050 Cash",
             image: "./img/items/fancy_large_couch_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Fancy Large Couch (Fancy Büyük Kanepe). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-solid-armchair",
@@ -2048,7 +2048,7 @@ const MINIFAL_DATABASE = {
             marketRange: "312 Cash",
             image: "./img/items/solid_armchair_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Solid Armchair (Solid Tekli Koltuk). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-solid-med-couch",
@@ -2064,7 +2064,7 @@ const MINIFAL_DATABASE = {
             marketRange: "750 Cash",
             image: "./img/items/solid_medium_couch_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Solid Medium Couch (Solid İkili Kanepe). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-solid-large-couch",
@@ -2080,7 +2080,7 @@ const MINIFAL_DATABASE = {
             marketRange: "900 Cash",
             image: "./img/items/solid_large_couch_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Solid Large Couch (Solid Büyük Kanepe). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-hunky-armchair",
@@ -2096,7 +2096,7 @@ const MINIFAL_DATABASE = {
             marketRange: "606 Cash",
             image: "./img/items/hunky_armchair_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Hunky Armchair (Hunky Tekli Koltuk). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-hunky-med-couch",
@@ -2112,7 +2112,7 @@ const MINIFAL_DATABASE = {
             marketRange: "900 Cash",
             image: "./img/items/hunky_medium_couch_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Hunky Medium Couch (Hunky İkili Kanepe). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-hunky-large-couch",
@@ -2128,7 +2128,7 @@ const MINIFAL_DATABASE = {
             marketRange: "1,200 Cash",
             image: "./img/items/hunky_large_couch_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Hunky Large Couch (Hunky Büyük Kanepe). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-leet-armchair",
@@ -2144,7 +2144,7 @@ const MINIFAL_DATABASE = {
             marketRange: "402 Cash",
             image: "./img/items/leet_armchair_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Leet Armchair (Leet Tekli Koltuk). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-leet-med-couch",
@@ -2160,7 +2160,7 @@ const MINIFAL_DATABASE = {
             marketRange: "612 Cash",
             image: "./img/items/leet_medium_couch_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Leet Medium Couch (Leet İkili Kanepe). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-leet-large-couch",
@@ -2176,7 +2176,7 @@ const MINIFAL_DATABASE = {
             marketRange: "960 Cash",
             image: "./img/items/leet_large_couch_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Leet Large Couch (Leet Büyük Kanepe). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-swivel-chair",
@@ -2192,7 +2192,7 @@ const MINIFAL_DATABASE = {
             marketRange: "276 Cash",
             image: "./img/items/swivel_chair_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Swivel Chair (Döner Sandalye). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-large-dinner-table",
@@ -2208,7 +2208,7 @@ const MINIFAL_DATABASE = {
             marketRange: "900 Cash",
             image: "./img/items/large_dinner_table_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Large Dinner Table (Büyük Yemek Masası). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-utility-shelf",
@@ -2224,7 +2224,7 @@ const MINIFAL_DATABASE = {
             marketRange: "114 Cash",
             image: "./img/items/utility_shelf_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Utility Shelf (Kutu Raf Ünitesi). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-piano",
@@ -2240,7 +2240,7 @@ const MINIFAL_DATABASE = {
             marketRange: "22 Crystal",
             image: "./img/items/piano_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Piano (Piyano). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-double-coffee-table",
@@ -2256,7 +2256,7 @@ const MINIFAL_DATABASE = {
             marketRange: "342 Cash",
             image: "./img/items/double_coffee_table_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Double Coffee Table (Çift Katlı Sehpa). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-fancy-column",
@@ -2272,7 +2272,7 @@ const MINIFAL_DATABASE = {
             marketRange: "600 Cash",
             image: "./img/items/fancy_column_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Fancy Column (Saray Kolonu). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-sq-breakfast-table",
@@ -2288,7 +2288,7 @@ const MINIFAL_DATABASE = {
             marketRange: "204 Cash",
             image: "./img/items/square_breakfast_table_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Square Breakfast Table (Kare Kahvaltı Masası). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-round-breakfast-table",
@@ -2304,7 +2304,7 @@ const MINIFAL_DATABASE = {
             marketRange: "474 Cash",
             image: "./img/items/round_breakfast_table_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Round Breakfast Table (Yuvarlak Kahvaltı Masası). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-round-low-table",
@@ -2320,7 +2320,7 @@ const MINIFAL_DATABASE = {
             marketRange: "312 Cash",
             image: "./img/items/round_low_table_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Round Low Table (Yuvarlak Alçak Sehpa). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-small-nightstand",
@@ -2336,7 +2336,7 @@ const MINIFAL_DATABASE = {
             marketRange: "180 Cash",
             image: "./img/items/small_nightstand_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Small Nightstand (Küçük Komodin). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-thin-floor-lamp",
@@ -2352,7 +2352,7 @@ const MINIFAL_DATABASE = {
             marketRange: "264 Cash",
             image: "./img/items/thin_floor_lamp_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Thin Floor Lamp (İnce Lambader). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-pyramid-floor-lamp",
@@ -2368,7 +2368,7 @@ const MINIFAL_DATABASE = {
             marketRange: "16 Crystal",
             image: "./img/items/pyramid_floor_lamp_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Pyramid Floor Lamp (Piramit Lambader). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-classic-lamp",
@@ -2384,7 +2384,7 @@ const MINIFAL_DATABASE = {
             marketRange: "126 Cash",
             image: "./img/items/classic_lamp_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Classic Lamp (Klasik Abajur). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-desk-lamp",
@@ -2400,7 +2400,7 @@ const MINIFAL_DATABASE = {
             marketRange: "210 Cash",
             image: "./img/items/desk_lamp_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Desk Lamp (Çalışma Lambası). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-hat-stand",
@@ -2416,7 +2416,7 @@ const MINIFAL_DATABASE = {
             marketRange: "270 Cash",
             image: "./img/items/hat_stand_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Hat Stand (Askılık). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-billiards-table",
@@ -2432,7 +2432,7 @@ const MINIFAL_DATABASE = {
             marketRange: "30 Crystal",
             image: "./img/items/billiards_table_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Billiards Table (Bilardo Masası). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-stool",
@@ -2448,7 +2448,7 @@ const MINIFAL_DATABASE = {
             marketRange: "150 Cash",
             image: "./img/items/stool_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Stool (Bar Taburesi). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-desktop-pc",
@@ -2464,7 +2464,7 @@ const MINIFAL_DATABASE = {
             marketRange: "2,010 Cash",
             image: "./img/items/desktop_pc_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Desktop PC (Masaüstü Bilgisayar). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-fridge",
@@ -2480,7 +2480,7 @@ const MINIFAL_DATABASE = {
             marketRange: "1,050 Cash",
             image: "./img/items/fridge_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Fridge (Buzdolabı). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-oven",
@@ -2496,7 +2496,7 @@ const MINIFAL_DATABASE = {
             marketRange: "900 Cash",
             image: "./img/items/oven_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Oven (Fırın). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-washer",
@@ -2512,7 +2512,7 @@ const MINIFAL_DATABASE = {
             marketRange: "1,140 Cash",
             image: "./img/items/washer_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Washer (Çamaşır Makinesi). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-bookshelves",
@@ -2528,7 +2528,7 @@ const MINIFAL_DATABASE = {
             marketRange: "492 Cash",
             image: "./img/items/bookshelves_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Bookshelves (Kitaplık). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-simple-large-rug",
@@ -2544,7 +2544,7 @@ const MINIFAL_DATABASE = {
             marketRange: "420 Cash",
             image: "./img/items/simple_large_rug_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Simple Large Rug (Sade Büyük Halı). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-striped-med-rug",
@@ -2560,7 +2560,7 @@ const MINIFAL_DATABASE = {
             marketRange: "324 Cash",
             image: "./img/items/striped_medium_rug_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Striped Medium Rug (Çizgili Orta Halı). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-small-flower",
@@ -2576,7 +2576,7 @@ const MINIFAL_DATABASE = {
             marketRange: "120 Cash",
             image: "./img/items/small_flower_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Small Flower (Küçük Çiçek Saksısı). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-med-orange-flower",
@@ -2592,7 +2592,7 @@ const MINIFAL_DATABASE = {
             marketRange: "150 Cash",
             image: "./img/items/medium_orange_flower_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Medium Orange Flower (Turuncu Çiçek Saksısı). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-med-blue-flower",
@@ -2608,7 +2608,7 @@ const MINIFAL_DATABASE = {
             marketRange: "150 Cash",
             image: "./img/items/medium_blue_flower_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Medium Blue Flower (Mavi Çiçek Saksısı). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-nightstand-cup",
@@ -2624,7 +2624,7 @@ const MINIFAL_DATABASE = {
             marketRange: "288 Cash",
             image: "./img/items/nightstand_with_cup_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Nightstand with Cup (Bardaklı Komodin). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-nightstand-tray",
@@ -2640,7 +2640,7 @@ const MINIFAL_DATABASE = {
             marketRange: "378 Cash",
             image: "./img/items/nightstand_with_tray_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Nightstand with Tray (Tepsili Komodin). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-smooth-nightstand",
@@ -2656,7 +2656,7 @@ const MINIFAL_DATABASE = {
             marketRange: "204 Cash",
             image: "./img/items/smooth_nightstand_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Smooth Nightstand (Çift Çekmeceli Komodin). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-large-wardrobe",
@@ -2672,7 +2672,7 @@ const MINIFAL_DATABASE = {
             marketRange: "564 Cash",
             image: "./img/items/large_wardrobe_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Large Wardrobe (Büyük Gardırop). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-medium-wardrobe",
@@ -2688,7 +2688,7 @@ const MINIFAL_DATABASE = {
             marketRange: "420 Cash",
             image: "./img/items/medium_wardrobe_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Medium Wardrobe (Orta Boy Gardırop). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-32-lcd-tv",
@@ -2704,7 +2704,7 @@ const MINIFAL_DATABASE = {
             marketRange: "1,458 Cash",
             image: "./img/items/32_inch_lcd_tv_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal 32 inch LCD TV (32 İnç LCD TV). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-42-lcd-tv",
@@ -2720,7 +2720,7 @@ const MINIFAL_DATABASE = {
             marketRange: "1,782 Cash",
             image: "./img/items/42_inch_lcd_tv_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal 42 inch LCD TV (42 İnç LCD TV). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-rectangular-lamp",
@@ -2736,7 +2736,7 @@ const MINIFAL_DATABASE = {
             marketRange: "360 Cash",
             image: "./img/items/rectangular_lamp_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Rectangular Lamp (Dikdörtgen Lambader). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-spotlight",
@@ -2752,7 +2752,7 @@ const MINIFAL_DATABASE = {
             marketRange: "882 Cash",
             image: "./img/items/spotlight_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Spotlight (Stüdyo Spot Işığı). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-large-shelves",
@@ -2768,7 +2768,7 @@ const MINIFAL_DATABASE = {
             marketRange: "564 Cash",
             image: "./img/items/large_shelves_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Large Shelves (Geniş Raf Standı). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-mini-tv",
@@ -2784,7 +2784,7 @@ const MINIFAL_DATABASE = {
             marketRange: "114 Cash",
             image: "./img/items/mini_tv_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Mini TV (Tüplü Mini TV). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-lcd-tv",
@@ -2800,7 +2800,7 @@ const MINIFAL_DATABASE = {
             marketRange: "2,136 Cash",
             image: "./img/items/lcd_tv_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal LCD TV (LCD TV). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-turntable",
@@ -2816,7 +2816,7 @@ const MINIFAL_DATABASE = {
             marketRange: "22 Crystal",
             image: "./img/items/turntable_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Turntable (Pikap & Plak Çalar). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-slim-speakers",
@@ -2832,7 +2832,7 @@ const MINIFAL_DATABASE = {
             marketRange: "16 Crystal",
             image: "./img/items/slim_speakers_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Slim Speakers (İnce Kule Hoparlör). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-large-utility-box",
@@ -2848,7 +2848,7 @@ const MINIFAL_DATABASE = {
             marketRange: "156 Cash",
             image: "./img/items/large_utility_box_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Large Utility Box (Büyük Sandık Kutu). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-deck-chair",
@@ -2864,7 +2864,7 @@ const MINIFAL_DATABASE = {
             marketRange: "588 Cash",
             image: "./img/items/deck_chair_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Deck Chair (Şezlong). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-modular-shoe-chair",
@@ -2880,7 +2880,7 @@ const MINIFAL_DATABASE = {
             marketRange: "492 Cash",
             image: "./img/items/modular_shoe_chair_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Modular Shoe Chair (Modüler Ayakkabı Koltuk). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-small-table",
@@ -2896,7 +2896,7 @@ const MINIFAL_DATABASE = {
             marketRange: "186 Cash",
             image: "./img/items/small_table_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Small Table (Küçük Sehpa). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-elegant-armchair",
@@ -2912,7 +2912,7 @@ const MINIFAL_DATABASE = {
             marketRange: "276 Cash",
             image: "./img/items/elegant_armchair_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Elegant Armchair (Zarif Tekli Koltuk). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-elegant-med-couch",
@@ -2928,7 +2928,7 @@ const MINIFAL_DATABASE = {
             marketRange: "594 Cash",
             image: "./img/items/elegant_medium_couch_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Elegant Medium Couch (Zarif İkili Kanepe). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-elegant-large-couch",
@@ -2944,7 +2944,7 @@ const MINIFAL_DATABASE = {
             marketRange: "870 Cash",
             image: "./img/items/elegant_large_couch_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Elegant Large Couch (Zarif Büyük Kanepe). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-neat-armchair",
@@ -2960,7 +2960,7 @@ const MINIFAL_DATABASE = {
             marketRange: "306 Cash",
             image: "./img/items/neat_armchair_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Neat Armchair (Neat Tekli Koltuk). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-neat-med-couch",
@@ -2976,7 +2976,7 @@ const MINIFAL_DATABASE = {
             marketRange: "546 Cash",
             image: "./img/items/neat_medium_couch_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Neat Medium Couch (Neat İkili Kanepe). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-neat-large-couch",
@@ -2992,7 +2992,7 @@ const MINIFAL_DATABASE = {
             marketRange: "984 Cash",
             image: "./img/items/neat_large_couch_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Neat Large Couch (Neat Büyük Kanepe). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-fussy-armchair",
@@ -3008,7 +3008,7 @@ const MINIFAL_DATABASE = {
             marketRange: "306 Cash",
             image: "./img/items/fussy_armchair_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Fussy Armchair (Fussy Tekli Koltuk). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-fussy-med-couch",
@@ -3024,7 +3024,7 @@ const MINIFAL_DATABASE = {
             marketRange: "534 Cash",
             image: "./img/items/fussy_medium_couch_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Fussy Medium Couch (Fussy İkili Kanepe). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-fussy-large-couch",
@@ -3040,7 +3040,7 @@ const MINIFAL_DATABASE = {
             marketRange: "876 Cash",
             image: "./img/items/fussy_large_couch_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Fussy Large Couch (Fussy Büyük Kanepe). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-spider-armchair",
@@ -3056,7 +3056,7 @@ const MINIFAL_DATABASE = {
             marketRange: "306 Cash",
             image: "./img/items/spider_armchair_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Spider Armchair (Spider Tekli Koltuk). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-spider-med-couch",
@@ -3072,7 +3072,7 @@ const MINIFAL_DATABASE = {
             marketRange: "546 Cash",
             image: "./img/items/spider_medium_couch_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Spider Medium Couch (Spider İkili Kanepe). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-spider-large-couch",
@@ -3088,7 +3088,7 @@ const MINIFAL_DATABASE = {
             marketRange: "912 Cash",
             image: "./img/items/spider_large_couch_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Spider Large Couch (Spider Büyük Kanepe). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-massive-armchair",
@@ -3104,7 +3104,7 @@ const MINIFAL_DATABASE = {
             marketRange: "366 Cash",
             image: "./img/items/massive_armchair_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Massive Armchair (Masif Ahşap Tekli Koltuk). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-massive-med-couch",
@@ -3120,7 +3120,7 @@ const MINIFAL_DATABASE = {
             marketRange: "564 Cash",
             image: "./img/items/massive_medium_couch_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Massive Medium Couch (Masif Ahşap İkili Kanepe). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-massive-large-couch",
@@ -3136,7 +3136,7 @@ const MINIFAL_DATABASE = {
             marketRange: "1,164 Cash",
             image: "./img/items/massive_large_couch_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Massive Large Couch (Masif Ahşap Büyük Kanepe). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-transparent-armchair",
@@ -3152,7 +3152,7 @@ const MINIFAL_DATABASE = {
             marketRange: "14 Crystal",
             image: "./img/items/transparent_armchair_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Transparent Armchair (Şeffaf Kristal Koltuk). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-transparent-med-couch",
@@ -3168,7 +3168,7 @@ const MINIFAL_DATABASE = {
             marketRange: "18 Crystal",
             image: "./img/items/transparent_medium_couch_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Transparent Medium Couch (Şeffaf Kristal İkili Kanepe). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-transparent-large-couch",
@@ -3184,7 +3184,7 @@ const MINIFAL_DATABASE = {
             marketRange: "26 Crystal",
             image: "./img/items/transparent_large_couch_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Transparent Large Couch (Şeffaf Kristal Büyük Kanepe). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-pyramid-chair",
@@ -3200,7 +3200,7 @@ const MINIFAL_DATABASE = {
             marketRange: "456 Cash",
             image: "./img/items/pyramid_chair_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Pyramid Chair (Piramit Berjer). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-small-fountain",
@@ -3216,7 +3216,7 @@ const MINIFAL_DATABASE = {
             marketRange: "408 Cash",
             image: "./img/items/small_fountain_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Small Fountain (Oda İçi Fıskiye). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-book",
@@ -3232,7 +3232,7 @@ const MINIFAL_DATABASE = {
             marketRange: "24 Cash",
             image: "./img/items/book_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Book (Kitap). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-cactus",
@@ -3248,7 +3248,7 @@ const MINIFAL_DATABASE = {
             marketRange: "738 Cash",
             image: "./img/items/cactus_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Cactus (Kaktüs). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-barbell",
@@ -3264,7 +3264,7 @@ const MINIFAL_DATABASE = {
             marketRange: "16 Crystal",
             image: "./img/items/barbell_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Barbell (Dambıl / Ağırlık). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-med-ornament",
@@ -3280,7 +3280,7 @@ const MINIFAL_DATABASE = {
             marketRange: "390 Cash",
             image: "./img/items/medium_ornament_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Medium Ornament (Dekoratif Taş Heykel). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-cello",
@@ -3296,7 +3296,7 @@ const MINIFAL_DATABASE = {
             marketRange: "24 Crystal",
             image: "./img/items/cello_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Cello (Çello). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-bathtub",
@@ -3312,7 +3312,7 @@ const MINIFAL_DATABASE = {
             marketRange: "1,290 Cash",
             image: "./img/items/bathtub_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Bathtub (Küvet). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-laptop",
@@ -3328,7 +3328,7 @@ const MINIFAL_DATABASE = {
             marketRange: "2,490 Cash",
             image: "./img/items/laptop_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Laptop (Dizüstü Bilgisayar). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-mini-fridge",
@@ -3344,7 +3344,7 @@ const MINIFAL_DATABASE = {
             marketRange: "876 Cash",
             image: "./img/items/mini_fridge_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Mini Fridge (Mini Buzdolabı). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-computer-table",
@@ -3360,7 +3360,7 @@ const MINIFAL_DATABASE = {
             marketRange: "576 Cash",
             image: "./img/items/computer_table_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Computer Table (Bilgisayar Masası). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-round-bookshelf",
@@ -3376,7 +3376,7 @@ const MINIFAL_DATABASE = {
             marketRange: "552 Cash",
             image: "./img/items/round_bookshelf_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Round Bookshelf (Yuvarlak Duvar Kitaplığı). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-stylish-bookshelf",
@@ -3392,7 +3392,7 @@ const MINIFAL_DATABASE = {
             marketRange: "12 Crystal",
             image: "./img/items/stylish_bookshelf_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Stylish Bookshelf (Modern Kitaplık). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-dancing-pole",
@@ -3408,7 +3408,7 @@ const MINIFAL_DATABASE = {
             marketRange: "744 Cash",
             image: "./img/items/dancing_pole_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Dancing Pole (Dans Direği). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-squeezer",
@@ -3424,7 +3424,7 @@ const MINIFAL_DATABASE = {
             marketRange: "282 Cash",
             image: "./img/items/squeezer_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Squeezer (Meyve Sıkacağı). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-easel",
@@ -3440,7 +3440,7 @@ const MINIFAL_DATABASE = {
             marketRange: "504 Cash",
             image: "./img/items/easel_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Easel (Ressam Şövalesi). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-treadmill",
@@ -3456,7 +3456,7 @@ const MINIFAL_DATABASE = {
             marketRange: "16 Crystal",
             image: "./img/items/treadmill_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Treadmill (Koşu Bandı). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-coffee-machine",
@@ -3472,7 +3472,7 @@ const MINIFAL_DATABASE = {
             marketRange: "198 Cash",
             image: "./img/items/coffee_machine_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Coffee Machine (Kahve Makinesi). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         },
 {
             id: "furn-medium-chest",
@@ -3488,7 +3488,7 @@ const MINIFAL_DATABASE = {
             marketRange: "342 Cash",
             image: "./img/items/medium_chest_trans.png",
             description: "Minifal ev ve oda dekorasyonu için orijinal Medium Chest (Orta Sandık). Ev Tasarımcısı modunda odanıza yerleştirilebilir.",
-            isPlaceable: True,
+            isPlaceable: true,
         }
     ],
 
@@ -3602,7 +3602,7 @@ const MINIFAL_DATABASE = {
                         "id": "game-paintball",
                         "name": "Paintball",
                         "status": "Aktif",
-                        "playerCount": "7 Oyuncu",
+                        "playerCount": "Aktif",
                         "description": "Stratejik siperler ve takım savaşları ile Minifal'in rekabetçi paintball sahası. Cyborg istilası modunu da barındırır."
                 },
                 {
@@ -3747,6 +3747,11 @@ const MINIFAL_DATABASE = {
         }
     ]
 };
+
+// Browser ortamında window'a ekleme
+if (typeof window !== "undefined") {
+    window.MINIFAL_DATABASE = MINIFAL_DATABASE;
+}
 
 // Node ortamında dışa aktarma
 if (typeof module !== "undefined" && module.exports) {

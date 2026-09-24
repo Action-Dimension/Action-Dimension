@@ -54,8 +54,8 @@
                 <span class="wiki-badge">Fandom & Wiki</span>
             </div>
 <nav class="topnav" aria-label="Sayfa bölümleri">
-                <a href="./index.html" class="nav-link active">📦 Katalog & Market</a>
-                <a href="./harita.html" class="nav-link">🗺️ Harita & Mekânlar</a>
+                <a href="./index.html" class="nav-link">📦 Katalog & Market</a>
+                <a href="./harita.html" class="nav-link active">🗺️ Harita & Mekânlar</a>
                 <a href="./evler.html" class="nav-link">🏡 Emlak & Tasarımcı</a>
                 <a href="./boss.html" class="nav-link">👾 Boss Rehberi</a>
                 <a href="./hikayemiz.html" class="nav-link">📜 Hikâyemiz</a>
@@ -69,47 +69,43 @@
         </div>
     </header>
 
-    <!-- Hero / Kompakt ve Şık Giriş Bölümü -->
     <section class="fandom-hero fandom-hero--compact">
         <div class="hero-shell">
             <div class="hero-header-row">
                 <div class="hero-text-block">
                     <div class="hero-tag-inline">
                         <span class="splat-dot" aria-hidden="true"></span>
-                        <span>Action Dimension Mirası · Topluluk Portalı</span>
+                        <span>Şehir Rehberi · Oyunlar & Esnaf</span>
                     </div>
-                    <h1 class="hero-title">Minifal Eşya Kataloğu</h1>
+                    <h1 class="hero-title">Minifal Haritası & Mekânlar</h1>
                     <p class="hero-lead">
-                        Paintball silahları, modkitler, zırhlar, tenis raketleri, maskeler, mobilyalar ve canlı pazar fiyatları.
+                        Minifal'in 4 ana oyun modu, 10 farklı şehir bölgesi ve dükkan işleten NPC satıcıları.
                     </p>
                 </div>
 
-                <div class="currency-panel" aria-label="Oyun İçi Para Birimleri">
+                <div class="currency-panel">
                     <div class="currency-card">
-                        <img src="./img/cash_coin_trans.png" alt="Cash" class="curr-img">
+                        <span style="font-size:24px;">🎮</span>
                         <div>
-                            <span class="curr-name">Cash</span>
-                            <span class="curr-sub">Çoğu Eşya</span>
+                            <span class="curr-name">4 Oyun</span>
+                            <span class="curr-sub">Paintball, Tenis...</span>
                         </div>
                     </div>
                     <div class="currency-card currency-card--crystal">
-                        <img src="./img/crystal_gem_trans.png" alt="Crystal" class="curr-img">
+                        <span style="font-size:24px;">📍</span>
                         <div>
-                            <span class="curr-name">Crystal</span>
-                            <span class="curr-sub">Özel & Nadir</span>
+                            <span class="curr-name">10 Mekân</span>
+                            <span class="curr-sub">Rezidans, Mall, Ada...</span>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="stat-pills-row">
-                <span class="stat-pill">🔫 <b>24</b> Silah (LMG: 12 Hasar)</span>
-                <span class="stat-pill">🛡️ <b>10</b> Zırh & Kalkan</span>
-                <span class="stat-pill">⚙️ <b>16</b> Modkit (S, M, L)</span>
-                <span class="stat-pill">🎾 <b>3</b> Tenis Raketi</span>
-                <span class="stat-pill">🎭 <b>465</b> Giysi & Maske</span>
-                <span class="stat-pill">🛋️ <b>115</b> Mobilya Modeli</span>
-                <span class="stat-pill">🧪 <b>7</b> Taktik Potion</span>
+                <span class="stat-pill">📍 <b>10</b> Şehir Mekânı</span>
+                <span class="stat-pill">🛍️ <b>4</b> Aktif NPC Satıcı</span>
+                <span class="stat-pill">🎮 <b>4</b> Oyun Alanı</span>
+                <span class="stat-pill">👥 <b>23</b> Toplam Çevrimiçi</span>
             </div>
         </div>
     </section>
@@ -119,102 +115,108 @@
         <span></span><span></span><span></span>
     </div>
 
-    <main class="fandom-main" id="katalog">
-        <!-- Kategori Sekmeleri -->
-        <nav class="category-nav" id="category-nav" aria-label="Eşya Kategorileri">
-            <button type="button" class="cat-btn is-active" data-cat="all">🌐 Tüm Eşyalar</button>
-            <button type="button" class="cat-btn" data-cat="weapons">🔫 Silahlar <span class="badge-num">24</span></button>
-            <button type="button" class="cat-btn" data-cat="modkits">⚙️ Modkitler <span class="badge-num">16</span></button>
-            <button type="button" class="cat-btn" data-cat="armor">🛡️ Zırhlar <span class="badge-num">10</span></button>
-            <button type="button" class="cat-btn" data-cat="sports">🎾 Tenis <span class="badge-num">3</span></button>
-            <button type="button" class="cat-btn" data-cat="masks">🎭 Maskeler & Kıyafet <span class="badge-num">465</span></button>
-            <button type="button" class="cat-btn" data-cat="furniture">🛋️ Mobilyalar & Ev <span class="badge-num">115</span></button>
-            <button type="button" class="cat-btn" data-cat="potions">🧪 Potionlar <span class="badge-num">7</span></button>
-            <button type="button" class="cat-btn" data-cat="market">📈 Market Fiyatları</button>
-            <button type="button" class="cat-btn" data-cat="drops">🎯 Falling Rate (Pasif)</button>
-        </nav>
+    <main class="fandom-main">
+        <!-- ================================================================= -->
+        <!-- HARİTA VE SATICILAR / MEKÂNLAR BÖLÜMÜ -->
+        <!-- ================================================================= -->
+        <section class="harita-section" id="harita-section">
+            <div class="harita-window-box">
+                <!-- Üst Kahverengi Minifal Harita Barı -->
+                <div class="harita-top-banner">
+                    <div class="harita-title-left">
+                        <span class="harita-map-icon">🗺️</span>
+                        <h2 class="harita-main-title">HARİTA</h2>
+                    </div>
+                    <div class="harita-top-right">
+                        <div class="harita-online-badge">
+                            <span class="online-users-icon">👥</span>
+                            <span>Toplam çevrimiçi: <b>23</b></span>
+                        </div>
+                        <span class="harita-close-badge">✕</span>
+                    </div>
+                </div>
 
-        <!-- Arama ve Sıralama Çubuğu (Sade & Kompakt) -->
-        <section class="filter-panel" aria-label="Filtreleme Seçenekleri">
-            <div class="filter-left">
-                <span id="results-count" class="catalog-count-pill">Yükleniyor…</span>
+                <div class="harita-inner-body">
+                    <!-- OYUNLAR (4) -->
+                    <div class="harita-group-block">
+                        <div class="harita-group-title">
+                            <span class="group-icon">🎮</span> Oyunlar (4)
+                        </div>
+                        <div class="harita-games-grid">
+                            <div class="harita-game-card">
+                                <div class="game-thumb-box">
+                                    <img src="./img/items/paintball_modkit_orange_trans.png" alt="Paintball" class="game-thumb-icon">
+                                    <span class="game-status-tag game-status--active">Aktif</span>
+                                </div>
+                                <div class="game-info-col">
+                                    <h4 class="game-title">Paintball</h4>
+                                    <p class="game-desc">Takım maçları, bayrak kapmaca ve Cyborg Boss savunma arenası.</p>
+                                </div>
+                            </div>
+
+                            <div class="harita-game-card">
+                                <div class="game-thumb-box">
+                                    <img src="./img/items/racket_of_speed_trans.png" alt="Tenis" class="game-thumb-icon">
+                                    <span class="game-status-tag game-status--open">Kortlar Açık</span>
+                                </div>
+                                <div class="game-info-col">
+                                    <h4 class="game-title">Tenis</h4>
+                                    <p class="game-desc">Hunter'ın raketleriyle tekler ve çiftler kort karşılaşmaları.</p>
+                                </div>
+                            </div>
+
+                            <div class="harita-game-card">
+                                <div class="game-thumb-box">
+                                    <span class="game-thumb-emoji">⚽</span>
+                                    <span class="game-status-tag game-status--open">Saha Açık</span>
+                                </div>
+                                <div class="game-info-col">
+                                    <h4 class="game-title">Futbol</h4>
+                                    <p class="game-desc">Stadyumda hızlı tempolu yeşil saha maçları.</p>
+                                </div>
+                            </div>
+
+                            <div class="harita-game-card harita-game-card--soon">
+                                <div class="game-thumb-box">
+                                    <span class="game-thumb-emoji">🏎️</span>
+                                    <span class="game-status-tag game-status--soon">Yakında</span>
+                                </div>
+                                <div class="game-info-col">
+                                    <h4 class="game-title">Yarış</h4>
+                                    <p class="game-desc">Minifal sokaklarında rekabetçi araç yarışları.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MEKÂNLAR (10) -->
+                    <div class="harita-group-block">
+                        <div class="harita-group-title">
+                            <span class="group-icon">📍</span> Mekânlar (10)
+                        </div>
+                        <div class="harita-locs-grid" id="harita-locs-grid">
+                            <!-- JS dinamik olarak 10 mekânı yerleştirecek -->
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="filter-right">
-                <div class="search-box">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                    <input type="text" id="search-input" placeholder="Eşya veya modkit ara…" autocomplete="off">
-                </div>
-
-                <div class="sort-group">
-                    <label for="sort-select" class="sort-label">Sırala:</label>
-                    <select id="sort-select" class="sort-select">
-                        <option value="featured">Öne Çıkanlar</option>
-                        <option value="price-asc">Fiyat: Düşükten Yükseğe</option>
-                        <option value="price-desc">Fiyat: Yüksekten Düşüğe</option>
-                        <option value="change-desc">24s Değişim</option>
-                        <option value="name-asc">Alfabetik (A-Z)</option>
-                    </select>
-                </div>
-            </div>
-        </section>
-
-        <!-- Eşyalar Izgarası -->
-        <section class="items-grid" id="items-grid" aria-label="Eşya Listesi">
-            <!-- JavaScript dinamik olarak kartları buraya ekler -->
-        </section>
-
-        <!-- MARKET FİYATLARI VE ZAMAN İÇİNDEKİ DEĞİŞİM (CANLI GRAFİK) -->
-        <section class="market-section" id="market-section">
-            <div class="market-header">
-                <div class="market-title-area">
-                    <h2>Minifal Market Fiyatları ve Zamanla Değişim</h2>
-                    <p>Oyuncular arası 2. el pazarında eşyaların değerleri ve aylık fiyat trendleri.</p>
-                </div>
-                <div class="market-stat-badge">
-                    <span class="curr-mini-tag"><img src="./img/cash_coin_trans.png" class="curr-img-mini" alt="Cash"> <b>Cash</b> (Temel)</span>
-                    <span class="curr-mini-tag curr-mini-tag--crystal"><img src="./img/crystal_gem_trans.png" class="curr-img-mini" alt="Crystal"> <b>Crystal</b> (Özel)</span>
-                </div>
-            </div>
-
-            <!-- İnteraktif SVG Fiyat Değişim Grafiği -->
-            <div class="chart-box">
-                <div class="chart-header">
+            <!-- SATICILAR VE NPC REHBERİ -->
+            <div class="vendors-container">
+                <div class="vendors-header">
                     <div>
-                        <span style="font-size: 11px; font-weight: 800; text-transform: uppercase; color: var(--ink-dim); display: block;">Zaman Çizelgesi Grafiği</span>
-                        <strong style="font-size: 15px; font-family: var(--font-display);">Fiyat Dalgalanma Eğrisi (Son 4 Ay)</strong>
+                        <span class="section-eyebrow">🛍️ Şehir Esnafı & Satıcı Rehberi</span>
+                        <h3 class="vendors-section-title">Minifal NPC Satıcıları</h3>
+                        <p class="vendors-section-desc">Şehrin farklı noktalarındaki dükkan sahipleri, uzmanlık alanları ve sattıkları teçhizatlar.</p>
                     </div>
-
-                    <div class="chart-item-picker">
-                        <label for="chart-item-select" style="font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--ink-dim);">Grafikteki Eşya:</label>
-                        <select id="chart-item-select" class="chart-item-select">
-                            <!-- JS seçenekleri buraya yükler -->
-                        </select>
+                    <div class="vendors-counter-pill">
+                        <b>4 Aktif Satıcı</b>
                     </div>
                 </div>
 
-                <div class="chart-svg-container">
-                    <svg id="price-chart-svg" class="chart-svg"></svg>
-                    <div id="chart-tooltip" class="chart-tooltip"></div>
+                <div class="vendors-grid" id="vendors-grid">
+                    <!-- JS dinamik satıcı kartlarını buraya yerleştirecek -->
                 </div>
-            </div>
-
-            <!-- Canlı Pazar Tablosu -->
-            <div class="market-table-wrap">
-                <table class="market-table">
-                    <thead>
-                        <tr>
-                            <th>Eşya Adı & Türü</th>
-                            <th>Nadirlik Seviyesi</th>
-                            <th>Güncel Fiyat</th>
-                            <th>24s Değişim</th>
-                            <th>İşlem</th>
-                        </tr>
-                    </thead>
-                    <tbody id="market-table-body">
-                        <!-- JS dinamik satırları buraya ekler -->
-                    </tbody>
-                </table>
             </div>
         </section>
     </main>
