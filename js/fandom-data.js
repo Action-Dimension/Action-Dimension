@@ -3951,6 +3951,61 @@ const MINIFAL_DATABASE = {
             description: "Power Mall 1. katta kuaför salonunu işleten sarı kıvırcık saçlı, stil sahibi kuaför. Oyuncuların saç kesimlerini, modellerini ve renklerini yeniler.",
             itemsForSale: ["Saç Kesim & Modelleri", "Saç Boyası & Renk Değişimi", "Özel Stil & Bakım Paketleri"],
             badgeColor: "#ec4899",
+        },
+        {
+            id: "vendor-taylor",
+            name: "Taylor - Alt Giyim",
+            location: "Power Mall 1. Kat",
+            role: "Alt Giyim & Pantolon Satıcısı / Bottoms Vendor",
+            avatar: "./img/npcs/npc_taylor.png",
+            dialogue: "Tarzını tamamlayacak en şık şortlar, pantolonlar ve taktik alt giyimler burada!",
+            description: "Power Mall 1. katta alt giyim reyonunu işleten askılı pantolonlu, gözlüklü moda satıcısı. Oyunculara yüzlerce farklı renkte şort, kot ve pantolon sunar.",
+            itemsForSale: ["Kot & Kumaş Pantolonlar", "Spor Şortlar & Etekler", "Taktik & Kamuflaj Alt Giyim"],
+            badgeColor: "#3b82f6",
+        },
+        {
+            id: "vendor-miles",
+            name: "Miles - Üst Giyim",
+            location: "Power Mall 1. Kat",
+            role: "Üst Giyim & Tişört Satıcısı / Tops Vendor",
+            avatar: "./img/npcs/npc_miles.png",
+            dialogue: "Kombininin parlayan yıldızı olacak ceket, tişört ve gömlekleri kaçırma!",
+            description: "Power Mall 1. kat giyim reyonunda kasanın başında duran güler yüzlü üst giyim satıcısı. Minifal'in en zengin tişört, kapüşonlu, ceket ve forma koleksiyonunu satar.",
+            itemsForSale: ["Tişörtler & Atletler", "Ceketler & Kapüşonlular", "Takım & Spor Formaları"],
+            badgeColor: "#10b981",
+        },
+        {
+            id: "vendor-thomas",
+            name: "Thomas - Ayakkabı",
+            location: "Power Mall 1. Kat",
+            role: "Ayakkabı & Sneaker Satıcısı / Footwear Vendor",
+            avatar: "./img/npcs/npc_thomas.png",
+            dialogue: "Hızlı adımlar, sağlam duruş! Sokak ve sahalar için en rahat sneaker'lar burada.",
+            description: "Power Mall 1. kattaki ayakkabı mağazasını işleten mor pantolonlu, pembe ayakkabılı stil satıcısı. Koşu ayakkabılarından botlara ve klasik sneaker modellerine kadar geniş seçenek sunar.",
+            itemsForSale: ["Spor Sneaker Modelleri", "Klasik & Günlük Ayakkabılar", "Ağır Saha Botları & Sandaletler"],
+            badgeColor: "#8b5cf6",
+        },
+        {
+            id: "vendor-hattie",
+            name: "Hattie - Şapka",
+            location: "Power Mall 1. Kat",
+            role: "Şapka, Kasket & Başlık Satıcısı / Headwear Vendor",
+            avatar: "./img/npcs/npc_hattie.png",
+            dialogue: "Kafana göre bir tarz bul! Kasketlerden pilot gözlüklerine en havalı şapkalar vitrinde.",
+            description: "Power Mall 1. katta sarı şapkası ve pilot gözlüğüyle şapka mağazasını yöneten enerjik esnaf. Oyuncuların tarzını taçlandıran kasket, bere, şapka ve gözlükleri sunar.",
+            itemsForSale: ["Kasketler & Snapback Şapkalar", "Pilot Gözlükleri & Vizörler", "Kışlık Bereler & Bandanalar"],
+            badgeColor: "#f59e0b",
+        },
+        {
+            id: "vendor-harrison",
+            name: "Dr. Harrison - Estetik",
+            location: "Estetik Ameliyat",
+            role: "Estetik Cerrahı & Klinik Direktörü / Plastic Surgeon",
+            avatar: "./img/npcs/npc_harrison.png",
+            dialogue: "Aynadaki görüntünden sıkıldın mı? Saç, yüz, ten rengi ve baştan yaratım benim uzmanlığım.",
+            description: "Minifal Estetik Kliniği'nin baş cerrahı. Uzun saçları, beyaz önlüğü ve profesyonel kliniğinde karakterlerin yüz hatlarını, ten rengini ve fiziksel görünüşünü baştan tasarlar.",
+            itemsForSale: ["Ten Rengi Değişimi", "Göz & Yüz Hatları Estetiği", "Tam Karakter Yenileme Paketi"],
+            badgeColor: "#0ea5e9",
         }
     ],
 
@@ -4002,9 +4057,13 @@ const MINIFAL_DATABASE = {
                         "id": "loc-2",
                         "name": "Power Mall 1.Kat",
                         "npcs": [
-                                "Chloe - Kuaför"
+                                "Chloe - Kuaför",
+                                "Miles - Üst Giyim",
+                                "Taylor - Alt Giyim",
+                                "Thomas - Ayakkabı",
+                                "Hattie - Şapka"
                         ],
-                        "desc": "Büyük alışveriş merkezi 1. kat; mağazalar, butikler ve Chloe'nin kuaför salonu."
+                        "desc": "Büyük alışveriş merkezi 1. kat; Chloe'nin kuaförü ile Miles, Taylor, Thomas ve Hattie'nin giyim ve ayakkabı butikleri."
                 },
                 {
                         "id": "loc-3",
@@ -4038,8 +4097,10 @@ const MINIFAL_DATABASE = {
                 {
                         "id": "loc-7",
                         "name": "Estetik Ameliyat",
-                        "npcs": [],
-                        "desc": "Karakter görünüşü, saç, yüz ve stil değişiklik kliniği."
+                        "npcs": [
+                                "Dr. Harrison - Estetik"
+                        ],
+                        "desc": "Dr. Harrison'ın uzmanlığındaki karakter estetiği, yüz hatları, saç ve ten rengi değişim kliniği."
                 },
                 {
                         "id": "loc-8",

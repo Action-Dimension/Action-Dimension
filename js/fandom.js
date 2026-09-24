@@ -977,6 +977,21 @@ document.addEventListener("DOMContentLoaded", () => {
             } else if (v.id === "vendor-ivan") {
                 actionBtnText = "🌾 Hayvan Yemleri (Yakında)";
                 actionAttr = 'data-action="info-pets"';
+            } else if (v.id === "vendor-taylor") {
+                actionBtnText = "👖 Alt Giyim Reyonu";
+                actionAttr = 'data-action="filter-masks"';
+            } else if (v.id === "vendor-miles") {
+                actionBtnText = "👕 Üst Giyim Reyonu";
+                actionAttr = 'data-action="filter-masks"';
+            } else if (v.id === "vendor-thomas") {
+                actionBtnText = "👟 Ayakkabı Reyonu";
+                actionAttr = 'data-action="filter-masks"';
+            } else if (v.id === "vendor-hattie") {
+                actionBtnText = "🧢 Şapka & Başlık Reyonu";
+                actionAttr = 'data-action="filter-masks"';
+            } else if (v.id === "vendor-harrison") {
+                actionBtnText = "💉 Estetik & Stil Kliniği";
+                actionAttr = 'data-action="info-surgery"';
             }
 
             return `
@@ -1063,6 +1078,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 } else if (action === "info-pets") {
                     alert("🐾 Evcil hayvanlar ve hayvan yemleri kataloğu çok yakında eklenecek ve burada listelenecektir!");
+                } else if (action === "info-surgery") {
+                    alert("💉 Dr. Harrison'ın Estetik Ameliyat Kliniğinde karakterinizin ten rengi, yüz hatları, saç kesimi ve tarzı baştan aşağı yenilenmektedir!");
                 }
             });
         });
