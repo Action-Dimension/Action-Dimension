@@ -962,6 +962,9 @@ document.addEventListener("DOMContentLoaded", () => {
             } else if (v.id === "vendor-vincent") {
                 actionBtnText = "📦 İkinci El Pazarı";
                 actionAttr = 'data-action="filter-vintage"';
+            } else if (v.id === "vendor-hazel") {
+                actionBtnText = "🧪 İksirleri İncele";
+                actionAttr = 'data-action="filter-potions"';
             }
 
             return `
@@ -1014,6 +1017,16 @@ document.addEventListener("DOMContentLoaded", () => {
                         katalog.scrollIntoView({ behavior: "smooth" });
                     } else {
                         window.location.href = "./index.html?cat=furniture";
+                    }
+                } else if (action === "filter-potions") {
+                    const katalog = document.getElementById("katalog");
+                    if (katalog) {
+                        state.activeCategory = "potions";
+                        updateActiveCategoryButton("potions");
+                        renderCards();
+                        katalog.scrollIntoView({ behavior: "smooth" });
+                    } else {
+                        window.location.href = "./index.html?cat=potions#katalog";
                     }
                 }
             });
@@ -1555,6 +1568,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Başlangıç Çalıştırması
+    if (state.activeCategory !== "all") {
+        updateActiveCategoryButton(state.activeCategory);
+    }
     populateChartSelect();
     renderChart();
     renderMarketTable();
