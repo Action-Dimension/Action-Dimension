@@ -1230,8 +1230,10 @@ document.addEventListener("DOMContentLoaded", () => {
             if (!furn) return;
 
             const stageRect = stage.getBoundingClientRect();
-            const defaultX = customX !== null ? customX : Math.round(stageRect.width / 2 - 35 + (Math.random() * 40 - 20));
-            const defaultY = customY !== null ? customY : Math.round(stageRect.height / 2 - 35 + (Math.random() * 40 - 20));
+            const stageW = (stageRect && stageRect.width > 100) ? stageRect.width : 520;
+            const stageH = (stageRect && stageRect.height > 100) ? stageRect.height : 440;
+            const defaultX = customX !== null ? customX : Math.round(stageW / 2 - 35 + (Math.random() * 40 - 20));
+            const defaultY = customY !== null ? customY : Math.round(stageH / 2 - 35 + (Math.random() * 40 - 20));
 
             const instanceId = "placed-" + Date.now() + "-" + Math.floor(Math.random() * 1000);
             designerState.nextZ += 1;
@@ -1510,6 +1512,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // İlk palet renderı
         renderPalette();
+
+        // Başlangıçta odayı boş bırakmamak için örnek yerleşimi otomatik yükle
+        setTimeout(() => {
+            if (sampleBtn) sampleBtn.click();
+        }, 150);
     }
 
     // Pencere yeniden boyutlandırıldığında grafiği güncelle
