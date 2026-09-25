@@ -45,6 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
             ...MINIFAL_DATABASE.armor,
             ...(MINIFAL_DATABASE.sports || []),
             ...(MINIFAL_DATABASE.pets || []),
+            ...(MINIFAL_DATABASE.petfood || []),
+            ...(MINIFAL_DATABASE.vouchers || []),
             ...(MINIFAL_DATABASE.toys || []),
             ...MINIFAL_DATABASE.masks,
             ...MINIFAL_DATABASE.furniture,
@@ -97,6 +99,9 @@ document.addEventListener("DOMContentLoaded", () => {
             case "modkits": return "⚙️";
             case "armor": return "🛡️";
             case "sports": return "🎾";
+            case "pets": return "🐾";
+            case "petfood": return "🥕";
+            case "vouchers": return "🎫";
             case "toys": return "🎪";
             case "masks": return item.subType === "Maske" ? "🎭" : item.subType === "Ceket" ? "🧥" : "👟";
             case "furniture": return item.subType === "Ev Planı" ? "📜" : "🛋️";
@@ -1014,14 +1019,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 actionBtnText = "💇 Kuaför & Saç Modelleri";
                 actionAttr = 'data-action="filter-masks"';
             } else if (v.id === "vendor-jasper") {
-                actionBtnText = "💎 Kristal Eşyaları";
-                actionAttr = 'data-action="filter-crystal"';
+                actionBtnText = "🎫 Kristal Kuponları";
+                actionAttr = 'data-action="filter-vouchers"';
             } else if (v.id === "vendor-sergei") {
-                actionBtnText = "🐾 Evcil Hayvanlar (Yakında)";
-                actionAttr = 'data-action="info-pets"';
+                actionBtnText = "🐾 Evcil Hayvanlar";
+                actionAttr = 'data-action="filter-pets"';
             } else if (v.id === "vendor-ivan") {
-                actionBtnText = "🌾 Hayvan Yemleri (Yakında)";
-                actionAttr = 'data-action="info-pets"';
+                actionBtnText = "🥕 Yem & Bataryalar";
+                actionAttr = 'data-action="filter-petfood"';
             } else if (v.id === "vendor-taylor") {
                 actionBtnText = "👖 Alt Giyim Reyonu";
                 actionAttr = 'data-action="filter-masks"';
@@ -1146,8 +1151,38 @@ document.addEventListener("DOMContentLoaded", () => {
                     } else {
                         window.location.href = "./index.html";
                     }
+                } else if (action === "filter-pets") {
+                    const katalog = document.getElementById("katalog");
+                    if (katalog) {
+                        state.activeCategory = "pets";
+                        updateActiveCategoryButton("pets");
+                        renderCards();
+                        katalog.scrollIntoView({ behavior: "smooth" });
+                    } else {
+                        window.location.href = "./index.html?cat=pets#katalog";
+                    }
+                } else if (action === "filter-petfood") {
+                    const katalog = document.getElementById("katalog");
+                    if (katalog) {
+                        state.activeCategory = "petfood";
+                        updateActiveCategoryButton("petfood");
+                        renderCards();
+                        katalog.scrollIntoView({ behavior: "smooth" });
+                    } else {
+                        window.location.href = "./index.html?cat=petfood#katalog";
+                    }
+                } else if (action === "filter-vouchers") {
+                    const katalog = document.getElementById("katalog");
+                    if (katalog) {
+                        state.activeCategory = "vouchers";
+                        updateActiveCategoryButton("vouchers");
+                        renderCards();
+                        katalog.scrollIntoView({ behavior: "smooth" });
+                    } else {
+                        window.location.href = "./index.html?cat=vouchers#katalog";
+                    }
                 } else if (action === "info-pets") {
-                    alert("🐾 Evcil hayvanlar ve hayvan yemleri kataloğu çok yakında eklenecek ve burada listelenecektir!");
+                    alert("🐾 Evcil hayvanlar ve hayvan yemleri kataloğu başarıyla eklendi! Yukarıdaki sekmelerden inceleyebilirsiniz.");
                 } else if (action === "info-surgery") {
                     alert("💉 Dr. Harrison'ın Estetik Ameliyat Kliniğinde karakterinizin ten rengi, yüz hatları, saç kesimi ve tarzı baştan aşağı yenilenmektedir!");
                 } else if (action === "filter-furniture") {

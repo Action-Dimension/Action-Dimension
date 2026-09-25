@@ -21,6 +21,8 @@ Action Dimension'ın bağımsız yeniden yapımı olan **Minifal** için resmi t
    - 🧪 **Potionlar:** Maçlık ve kalıcı stat güçlendirici iksirler
    - 🎪 **Oyuncaklar & Eğlence Eşyaları:** Tobias'ın dükkanından 69 adet orijinal maske, gözlük, renkli şemsiye, kupa, peluş oyuncaklar, ışın kılıçları, frizbiler ve toplar
    - 🐾 **Evcil Hayvanlar & Robotlar:** Sergei'nin dükkanından 13 adet orijinal kedi, köpek, inek, domuz, servis & koruma robotları ve efsanevi yeşil ejderha
+   - 🥕 **Hayvan Yemleri & Robot Bataryaları:** Ivan'ın dükkanından 8 adet orijinal organik besin (Apple, Carrot, Fish, Meat) ve robotik enerji bataryaları (Small, Medium, Large, Ultimate Battery)
+   - 🎫 **Kristal Kuponları (Crystal Vouchers):** Jasper'ın dükkanından oyuncular arası takas edilebilen ve kullanıldığında hesaba 50, 100 veya 200 Crystal ekleyen Small, Medium ve Large kuponlar
 
 3. **Canlı Market ve Fiyat Değişim Grafiği (Cash & Crystal):**
    - Oyundaki iki resmi para birimi: **Cash (Altın Para)** çoğu eşya için, **Crystal (Yeşil Taş)** ise özel ve nadir eşyalar için kullanılır

@@ -23,7 +23,9 @@ const MINIFAL_DATABASE = {
         totalModkits: 21,
         totalFurniture: 116,
         totalToys: 69,
-        totalPets: 13
+        totalPets: 13,
+        totalPetFood: 8,
+        totalVouchers: 3
     },
 
     // Kategori Tanımları
@@ -35,6 +37,8 @@ const MINIFAL_DATABASE = {
         { id: "potions", name: "İksirler & Taktik Çantalar", icon: "🧪", color: "teal", count: 17, desc: "Güçlendirici iksirler, can ve cephane ikmal paketleri." },
         { id: "sports", name: "Tenis Raketleri", icon: "🎾", color: "orange", count: 3, desc: "Tenis kortlarında kullanılan ve koşu, vuruş veya stamina bonusu sağlayan raketler." },
         { id: "pets", name: "Evcil Hayvanlar", icon: "🐾", color: "purple", count: 13, desc: "Sergei'nin evcil hayvan mağazasından kediler, köpekler, inekler, domuzlar, robotlar ve efsanevi ejderha." },
+        { id: "petfood", name: "Hayvan Yemi & Batarya", icon: "🥕", color: "orange", count: 8, desc: "Ivan'ın mağazasından organik hayvan yemleri ve robot enerji bataryaları." },
+        { id: "vouchers", name: "Kristal Kuponları", icon: "🎫", color: "teal", count: 3, desc: "Jasper'ın mağazasından oyuncular arası takas edilebilir ve kullanıldığında hesaba Crystal ekleyen kuponlar." },
         { id: "masks", name: "Kıyafet & Maske", icon: "🎭", color: "olive", count: 465, desc: "Şehirde tarzını yansıtan maskeler, tişörtler, şortlar ve ceketler." },
         { id: "furniture", name: "Mobilyalar & Ev", icon: "🛋️", color: "sand", count: 116, desc: "Sebastian'dan alınan ev planları ve odayı döşeyen mobilyalar." },
         { id: "toys", name: "Oyuncak & Eğlence", icon: "🎪", color: "pink", count: 69, desc: "Tobias'ın dükkanından maskeler, şemsiyeler, oyuncaklar, kupalar ve ışın kılıçları." },
@@ -5578,6 +5582,246 @@ const MINIFAL_DATABASE = {
         }
     ],
 
+
+    // 11. HAYVAN YEMLERİ VE ROBOT BATARYALARI (IVAN)
+    petfood: [
+        {
+            id: "food-apple",
+            name: "Apple",
+            category: "petfood",
+            subType: "Organik Yem",
+            rarity: "common",
+            rarityName: "Yaygın",
+            image: "./img/items/food_apple_trans.png",
+            currency: "cash",
+            price: 6,
+            marketRange: "6 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 6 },
+                { date: "Tem 2026", price: 6 },
+                { date: "Ağu 2026", price: 6 },
+                { date: "Eyl 2026", price: 6 }
+            ],
+            change24h: 0,
+            description: "Evcil hayvanlar için taze ve sulu kırmızı elma. Hayvanın tokluğunu ve enerjisini tazeler.",
+            source: "Ivan - Hayvan Yemi Mağazası (Şehir Merkezi) / 6 Cash"
+        },
+        {
+            id: "food-carrot",
+            name: "Carrot",
+            category: "petfood",
+            subType: "Organik Yem",
+            rarity: "common",
+            rarityName: "Yaygın",
+            image: "./img/items/food_carrot_trans.png",
+            currency: "cash",
+            price: 12,
+            marketRange: "12 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 12 },
+                { date: "Tem 2026", price: 12 },
+                { date: "Ağu 2026", price: 12 },
+                { date: "Eyl 2026", price: 12 }
+            ],
+            change24h: 0,
+            description: "Taze ve kıtır kıtır havuç. Otobur evcil hayvanların gelişimini ve enerjisini destekler.",
+            source: "Ivan - Hayvan Yemi Mağazası (Şehir Merkezi) / 12 Cash"
+        },
+        {
+            id: "food-fish",
+            name: "Fish",
+            category: "petfood",
+            subType: "Organik Yem",
+            rarity: "uncommon",
+            rarityName: "Nadir",
+            image: "./img/items/food_fish_trans.png",
+            currency: "cash",
+            price: 18,
+            marketRange: "18 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 18 },
+                { date: "Tem 2026", price: 18 },
+                { date: "Ağu 2026", price: 18 },
+                { date: "Eyl 2026", price: 18 }
+            ],
+            change24h: 0,
+            description: "Kediler ve diğer etobur evcil dostlar için taze sarı balık yemi. Yüksek enerji sağlar.",
+            source: "Ivan - Hayvan Yemi Mağazası (Şehir Merkezi) / 18 Cash"
+        },
+        {
+            id: "battery-large",
+            name: "Large Battery",
+            category: "petfood",
+            subType: "Robot Enerjisi",
+            rarity: "rare",
+            rarityName: "Çok Nadir",
+            image: "./img/items/battery_large_trans.png",
+            currency: "cash",
+            price: 18,
+            marketRange: "18 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 18 },
+                { date: "Tem 2026", price: 18 },
+                { date: "Ağu 2026", price: 18 },
+                { date: "Eyl 2026", price: 18 }
+            ],
+            change24h: 0,
+            description: "Gelişmiş koruma ve servis robotları (B-2, SU-70) için çift hücreli yüksek kapasiteli enerji bataryası.",
+            source: "Ivan - Hayvan Yemi Mağazası (Şehir Merkezi) / 18 Cash"
+        },
+        {
+            id: "food-meat",
+            name: "Meat",
+            category: "petfood",
+            subType: "Organik Yem",
+            rarity: "rare",
+            rarityName: "Çok Nadir",
+            image: "./img/items/food_meat_trans.png",
+            currency: "cash",
+            price: 24,
+            marketRange: "24 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 24 },
+                { date: "Tem 2026", price: 24 },
+                { date: "Ağu 2026", price: 24 },
+                { date: "Eyl 2026", price: 24 }
+            ],
+            change24h: 0,
+            description: "Köpekler ve yeşil ejderha gibi etçil evcil hayvanlar için zengin proteinli taze et porsiyonu.",
+            source: "Ivan - Hayvan Yemi Mağazası (Şehir Merkezi) / 24 Cash"
+        },
+        {
+            id: "battery-medium",
+            name: "Medium Battery",
+            category: "petfood",
+            subType: "Robot Enerjisi",
+            rarity: "uncommon",
+            rarityName: "Nadir",
+            image: "./img/items/battery_medium_trans.png",
+            currency: "cash",
+            price: 12,
+            marketRange: "12 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 12 },
+                { date: "Tem 2026", price: 12 },
+                { date: "Ağu 2026", price: 12 },
+                { date: "Eyl 2026", price: 12 }
+            ],
+            change24h: 0,
+            description: "Robot evcil hayvanlar için orta boy çift batarya seti. Standart operasyon süresini ikiye katlar.",
+            source: "Ivan - Hayvan Yemi Mağazası (Şehir Merkezi) / 12 Cash"
+        },
+        {
+            id: "battery-small",
+            name: "Small Battery",
+            category: "petfood",
+            subType: "Robot Enerjisi",
+            rarity: "common",
+            rarityName: "Yaygın",
+            image: "./img/items/battery_small_trans.png",
+            currency: "cash",
+            price: 6,
+            marketRange: "6 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 6 },
+                { date: "Tem 2026", price: 6 },
+                { date: "Ağu 2026", price: 6 },
+                { date: "Eyl 2026", price: 6 }
+            ],
+            change24h: 0,
+            description: "S-4 ve benzeri küçük robot refakatçiler için tek hücreli pratik şarj bataryası.",
+            source: "Ivan - Hayvan Yemi Mağazası (Şehir Merkezi) / 6 Cash"
+        },
+        {
+            id: "battery-ultimate",
+            name: "Ultimate Battery",
+            category: "petfood",
+            subType: "Robot Enerjisi",
+            rarity: "epic",
+            rarityName: "Epik",
+            image: "./img/items/battery_ultimate_trans.png",
+            currency: "cash",
+            price: 24,
+            marketRange: "24 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 24 },
+                { date: "Tem 2026", price: 24 },
+                { date: "Ağu 2026", price: 24 },
+                { date: "Eyl 2026", price: 24 }
+            ],
+            change24h: 0,
+            description: "Gelişmiş nükleer-kuantum döngülü nihai batarya bloğu. Robotik ünitelerin maksimum güçte çalışmasını sağlar.",
+            source: "Ivan - Hayvan Yemi Mağazası (Şehir Merkezi) / 24 Cash"
+        }
+    ],
+
+    // 12. KRİSTAL KUPONLARI (JASPER)
+    vouchers: [
+        {
+            id: "voucher-small-crystal",
+            name: "Small Crystal Voucher",
+            category: "vouchers",
+            subType: "Giyilebilir ve kullanılabilir eşya",
+            rarity: "uncommon",
+            rarityName: "Nadir",
+            image: "./img/items/voucher_small_crystal_trans.png",
+            currency: "crystal",
+            price: 65,
+            marketRange: "65 Crystal",
+            priceHistory: [
+                { date: "Haz 2026", price: 65 },
+                { date: "Tem 2026", price: 65 },
+                { date: "Ağu 2026", price: 65 },
+                { date: "Eyl 2026", price: 65 }
+            ],
+            change24h: 0,
+            description: "Kullanıldığında hesabına 50 Crystal ekler. Diğer oyuncularla takas edilebilir.",
+            source: "Jasper - Kristal Mağazası (Şehir Merkezi) / 65 Crystal"
+        },
+        {
+            id: "voucher-medium-crystal",
+            name: "Medium Crystal Voucher",
+            category: "vouchers",
+            subType: "Giyilebilir ve kullanılabilir eşya",
+            rarity: "rare",
+            rarityName: "Çok Nadir",
+            image: "./img/items/voucher_medium_crystal_trans.png",
+            currency: "crystal",
+            price: 130,
+            marketRange: "130 Crystal",
+            priceHistory: [
+                { date: "Haz 2026", price: 130 },
+                { date: "Tem 2026", price: 130 },
+                { date: "Ağu 2026", price: 130 },
+                { date: "Eyl 2026", price: 130 }
+            ],
+            change24h: 0,
+            description: "Kullanıldığında hesabına 100 Crystal ekler. Diğer oyuncularla takas edilebilir.",
+            source: "Jasper - Kristal Mağazası (Şehir Merkezi) / 130 Crystal"
+        },
+        {
+            id: "voucher-large-crystal",
+            name: "Large Crystal Voucher",
+            category: "vouchers",
+            subType: "Giyilebilir ve kullanılabilir eşya",
+            rarity: "legendary",
+            rarityName: "Efsanevi",
+            image: "./img/items/voucher_large_crystal_trans.png",
+            currency: "crystal",
+            price: 260,
+            marketRange: "260 Crystal",
+            priceHistory: [
+                { date: "Haz 2026", price: 260 },
+                { date: "Tem 2026", price: 260 },
+                { date: "Ağu 2026", price: 260 },
+                { date: "Eyl 2026", price: 260 }
+            ],
+            change24h: 0,
+            description: "Kullanıldığında hesabına 200 Crystal ekler. Diğer oyuncularla takas edilebilir.",
+            source: "Jasper - Kristal Mağazası (Şehir Merkezi) / 260 Crystal"
+        }
+    ],
+
     vendors: [
 {
             id: "vendor-mason",
@@ -5649,9 +5893,15 @@ const MINIFAL_DATABASE = {
             location: "Şehir Merkezi",
             role: "Hayvan Yemi & Bakım Malzemeleri",
             avatar: "./img/npcs/npc_ivan.png",
-            dialogue: "Dostlarının enerjik ve mutlu kalması için en taze, besleyici yemler burada!",
-            description: "Şehir merkezinde geniş şapkası ve sarı gömleğiyle tezgâh açan hayvan dostu esnaf. Evcil hayvanların beslenmesi ve bakımı için yem ve besin paketleri sağlar.",
-            itemsForSale: ["Evcil Hayvan Yemleri (Yakında)", "Gelişim & Enerji Mamaları", "Özel Bakım İkramları"],
+            dialogue: "Dostlarının enerjik ve mutlu kalması için en taze besinler ve robotik bataryalar burada!",
+            description: "Şehir merkezinde geniş şapkası ve sarı gömleğiyle tezgâh açan hayvan dostu esnaf. Organik evcil hayvanlar için taze meyve/sebze/et ve robot refakatçiler için şarj edilebilir bataryalar satar.",
+            itemsForSale: [
+                "Meat (24 Cash)",
+                "Ultimate Battery (24 Cash)",
+                "Fish & Large Battery (18 Cash)",
+                "Carrot & Medium Battery (12 Cash)",
+                "Apple & Small Battery (6 Cash)"
+            ],
             badgeColor: "#eab308",
         },
         {
@@ -5671,9 +5921,13 @@ const MINIFAL_DATABASE = {
             location: "Şehir Merkezi",
             role: "Kristal Tüccarı & Bilet Satıcısı",
             avatar: "./img/npcs/npc_jasper.png",
-            dialogue: "Minifal'in en değerli hazinesi Kristallerdir! Özel etkinlikler ve nadir eşyalar için biletini al.",
-            description: "Şehir merkezinde ihtişamlı kral tacı, pelerini ve altın biletleriyle tezgâh açan kristal tüccarı. Özel eşya alımları, maç biletleri ve Crystal paketleri sunar.",
-            itemsForSale: ["Crystal Paketleri", "Özel Giriş Biletleri", "Nadir Turnuva Kuponları"],
+            dialogue: "Minifal'in en değerli hazinesi Kristallerdir! Takas edilebilir kuponlarınla dilediğince işlem yap.",
+            description: "Şehir merkezinde ihtişamlı kral tacı, pelerini ve altın biletleriyle tezgâh açan kristal tüccarı. Oyuncular arası takas edilebilen ve kullanıldığında hesaba Crystal yükleyen bilet kuponları sunar.",
+            itemsForSale: [
+                "Small Crystal Voucher (65 Crystal / +50 Crystal)",
+                "Medium Crystal Voucher (130 Crystal / +100 Crystal)",
+                "Large Crystal Voucher (260 Crystal / +200 Crystal)"
+            ],
             badgeColor: "#06b6d4",
         },
         {
