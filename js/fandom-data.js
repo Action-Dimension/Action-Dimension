@@ -6224,7 +6224,71 @@ const MINIFAL_DATABASE = {
                 formulaText: "250 Can / 18 Hasar = 13.8 (Yaklaşık 14 Mermi)"
             }
         }
-    ]
+    ],
+
+    // 14. PAINTBALL ODA VE ARENA REHBERİ
+    paintball: {
+        title: "Paintball Arenası",
+        description: "Minifal'in en popüler taktik boya savaşı oyunu. 4 farklı harita ve 4 farklı oyun modunda 4-10 kişilik rekabetçi maçlar düzenlenir.",
+        openRoomsCount: 2,
+        modes: [
+            {
+                id: "ctf",
+                name: "Bayrak Kapmaca",
+                desc: "Düşman üssündeki bayrağı ele geçirip kendi üssüne taşıyarak puan kazanılan yüksek tempolu takım oyunu.",
+                icon: "🚩"
+            },
+            {
+                id: "dm",
+                name: "Ölüm Maçı",
+                desc: "Herkesin tek veya takımlı olarak en çok boya atışıyla rakip elediği kesintisiz çatışma modu.",
+                icon: "💀"
+            },
+            {
+                id: "cyborg",
+                name: "Cyborg Saldırısı",
+                desc: "Dalga dalga gelen robot sürülerine ve devasa Cyborg Boss'a (4.016 HP) karşı birlikte hayatta kalma modu.",
+                icon: "🤖"
+            },
+            {
+                id: "starter",
+                name: "Başlangıç Maçı",
+                desc: "Yeni oyuncuların harita düzenini ve silahları keşfetmesi için tasarlanmış hafif tempolu alıştırma maçı.",
+                icon: "🔰"
+            }
+        ],
+        playerCounts: [4, 6, 8, 10],
+        maps: [
+            {
+                id: "map-1",
+                number: 1,
+                name: "Şelale & Nehir Köprüsü",
+                image: "./img/maps/map_paintball_1.png",
+                desc: "Geniş nehir yatağı, ahşap köprü ve kayalıklar içeren doğal strateji haritası."
+            },
+            {
+                id: "map-2",
+                number: 2,
+                name: "Klinik & Dinlenme Salonu",
+                image: "./img/maps/map_paintball_2.png",
+                desc: "Kapalı iç mekân, masalar, su sebilleri ve dar koridorlarla yakın mesafe boya savaşları sahası."
+            },
+            {
+                id: "map-3",
+                number: 3,
+                name: "Şehir Caddesi & Binalar",
+                image: "./img/maps/map_paintball_3.png",
+                desc: "Sokak lambaları, beton duvarlar ve bina köşeleriyle taktiksel sokak çatışması alanı."
+            },
+            {
+                id: "map-4",
+                number: 4,
+                name: "Harabe Taş Ev & Çimenlik",
+                image: "./img/maps/map_paintball_4.png",
+                desc: "Tuğla duvar kalıntıları, açık çim alanlar ve pusu pencereleriyle dengeli bir çatışma sahası."
+            }
+        ]
+    }
 };
 
 // Browser ortamında window'a ekleme

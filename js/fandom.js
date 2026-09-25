@@ -992,6 +992,159 @@ document.addEventListener("DOMContentLoaded", () => {
         }).join("");
     }
 
+    // ==============================================================================
+    // PAINTBALL ODA OLUŞTURMA MENÜSÜ MANTIĞI
+    // ==============================================================================
+    function initPaintballModal() {
+        const modal = document.getElementById("paintball-room-modal");
+        const openBtn = document.getElementById("btn-open-paintball");
+        const triggerCard = document.getElementById("paintball-trigger-card");
+        const closeBtn = document.getElementById("room-close-btn");
+        const backBtn = document.getElementById("pb-btn-back");
+        const createBtn = document.getElementById("pb-btn-create");
+        const roomNameInput = document.getElementById("pb-room-name");
+        const modeGrid = document.getElementById("pb-mode-grid");
+        const modeHint = document.getElementById("pb-mode-hint");
+        const playersRow = document.getElementById("pb-players-row");
+        const mapsGrid = document.getElementById("pb-maps-grid");
+        const mapHint = document.getElementById("pb-map-hint");
+        const openCountText = document.getElementById("pb-open-rooms-text");
+
+        if (!modal) return;
+
+        let currentOpenRooms = (MINIFAL_DATABASE.paintball && MINIFAL_DATABASE.paintball.openRoomsCount) || 2;
+        let selectedMode = "ctf";
+        let selectedModeName = "Bayrak Kapmaca";
+        let selectedPlayers = "8";
+        let selectedMapNum = 1;
+
+        const modeHints = {
+            "ctf": "🚩 Bayrak Kapmaca: Rakip takımın bayrağını ele geçirip kendi üssüne getir!",
+            "dm": "💀 Ölüm Maçı: En çok boya atışıyla rakip eleyen kazanır!",
+            "cyborg": "🤖 Cyborg Saldırısı: Robot dalgalarına ve dev Cyborg Boss'a karşı takımla savaş!",
+            "starter": "🔰 Başlangıç Maçı: Haritayı ve boya silahlarını tanımak için alıştırma arenası."
+        };
+
+        const mapHints = {
+            1: "🏞️ Harita 1: Şelale & Ahşap Köprü Vadisi (Doğal nehir yatağı & açık vadi)",
+            2: "🏥 Harita 2: Klinik & Dinlenme Salonu (İç mekân masaları & dar koridorlar)",
+            3: "🏙️ Harita 3: Şehir Caddesi & Binalar (Sokak lambaları & taktik bina köşeleri)",
+            4: "🧱 Harita 4: Harabe Taş Ev & Çimenlik (Tuğla siperler & pusu pencereleri)"
+        };
+
+        function openModal() {
+            modal.classList.add("is-open");
+            modal.setAttribute("aria-hidden", "false");
+            document.body.style.overflow = "hidden";
+            if (roomNameInput) {
+                roomNameInput.focus();
+                roomNameInput.select();
+            }
+        }
+
+        function closeModal() {
+            modal.classList.remove("is-open");
+            modal.setAttribute("aria-hidden", "true");
+            document.body.style.overflow = "";
+        }
+
+        // Açılış Tetikleyicileri
+        if (openBtn) {
+            openBtn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                openModal();
+            });
+        }
+
+        if (triggerCard) {
+            triggerCard.addEventListener("click", () => {
+                openModal();
+            });
+        }
+
+        // Kapanış Tetikleyicileri
+        if (closeBtn) closeBtn.addEventListener("click", closeModal);
+        if (backBtn) backBtn.addEventListener("click", closeModal);
+
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && modal.classList.contains("is-open")) {
+                closeModal();
+            }
+        });
+
+        // Mod Seçimi
+        if (modeGrid) {
+            const modeBtns = modeGrid.querySelectorAll(".mode-choice-btn");
+            modeBtns.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    modeBtns.forEach(b => b.classList.remove("is-active"));
+                    btn.classList.add("is-active");
+                    selectedMode = btn.getAttribute("data-mode-id") || "ctf";
+                    selectedModeName = btn.getAttribute("data-mode-name") || btn.textContent.trim();
+                    if (modeHint && modeHints[selectedMode]) {
+                        modeHint.textContent = modeHints[selectedMode];
+                    }
+                });
+            });
+        }
+
+        // Oyuncu Sayısı Seçimi
+        if (playersRow) {
+            const playerBtns = playersRow.querySelectorAll(".player-choice-btn");
+            playerBtns.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    playerBtns.forEach(b => b.classList.remove("is-active"));
+                    btn.classList.add("is-active");
+                    selectedPlayers = btn.getAttribute("data-players") || "8";
+                });
+            });
+        }
+
+        // Harita Seçimi
+        if (mapsGrid) {
+            const mapCards = mapsGrid.querySelectorAll(".map-card-select");
+            mapCards.forEach(card => {
+                card.addEventListener("click", () => {
+                    mapCards.forEach(c => c.classList.remove("is-active"));
+                    card.classList.add("is-active");
+                    const num = parseInt(card.getAttribute("data-map-num"), 10) || 1;
+                    selectedMapNum = num;
+                    if (mapHint && mapHints[num]) {
+                        mapHint.textContent = mapHints[num];
+                    }
+                });
+            });
+        }
+
+        // Oda Oluştur Butonu
+        if (createBtn) {
+            createBtn.addEventListener("click", () => {
+                const roomName = (roomNameInput && roomNameInput.value.trim()) ? roomNameInput.value.trim() : "Minifal Paintball Odası";
+                currentOpenRooms += 1;
+                if (openCountText) {
+                    openCountText.textContent = `${currentOpenRooms} oda açık`;
+                }
+
+                // Bilgilendirme ve Yönlendirme Seçeneği
+                const confirmMsg = `🎉 Tebrikler! "${roomName}" odası başarıyla açıldı!\n\n` +
+                    `🕹️ Mod: ${selectedModeName}\n` +
+                    `👥 Kapasite: ${selectedPlayers} Kişilik\n` +
+                    `🗺️ Seçili Alan: Harita ${selectedMapNum}\n\n` +
+                    `Gerçek oyunda lobiye bağlanmak istiyor musunuz? (minifal.com/play)`;
+
+                if (confirm(confirmMsg)) {
+                    window.location.href = "https://minifal.com/play";
+                } else {
+                    closeModal();
+                }
+            });
+        }
+    }
+
     function renderVendors() {
         const vendorsGrid = document.getElementById("vendors-grid");
         if (!vendorsGrid || !MINIFAL_DATABASE.vendors) return;
@@ -1882,6 +2035,7 @@ document.addEventListener("DOMContentLoaded", () => {
     renderCards();
     initBossCalculator();
     renderHaritaAndLocations();
+    initPaintballModal();
     renderVendors();
     renderHouses();
     initRoomDesigner();

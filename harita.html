@@ -138,7 +138,7 @@
                             <span class="group-icon">🎮</span> Oyunlar (4)
                         </div>
                         <div class="harita-games-grid">
-                            <div class="harita-game-card">
+                            <div class="harita-game-card harita-game-card--paintball" id="paintball-trigger-card" style="cursor: pointer;" title="Oda Oluştur menüsünü açmak için tıklayın">
                                 <div class="game-thumb-box">
                                     <img src="./img/items/paintball_modkit_orange_trans.png" alt="Paintball" class="game-thumb-icon">
                                     <span class="game-status-tag game-status--active">Aktif</span>
@@ -146,6 +146,7 @@
                                 <div class="game-info-col">
                                     <h4 class="game-title">Paintball</h4>
                                     <p class="game-desc">Takım maçları, bayrak kapmaca ve Cyborg Boss savunma arenası.</p>
+                                    <button type="button" class="btn-open-paintball" id="btn-open-paintball">🎮 Oda Oluştur</button>
                                 </div>
                             </div>
 
@@ -216,7 +217,7 @@
         </section>
     </main>
 
-<!-- EŞYA DETAY MODALİ (OYUN İÇİ BİREBİR EŞYA AYRINTILARI PENCERESİ) -->
+    <!-- EŞYA DETAY MODALİ (OYUN İÇİ BİREBİR EŞYA AYRINTILARI PENCERESİ) -->
     <div class="modal-overlay" id="item-modal" role="dialog" aria-modal="true" aria-hidden="true">
         <div class="modal-card game-modal" id="modal-card">
             <div class="game-modal-header">
@@ -225,6 +226,85 @@
             </div>
             <div id="modal-content-body" class="game-modal-body">
                 <!-- JS içeriği buraya birebir oyun diliyle dinamik doldurur -->
+            </div>
+        </div>
+    </div>
+
+    <!-- PAINTBALL ODA OLUŞTURMA MODALİ (OYUN İÇİ BİREBİR ARAYÜZ) -->
+    <div class="paintball-modal-overlay" id="paintball-room-modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="room-creator-box">
+            <!-- Header -->
+            <div class="room-creator-header">
+                <div class="room-creator-title-left">
+                    <img src="./img/maps/icon_tree_header_trans.png" alt="" class="room-creator-tree-icon" aria-hidden="true">
+                    <h3 class="room-creator-main-title">ODA OLUŞTUR</h3>
+                </div>
+                <div class="room-creator-top-right">
+                    <span class="room-creator-open-count" id="pb-open-rooms-text">2 oda açık</span>
+                    <button type="button" class="room-creator-close-btn" id="room-close-btn" aria-label="Pencereyi Kapat">✕</button>
+                </div>
+            </div>
+
+            <!-- Body -->
+            <div class="room-creator-body">
+                <!-- Sol Kolon: Ayarlar -->
+                <div class="room-form-section">
+                    <div class="room-field-group">
+                        <label class="room-field-label" for="pb-room-name">Oda adı</label>
+                        <input type="text" class="room-name-input" id="pb-room-name" placeholder="Oda adını girin..." maxlength="30" value="Minifal Turnuva Odası">
+                    </div>
+
+                    <div class="room-field-group">
+                        <label class="room-field-label">Mod</label>
+                        <div class="mode-grid-2x2" id="pb-mode-grid">
+                            <button type="button" class="mode-choice-btn is-active" data-mode-id="ctf" data-mode-name="Bayrak Kapmaca">Bayrak Kapmaca</button>
+                            <button type="button" class="mode-choice-btn" data-mode-id="dm" data-mode-name="Ölüm Maçı">Ölüm Maçı</button>
+                            <button type="button" class="mode-choice-btn" data-mode-id="cyborg" data-mode-name="Cyborg Saldırısı">Cyborg Saldırısı</button>
+                            <button type="button" class="mode-choice-btn" data-mode-id="starter" data-mode-name="Başlangıç Maçı">Başlangıç Maçı</button>
+                        </div>
+                        <div class="mode-desc-hint" id="pb-mode-hint">🚩 Bayrak Kapmaca: Rakip takımın bayrağını ele geçirip kendi üssüne getir!</div>
+                    </div>
+
+                    <div class="room-field-group">
+                        <label class="room-field-label">Oyuncu sayısı</label>
+                        <div class="players-row-4" id="pb-players-row">
+                            <button type="button" class="player-choice-btn" data-players="4">4 kişilik</button>
+                            <button type="button" class="player-choice-btn" data-players="6">6 kişilik</button>
+                            <button type="button" class="player-choice-btn is-active" data-players="8">8 kişilik</button>
+                            <button type="button" class="player-choice-btn" data-players="10">10 kişilik</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sağ Kolon: Harita Seçimi -->
+                <div class="maps-picker-col">
+                    <label class="room-field-label">Harita</label>
+                    <div class="maps-grid-2x2" id="pb-maps-grid">
+                        <div class="map-card-select is-active" data-map-num="1" tabindex="0" role="button" aria-label="Harita 1: Şelale & Ahşap Köprü">
+                            <span class="map-number-badge">1</span>
+                            <img src="./img/maps/map_paintball_1.png" alt="Harita 1" class="map-card-img">
+                        </div>
+                        <div class="map-card-select" data-map-num="2" tabindex="0" role="button" aria-label="Harita 2: Klinik & Salon">
+                            <span class="map-number-badge">2</span>
+                            <img src="./img/maps/map_paintball_2.png" alt="Harita 2" class="map-card-img">
+                        </div>
+                        <div class="map-card-select" data-map-num="3" tabindex="0" role="button" aria-label="Harita 3: Şehir Caddesi">
+                            <span class="map-number-badge">3</span>
+                            <img src="./img/maps/map_paintball_3.png" alt="Harita 3" class="map-card-img">
+                        </div>
+                        <div class="map-card-select" data-map-num="4" tabindex="0" role="button" aria-label="Harita 4: Harabe Taş Ev">
+                            <span class="map-number-badge">4</span>
+                            <img src="./img/maps/map_paintball_4.png" alt="Harita 4" class="map-card-img">
+                        </div>
+                    </div>
+                    <div class="map-info-hint" id="pb-map-hint">🏞️ Harita 1: Şelale & Ahşap Köprü Vadisi</div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="room-creator-footer">
+                <button type="button" class="btn-room-back" id="pb-btn-back">‹ GERİ</button>
+                <button type="button" class="btn-room-create" id="pb-btn-create">ODA OLUŞTUR</button>
             </div>
         </div>
     </div>
