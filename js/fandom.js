@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ...MINIFAL_DATABASE.modkits,
             ...MINIFAL_DATABASE.armor,
             ...(MINIFAL_DATABASE.sports || []),
+            ...(MINIFAL_DATABASE.toys || []),
             ...MINIFAL_DATABASE.masks,
             ...MINIFAL_DATABASE.furniture,
             ...MINIFAL_DATABASE.potions
@@ -95,6 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
             case "modkits": return "⚙️";
             case "armor": return "🛡️";
             case "sports": return "🎾";
+            case "toys": return "🎪";
             case "masks": return item.subType === "Maske" ? "🎭" : item.subType === "Ceket" ? "🧥" : "👟";
             case "furniture": return item.subType === "Ev Planı" ? "📜" : "🛋️";
             case "potions": return "🧪";
@@ -1050,7 +1052,17 @@ document.addEventListener("DOMContentLoaded", () => {
                     } else {
                         window.location.href = "./index.html?cat=sports";
                     }
-                } else if (action === "filter-toys" || action === "filter-vintage") {
+                } else if (action === "filter-toys") {
+                    const katalog = document.getElementById("katalog");
+                    if (katalog) {
+                        state.activeCategory = "toys";
+                        updateActiveCategoryButton("toys");
+                        renderCards();
+                        katalog.scrollIntoView({ behavior: "smooth" });
+                    } else {
+                        window.location.href = "./index.html?cat=toys#katalog";
+                    }
+                } else if (action === "filter-vintage") {
                     const katalog = document.getElementById("katalog");
                     if (katalog) {
                         state.activeCategory = "furniture";
@@ -1058,7 +1070,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         renderCards();
                         katalog.scrollIntoView({ behavior: "smooth" });
                     } else {
-                        window.location.href = "./index.html?cat=furniture";
+                        window.location.href = "./index.html?cat=furniture#katalog";
                     }
                 } else if (action === "filter-potions") {
                     const katalog = document.getElementById("katalog");

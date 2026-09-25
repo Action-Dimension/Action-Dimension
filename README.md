@@ -19,6 +19,7 @@ Action Dimension'ın bağımsız yeniden yapımı olan **Minifal** için resmi t
    - 🎭 **Maskeler ve Kıyafetler:** Siber gaz maskesi, kitsune tilki maskesi, kapüşonlular, siberpunk ceketler
    - 🛋️ **Mobilyalar ve Ev Planları:** Sebastian'ın mimari ev planları, 4 yöne dönebilen ve renkleri değiştirilebilen ev eşyaları
    - 🧪 **Potionlar:** Maçlık ve kalıcı stat güçlendirici iksirler
+   - 🎪 **Oyuncaklar & Eğlence Eşyaları:** Tobias'ın dükkanından 45 adet orijinal maske, gözlük, renkli şemsiye, kupa, peluş oyuncaklar ve ışın kılıçları
 
 3. **Canlı Market ve Fiyat Değişim Grafiği (Cash & Crystal):**
    - Oyundaki iki resmi para birimi: **Cash (Altın Para)** çoğu eşya için, **Crystal (Yeşil Taş)** ise özel ve nadir eşyalar için kullanılır

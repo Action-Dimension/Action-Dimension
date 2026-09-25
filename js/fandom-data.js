@@ -21,7 +21,8 @@ const MINIFAL_DATABASE = {
         totalWeapons: 48,
         totalArmor: 16,
         totalModkits: 21,
-        totalFurniture: 116
+        totalFurniture: 116,
+        totalToys: 45
     },
 
     // Kategori Tanımları
@@ -34,6 +35,7 @@ const MINIFAL_DATABASE = {
         { id: "sports", name: "Tenis Raketleri", icon: "🎾", color: "orange", count: 3, desc: "Tenis kortlarında kullanılan ve koşu, vuruş veya stamina bonusu sağlayan raketler." },
         { id: "masks", name: "Kıyafet & Maske", icon: "🎭", color: "olive", count: 465, desc: "Şehirde tarzını yansıtan maskeler, tişörtler, şortlar ve ceketler." },
         { id: "furniture", name: "Mobilyalar & Ev", icon: "🛋️", color: "sand", count: 116, desc: "Sebastian'dan alınan ev planları ve odayı döşeyen mobilyalar." },
+        { id: "toys", name: "Oyuncak & Eğlence", icon: "🎪", color: "pink", count: 45, desc: "Tobias'ın dükkanından maskeler, şemsiyeler, oyuncaklar, kupalar ve ışın kılıçları." },
         { id: "market", name: "Market Fiyatları", icon: "📈", color: "gold", count: 50, desc: "2. el pazarındaki canlı fiyatlar ve zaman içindeki değişim grafikleri." },
         { id: "drops", name: "Falling Rate (Pasif)", icon: "🎯", color: "orange", count: 0, desc: "Paintball maç sonu düşme ihtimalleri (Şimdilik pasif)." }
     ],
@@ -1942,6 +1944,955 @@ const MINIFAL_DATABASE = {
             description: "Canlı sarı renkte rahat kesim spor şort.",
             source: "Şehir Mağazası / 500 Cash"
         }
+    ],
+
+    // 9. OYUNCAKLAR & EĞLENCE EŞYALARI (TOYS & PROPS)
+    toys: [
+        {
+            id: "toy-black-round-glasses",
+            name: "Black Round Glasses",
+            category: "toys",
+            subType: "Gözlük & Yüz Aksesuarı",
+            rarity: "uncommon",
+            rarityName: "Nadir",
+            image: "./img/items/toy_black_round_glasses_trans.png",
+            currency: "cash",
+            price: 360,
+            marketRange: "360 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 360 },
+                { date: "Tem 2026", price: 360 },
+                { date: "Ağu 2026", price: 360 },
+                { date: "Eyl 2026", price: 360 }
+            ],
+            change24h: 0,
+            description: "Siyah çerçeveli ve koyu filtreli şık yuvarlak güneş gözlüğü. Karakterine havalı bir retro hava katar.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 360 Cash"
+        },
+        {
+            id: "toy-blue-round-glasses",
+            name: "Blue Round Glasses",
+            category: "toys",
+            subType: "Gözlük & Yüz Aksesuarı",
+            rarity: "common",
+            rarityName: "Standart",
+            image: "./img/items/toy_blue_round_glasses_trans.png",
+            currency: "cash",
+            price: 180,
+            marketRange: "180 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 180 },
+                { date: "Tem 2026", price: 180 },
+                { date: "Ağu 2026", price: 180 },
+                { date: "Eyl 2026", price: 180 }
+            ],
+            change24h: 0,
+            description: "Mavi çerçeveli, açık camlı klasik yuvarlak gözlük.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 180 Cash"
+        },
+        {
+            id: "toy-agent-glasses",
+            name: "Agent Glasses",
+            category: "toys",
+            subType: "Gözlük & Yüz Aksesuarı",
+            rarity: "rare",
+            rarityName: "Ender",
+            image: "./img/items/toy_agent_glasses_trans.png",
+            currency: "crystal",
+            price: 12,
+            marketRange: "12 Crystal",
+            priceHistory: [
+                { date: "Haz 2026", price: 12 },
+                { date: "Tem 2026", price: 12 },
+                { date: "Ağu 2026", price: 12 },
+                { date: "Eyl 2026", price: 12 }
+            ],
+            change24h: 0,
+            description: "Gizli ajan ve koruma tarzında koyu camlı premium güneş gözlüğü.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 12 Crystal"
+        },
+        {
+            id: "toy-funny-glasses",
+            name: "Funny Glasses",
+            category: "toys",
+            subType: "Komik Gözlük & Maske",
+            rarity: "rare",
+            rarityName: "Ender",
+            image: "./img/items/toy_funny_glasses_trans.png",
+            currency: "crystal",
+            price: 12,
+            marketRange: "12 Crystal",
+            priceHistory: [
+                { date: "Haz 2026", price: 12 },
+                { date: "Tem 2026", price: 12 },
+                { date: "Ağu 2026", price: 12 },
+                { date: "Eyl 2026", price: 12 }
+            ],
+            change24h: 0,
+            description: "Burunlu ve sahte kaşlı klasik şaka ve eğlence gözlüğü.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 12 Crystal"
+        },
+        {
+            id: "toy-clown-nose",
+            name: "Clown Nose",
+            category: "toys",
+            subType: "Yüz Aksesuarı",
+            rarity: "rare",
+            rarityName: "Ender",
+            image: "./img/items/toy_clown_nose_trans.png",
+            currency: "crystal",
+            price: 10,
+            marketRange: "10 Crystal",
+            priceHistory: [
+                { date: "Haz 2026", price: 10 },
+                { date: "Tem 2026", price: 10 },
+                { date: "Ağu 2026", price: 10 },
+                { date: "Eyl 2026", price: 10 }
+            ],
+            change24h: 0,
+            description: "Kırmızı yuvarlak sevimli palyaço burnu.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 10 Crystal"
+        },
+        {
+            id: "toy-star-glasses",
+            name: "Star Glasses",
+            category: "toys",
+            subType: "Gözlük & Yüz Aksesuarı",
+            rarity: "epic",
+            rarityName: "Epik",
+            image: "./img/items/toy_star_glasses_trans.png",
+            currency: "crystal",
+            price: 16,
+            marketRange: "16 Crystal",
+            priceHistory: [
+                { date: "Haz 2026", price: 16 },
+                { date: "Tem 2026", price: 16 },
+                { date: "Ağu 2026", price: 16 },
+                { date: "Eyl 2026", price: 16 }
+            ],
+            change24h: 0,
+            description: "Yıldız şeklinde parlak sarı parti gözlüğü.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 16 Crystal"
+        },
+        {
+            id: "toy-thunder-tattoo",
+            name: "Thunder Tattoo",
+            category: "toys",
+            subType: "Yüz Dövmesi",
+            rarity: "epic",
+            rarityName: "Epik",
+            image: "./img/items/toy_thunder_tattoo_trans.png",
+            currency: "crystal",
+            price: 16,
+            marketRange: "16 Crystal",
+            priceHistory: [
+                { date: "Haz 2026", price: 16 },
+                { date: "Tem 2026", price: 16 },
+                { date: "Ağu 2026", price: 16 },
+                { date: "Eyl 2026", price: 16 }
+            ],
+            change24h: 0,
+            description: "Yüze uygulanan efsanevi kırmızı şimşek simgesi dövmesi.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 16 Crystal"
+        },
+        {
+            id: "toy-beak",
+            name: "Beak",
+            category: "toys",
+            subType: "Maske & Yüz Aksesuarı",
+            rarity: "epic",
+            rarityName: "Epik",
+            image: "./img/items/toy_beak_trans.png",
+            currency: "crystal",
+            price: 16,
+            marketRange: "16 Crystal",
+            priceHistory: [
+                { date: "Haz 2026", price: 16 },
+                { date: "Tem 2026", price: 16 },
+                { date: "Ağu 2026", price: 16 },
+                { date: "Eyl 2026", price: 16 }
+            ],
+            change24h: 0,
+            description: "Sarı geometrik sivri kuş gagası maskesi.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 16 Crystal"
+        },
+        {
+            id: "toy-evil-mask",
+            name: "Evil Mask",
+            category: "toys",
+            subType: "Maske",
+            rarity: "epic",
+            rarityName: "Epik",
+            image: "./img/items/toy_evil_mask_trans.png",
+            currency: "crystal",
+            price: 28,
+            marketRange: "28 Crystal",
+            priceHistory: [
+                { date: "Haz 2026", price: 28 },
+                { date: "Tem 2026", price: 28 },
+                { date: "Ağu 2026", price: 28 },
+                { date: "Eyl 2026", price: 28 }
+            ],
+            change24h: 0,
+            description: "Kırmızı alev gözlü, karanlık tüylü ve gizemli süper kötü maskesi.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 28 Crystal"
+        },
+        {
+            id: "toy-zombie-mask",
+            name: "Zombie Mask",
+            category: "toys",
+            subType: "Maske",
+            rarity: "legendary",
+            rarityName: "Efsanevi",
+            image: "./img/items/toy_zombie_mask_trans.png",
+            currency: "crystal",
+            price: 34,
+            marketRange: "34 Crystal",
+            priceHistory: [
+                { date: "Haz 2026", price: 34 },
+                { date: "Tem 2026", price: 34 },
+                { date: "Ağu 2026", price: 34 },
+                { date: "Eyl 2026", price: 34 }
+            ],
+            change24h: 0,
+            description: "Yeşil tenli, sivri dişli ve kan çanağı gözlü korkutucu zombi kafası maskesi.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 34 Crystal"
+        },
+        {
+            id: "toy-joker-mouth",
+            name: "Joker Mouth",
+            category: "toys",
+            subType: "Yüz Aksesuarı",
+            rarity: "rare",
+            rarityName: "Ender",
+            image: "./img/items/toy_joker_mouth_trans.png",
+            currency: "crystal",
+            price: 8,
+            marketRange: "8 Crystal",
+            priceHistory: [
+                { date: "Haz 2026", price: 8 },
+                { date: "Tem 2026", price: 8 },
+                { date: "Ağu 2026", price: 8 },
+                { date: "Eyl 2026", price: 8 }
+            ],
+            change24h: 0,
+            description: "Kızıl ve geniş tebessümlü ikonik Joker dudak aksesuarı.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 8 Crystal"
+        },
+        {
+            id: "toy-blue-umbrella",
+            name: "Blue Umbrella",
+            category: "toys",
+            subType: "Şemsiye & El Eşyası",
+            rarity: "common",
+            rarityName: "Standart",
+            image: "./img/items/toy_blue_umbrella_trans.png",
+            currency: "cash",
+            price: 180,
+            marketRange: "180 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 180 },
+                { date: "Tem 2026", price: 180 },
+                { date: "Ağu 2026", price: 180 },
+                { date: "Eyl 2026", price: 180 }
+            ],
+            change24h: 0,
+            description: "Mavi beyaz panelli, kıvrık saplı ferah şehir şemsiyesi.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 180 Cash"
+        },
+        {
+            id: "toy-green-umbrella",
+            name: "Green Umbrella",
+            category: "toys",
+            subType: "Şemsiye & El Eşyası",
+            rarity: "common",
+            rarityName: "Standart",
+            image: "./img/items/toy_green_umbrella_trans.png",
+            currency: "cash",
+            price: 180,
+            marketRange: "180 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 180 },
+                { date: "Tem 2026", price: 180 },
+                { date: "Ağu 2026", price: 180 },
+                { date: "Eyl 2026", price: 180 }
+            ],
+            change24h: 0,
+            description: "Fıstık yeşili ve beyaz panelli neşeli şemsiye.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 180 Cash"
+        },
+        {
+            id: "toy-yellow-umbrella",
+            name: "Yellow Umbrella",
+            category: "toys",
+            subType: "Şemsiye & El Eşyası",
+            rarity: "common",
+            rarityName: "Standart",
+            image: "./img/items/toy_yellow_umbrella_trans.png",
+            currency: "cash",
+            price: 180,
+            marketRange: "180 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 180 },
+                { date: "Tem 2026", price: 180 },
+                { date: "Ağu 2026", price: 180 },
+                { date: "Eyl 2026", price: 180 }
+            ],
+            change24h: 0,
+            description: "Güneş sarısı ve beyaz çizgili parlak şemsiye.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 180 Cash"
+        },
+        {
+            id: "toy-red-umbrella",
+            name: "Red Umbrella",
+            category: "toys",
+            subType: "Şemsiye & El Eşyası",
+            rarity: "common",
+            rarityName: "Standart",
+            image: "./img/items/toy_red_umbrella_trans.png",
+            currency: "cash",
+            price: 180,
+            marketRange: "180 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 180 },
+                { date: "Tem 2026", price: 180 },
+                { date: "Ağu 2026", price: 180 },
+                { date: "Eyl 2026", price: 180 }
+            ],
+            change24h: 0,
+            description: "Kırmızı beyaz panelli dikkat çekici klasik şemsiye.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 180 Cash"
+        },
+        {
+            id: "toy-purple-umbrella",
+            name: "Purple Umbrella",
+            category: "toys",
+            subType: "Şemsiye & El Eşyası",
+            rarity: "common",
+            rarityName: "Standart",
+            image: "./img/items/toy_purple_umbrella_trans.png",
+            currency: "cash",
+            price: 180,
+            marketRange: "180 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 180 },
+                { date: "Tem 2026", price: 180 },
+                { date: "Ağu 2026", price: 180 },
+                { date: "Eyl 2026", price: 180 }
+            ],
+            change24h: 0,
+            description: "Mor ve beyaz renk kombinasyonlu asil şemsiye.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 180 Cash"
+        },
+        {
+            id: "toy-pink-umbrella",
+            name: "Pink Umbrella",
+            category: "toys",
+            subType: "Şemsiye & El Eşyası",
+            rarity: "common",
+            rarityName: "Standart",
+            image: "./img/items/toy_pink_umbrella_trans.png",
+            currency: "cash",
+            price: 180,
+            marketRange: "180 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 180 },
+                { date: "Tem 2026", price: 180 },
+                { date: "Ağu 2026", price: 180 },
+                { date: "Eyl 2026", price: 180 }
+            ],
+            change24h: 0,
+            description: "Şeker pembesi ve beyaz panelli tatlı şemsiye.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 180 Cash"
+        },
+        {
+            id: "toy-white-umbrella",
+            name: "White Umbrella",
+            category: "toys",
+            subType: "Şemsiye & El Eşyası",
+            rarity: "common",
+            rarityName: "Standart",
+            image: "./img/items/toy_white_umbrella_trans.png",
+            currency: "cash",
+            price: 180,
+            marketRange: "180 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 180 },
+                { date: "Tem 2026", price: 180 },
+                { date: "Ağu 2026", price: 180 },
+                { date: "Eyl 2026", price: 180 }
+            ],
+            change24h: 0,
+            description: "Bembeyaz kumaş panelli sade ve zarif şemsiye.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 180 Cash"
+        },
+        {
+            id: "toy-black-umbrella",
+            name: "Black Umbrella",
+            category: "toys",
+            subType: "Şemsiye & El Eşyası",
+            rarity: "uncommon",
+            rarityName: "Nadir",
+            image: "./img/items/toy_black_umbrella_trans.png",
+            currency: "cash",
+            price: 270,
+            marketRange: "270 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 270 },
+                { date: "Tem 2026", price: 270 },
+                { date: "Ağu 2026", price: 270 },
+                { date: "Eyl 2026", price: 270 }
+            ],
+            change24h: 0,
+            description: "Koyu mat siyah kumaşlı elit beyefendi şemsiyesi.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 270 Cash"
+        },
+        {
+            id: "toy-transparent-umbrella",
+            name: "Transparent Umbrella",
+            category: "toys",
+            subType: "Şemsiye & El Eşyası",
+            rarity: "epic",
+            rarityName: "Epik",
+            image: "./img/items/toy_transparent_umbrella_trans.png",
+            currency: "crystal",
+            price: 23,
+            marketRange: "23 Crystal",
+            priceHistory: [
+                { date: "Haz 2026", price: 23 },
+                { date: "Tem 2026", price: 23 },
+                { date: "Ağu 2026", price: 23 },
+                { date: "Eyl 2026", price: 23 }
+            ],
+            change24h: 0,
+            description: "Saydam kubbeye sahip özel kristal Tokyo tarzı şeffaf şemsiye.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 23 Crystal"
+        },
+        {
+            id: "toy-duello-sword",
+            name: "Duello Sword",
+            category: "toys",
+            subType: "Oyuncak Kılıç",
+            rarity: "rare",
+            rarityName: "Ender",
+            image: "./img/items/toy_duello_sword_trans.png",
+            currency: "cash",
+            price: 630,
+            marketRange: "630 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 630 },
+                { date: "Tem 2026", price: 630 },
+                { date: "Ağu 2026", price: 630 },
+                { date: "Eyl 2026", price: 630 }
+            ],
+            change24h: 0,
+            description: "Eskrim tipi yuvarlak el korumalı gümüş düello kılıcı.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 630 Cash"
+        },
+        {
+            id: "toy-plastic-club",
+            name: "Plastic Club",
+            category: "toys",
+            subType: "Oyuncak Sopa",
+            rarity: "common",
+            rarityName: "Standart",
+            image: "./img/items/toy_plastic_club_trans.png",
+            currency: "cash",
+            price: 300,
+            marketRange: "300 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 300 },
+                { date: "Tem 2026", price: 300 },
+                { date: "Ağu 2026", price: 300 },
+                { date: "Eyl 2026", price: 300 }
+            ],
+            change24h: 0,
+            description: "Hafif gri plastik beyzbol sopası.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 300 Cash"
+        },
+        {
+            id: "toy-daisy",
+            name: "Daisy",
+            category: "toys",
+            subType: "Çiçek & El Eşyası",
+            rarity: "common",
+            rarityName: "Standart",
+            image: "./img/items/toy_daisy_trans.png",
+            currency: "cash",
+            price: 90,
+            marketRange: "90 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 90 },
+                { date: "Tem 2026", price: 90 },
+                { date: "Ağu 2026", price: 90 },
+                { date: "Eyl 2026", price: 90 }
+            ],
+            change24h: 0,
+            description: "Taze yeşil saplı sevimli beyaz papatya.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 90 Cash"
+        },
+        {
+            id: "toy-red-rose",
+            name: "Red Rose",
+            category: "toys",
+            subType: "Çiçek & El Eşyası",
+            rarity: "common",
+            rarityName: "Standart",
+            image: "./img/items/toy_red_rose_trans.png",
+            currency: "cash",
+            price: 120,
+            marketRange: "120 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 120 },
+                { date: "Tem 2026", price: 120 },
+                { date: "Ağu 2026", price: 120 },
+                { date: "Eyl 2026", price: 120 }
+            ],
+            change24h: 0,
+            description: "Romantik kırmızı tomurcuk gül.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 120 Cash"
+        },
+        {
+            id: "toy-giant-slasher",
+            name: "Giant Slasher",
+            category: "toys",
+            subType: "Oyuncak Kılıç",
+            rarity: "epic",
+            rarityName: "Epik",
+            image: "./img/items/toy_giant_slasher_trans.png",
+            currency: "crystal",
+            price: 20,
+            marketRange: "20 Crystal",
+            priceHistory: [
+                { date: "Haz 2026", price: 20 },
+                { date: "Tem 2026", price: 20 },
+                { date: "Ağu 2026", price: 20 },
+                { date: "Eyl 2026", price: 20 }
+            ],
+            change24h: 0,
+            description: "Kavisli, tırtıklı ve geniş namlulu devasa fantezi kılıcı.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 20 Crystal"
+        },
+        {
+            id: "toy-plastic-spiked",
+            name: "Plastic Spiked Club",
+            category: "toys",
+            subType: "Oyuncak Sopa",
+            rarity: "rare",
+            rarityName: "Ender",
+            image: "./img/items/toy_plastic_spiked_trans.png",
+            currency: "cash",
+            price: 840,
+            marketRange: "840 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 840 },
+                { date: "Tem 2026", price: 840 },
+                { date: "Ağu 2026", price: 840 },
+                { date: "Eyl 2026", price: 840 }
+            ],
+            change24h: 0,
+            description: "Dikenli plastik başlığa sahip heybetli oyuncak gürz.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 840 Cash"
+        },
+        {
+            id: "toy-blue-cup",
+            name: "Blue Cup",
+            category: "toys",
+            subType: "Kupa & İçecek",
+            rarity: "common",
+            rarityName: "Standart",
+            image: "./img/items/toy_blue_cup_trans.png",
+            currency: "cash",
+            price: 90,
+            marketRange: "90 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 90 },
+                { date: "Tem 2026", price: 90 },
+                { date: "Ağu 2026", price: 90 },
+                { date: "Eyl 2026", price: 90 }
+            ],
+            change24h: 0,
+            description: "Canlı mavi renkte kulplu seramik içecek kupası.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 90 Cash"
+        },
+        {
+            id: "toy-green-cup",
+            name: "Green Cup",
+            category: "toys",
+            subType: "Kupa & İçecek",
+            rarity: "common",
+            rarityName: "Standart",
+            image: "./img/items/toy_green_cup_trans.png",
+            currency: "cash",
+            price: 90,
+            marketRange: "90 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 90 },
+                { date: "Tem 2026", price: 90 },
+                { date: "Ağu 2026", price: 90 },
+                { date: "Eyl 2026", price: 90 }
+            ],
+            change24h: 0,
+            description: "Açık fıstık yeşili kulplu seramik kupa.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 90 Cash"
+        },
+        {
+            id: "toy-yellow-cup",
+            name: "Yellow Cup",
+            category: "toys",
+            subType: "Kupa & İçecek",
+            rarity: "common",
+            rarityName: "Standart",
+            image: "./img/items/toy_yellow_cup_trans.png",
+            currency: "cash",
+            price: 90,
+            marketRange: "90 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 90 },
+                { date: "Tem 2026", price: 90 },
+                { date: "Ağu 2026", price: 90 },
+                { date: "Eyl 2026", price: 90 }
+            ],
+            change24h: 0,
+            description: "Güneş sarısı parlak seramik kahve kupası.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 90 Cash"
+        },
+        {
+            id: "toy-red-cup",
+            name: "Red Cup",
+            category: "toys",
+            subType: "Kupa & İçecek",
+            rarity: "common",
+            rarityName: "Standart",
+            image: "./img/items/toy_red_cup_trans.png",
+            currency: "cash",
+            price: 90,
+            marketRange: "90 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 90 },
+                { date: "Tem 2026", price: 90 },
+                { date: "Ağu 2026", price: 90 },
+                { date: "Eyl 2026", price: 90 }
+            ],
+            change24h: 0,
+            description: "Ateş kırmızısı kulplu içecek kupası.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 90 Cash"
+        },
+        {
+            id: "toy-purple-cup",
+            name: "Purple Cup",
+            category: "toys",
+            subType: "Kupa & İçecek",
+            rarity: "common",
+            rarityName: "Standart",
+            image: "./img/items/toy_purple_cup_trans.png",
+            currency: "cash",
+            price: 90,
+            marketRange: "90 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 90 },
+                { date: "Tem 2026", price: 90 },
+                { date: "Ağu 2026", price: 90 },
+                { date: "Eyl 2026", price: 90 }
+            ],
+            change24h: 0,
+            description: "Derin mor renkte şık seramik kupa.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 90 Cash"
+        },
+        {
+            id: "toy-pink-cup",
+            name: "Pink Cup",
+            category: "toys",
+            subType: "Kupa & İçecek",
+            rarity: "common",
+            rarityName: "Standart",
+            image: "./img/items/toy_pink_cup_trans.png",
+            currency: "cash",
+            price: 90,
+            marketRange: "90 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 90 },
+                { date: "Tem 2026", price: 90 },
+                { date: "Ağu 2026", price: 90 },
+                { date: "Eyl 2026", price: 90 }
+            ],
+            change24h: 0,
+            description: "Canlı fuşya pembe seramik kupa.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 90 Cash"
+        },
+        {
+            id: "toy-white-cup",
+            name: "White Cup",
+            category: "toys",
+            subType: "Kupa & İçecek",
+            rarity: "common",
+            rarityName: "Standart",
+            image: "./img/items/toy_white_cup_trans.png",
+            currency: "cash",
+            price: 90,
+            marketRange: "90 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 90 },
+                { date: "Tem 2026", price: 90 },
+                { date: "Ağu 2026", price: 90 },
+                { date: "Eyl 2026", price: 90 }
+            ],
+            change24h: 0,
+            description: "Sade ve duru beyaz seramik kupa.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 90 Cash"
+        },
+        {
+            id: "toy-black-cup",
+            name: "Black Cup",
+            category: "toys",
+            subType: "Kupa & İçecek",
+            rarity: "common",
+            rarityName: "Standart",
+            image: "./img/items/toy_black_cup_trans.png",
+            currency: "cash",
+            price: 90,
+            marketRange: "90 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 90 },
+                { date: "Tem 2026", price: 90 },
+                { date: "Ağu 2026", price: 90 },
+                { date: "Eyl 2026", price: 90 }
+            ],
+            change24h: 0,
+            description: "Mat siyah minimalist seramik kupa.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 90 Cash"
+        },
+        {
+            id: "toy-juice-bottle",
+            name: "Juice Bottle",
+            category: "toys",
+            subType: "Şişe & İçecek",
+            rarity: "common",
+            rarityName: "Standart",
+            image: "./img/items/toy_juice_bottle_trans.png",
+            currency: "cash",
+            price: 180,
+            marketRange: "180 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 180 },
+                { date: "Tem 2026", price: 180 },
+                { date: "Ağu 2026", price: 180 },
+                { date: "Eyl 2026", price: 180 }
+            ],
+            change24h: 0,
+            description: "Mor gövdeli, turuncu etiketli leziz meyve suyu şişesi.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 180 Cash"
+        },
+        {
+            id: "toy-soda-bottle",
+            name: "Soda Bottle",
+            category: "toys",
+            subType: "Şişe & İçecek",
+            rarity: "common",
+            rarityName: "Standart",
+            image: "./img/items/toy_soda_bottle_trans.png",
+            currency: "cash",
+            price: 240,
+            marketRange: "240 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 240 },
+                { date: "Tem 2026", price: 240 },
+                { date: "Ağu 2026", price: 240 },
+                { date: "Eyl 2026", price: 240 }
+            ],
+            change24h: 0,
+            description: "Yeşil camlı, gazlı ferahlatıcı klasik soda şişesi.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 240 Cash"
+        },
+        {
+            id: "toy-brown-plush-bear",
+            name: "Brown Plush Bear",
+            category: "toys",
+            subType: "Peluş Oyuncak",
+            rarity: "uncommon",
+            rarityName: "Nadir",
+            image: "./img/items/toy_brown_plush_bear_trans.png",
+            currency: "cash",
+            price: 300,
+            marketRange: "300 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 300 },
+                { date: "Tem 2026", price: 300 },
+                { date: "Ağu 2026", price: 300 },
+                { date: "Eyl 2026", price: 300 }
+            ],
+            change24h: 0,
+            description: "Dikiş detaylı klasik kahverengi nostaljik peluş oyuncak ayı.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 300 Cash"
+        },
+        {
+            id: "toy-the-duck",
+            name: "The Duck",
+            category: "toys",
+            subType: "Oyuncak",
+            rarity: "uncommon",
+            rarityName: "Nadir",
+            image: "./img/items/toy_the_duck_trans.png",
+            currency: "cash",
+            price: 360,
+            marketRange: "360 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 360 },
+                { date: "Tem 2026", price: 360 },
+                { date: "Ağu 2026", price: 360 },
+                { date: "Eyl 2026", price: 360 }
+            ],
+            change24h: 0,
+            description: "Retro ahşap/metal tekerlekli nostaljik ördek oyuncağı.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 360 Cash"
+        },
+        {
+            id: "toy-insane-cat-toy",
+            name: "Insane Cat Toy",
+            category: "toys",
+            subType: "Oyuncak",
+            rarity: "epic",
+            rarityName: "Epik",
+            image: "./img/items/toy_insane_cat_toy_trans.png",
+            currency: "cash",
+            price: 1380,
+            marketRange: "1380 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 1380 },
+                { date: "Tem 2026", price: 1380 },
+                { date: "Ağu 2026", price: 1380 },
+                { date: "Eyl 2026", price: 1380 }
+            ],
+            change24h: 0,
+            description: "Kocaman fıldır fıldır gözleri olan efsanevi çılgın kedi figürü.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 1.380 Cash"
+        },
+        {
+            id: "toy-pink-plush-bear",
+            name: "Pink Plush Bear",
+            category: "toys",
+            subType: "Peluş Oyuncak",
+            rarity: "uncommon",
+            rarityName: "Nadir",
+            image: "./img/items/toy_pink_plush_bear_trans.png",
+            currency: "cash",
+            price: 300,
+            marketRange: "300 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 300 },
+                { date: "Tem 2026", price: 300 },
+                { date: "Ağu 2026", price: 300 },
+                { date: "Eyl 2026", price: 300 }
+            ],
+            change24h: 0,
+            description: "Pembe dikiş detaylı ve sevimli kalpli peluş oyuncak ayı.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 300 Cash"
+        },
+        {
+            id: "toy-pirate-sword",
+            name: "Pirate Sword",
+            category: "toys",
+            subType: "Oyuncak Kılıç",
+            rarity: "epic",
+            rarityName: "Epik",
+            image: "./img/items/toy_pirate_sword_trans.png",
+            currency: "crystal",
+            price: 54,
+            marketRange: "54 Crystal",
+            priceHistory: [
+                { date: "Haz 2026", price: 54 },
+                { date: "Tem 2026", price: 54 },
+                { date: "Ağu 2026", price: 54 },
+                { date: "Eyl 2026", price: 54 }
+            ],
+            change24h: 0,
+            description: "Altın sarısı kavisli palaya sahip korsan kaptanı kılıcı.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 54 Crystal"
+        },
+        {
+            id: "toy-battle-axe",
+            name: "Battle Axe",
+            category: "toys",
+            subType: "Oyuncak Balta",
+            rarity: "epic",
+            rarityName: "Epik",
+            image: "./img/items/toy_battle_axe_trans.png",
+            currency: "crystal",
+            price: 60,
+            marketRange: "60 Crystal",
+            priceHistory: [
+                { date: "Haz 2026", price: 60 },
+                { date: "Tem 2026", price: 60 },
+                { date: "Ağu 2026", price: 60 },
+                { date: "Eyl 2026", price: 60 }
+            ],
+            change24h: 0,
+            description: "Ahşap saplı ve çift taraflı geniş ağızlı savaş baltası oyuncağı.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 60 Crystal"
+        },
+        {
+            id: "toy-light-saber-blue",
+            name: "Light Saber - Blue",
+            category: "toys",
+            subType: "Işın Kılıcı",
+            rarity: "legendary",
+            rarityName: "Efsanevi",
+            image: "./img/items/toy_light_saber_blue_trans.png",
+            currency: "crystal",
+            price: 68,
+            marketRange: "68 Crystal",
+            priceHistory: [
+                { date: "Haz 2026", price: 68 },
+                { date: "Tem 2026", price: 68 },
+                { date: "Ağu 2026", price: 68 },
+                { date: "Eyl 2026", price: 68 }
+            ],
+            change24h: 0,
+            description: "Gökyüzü mavisi lazer ışını yayan Jedi tarzı efsanevi ışın kılıcı.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 68 Crystal"
+        },
+        {
+            id: "toy-light-saber-red",
+            name: "Light Saber - Red",
+            category: "toys",
+            subType: "Işın Kılıcı",
+            rarity: "legendary",
+            rarityName: "Efsanevi",
+            image: "./img/items/toy_light_saber_red_trans.png",
+            currency: "crystal",
+            price: 68,
+            marketRange: "68 Crystal",
+            priceHistory: [
+                { date: "Haz 2026", price: 68 },
+                { date: "Tem 2026", price: 68 },
+                { date: "Ağu 2026", price: 68 },
+                { date: "Eyl 2026", price: 68 }
+            ],
+            change24h: 0,
+            description: "Kırmızı karanlık güç lazer ışını yayan Sith tarzı efsanevi ışın kılıcı.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 68 Crystal"
+        },
+        {
+            id: "toy-light-saber-green",
+            name: "Light Saber - Green",
+            category: "toys",
+            subType: "Işın Kılıcı",
+            rarity: "legendary",
+            rarityName: "Efsanevi",
+            image: "./img/items/toy_light_saber_green_trans.png",
+            currency: "crystal",
+            price: 68,
+            marketRange: "68 Crystal",
+            priceHistory: [
+                { date: "Haz 2026", price: 68 },
+                { date: "Tem 2026", price: 68 },
+                { date: "Ağu 2026", price: 68 },
+                { date: "Eyl 2026", price: 68 }
+            ],
+            change24h: 0,
+            description: "Zümrüt yeşili lazer ışını yayan usta savaşçı ışın kılıcı.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 68 Crystal"
+        },
     ],
 
     // 6. MOBİLYALAR VE EV (FURNITURE)
@@ -3874,7 +4825,7 @@ const MINIFAL_DATABASE = {
             avatar: "./img/npcs/npc_tobias.png",
             dialogue: "Minifal'in en renkli ve eğlenceli oyuncakları burada! Gel ve vitrine göz at!",
             description: "Power Mall 2. katta yer alan mavi afro saçlı, turuncu atletli neşeli oyuncak ve eğlence satıcısı. Trambolin, oyun aksesuarları ve dans eşyaları satar.",
-            itemsForSale: ["Trampoline (18 Crystal)", "Dancing Pole (744 Cash)", "Oyun Masaları ve Oyuncaklar"],
+            itemsForSale: ["Light Sabers (68 Crystal)", "Duello Sword (630 Cash)", "Plush Bears (300 Cash)", "Zombie & Evil Masks (28-34 Crystal)", "Renkli Şemsiyeler & Kupalar (90-270 Cash)"],
             badgeColor: "#06b6d4",
         },
 {
