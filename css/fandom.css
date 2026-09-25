@@ -3367,7 +3367,8 @@ button, input, select {
 /* ==========================================================================
    PAINTBALL ODA OLUŞTURMA MENÜSÜ (1:1 AUTHENTIC MINIFAL GAME MODAL)
    ========================================================================== */
-.paintball-modal-overlay {
+.paintball-modal-overlay,
+.football-modal-overlay {
   position: fixed;
   inset: 0;
   background: rgba(22, 16, 10, 0.65);
@@ -3382,7 +3383,8 @@ button, input, select {
   transition: opacity 0.2s ease, visibility 0.2s ease;
 }
 
-.paintball-modal-overlay.is-open {
+.paintball-modal-overlay.is-open,
+.football-modal-overlay.is-open {
   opacity: 1;
   visibility: visible;
 }
@@ -3402,7 +3404,8 @@ button, input, select {
   box-sizing: border-box;
 }
 
-.paintball-modal-overlay.is-open .room-creator-box {
+.paintball-modal-overlay.is-open .room-creator-box,
+.football-modal-overlay.is-open .room-creator-box {
   translate: 0 0;
 }
 
@@ -3760,5 +3763,94 @@ button, input, select {
 .btn-open-paintball:hover {
   background: #fff;
   transform: translateY(-1px);
+}
+
+/* ==============================================================================
+   FOOTBALL ODA OLUŞTURMA MENÜSÜ ÖZEL STİLLERİ (BİREBİR OYUN İÇİ DİZAYN)
+   ============================================================================== */
+.room-creator-box--football {
+  max-width: 780px;
+}
+
+.room-creator-body--football {
+  padding: 38px 36px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .room-creator-body--football {
+    padding: 24px 18px 20px;
+    gap: 18px;
+  }
+}
+
+.football-players-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.football-players-row-1 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.football-players-row-2 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 640px) {
+  .football-players-row-1 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .football-players-row-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.football-stadium-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px dashed #cfbe9e;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-top: 6px;
+}
+
+.football-stadium-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.football-stadium-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.football-stadium-title {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #3b2a1a;
+}
+
+.football-stadium-desc {
+  font-size: 12px;
+  color: #6d5b48;
+}
+
+/* Football Card Button on Harita */
+.btn-open-football {
+  background: linear-gradient(180deg, #fcebb5 0%, #eed487 100%);
+  border-color: #81662c;
+  color: #2a1d10;
 }
 

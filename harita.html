@@ -161,7 +161,7 @@
                                 </div>
                             </div>
 
-                            <div class="harita-game-card">
+                            <div class="harita-game-card harita-game-card--football" id="football-trigger-card" style="cursor: pointer;" title="Futbol Odası Oluştur menüsünü açmak için tıklayın">
                                 <div class="game-thumb-box">
                                     <span class="game-thumb-emoji">⚽</span>
                                     <span class="game-status-tag game-status--open">Saha Açık</span>
@@ -169,6 +169,7 @@
                                 <div class="game-info-col">
                                     <h4 class="game-title">Futbol</h4>
                                     <p class="game-desc">Stadyumda hızlı tempolu yeşil saha maçları.</p>
+                                    <button type="button" class="btn-open-paintball btn-open-football" id="btn-open-football">⚽ Oda Oluştur</button>
                                 </div>
                             </div>
 
@@ -305,6 +306,59 @@
             <div class="room-creator-footer">
                 <button type="button" class="btn-room-back" id="pb-btn-back">‹ GERİ</button>
                 <button type="button" class="btn-room-create" id="pb-btn-create">ODA OLUŞTUR</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTBALL ODA OLUŞTURMA MODALİ (OYUN İÇİ BİREBİR ARAYÜZ) -->
+    <div class="football-modal-overlay" id="football-room-modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="room-creator-box room-creator-box--football">
+            <!-- Header -->
+            <div class="room-creator-header">
+                <div class="room-creator-title-left">
+                    <img src="./img/maps/icon_tree_header_trans.png" alt="" class="room-creator-tree-icon" aria-hidden="true">
+                    <h3 class="room-creator-main-title">ODA OLUŞTUR</h3>
+                </div>
+                <div class="room-creator-top-right">
+                    <button type="button" class="room-creator-close-btn" id="football-close-btn" aria-label="Pencereyi Kapat">✕</button>
+                </div>
+            </div>
+
+            <!-- Body -->
+            <div class="room-creator-body--football">
+                <div class="room-field-group">
+                    <label class="room-field-label" for="fb-room-name">Oda adı</label>
+                    <input type="text" class="room-name-input" id="fb-room-name" placeholder="Oda adını girin..." maxlength="30" value="Minifal Stadyum Maçı">
+                </div>
+
+                <div class="room-field-group">
+                    <label class="room-field-label">Oyuncu sayısı</label>
+                    <div class="football-players-grid" id="fb-players-grid">
+                        <div class="football-players-row-1">
+                            <button type="button" class="player-choice-btn" data-fb-players="2">2 kişilik</button>
+                            <button type="button" class="player-choice-btn" data-fb-players="4">4 kişilik</button>
+                            <button type="button" class="player-choice-btn is-active" data-fb-players="6">6 kişilik</button>
+                            <button type="button" class="player-choice-btn" data-fb-players="10">10 kişilik</button>
+                        </div>
+                        <div class="football-players-row-2">
+                            <button type="button" class="player-choice-btn" data-fb-players="14">14 kişilik</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="football-stadium-card">
+                    <span class="football-stadium-icon">⚽</span>
+                    <div class="football-stadium-meta">
+                        <span class="football-stadium-title">Minifal Merkez Stadyumu</span>
+                        <span class="football-stadium-desc">Nizami yeşil çim saha, 2 kale, tribünler ve yüksek projektörler altında gerçek zamanlı futbol heyecanı.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="room-creator-footer">
+                <button type="button" class="btn-room-back" id="fb-btn-back">‹ GERİ</button>
+                <button type="button" class="btn-room-create" id="fb-btn-create">ODA OLUŞTUR</button>
             </div>
         </div>
     </div>

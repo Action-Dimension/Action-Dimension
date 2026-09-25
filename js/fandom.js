@@ -1145,6 +1145,98 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    // ==============================================================================
+    // FOOTBALL ODA OLUŞTURMA MENÜSÜ MANTIĞI
+    // ==============================================================================
+    function initFootballModal() {
+        const modal = document.getElementById("football-room-modal");
+        const openBtn = document.getElementById("btn-open-football");
+        const triggerCard = document.getElementById("football-trigger-card");
+        const closeBtn = document.getElementById("football-close-btn");
+        const backBtn = document.getElementById("fb-btn-back");
+        const createBtn = document.getElementById("fb-btn-create");
+        const roomNameInput = document.getElementById("fb-room-name");
+        const playersGrid = document.getElementById("fb-players-grid");
+
+        if (!modal) return;
+
+        let selectedPlayers = "6";
+
+        function openModal() {
+            modal.classList.add("is-open");
+            modal.setAttribute("aria-hidden", "false");
+            document.body.style.overflow = "hidden";
+            if (roomNameInput) {
+                roomNameInput.focus();
+                roomNameInput.select();
+            }
+        }
+
+        function closeModal() {
+            modal.classList.remove("is-open");
+            modal.setAttribute("aria-hidden", "true");
+            document.body.style.overflow = "";
+        }
+
+        // Açılış Tetikleyicileri
+        if (openBtn) {
+            openBtn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                openModal();
+            });
+        }
+
+        if (triggerCard) {
+            triggerCard.addEventListener("click", () => {
+                openModal();
+            });
+        }
+
+        // Kapanış Tetikleyicileri
+        if (closeBtn) closeBtn.addEventListener("click", closeModal);
+        if (backBtn) backBtn.addEventListener("click", closeModal);
+
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && modal.classList.contains("is-open")) {
+                closeModal();
+            }
+        });
+
+        // Oyuncu Sayısı Seçimi (2, 4, 6, 10, 14)
+        if (playersGrid) {
+            const playerBtns = playersGrid.querySelectorAll(".player-choice-btn");
+            playerBtns.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    playerBtns.forEach(b => b.classList.remove("is-active"));
+                    btn.classList.add("is-active");
+                    selectedPlayers = btn.getAttribute("data-fb-players") || "6";
+                });
+            });
+        }
+
+        // Oda Oluştur Butonu
+        if (createBtn) {
+            createBtn.addEventListener("click", () => {
+                const roomName = (roomNameInput && roomNameInput.value.trim()) ? roomNameInput.value.trim() : "Minifal Stadyum Maçı";
+
+                const confirmMsg = `🎉 Tebrikler! "${roomName}" futbol maçı odası başarıyla açıldı!\n\n` +
+                    `⚽ Saha: Minifal Merkez Stadyumu\n` +
+                    `👥 Kapasite: ${selectedPlayers} Kişilik Saha Maçı\n\n` +
+                    `Gerçek oyunda stadyuma bağlanmak istiyor musunuz? (minifal.com/play)`;
+
+                if (confirm(confirmMsg)) {
+                    window.location.href = "https://minifal.com/play";
+                } else {
+                    closeModal();
+                }
+            });
+        }
+    }
+
     function renderVendors() {
         const vendorsGrid = document.getElementById("vendors-grid");
         if (!vendorsGrid || !MINIFAL_DATABASE.vendors) return;
@@ -2036,6 +2128,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initBossCalculator();
     renderHaritaAndLocations();
     initPaintballModal();
+    initFootballModal();
     renderVendors();
     renderHouses();
     initRoomDesigner();

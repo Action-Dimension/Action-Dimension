@@ -6288,6 +6288,19 @@ const MINIFAL_DATABASE = {
                 desc: "Tuğla duvar kalıntıları, açık çim alanlar ve pusu pencereleriyle dengeli bir çatışma sahası."
             }
         ]
+    },
+
+    // 15. FUTBOL VE STADYUM REHBERİ
+    football: {
+        title: "Minifal Futbol Stadyumu",
+        description: "Minifal stadyumunda hızlı tempolu, yüksek enerjili yeşil saha maçları. 2 ile 14 oyuncu arasında kıyasıya rekabet.",
+        openRoomsCount: 1,
+        playerCounts: [2, 4, 6, 10, 14],
+        defaultPlayerCount: 6,
+        stadium: {
+            name: "Minifal Merkez Stadyumu",
+            desc: "İki kale, nizami yeşil çim saha, tribünler ve yüksek aydınlatmalı projektörler."
+        }
     }
 };
 
