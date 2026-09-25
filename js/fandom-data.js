@@ -22,7 +22,7 @@ const MINIFAL_DATABASE = {
         totalArmor: 16,
         totalModkits: 21,
         totalFurniture: 116,
-        totalToys: 45
+        totalToys: 69
     },
 
     // Kategori Tanımları
@@ -35,7 +35,7 @@ const MINIFAL_DATABASE = {
         { id: "sports", name: "Tenis Raketleri", icon: "🎾", color: "orange", count: 3, desc: "Tenis kortlarında kullanılan ve koşu, vuruş veya stamina bonusu sağlayan raketler." },
         { id: "masks", name: "Kıyafet & Maske", icon: "🎭", color: "olive", count: 465, desc: "Şehirde tarzını yansıtan maskeler, tişörtler, şortlar ve ceketler." },
         { id: "furniture", name: "Mobilyalar & Ev", icon: "🛋️", color: "sand", count: 116, desc: "Sebastian'dan alınan ev planları ve odayı döşeyen mobilyalar." },
-        { id: "toys", name: "Oyuncak & Eğlence", icon: "🎪", color: "pink", count: 45, desc: "Tobias'ın dükkanından maskeler, şemsiyeler, oyuncaklar, kupalar ve ışın kılıçları." },
+        { id: "toys", name: "Oyuncak & Eğlence", icon: "🎪", color: "pink", count: 69, desc: "Tobias'ın dükkanından maskeler, şemsiyeler, oyuncaklar, kupalar ve ışın kılıçları." },
         { id: "market", name: "Market Fiyatları", icon: "📈", color: "gold", count: 50, desc: "2. el pazarındaki canlı fiyatlar ve zaman içindeki değişim grafikleri." },
         { id: "drops", name: "Falling Rate (Pasif)", icon: "🎯", color: "orange", count: 0, desc: "Paintball maç sonu düşme ihtimalleri (Şimdilik pasif)." }
     ],
@@ -2852,6 +2852,510 @@ const MINIFAL_DATABASE = {
             source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 68 Crystal"
         },
         {
+            id: "toy-scepter-of-power",
+            name: "Scepter of Power",
+            category: "toys",
+            subType: "Asa & Büyü Eşyası",
+            rarity: "legendary",
+            rarityName: "Efsanevi",
+            image: "./img/items/toy_scepter_of_power_trans.png",
+            currency: "crystal",
+            price: 232,
+            marketRange: "232 Crystal",
+            priceHistory: [
+                { date: "Haz 2026", price: 232 },
+                { date: "Tem 2026", price: 232 },
+                { date: "Ağu 2026", price: 232 },
+                { date: "Eyl 2026", price: 232 }
+            ],
+            change24h: 0,
+            description: "Mavi parlak küreli ve altın oymalı efsanevi güç asası. Tobias'ın vitrinindeki en nadide ve seçkin parça.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 232 Crystal"
+        },
+        {
+            id: "toy-blue-frisbee",
+            name: "Blue Frisbee",
+            category: "toys",
+            subType: "Frizbi & Spor",
+            rarity: "uncommon",
+            rarityName: "Nadir",
+            image: "./img/items/toy_blue_frisbee_trans.png",
+            currency: "cash",
+            price: 450,
+            marketRange: "450 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 450 },
+                { date: "Tem 2026", price: 450 },
+                { date: "Ağu 2026", price: 450 },
+                { date: "Eyl 2026", price: 450 }
+            ],
+            change24h: 0,
+            description: "Mavi renkli aerodinamik fırlatma frizbisi.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 450 Cash"
+        },
+        {
+            id: "toy-yellow-frisbee",
+            name: "Yellow Frisbee",
+            category: "toys",
+            subType: "Frizbi & Spor",
+            rarity: "uncommon",
+            rarityName: "Nadir",
+            image: "./img/items/toy_yellow_frisbee_trans.png",
+            currency: "cash",
+            price: 450,
+            marketRange: "450 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 450 },
+                { date: "Tem 2026", price: 450 },
+                { date: "Ağu 2026", price: 450 },
+                { date: "Eyl 2026", price: 450 }
+            ],
+            change24h: 0,
+            description: "Güneş sarısı renginde açık alan fırlatma frizbisi.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 450 Cash"
+        },
+        {
+            id: "toy-red-frisbee",
+            name: "Red Frisbee",
+            category: "toys",
+            subType: "Frizbi & Spor",
+            rarity: "uncommon",
+            rarityName: "Nadir",
+            image: "./img/items/toy_red_frisbee_trans.png",
+            currency: "cash",
+            price: 450,
+            marketRange: "450 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 450 },
+                { date: "Tem 2026", price: 450 },
+                { date: "Ağu 2026", price: 450 },
+                { date: "Eyl 2026", price: 450 }
+            ],
+            change24h: 0,
+            description: "Kırmızı renkli klasik spor frizbisi.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 450 Cash"
+        },
+        {
+            id: "toy-pink-frisbee",
+            name: "Pink Frisbee",
+            category: "toys",
+            subType: "Frizbi & Spor",
+            rarity: "uncommon",
+            rarityName: "Nadir",
+            image: "./img/items/toy_pink_frisbee_trans.png",
+            currency: "cash",
+            price: 450,
+            marketRange: "450 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 450 },
+                { date: "Tem 2026", price: 450 },
+                { date: "Ağu 2026", price: 450 },
+                { date: "Eyl 2026", price: 450 }
+            ],
+            change24h: 0,
+            description: "Canlı pembe renkte eğlenceli plaj ve park frizbisi.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 450 Cash"
+        },
+        {
+            id: "toy-green-frisbee",
+            name: "Green Frisbee",
+            category: "toys",
+            subType: "Frizbi & Spor",
+            rarity: "uncommon",
+            rarityName: "Nadir",
+            image: "./img/items/toy_green_frisbee_trans.png",
+            currency: "cash",
+            price: 450,
+            marketRange: "450 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 450 },
+                { date: "Tem 2026", price: 450 },
+                { date: "Ağu 2026", price: 450 },
+                { date: "Eyl 2026", price: 450 }
+            ],
+            change24h: 0,
+            description: "Fıstık yeşili aerodinamik fırlatma diski.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 450 Cash"
+        },
+        {
+            id: "toy-black-frisbee",
+            name: "Black Frisbee",
+            category: "toys",
+            subType: "Frizbi & Spor",
+            rarity: "uncommon",
+            rarityName: "Nadir",
+            image: "./img/items/toy_black_frisbee_trans.png",
+            currency: "cash",
+            price: 450,
+            marketRange: "450 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 450 },
+                { date: "Tem 2026", price: 450 },
+                { date: "Ağu 2026", price: 450 },
+                { date: "Eyl 2026", price: 450 }
+            ],
+            change24h: 0,
+            description: "Koyu mat siyah renkli dayanıklı spor frizbisi.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 450 Cash"
+        },
+        {
+            id: "toy-magma-frisbee",
+            name: "Magma Frisbee",
+            category: "toys",
+            subType: "Özel Frizbi",
+            rarity: "rare",
+            rarityName: "Ender",
+            image: "./img/items/toy_magma_frisbee_trans.png",
+            currency: "cash",
+            price: 840,
+            marketRange: "840 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 840 },
+                { date: "Tem 2026", price: 840 },
+                { date: "Ağu 2026", price: 840 },
+                { date: "Eyl 2026", price: 840 }
+            ],
+            change24h: 0,
+            description: "Ateş aurası yayan lav ve magma desenli kızıl özel frizbi diski.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 840 Cash"
+        },
+        {
+            id: "toy-american-football",
+            name: "American Football",
+            category: "toys",
+            subType: "Top & Spor Eşyası",
+            rarity: "rare",
+            rarityName: "Ender",
+            image: "./img/items/toy_american_football_trans.png",
+            currency: "cash",
+            price: 960,
+            marketRange: "960 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 960 },
+                { date: "Tem 2026", price: 960 },
+                { date: "Ağu 2026", price: 960 },
+                { date: "Eyl 2026", price: 960 }
+            ],
+            change24h: 0,
+            description: "Beyaz dikiş detaylı klasik kahverengi Amerikan futbolu topu.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 960 Cash"
+        },
+        {
+            id: "toy-blue-bladed-frisbee",
+            name: "Blue Bladed Frisbee",
+            category: "toys",
+            subType: "Bıçaklı Frizbi",
+            rarity: "rare",
+            rarityName: "Ender",
+            image: "./img/items/toy_blue_bladed_frisbee_trans.png",
+            currency: "cash",
+            price: 900,
+            marketRange: "900 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 900 },
+                { date: "Tem 2026", price: 900 },
+                { date: "Ağu 2026", price: 900 },
+                { date: "Eyl 2026", price: 900 }
+            ],
+            change24h: 0,
+            description: "Mavi renkli testere dişli fırlatma diski oyuncağı.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 900 Cash"
+        },
+        {
+            id: "toy-green-bladed-frisbee",
+            name: "Green Bladed Frisbee",
+            category: "toys",
+            subType: "Bıçaklı Frizbi",
+            rarity: "rare",
+            rarityName: "Ender",
+            image: "./img/items/toy_green_bladed_frisbee_trans.png",
+            currency: "cash",
+            price: 900,
+            marketRange: "900 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 900 },
+                { date: "Tem 2026", price: 900 },
+                { date: "Ağu 2026", price: 900 },
+                { date: "Eyl 2026", price: 900 }
+            ],
+            change24h: 0,
+            description: "Yeşil testere dişli döner fırlatma diski.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 900 Cash"
+        },
+        {
+            id: "toy-yellow-bladed-frisbee",
+            name: "Yellow Bladed Frisbee",
+            category: "toys",
+            subType: "Bıçaklı Frizbi",
+            rarity: "rare",
+            rarityName: "Ender",
+            image: "./img/items/toy_yellow_bladed_frisbee_trans.png",
+            currency: "cash",
+            price: 900,
+            marketRange: "900 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 900 },
+                { date: "Tem 2026", price: 900 },
+                { date: "Ağu 2026", price: 900 },
+                { date: "Eyl 2026", price: 900 }
+            ],
+            change24h: 0,
+            description: "Sarı renkli döner bıçaklı frizbi oyuncağı.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 900 Cash"
+        },
+        {
+            id: "toy-red-bladed-frisbee",
+            name: "Red Bladed Frisbee",
+            category: "toys",
+            subType: "Bıçaklı Frizbi",
+            rarity: "rare",
+            rarityName: "Ender",
+            image: "./img/items/toy_red_bladed_frisbee_trans.png",
+            currency: "cash",
+            price: 900,
+            marketRange: "900 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 900 },
+                { date: "Tem 2026", price: 900 },
+                { date: "Ağu 2026", price: 900 },
+                { date: "Eyl 2026", price: 900 }
+            ],
+            change24h: 0,
+            description: "Kırmızı alevli testere bıçaklı keskin kenarlı frizbi.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 900 Cash"
+        },
+        {
+            id: "toy-purple-bladed-frisbee",
+            name: "Purple Bladed Frisbee",
+            category: "toys",
+            subType: "Bıçaklı Frizbi",
+            rarity: "rare",
+            rarityName: "Ender",
+            image: "./img/items/toy_purple_bladed_frisbee_trans.png",
+            currency: "cash",
+            price: 900,
+            marketRange: "900 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 900 },
+                { date: "Tem 2026", price: 900 },
+                { date: "Ağu 2026", price: 900 },
+                { date: "Eyl 2026", price: 900 }
+            ],
+            change24h: 0,
+            description: "Mor renkli keskin testere dişli fırlatma diski.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 900 Cash"
+        },
+        {
+            id: "toy-pink-bladed-frisbee",
+            name: "Pink Bladed Frisbee",
+            category: "toys",
+            subType: "Bıçaklı Frizbi",
+            rarity: "rare",
+            rarityName: "Ender",
+            image: "./img/items/toy_pink_bladed_frisbee_trans.png",
+            currency: "cash",
+            price: 900,
+            marketRange: "900 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 900 },
+                { date: "Tem 2026", price: 900 },
+                { date: "Ağu 2026", price: 900 },
+                { date: "Eyl 2026", price: 900 }
+            ],
+            change24h: 0,
+            description: "Fuşya pembe testere dişli fırlatma diski.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 900 Cash"
+        },
+        {
+            id: "toy-white-bladed-frisbee",
+            name: "White Bladed Frisbee",
+            category: "toys",
+            subType: "Bıçaklı Frizbi",
+            rarity: "rare",
+            rarityName: "Ender",
+            image: "./img/items/toy_white_bladed_frisbee_trans.png",
+            currency: "cash",
+            price: 960,
+            marketRange: "960 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 960 },
+                { date: "Tem 2026", price: 960 },
+                { date: "Ağu 2026", price: 960 },
+                { date: "Eyl 2026", price: 960 }
+            ],
+            change24h: 0,
+            description: "Gümüş beyazı metalik testere bıçaklı frizbi.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 960 Cash"
+        },
+        {
+            id: "toy-black-bladed-frisbee",
+            name: "Black Bladed Frisbee",
+            category: "toys",
+            subType: "Bıçaklı Frizbi",
+            rarity: "rare",
+            rarityName: "Ender",
+            image: "./img/items/toy_black_bladed_frisbee_trans.png",
+            currency: "cash",
+            price: 1080,
+            marketRange: "1080 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 1080 },
+                { date: "Tem 2026", price: 1080 },
+                { date: "Ağu 2026", price: 1080 },
+                { date: "Eyl 2026", price: 1080 }
+            ],
+            change24h: 0,
+            description: "Karanlık siyah gölgeli keskin kenarlı fırlatma diski.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 1.080 Cash"
+        },
+        {
+            id: "toy-banana-of-doom",
+            name: "Banana of Doom",
+            category: "toys",
+            subType: "Eğlenceli Silah & Bumerang",
+            rarity: "epic",
+            rarityName: "Epik",
+            image: "./img/items/toy_banana_of_doom_trans.png",
+            currency: "cash",
+            price: 2400,
+            marketRange: "2400 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 2400 },
+                { date: "Tem 2026", price: 2400 },
+                { date: "Ağu 2026", price: 2400 },
+                { date: "Eyl 2026", price: 2400 }
+            ],
+            change24h: 0,
+            description: "Kıvrık sarı ölüm muzu bumerangı. Fırlatıldığında havada süzülür ve geri döner.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 2.400 Cash"
+        },
+        {
+            id: "toy-football",
+            name: "Football",
+            category: "toys",
+            subType: "Futbol Topu",
+            rarity: "uncommon",
+            rarityName: "Nadir",
+            image: "./img/items/toy_football_trans.png",
+            currency: "cash",
+            price: 570,
+            marketRange: "570 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 570 },
+                { date: "Tem 2026", price: 570 },
+                { date: "Ağu 2026", price: 570 },
+                { date: "Eyl 2026", price: 570 }
+            ],
+            change24h: 0,
+            description: "Klasik siyah beyaz beşgen desenli resmi Minifal futbol topu.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 570 Cash"
+        },
+        {
+            id: "toy-ufo",
+            name: "UFO",
+            category: "toys",
+            subType: "Uçan Daire & Drone",
+            rarity: "epic",
+            rarityName: "Epik",
+            image: "./img/items/toy_ufo_trans.png",
+            currency: "cash",
+            price: 2640,
+            marketRange: "2640 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 2640 },
+                { date: "Tem 2026", price: 2640 },
+                { date: "Ağu 2026", price: 2640 },
+                { date: "Eyl 2026", price: 2640 }
+            ],
+            change24h: 0,
+            description: "Gümüş gövdeli kubbeli pencereli minyatür uzaylı uçan daire oyuncağı.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 2.640 Cash"
+        },
+        {
+            id: "toy-tnt",
+            name: "TNT",
+            category: "toys",
+            subType: "Patlayıcı Oyuncağı",
+            rarity: "rare",
+            rarityName: "Ender",
+            image: "./img/items/toy_tnt_trans.png",
+            currency: "cash",
+            price: 1920,
+            marketRange: "1920 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 1920 },
+                { date: "Tem 2026", price: 1920 },
+                { date: "Ağu 2026", price: 1920 },
+                { date: "Eyl 2026", price: 1920 }
+            ],
+            change24h: 0,
+            description: "Fitili yanan kırmızı şaka dinamit lokumu.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 1.920 Cash"
+        },
+        {
+            id: "toy-funky-pig",
+            name: "Funky Pig",
+            category: "toys",
+            subType: "Peluş & Figür",
+            rarity: "epic",
+            rarityName: "Epik",
+            image: "./img/items/toy_funky_pig_trans.png",
+            currency: "cash",
+            price: 3300,
+            marketRange: "3300 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 3300 },
+                { date: "Tem 2026", price: 3300 },
+                { date: "Ağu 2026", price: 3300 },
+                { date: "Eyl 2026", price: 3300 }
+            ],
+            change24h: 0,
+            description: "Parlak pembe kıvrık kuyruklu sevimli neşeli domuzcuk oyuncağı.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 3.300 Cash"
+        },
+        {
+            id: "toy-spiked-ball",
+            name: "Spiked Ball",
+            category: "toys",
+            subType: "Dikenli Top & El Eşyası",
+            rarity: "rare",
+            rarityName: "Ender",
+            image: "./img/items/toy_spiked_ball_trans.png",
+            currency: "cash",
+            price: 1260,
+            marketRange: "1260 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 1260 },
+                { date: "Tem 2026", price: 1260 },
+                { date: "Ağu 2026", price: 1260 },
+                { date: "Eyl 2026", price: 1260 }
+            ],
+            change24h: 0,
+            description: "Piramit dikenli ağır metalik gülle oyuncağı.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 1.260 Cash"
+        },
+        {
+            id: "toy-alien-mothership",
+            name: "Alien Mothership",
+            category: "toys",
+            subType: "Ana Gemi & Drone",
+            rarity: "legendary",
+            rarityName: "Efsanevi",
+            image: "./img/items/toy_alien_mothership_trans.png",
+            currency: "crystal",
+            price: 14,
+            marketRange: "14 Crystal",
+            priceHistory: [
+                { date: "Haz 2026", price: 14 },
+                { date: "Tem 2026", price: 14 },
+                { date: "Ağu 2026", price: 14 },
+                { date: "Eyl 2026", price: 14 }
+            ],
+            change24h: 0,
+            description: "Işın sütunlu ve fütüristik panelli devasa uzaylı ana gemisi modeli.",
+            source: "Tobias Oyuncakçı (Power Mall 2. Kat) / 14 Crystal"
+        },
+        {
             id: "toy-light-saber-red",
             name: "Light Saber - Red",
             category: "toys",
@@ -4825,7 +5329,7 @@ const MINIFAL_DATABASE = {
             avatar: "./img/npcs/npc_tobias.png",
             dialogue: "Minifal'in en renkli ve eğlenceli oyuncakları burada! Gel ve vitrine göz at!",
             description: "Power Mall 2. katta yer alan mavi afro saçlı, turuncu atletli neşeli oyuncak ve eğlence satıcısı. Trambolin, oyun aksesuarları ve dans eşyaları satar.",
-            itemsForSale: ["Light Sabers (68 Crystal)", "Duello Sword (630 Cash)", "Plush Bears (300 Cash)", "Zombie & Evil Masks (28-34 Crystal)", "Renkli Şemsiyeler & Kupalar (90-270 Cash)"],
+            itemsForSale: ["Scepter of Power (232 Crystal)", "Alien Mothership (14 Crystal)", "Light Sabers (68 Crystal)", "Banana of Doom & TNT", "Funky Pig, Frizbiler & Toplar"],
             badgeColor: "#06b6d4",
         },
 {
