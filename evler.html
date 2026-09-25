@@ -232,21 +232,37 @@
                 <!-- Sol / Merkez: İzometrik Oda Tuvali -->
                 <div class="room-canvas-container" id="room-canvas-container">
                     <div class="room-canvas-viewport" id="room-viewport">
-                        <!-- Oda Planı Arka Planı -->
-                        <div class="room-plan-layer" id="room-plan-layer">
-                            <img src="./img/houses/house_kucuk_oda.png" alt="Oda Planı" id="room-blueprint-img" class="room-blueprint-img">
-                            <div class="room-grid-overlay" aria-hidden="true"></div>
+                        <!-- Izometrik Grid Arka Planı -->
+                        <div class="room-grid-overlay" aria-hidden="true"></div>
+
+                        <!-- Zoomlanabilir ve Kaydırılabilir Dünya Alanı -->
+                        <div class="room-canvas-world" id="room-canvas-world">
+                            <!-- Oda Planı Katmanı -->
+                            <div class="room-plan-layer" id="room-plan-layer">
+                                <img src="./img/houses/house_kucuk_oda_trans.png" alt="Oda Planı" id="room-blueprint-img" class="room-blueprint-img">
+                            </div>
+
+                            <!-- Yerleştirilen Mobilyalar Katmanı -->
+                            <div class="room-furniture-stage" id="furniture-stage">
+                                <!-- JS ile mobilyalar buraya interaktif eklenir -->
+                            </div>
                         </div>
 
-                        <!-- Yerleştirilen Mobilyalar Katmanı -->
-                        <div class="room-furniture-stage" id="furniture-stage">
-                            <!-- JS ile mobilyalar buraya interaktif eklenir -->
+                        <!-- Yakınlık (Zoom) ve Gezinti Araç Çubuğu -->
+                        <div class="canvas-zoom-toolbar" aria-label="Yakınlık Ayarları">
+                            <span class="zoom-toolbar-label">🔍 Yakınlık:</span>
+                            <button type="button" class="btn-zoom-act" id="btn-zoom-out" title="Uzaklaştır">➖</button>
+                            <button type="button" class="btn-zoom-reset" id="btn-zoom-reset" title="Varsayılan Yakınlığa Dön (%100)">
+                                <span id="zoom-val-text">%100</span>
+                            </button>
+                            <button type="button" class="btn-zoom-act" id="btn-zoom-in" title="Yakınlaştır">➕</button>
+                            <button type="button" class="btn-zoom-act btn-zoom-fit" id="btn-zoom-fit" title="Ekrana Sığdır">🎯 Sığdır</button>
                         </div>
                     </div>
 
                     <!-- Tuval Altı Bilgi & Kısayol İpuçları -->
                     <div class="canvas-hint-bar">
-                        <span>💡 <b>İpucu:</b> Mobilyaları sürükleyerek taşıyabilir, üzerlerine tıklayarak <b>Döndürebilir (Çevirebilir)</b> veya <b>Silebilirsiniz</b>.</span>
+                        <span>💡 <b>İpucu:</b> Mobilyaları sürükleyerek yerleştirebilir, tekerlekle <b>Yakınlaştırıp</b>, boş alandan sürükleyerek <b>Gezinebilirsiniz</b>.</span>
                         <span class="active-room-indicator" id="active-room-label">Seçili Oda: Küçük Oda</span>
                     </div>
                 </div>
