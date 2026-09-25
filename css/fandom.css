@@ -409,14 +409,76 @@ button, input, select {
   display: flex;
   gap: 8px;
   overflow-x: auto;
-  padding: 4px 2px 10px;
-  margin-bottom: 12px;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE/Edge */
+  overflow-y: hidden;
+  padding: 4px 2px 12px;
+  margin-bottom: 14px;
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: var(--gold) var(--sand-input); /* Firefox */
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
 }
 
 .category-nav::-webkit-scrollbar {
-  display: none; /* Chrome/Safari/Edge */
+  height: 12px;
+  display: block;
+}
+
+.category-nav::-webkit-scrollbar-track {
+  background: var(--sand-input);
+  border: 1.5px solid var(--ink);
+  border-radius: 999px;
+}
+
+.category-nav::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border: 1.5px solid var(--ink);
+  border-radius: 999px;
+  box-shadow: 1px 1px 0 var(--ink);
+  cursor: grab;
+}
+
+.category-nav::-webkit-scrollbar-thumb:hover {
+  background: var(--orange);
+}
+
+.category-nav::-webkit-scrollbar-thumb:active {
+  cursor: grabbing;
+}
+
+.category-nav::-webkit-scrollbar-button:single-button:horizontal:decrement {
+  display: block;
+  width: 16px;
+  height: 12px;
+  background-color: var(--sand);
+  border: 1.5px solid var(--ink);
+  border-radius: 4px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232E2A18'%3E%3Cpath d='M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 10px;
+  cursor: pointer;
+}
+
+.category-nav::-webkit-scrollbar-button:single-button:horizontal:decrement:hover {
+  background-color: var(--gold);
+}
+
+.category-nav::-webkit-scrollbar-button:single-button:horizontal:increment {
+  display: block;
+  width: 16px;
+  height: 12px;
+  background-color: var(--sand);
+  border: 1.5px solid var(--ink);
+  border-radius: 4px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232E2A18'%3E%3Cpath d='M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 10px;
+  cursor: pointer;
+}
+
+.category-nav::-webkit-scrollbar-button:single-button:horizontal:increment:hover {
+  background-color: var(--gold);
 }
 
 .cat-btn {
@@ -436,6 +498,7 @@ button, input, select {
   cursor: pointer;
   box-shadow: 2px 2px 0 var(--ink);
   white-space: nowrap;
+  flex-shrink: 0;
   transition: translate 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
 }
 

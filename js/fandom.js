@@ -709,11 +709,53 @@ document.addEventListener("DOMContentLoaded", () => {
     // 4. ETKİLEŞİM DİNLEYİCİLERİ
     // Kategori Sekmeleri
     if (categoryNav) {
+        // Fare tekerleği ile yatay kaydırma desteği
+        categoryNav.addEventListener("wheel", (e) => {
+            if (e.deltaY !== 0) {
+                e.preventDefault();
+                categoryNav.scrollLeft += e.deltaY;
+            }
+        }, { passive: false });
+
+        // Fare ile basıp sürükleme desteği (Drag-to-scroll)
+        let isDown = false;
+        let startX = 0;
+        let scrollStart = 0;
+        let dragged = false;
+
+        categoryNav.addEventListener("mousedown", (e) => {
+            isDown = true;
+            dragged = false;
+            startX = e.pageX - categoryNav.offsetLeft;
+            scrollStart = categoryNav.scrollLeft;
+        });
+
+        window.addEventListener("mouseup", () => {
+            isDown = false;
+        });
+
+        categoryNav.addEventListener("mousemove", (e) => {
+            if (!isDown) return;
+            const x = e.pageX - categoryNav.offsetLeft;
+            const walk = (x - startX);
+            if (Math.abs(walk) > 5) {
+                dragged = true;
+                categoryNav.scrollLeft = scrollStart - walk;
+            }
+        });
+
         categoryNav.querySelectorAll(".cat-btn").forEach(btn => {
-            btn.addEventListener("click", () => {
+            btn.addEventListener("click", (e) => {
+                if (dragged) {
+                    e.preventDefault();
+                    return;
+                }
                 categoryNav.querySelectorAll(".cat-btn").forEach(b => b.classList.remove("is-active"));
                 btn.classList.add("is-active");
                 state.activeCategory = btn.getAttribute("data-cat");
+
+                // Tıklanan butonu görünür alana kaydır
+                btn.scrollIntoView({ behavior: "smooth", inline: "nearest", block: "nearest" });
 
                 // Eğer Market seçildiyse Market bölümüne kaydır
                 if (state.activeCategory === "market") {
