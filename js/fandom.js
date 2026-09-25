@@ -1237,6 +1237,123 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    // ==============================================================================
+    // TENİS ODA OLUŞTURMA MENÜSÜ MANTIĞI
+    // ==============================================================================
+    function initTennisModal() {
+        const modal = document.getElementById("tennis-room-modal");
+        const openBtn = document.getElementById("btn-open-tennis");
+        const triggerCard = document.getElementById("tennis-trigger-card");
+        const closeBtn = document.getElementById("tennis-close-btn");
+        const backBtn = document.getElementById("tn-btn-back");
+        const createBtn = document.getElementById("tn-btn-create");
+        const roomNameInput = document.getElementById("tn-room-name");
+        const playersRow = document.getElementById("tn-players-row");
+        const courtsGrid = document.getElementById("tn-courts-grid");
+        const courtHint = document.getElementById("tn-court-hint");
+
+        if (!modal) return;
+
+        let selectedMode = "1 vs 1";
+        let selectedCourtNum = 1;
+
+        const courtHints = {
+            1: "🌱 Kort 1: Yeşil Çim Kort (Hızlı zemin & düşük sekme)",
+            2: "🧱 Kort 2: Kırmızı Toprak Kort (Yavaş zemin & yüksek sekme)"
+        };
+
+        function openModal() {
+            modal.classList.add("is-open");
+            modal.setAttribute("aria-hidden", "false");
+            document.body.style.overflow = "hidden";
+            if (roomNameInput) {
+                roomNameInput.focus();
+                roomNameInput.select();
+            }
+        }
+
+        function closeModal() {
+            modal.classList.remove("is-open");
+            modal.setAttribute("aria-hidden", "true");
+            document.body.style.overflow = "";
+        }
+
+        // Açılış Tetikleyicileri
+        if (openBtn) {
+            openBtn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                openModal();
+            });
+        }
+
+        if (triggerCard) {
+            triggerCard.addEventListener("click", () => {
+                openModal();
+            });
+        }
+
+        // Kapanış Tetikleyicileri
+        if (closeBtn) closeBtn.addEventListener("click", closeModal);
+        if (backBtn) backBtn.addEventListener("click", closeModal);
+
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && modal.classList.contains("is-open")) {
+                closeModal();
+            }
+        });
+
+        // Oyuncu Sayısı Seçimi (1 vs 1, 2 vs 2)
+        if (playersRow) {
+            const playerBtns = playersRow.querySelectorAll(".player-choice-btn");
+            playerBtns.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    playerBtns.forEach(b => b.classList.remove("is-active"));
+                    btn.classList.add("is-active");
+                    selectedMode = btn.getAttribute("data-tn-mode") || "1 vs 1";
+                });
+            });
+        }
+
+        // Kort Seçimi
+        if (courtsGrid) {
+            const courtCards = courtsGrid.querySelectorAll(".map-card-select");
+            courtCards.forEach(card => {
+                card.addEventListener("click", () => {
+                    courtCards.forEach(c => c.classList.remove("is-active"));
+                    card.classList.add("is-active");
+                    const num = parseInt(card.getAttribute("data-court-num"), 10) || 1;
+                    selectedCourtNum = num;
+                    if (courtHint && courtHints[num]) {
+                        courtHint.textContent = courtHints[num];
+                    }
+                });
+            });
+        }
+
+        // Oda Oluştur Butonu
+        if (createBtn) {
+            createBtn.addEventListener("click", () => {
+                const roomName = (roomNameInput && roomNameInput.value.trim()) ? roomNameInput.value.trim() : "Minifal Tenis Turnuvası";
+                const courtName = selectedCourtNum === 1 ? "Yeşil Çim Kort" : "Kırmızı Toprak Kort";
+
+                const confirmMsg = `🎉 Tebrikler! "${roomName}" tenis odası başarıyla açıldı!\n\n` +
+                    `🎾 Karşılaşma: ${selectedMode}\n` +
+                    `🌱 Seçili Alan: Kort ${selectedCourtNum} (${courtName})\n\n` +
+                    `Gerçek oyunda kortlara bağlanmak istiyor musunuz? (minifal.com/play)`;
+
+                if (confirm(confirmMsg)) {
+                    window.location.href = "https://minifal.com/play";
+                } else {
+                    closeModal();
+                }
+            });
+        }
+    }
+
     function renderVendors() {
         const vendorsGrid = document.getElementById("vendors-grid");
         if (!vendorsGrid || !MINIFAL_DATABASE.vendors) return;
@@ -2129,6 +2246,7 @@ document.addEventListener("DOMContentLoaded", () => {
     renderHaritaAndLocations();
     initPaintballModal();
     initFootballModal();
+    initTennisModal();
     renderVendors();
     renderHouses();
     initRoomDesigner();

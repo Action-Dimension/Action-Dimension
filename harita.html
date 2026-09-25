@@ -150,7 +150,7 @@
                                 </div>
                             </div>
 
-                            <div class="harita-game-card">
+                            <div class="harita-game-card harita-game-card--tennis" id="tennis-trigger-card" style="cursor: pointer;" title="Tenis Odası Oluştur menüsünü açmak için tıklayın">
                                 <div class="game-thumb-box">
                                     <img src="./img/items/racket_of_speed_trans.png" alt="Tenis" class="game-thumb-icon">
                                     <span class="game-status-tag game-status--open">Kortlar Açık</span>
@@ -158,6 +158,7 @@
                                 <div class="game-info-col">
                                     <h4 class="game-title">Tenis</h4>
                                     <p class="game-desc">Hunter'ın raketleriyle tekler ve çiftler kort karşılaşmaları.</p>
+                                    <button type="button" class="btn-open-paintball btn-open-tennis" id="btn-open-tennis">🎾 Oda Oluştur</button>
                                 </div>
                             </div>
 
@@ -359,6 +360,63 @@
             <div class="room-creator-footer">
                 <button type="button" class="btn-room-back" id="fb-btn-back">‹ GERİ</button>
                 <button type="button" class="btn-room-create" id="fb-btn-create">ODA OLUŞTUR</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TENİS ODA OLUŞTURMA MODALİ (OYUN İÇİ BİREBİR ARAYÜZ) -->
+    <div class="tennis-modal-overlay" id="tennis-room-modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="room-creator-box">
+            <!-- Header -->
+            <div class="room-creator-header">
+                <div class="room-creator-title-left">
+                    <img src="./img/maps/icon_tree_header_trans.png" alt="" class="room-creator-tree-icon" aria-hidden="true">
+                    <h3 class="room-creator-main-title">ODA OLUŞTUR</h3>
+                </div>
+                <div class="room-creator-top-right">
+                    <button type="button" class="room-creator-close-btn" id="tennis-close-btn" aria-label="Pencereyi Kapat">✕</button>
+                </div>
+            </div>
+
+            <!-- Body -->
+            <div class="room-creator-body">
+                <!-- Sol Kolon: Ayarlar -->
+                <div class="room-form-section">
+                    <div class="room-field-group">
+                        <label class="room-field-label" for="tn-room-name">Oda adı</label>
+                        <input type="text" class="room-name-input" id="tn-room-name" placeholder="Oda adını girin..." maxlength="30" value="Minifal Tenis Turnuvası">
+                    </div>
+
+                    <div class="room-field-group">
+                        <label class="room-field-label">Oyuncu sayısı</label>
+                        <div class="tennis-players-row" id="tn-players-row">
+                            <button type="button" class="player-choice-btn is-active" data-tn-mode="1 vs 1">1 vs 1</button>
+                            <button type="button" class="player-choice-btn" data-tn-mode="2 vs 2">2 vs 2</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sağ Kolon: Kort Seçimi -->
+                <div class="maps-picker-col">
+                    <label class="room-field-label">Kort</label>
+                    <div class="courts-grid-1x2" id="tn-courts-grid">
+                        <div class="map-card-select is-active" data-court-num="1" tabindex="0" role="button" aria-label="Kort 1: Yeşil Çim Kort">
+                            <span class="map-number-badge">1</span>
+                            <img src="./img/maps/court_tennis_1.png" alt="Kort 1" class="map-card-img">
+                        </div>
+                        <div class="map-card-select" data-court-num="2" tabindex="0" role="button" aria-label="Kort 2: Kırmızı Toprak Kort">
+                            <span class="map-number-badge">2</span>
+                            <img src="./img/maps/court_tennis_2.png" alt="Kort 2" class="map-card-img">
+                        </div>
+                    </div>
+                    <div class="map-info-hint" id="tn-court-hint">🌱 Kort 1: Yeşil Çim Kort (Hızlı zemin & düşük sekme)</div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="room-creator-footer">
+                <button type="button" class="btn-room-back" id="tn-btn-back">‹ GERİ</button>
+                <button type="button" class="btn-room-create" id="tn-btn-create">ODA OLUŞTUR</button>
             </div>
         </div>
     </div>

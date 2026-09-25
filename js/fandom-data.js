@@ -6301,6 +6301,30 @@ const MINIFAL_DATABASE = {
             name: "Minifal Merkez Stadyumu",
             desc: "İki kale, nizami yeşil çim saha, tribünler ve yüksek aydınlatmalı projektörler."
         }
+    },
+
+    // 16. TENİS VE KORT REHBERİ
+    tennis: {
+        title: "Minifal Tenis Kulübü",
+        description: "Hunter'ın profesyonel tenis raketleriyle 1 vs 1 tekler veya 2 vs 2 çiftler kort karşılaşmaları.",
+        playerModes: ["1 vs 1", "2 vs 2"],
+        defaultMode: "1 vs 1",
+        courts: [
+            {
+                id: "court-1",
+                number: 1,
+                name: "Yeşil Çim Kort",
+                image: "./img/maps/court_tennis_1.png",
+                desc: "Hızlı tempolu, düşük sekmeli ve servis-vole oyununa uygun klasik çim kort."
+            },
+            {
+                id: "court-2",
+                number: 2,
+                name: "Kırmızı Toprak Kort",
+                image: "./img/maps/court_tennis_2.png",
+                desc: "Yavaş zemin, yüksek sekmeli ve uzun rallilere sahne olan geleneksel toprak kort."
+            }
+        ]
     }
 };
 

@@ -3368,7 +3368,8 @@ button, input, select {
    PAINTBALL ODA OLUŞTURMA MENÜSÜ (1:1 AUTHENTIC MINIFAL GAME MODAL)
    ========================================================================== */
 .paintball-modal-overlay,
-.football-modal-overlay {
+.football-modal-overlay,
+.tennis-modal-overlay {
   position: fixed;
   inset: 0;
   background: rgba(22, 16, 10, 0.65);
@@ -3384,7 +3385,8 @@ button, input, select {
 }
 
 .paintball-modal-overlay.is-open,
-.football-modal-overlay.is-open {
+.football-modal-overlay.is-open,
+.tennis-modal-overlay.is-open {
   opacity: 1;
   visibility: visible;
 }
@@ -3405,7 +3407,8 @@ button, input, select {
 }
 
 .paintball-modal-overlay.is-open .room-creator-box,
-.football-modal-overlay.is-open .room-creator-box {
+.football-modal-overlay.is-open .room-creator-box,
+.tennis-modal-overlay.is-open .room-creator-box {
   translate: 0 0;
 }
 
@@ -3853,4 +3856,27 @@ button, input, select {
   border-color: #81662c;
   color: #2a1d10;
 }
+
+/* ==============================================================================
+   TENİS ODA OLUŞTURMA MENÜSÜ ÖZEL STİLLERİ (BİREBİR OYUN İÇİ DİZAYN)
+   ============================================================================== */
+.tennis-players-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  max-width: 260px;
+}
+
+.courts-grid-1x2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.btn-open-tennis {
+  background: linear-gradient(180deg, #fcebb5 0%, #eed487 100%);
+  border-color: #81662c;
+  color: #2a1d10;
+}
+
 
