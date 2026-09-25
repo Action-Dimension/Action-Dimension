@@ -1419,6 +1419,15 @@ document.addEventListener("DOMContentLoaded", () => {
             } else if (v.id === "npc-marijuannaa") {
                 actionBtnText = "📖 Wiki Portalı";
                 actionAttr = 'data-action="goto-wiki"';
+            } else if (v.id === "vendor-ozalp") {
+                actionBtnText = "👕 Odcaf Tişörtleri (300 Cash)";
+                actionAttr = 'data-action="filter-odcaf-tshirts"';
+            } else if (v.id === "npc-emre") {
+                actionBtnText = "💬 Emre ile Konuş";
+                actionAttr = 'data-action="dialogue-emre"';
+            } else if (v.id === "npc-ether-lord") {
+                actionBtnText = "💬 Ether Lord ile Konuş";
+                actionAttr = 'data-action="dialogue-ether-lord"';
             }
 
             return `
@@ -1563,6 +1572,23 @@ document.addEventListener("DOMContentLoaded", () => {
                     alert('Cem:\n"Ben çalışıyorum! Seninle Tolga uğraşsın."');
                 } else if (action === "dialogue-taner") {
                     alert('Taner [DEV]:\n"Flash öldü ama Minifal yaşıyor! Oyunu modern web teknolojileriyle sıfırdan hayata döndürüyoruz."');
+                } else if (action === "dialogue-emre") {
+                    alert('Emre:\n"Gözlüklerimi taktım, kodları yazıyorum! Odcaf ekibi tam gaz çalışıyor."');
+                } else if (action === "dialogue-ether-lord") {
+                    alert('Ether Lord:\n"..."');
+                } else if (action === "filter-odcaf-tshirts") {
+                    const katalog = document.getElementById("katalog");
+                    if (katalog) {
+                        state.activeCategory = "masks";
+                        updateActiveCategoryButton("masks");
+                        state.searchQuery = "Odcaf";
+                        const searchInput = document.getElementById("search-input");
+                        if (searchInput) searchInput.value = "Odcaf";
+                        renderCards();
+                        katalog.scrollIntoView({ behavior: "smooth" });
+                    } else {
+                        window.location.href = "./index.html?cat=masks#katalog";
+                    }
                 } else if (action === "goto-wiki") {
                     window.location.href = "./index.html";
                 }
