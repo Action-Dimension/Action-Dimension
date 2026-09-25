@@ -22,7 +22,8 @@ const MINIFAL_DATABASE = {
         totalArmor: 16,
         totalModkits: 21,
         totalFurniture: 116,
-        totalToys: 69
+        totalToys: 69,
+        totalPets: 13
     },
 
     // Kategori Tanımları
@@ -33,6 +34,7 @@ const MINIFAL_DATABASE = {
         { id: "modkits", name: "Modkitler", icon: "⚙️", color: "teal", count: 16, desc: "Silahların hasar, hız ve menzilini artıran geliştirme modülleri ve sökücüler." },
         { id: "potions", name: "İksirler & Taktik Çantalar", icon: "🧪", color: "teal", count: 17, desc: "Güçlendirici iksirler, can ve cephane ikmal paketleri." },
         { id: "sports", name: "Tenis Raketleri", icon: "🎾", color: "orange", count: 3, desc: "Tenis kortlarında kullanılan ve koşu, vuruş veya stamina bonusu sağlayan raketler." },
+        { id: "pets", name: "Evcil Hayvanlar", icon: "🐾", color: "purple", count: 13, desc: "Sergei'nin evcil hayvan mağazasından kediler, köpekler, inekler, domuzlar, robotlar ve efsanevi ejderha." },
         { id: "masks", name: "Kıyafet & Maske", icon: "🎭", color: "olive", count: 465, desc: "Şehirde tarzını yansıtan maskeler, tişörtler, şortlar ve ceketler." },
         { id: "furniture", name: "Mobilyalar & Ev", icon: "🛋️", color: "sand", count: 116, desc: "Sebastian'dan alınan ev planları ve odayı döşeyen mobilyalar." },
         { id: "toys", name: "Oyuncak & Eğlence", icon: "🎪", color: "pink", count: 69, desc: "Tobias'ın dükkanından maskeler, şemsiyeler, oyuncaklar, kupalar ve ışın kılıçları." },
@@ -5298,6 +5300,284 @@ const MINIFAL_DATABASE = {
         }
     ],
 
+
+    // 9. EVCİL HAYVANLAR (PETS) - SERGEI MAĞAZASI
+    pets: [
+        {
+            id: "pet-s4-servis-robotu",
+            name: "S-4 Servis Robotu",
+            category: "pets",
+            subType: "Servis Robotu",
+            rarity: "uncommon",
+            rarityName: "Nadir",
+            image: "./img/items/pet_s4_servis_robotu_trans.png",
+            currency: "cash",
+            price: 550,
+            marketRange: "550 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 550 },
+                { date: "Tem 2026", price: 550 },
+                { date: "Ağu 2026", price: 550 },
+                { date: "Eyl 2026", price: 550 }
+            ],
+            change24h: 0,
+            description: "S-4 modeli tekerlekli ve kompakt ev içi servis ve temizlik robotu yoldaşı.",
+            source: "Sergei Evcil Hayvan Mağazası (Şehir Merkezi) / 550 Cash"
+        },
+        {
+            id: "pet-gri-kedi",
+            name: "Gri Kedi",
+            category: "pets",
+            subType: "Evcil Kedi",
+            rarity: "common",
+            rarityName: "Yaygın",
+            image: "./img/items/pet_gri_kedi_trans.png",
+            currency: "cash",
+            price: 200,
+            marketRange: "200 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 200 },
+                { date: "Tem 2026", price: 200 },
+                { date: "Ağu 2026", price: 200 },
+                { date: "Eyl 2026", price: 200 }
+            ],
+            change24h: 0,
+            description: "Kocaman meraklı gözleriyle oyuncunun peşini bırakmayan sevimli gri kedi.",
+            source: "Sergei Evcil Hayvan Mağazası (Şehir Merkezi) / 200 Cash"
+        },
+        {
+            id: "pet-beyaz-kedi",
+            name: "Beyaz Kedi",
+            category: "pets",
+            subType: "Evcil Kedi",
+            rarity: "uncommon",
+            rarityName: "Nadir",
+            image: "./img/items/pet_beyaz_kedi_trans.png",
+            currency: "cash",
+            price: 300,
+            marketRange: "300 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 300 },
+                { date: "Tem 2026", price: 300 },
+                { date: "Ağu 2026", price: 300 },
+                { date: "Eyl 2026", price: 300 }
+            ],
+            change24h: 0,
+            description: "Koyu kulak ve pati detaylarına sahip asil ve uysal beyaz Siyam kırması evcil kedi.",
+            source: "Sergei Evcil Hayvan Mağazası (Şehir Merkezi) / 300 Cash"
+        },
+        {
+            id: "pet-gri-kopek",
+            name: "Gri Köpek",
+            category: "pets",
+            subType: "Evcil Köpek",
+            rarity: "common",
+            rarityName: "Yaygın",
+            image: "./img/items/pet_gri_kopek_trans.png",
+            currency: "cash",
+            price: 250,
+            marketRange: "250 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 250 },
+                { date: "Tem 2026", price: 250 },
+                { date: "Ağu 2026", price: 250 },
+                { date: "Eyl 2026", price: 250 }
+            ],
+            change24h: 0,
+            description: "Dili dışarıda neşeyle kuyruk sallayan sadık gri yavru köpek.",
+            source: "Sergei Evcil Hayvan Mağazası (Şehir Merkezi) / 250 Cash"
+        },
+        {
+            id: "pet-gri-maymun",
+            name: "Gri Maymun",
+            category: "pets",
+            subType: "Egzotik Hayvan",
+            rarity: "rare",
+            rarityName: "Ender",
+            image: "./img/items/pet_gri_maymun_trans.png",
+            currency: "cash",
+            price: 950,
+            marketRange: "950 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 950 },
+                { date: "Tem 2026", price: 950 },
+                { date: "Ağu 2026", price: 950 },
+                { date: "Eyl 2026", price: 950 }
+            ],
+            change24h: 0,
+            description: "Zeki bakışlı, meraklı ve enerjik gri evcil maymun yoldaşı.",
+            source: "Sergei Evcil Hayvan Mağazası (Şehir Merkezi) / 950 Cash"
+        },
+        {
+            id: "pet-siyah-inek",
+            name: "Siyah İnek",
+            category: "pets",
+            subType: "Çiftlik Hayvanı",
+            rarity: "rare",
+            rarityName: "Ender",
+            image: "./img/items/pet_siyah_inek_trans.png",
+            currency: "cash",
+            price: 2500,
+            marketRange: "2.500 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 2500 },
+                { date: "Tem 2026", price: 2500 },
+                { date: "Ağu 2026", price: 2500 },
+                { date: "Eyl 2026", price: 2500 }
+            ],
+            change24h: 0,
+            description: "Geniş pembe burunlu ve sevimli boynuzlu sakin siyah çiftlik ineği.",
+            source: "Sergei Evcil Hayvan Mağazası (Şehir Merkezi) / 2.500 Cash"
+        },
+        {
+            id: "pet-pembe-domuz",
+            name: "Pembe Domuz",
+            category: "pets",
+            subType: "Çiftlik Hayvanı",
+            rarity: "rare",
+            rarityName: "Ender",
+            image: "./img/items/pet_pembe_domuz_trans.png",
+            currency: "cash",
+            price: 1300,
+            marketRange: "1.300 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 1300 },
+                { date: "Tem 2026", price: 1300 },
+                { date: "Ağu 2026", price: 1300 },
+                { date: "Eyl 2026", price: 1300 }
+            ],
+            change24h: 0,
+            description: "Kıvrık kuyruklu, pembe tombul gövdeli neşeli evcil domuzcuk.",
+            source: "Sergei Evcil Hayvan Mağazası (Şehir Merkezi) / 1.300 Cash"
+        },
+        {
+            id: "pet-fosforlu-domuz",
+            name: "Fosforlu Domuz",
+            category: "pets",
+            subType: "Özel Egzotik Hayvan",
+            rarity: "epic",
+            rarityName: "Epik",
+            image: "./img/items/pet_fosforlu_domuz_trans.png",
+            currency: "crystal",
+            price: 25,
+            marketRange: "25 Crystal",
+            priceHistory: [
+                { date: "Haz 2026", price: 25 },
+                { date: "Tem 2026", price: 25 },
+                { date: "Ağu 2026", price: 25 },
+                { date: "Eyl 2026", price: 25 }
+            ],
+            change24h: 0,
+            description: "Karanlıkta bile ışıl ışıl parlayan neon yeşili efsunlu fosforlu domuz yoldaşı.",
+            source: "Sergei Evcil Hayvan Mağazası (Şehir Merkezi) / 25 Crystal"
+        },
+        {
+            id: "pet-inek",
+            name: "İnek",
+            category: "pets",
+            subType: "Çiftlik Hayvanı",
+            rarity: "rare",
+            rarityName: "Ender",
+            image: "./img/items/pet_inek_trans.png",
+            currency: "cash",
+            price: 2800,
+            marketRange: "2.800 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 2800 },
+                { date: "Tem 2026", price: 2800 },
+                { date: "Ağu 2026", price: 2800 },
+                { date: "Eyl 2026", price: 2800 }
+            ],
+            change24h: 0,
+            description: "Klasik siyah-beyaz benekli, pembe burunlu Minifal çiftlik ineği.",
+            source: "Sergei Evcil Hayvan Mağazası (Şehir Merkezi) / 2.800 Cash"
+        },
+        {
+            id: "pet-yesil-ejderha",
+            name: "Yeşil Ejderha",
+            category: "pets",
+            subType: "Efsanevi Yoldaş",
+            rarity: "legendary",
+            rarityName: "Efsanevi",
+            image: "./img/items/pet_yesil_ejderha_trans.png",
+            currency: "crystal",
+            price: 50,
+            marketRange: "50 Crystal",
+            priceHistory: [
+                { date: "Haz 2026", price: 50 },
+                { date: "Tem 2026", price: 50 },
+                { date: "Ağu 2026", price: 50 },
+                { date: "Eyl 2026", price: 50 }
+            ],
+            change24h: 0,
+            description: "Uzun boyunlu, kanatlı ve asil duruşlu efsanevi yeşil evcil ejderha.",
+            source: "Sergei Evcil Hayvan Mağazası (Şehir Merkezi) / 50 Crystal"
+        },
+        {
+            id: "pet-beyaz-kopek",
+            name: "Beyaz Köpek",
+            category: "pets",
+            subType: "Evcil Köpek",
+            rarity: "uncommon",
+            rarityName: "Nadir",
+            image: "./img/items/pet_beyaz_kopek_trans.png",
+            currency: "cash",
+            price: 300,
+            marketRange: "300 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 300 },
+                { date: "Tem 2026", price: 300 },
+                { date: "Ağu 2026", price: 300 },
+                { date: "Eyl 2026", price: 300 }
+            ],
+            change24h: 0,
+            description: "Tüylü, sevimli ve oyuncu beyaz evcil yavru köpek.",
+            source: "Sergei Evcil Hayvan Mağazası (Şehir Merkezi) / 300 Cash"
+        },
+        {
+            id: "pet-su70-servis-robotu",
+            name: "S-U70 Servis Robotu",
+            category: "pets",
+            subType: "İnsansı Robot",
+            rarity: "rare",
+            rarityName: "Ender",
+            image: "./img/items/pet_su70_servis_robotu_trans.png",
+            currency: "cash",
+            price: 1600,
+            marketRange: "1.600 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 1600 },
+                { date: "Tem 2026", price: 1600 },
+                { date: "Ağu 2026", price: 1600 },
+                { date: "Eyl 2026", price: 1600 }
+            ],
+            change24h: 0,
+            description: "Geniş vizörlü, şerit desenli sevimli insansı servis robotu yoldaşı.",
+            source: "Sergei Evcil Hayvan Mağazası (Şehir Merkezi) / 1.600 Cash"
+        },
+        {
+            id: "pet-b2-koruma-robotu",
+            name: "B-2 Koruma Robotu",
+            category: "pets",
+            subType: "Güvenlik Robotu",
+            rarity: "rare",
+            rarityName: "Ender",
+            image: "./img/items/pet_b2_koruma_robotu_trans.png",
+            currency: "cash",
+            price: 1700,
+            marketRange: "1.700 Cash",
+            priceHistory: [
+                { date: "Haz 2026", price: 1700 },
+                { date: "Tem 2026", price: 1700 },
+                { date: "Ağu 2026", price: 1700 },
+                { date: "Eyl 2026", price: 1700 }
+            ],
+            change24h: 0,
+            description: "Tek gözlü vizöre ve kapüşonlu zırh başlığına sahip B-2 koruma ve güvenlik robotu.",
+            source: "Sergei Evcil Hayvan Mağazası (Şehir Merkezi) / 1.700 Cash"
+        }
+    ],
+
     vendors: [
 {
             id: "vendor-mason",
@@ -5382,7 +5662,7 @@ const MINIFAL_DATABASE = {
             avatar: "./img/npcs/npc_sergei.png",
             dialogue: "Minifal sokaklarında sana eşlik edecek sevimli bir evcil hayvan ister misin? Sevgiye doyamayacaksın!",
             description: "Şehir meydanında sevimli kahverengi tavşan kostümüyle oyuncuları karşılayan evcil hayvan yetiştiricisi. Oyunculara şehirde yanlarında gezdirebilecekleri yoldaş hayvanlar sunar.",
-            itemsForSale: ["Evcil Hayvanlar (Yakında)", "Tavşanlar & Minik Dostlar", "Yoldaş Tasarımları"],
+            itemsForSale: ["Yeşil Ejderha (50 Crystal)", "Fosforlu Domuz (25 Crystal)", "B-2 Koruma & S-U70 Robotlar (1.600 - 1.700 Cash)", "Kedi & Köpek Yoldaşları (200 - 300 Cash)", "İnekler & Maymun (950 - 2.800 Cash)"],
             badgeColor: "#a855f7",
         },
         {
